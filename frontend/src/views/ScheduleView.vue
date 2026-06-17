@@ -1,10 +1,10 @@
 <template>
   <BaseLayout>
     <div class="schedule-view">
-      <h2>いつ空いてる？</h2>
+      <h2 class="manga-title">いつ空いてる？</h2>
       <p class="description">授業を入れたい曜日と時間を選んでください。<br>何個選んでも大丈夫です。</p>
 
-      <div class="table-container">
+      <div class="table-container manga-panel">
         <table>
           <thead>
             <tr>
@@ -23,9 +23,10 @@
                 :key="day"
                 :class="{ selected: isSelected(day, period) }"
                 @click="store.toggleSchedule(day, period)"
+                class="schedule-cell"
               >
                 <div class="cell-content">
-                  <div v-if="isSelected(day, period)" class="check">✓</div>
+                  <div v-if="isSelected(day, period)" class="check">必</div>
                 </div>
               </td>
             </tr>
@@ -33,9 +34,9 @@
         </table>
       </div>
 
-      <div class="selection-info">
-        <p v-if="store.selectedSchedule.length > 0">
-          <strong>{{ store.selectedSchedule.length }}つ</strong> のコマを選択中
+      <div class="selection-info manga-badge-container">
+        <p v-if="store.selectedSchedule.length > 0" class="manga-badge">
+          <strong>{{ store.selectedSchedule.length }}つ</strong> のコマを選択中ッ！
         </p>
         <p v-else class="hint">マスをタップして選択してください</p>
       </div>
@@ -43,9 +44,9 @@
       <button 
         :disabled="store.selectedSchedule.length === 0"
         @click="$router.push('/results')"
-        class="next-button"
+        class="next-button manga-button"
       >
-        結果を見る
+        結果!!
       </button>
     </div>
   </BaseLayout>
@@ -66,27 +67,33 @@ const isSelected = (day: string, period: number) => {
 <style scoped>
 .schedule-view {
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
-  color: #1e293b;
+.manga-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-heading);
+  font-weight: 900;
+  text-shadow: 3px 3px 0 var(--color-manga-accent-secondary);
 }
 
 .description {
   margin-bottom: 2.5rem;
-  color: #64748b;
+  color: var(--color-text);
   line-height: 1.6;
+  font-weight: 700;
 }
 
-.table-container {
-  overflow-x: auto;
-  margin-bottom: 2rem;
-  background: #f8fafc;
+.manga-panel {
+  background: white;
   padding: 1rem;
-  border-radius: 1.5rem;
-  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  border: 4px solid var(--color-manga-accent);
+  box-shadow: 8px 8px 0 var(--color-manga-accent-secondary);
+  margin-bottom: 3rem;
+  overflow: hidden;
 }
 
 table {
@@ -97,98 +104,113 @@ table {
 
 th {
   padding: 0.5rem;
-  color: #64748b;
-  font-weight: 700;
-  font-size: 1.1rem;
+  color: var(--color-heading);
+  font-weight: 900;
+  font-size: 1.2rem;
 }
 
-td {
+.schedule-cell {
   background: white;
-  border: 1px solid #e2e8f0;
-  height: 3.5rem;
-  border-radius: 0.75rem;
+  border: 3px solid var(--color-heading);
+  height: 4.5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.1s;
   position: relative;
+}
+
+.schedule-cell:hover {
+  background-color: #fef2f2;
+  border-color: var(--color-manga-accent);
+}
+
+.schedule-cell.selected {
+  background-color: var(--color-manga-accent-secondary);
+  border-color: var(--color-heading);
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 4px 4px 0 var(--color-heading);
+  z-index: 5;
 }
 
 td.period-label {
   background: none;
   border: none;
-  width: 3rem;
+  width: 3.5rem;
   cursor: default;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .period-label .num {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #1e293b;
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--color-heading);
   line-height: 1;
 }
 
 .period-label .unit {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  font-weight: 600;
-}
-
-td:not(.period-label):hover {
-  border-color: #3b82f6;
-  background-color: #f0f9ff;
-}
-
-td.selected {
-  background-color: #3b82f6;
-  border-color: #3b82f6;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  font-size: 0.8rem;
+  color: var(--color-text);
+  font-weight: 900;
 }
 
 .check {
   color: white;
-  font-weight: bold;
-  font-size: 1.25rem;
+  font-weight: 900;
+  font-size: 1.5rem;
 }
 
 .selection-info {
-  margin-bottom: 2rem;
-  height: 1.5rem;
+  margin-bottom: 2.5rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.selection-info p {
-  margin: 0;
-  color: #475569;
+.manga-badge {
+  background: var(--color-manga-accent);
+  padding: 0.5rem 1.5rem;
+  border: 3px solid var(--color-heading);
+  border-radius: 0.5rem;
+  font-weight: 900;
+  color: white;
+  transform: rotate(-2deg);
+  box-shadow: 4px 4px 0 var(--color-manga-accent-secondary);
 }
 
-.selection-info .hint {
-  color: #94a3b8;
-  font-size: 0.9rem;
+.hint {
+  color: var(--color-text-muted);
+  font-weight: 700;
 }
 
-.next-button {
+.manga-button {
   width: 100%;
   padding: 1.25rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  background-color: #3b82f6;
+  font-size: 1.5rem;
+  font-weight: 900;
+  background-color: var(--color-heading);
   color: white;
-  border: none;
+  border: 4px solid var(--color-manga-accent);
   border-radius: 1rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.1s;
+  box-shadow: 6px 6px 0 var(--color-manga-accent-secondary);
 }
 
-.next-button:disabled {
-  background-color: #cbd5e1;
+.manga-button:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--color-manga-accent);
+}
+
+.manga-button:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--color-manga-accent);
+}
+
+.manga-button:disabled {
+  background-color: #e4e4e7;
+  color: #a1a1aa;
+  border-color: #d4d4d8;
+  box-shadow: none;
   cursor: not-allowed;
-}
-
-.next-button:not(:disabled):hover {
-  background-color: #2563eb;
-  transform: translateY(-2px);
 }
 </style>
