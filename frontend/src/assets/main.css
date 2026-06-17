@@ -1,35 +1,241 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
+  width: 100%;
+  max-width: 800px; /* Increased from 600px */
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+h1, h2, h3 {
+  color: var(--magic-text-heading);
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-weight: 700;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+/* --- Magical Card Design (Step 2 Items) --- */
+.m-card-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  background: linear-gradient(180deg, var(--magic-white) 0%, var(--magic-lavender-bg) 100%);
+  border: 2px solid var(--magic-silver);
+  border-radius: var(--magic-radius-md);
+  padding: 1.25rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 20px var(--magic-shadow-lavender);
+  overflow: hidden;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.m-card-item::before {
+  content: '';
+  position: absolute;
+  top: 6px; left: 6px; right: 6px; bottom: 6px;
+  border: 1px solid rgba(216, 212, 221, 0.8);
+  border-radius: 16px;
+  pointer-events: none;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.m-card-item::after {
+  content: '';
+  position: absolute;
+  top: 10px; left: 10px; right: 10px; bottom: 10px;
+  border: 1px solid rgba(216, 212, 221, 0.4);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.card-corners::before, .card-corners::after {
+  content: '✧';
+  position: absolute;
+  font-size: 0.75rem;
+  color: var(--magic-silver);
+  top: 4px;
+}
+.card-corners::before { left: 4px; }
+.card-corners::after { right: 4px; }
+
+.card-watermark {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-top-icon {
+  z-index: 1;
+  font-size: 2.4rem;
+  margin-top: 0.4rem;
+  filter: drop-shadow(0 4px 6px var(--magic-shadow-pink));
+}
+
+.card-title {
+  z-index: 1;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--magic-card-title);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.card-footer {
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.card-divider {
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--magic-silver), transparent);
+}
+
+.card-sub {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--magic-text-sub);
+  letter-spacing: 0.05em;
+}
+
+.m-card-item.active {
+  border-color: var(--magic-pink-accent);
+  border-width: 3px;
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px var(--magic-shadow-pink), 0 0 15px var(--magic-pink-accent);
+  background: linear-gradient(180deg, var(--magic-white) 0%, var(--magic-pink-bg) 100%);
+}
+
+.m-card-item.active .card-corners::before,
+.m-card-item.active .card-corners::after {
+  color: var(--magic-pink-accent);
+}
+
+/* --- Magical Item UI Elements --- */
+
+.m-action-btn {
+  position: relative;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--magic-white) 0%, var(--magic-pink-bg) 100%);
+  border: 3px solid var(--magic-silver);
+  border-radius: 999px;
+  color: var(--magic-text-main);
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  box-shadow: 0 8px 25px var(--magic-shadow-pink);
+  overflow: hidden;
+}
+
+.m-action-btn:hover:not(:disabled) {
+  transform: scale(1.05) translateY(-3px);
+  border-color: var(--magic-pink-accent);
+  box-shadow: 0 12px 35px var(--magic-shadow-pink);
+}
+
+.m-charm-btn {
+  width: 44px;
+  height: 44px;
+  background: var(--magic-white);
+  border: 2px solid var(--magic-silver);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px var(--magic-shadow-lavender);
+  color: var(--magic-text-heading);
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.m-charm-btn::after {
+  content: '🎀';
+  position: absolute;
+  top: -8px;
+  font-size: 1rem;
+}
+
+.m-aux-btn {
+  padding: 0.4rem 1.2rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--magic-silver);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--magic-text-heading);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.m-aux-btn:hover {
+  background: var(--magic-white);
+  border-color: var(--magic-pink-accent);
+}
+
+/* --- Magical Logo Styles --- */
+.m-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: 3rem;
+  padding: 1rem 2rem;
+  /* Main color: Deep Rose Brown */
+  color: #6B2F4A; 
+  /* Intricate Magical Outline & Shadow */
+  text-shadow: 
+    -1.5px -1.5px 0 #D8C7DD,
+     1.5px -1.5px 0 #D8C7DD,
+    -1.5px  1.5px 0 #D8C7DD,
+     1.5px  1.5px 0 #D8C7DD,
+    0 4px 10px rgba(138, 90, 106, 0.25);
+  /* Subtle Pearl Highlight */
+  background: linear-gradient(180deg, #FFFFFF 0%, #6B2F4A 20%, #6B2F4A 80%, #5A2E4A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Very subtle glow */
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+}
+
+.m-logo-container {
+  position: relative;
+  display: inline-block;
+  margin: 1.5rem 0;
+}
+
+.m-logo-deco {
+  position: absolute;
+  font-size: 1.5rem;
+  pointer-events: none;
+  filter: drop-shadow(0 0 5px #fff);
+}
+
+.deco-star { top: -10px; left: -10px; animation: m-twinkle 2s infinite; }
+.deco-heart { bottom: -5px; right: -5px; animation: m-twinkle 2.5s infinite; }
+.deco-wand { top: 10px; right: -40px; transform: rotate(45deg); font-size: 2.5rem; }
+
+@keyframes m-twinkle {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
 }

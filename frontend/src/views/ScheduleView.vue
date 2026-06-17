@@ -1,8 +1,8 @@
 <template>
   <BaseLayout>
     <div class="schedule-view">
-      <h2>いつ空いてる？</h2>
-      <p class="description">授業を入れたい曜日と時間を選んでください。<br>何個選んでも大丈夫です。</p>
+      <h2 class="magic-title">運命の時間帯</h2>
+      <p class="description">魔法を発動させたい曜日と時間を選んでください。<br>白いマスをタップして聖域を決めましょう。</p>
 
       <div class="table-container">
         <table>
@@ -23,9 +23,10 @@
                 :key="day"
                 :class="{ selected: isSelected(day, period) }"
                 @click="store.toggleSchedule(day, period)"
+                class="magic-cell"
               >
                 <div class="cell-content">
-                  <div v-if="isSelected(day, period)" class="check">✓</div>
+                  <div v-if="isSelected(day, period)" class="check">💖</div>
                 </div>
               </td>
             </tr>
@@ -35,18 +36,20 @@
 
       <div class="selection-info">
         <p v-if="store.selectedSchedule.length > 0">
-          <strong>{{ store.selectedSchedule.length }}つ</strong> のコマを選択中
+          <strong>{{ store.selectedSchedule.length }}つの聖域</strong> を選択中
         </p>
-        <p v-else class="hint">マスをタップして選択してください</p>
+        <p v-else class="hint">タップして聖域を有効化してください</p>
       </div>
 
-      <button 
-        :disabled="store.selectedSchedule.length === 0"
-        @click="$router.push('/results')"
-        class="next-button"
-      >
-        結果を見る
-      </button>
+      <div class="action-container">
+        <button 
+          :disabled="store.selectedSchedule.length === 0"
+          @click="$router.push('/results')"
+          class="m-action-btn next-button"
+        >
+          結果を召喚する <span>🪄</span>
+        </button>
+      </div>
     </div>
   </BaseLayout>
 </template>
@@ -68,45 +71,46 @@ const isSelected = (day: string, period: number) => {
   text-align: center;
 }
 
-h2 {
+.magic-title {
   font-size: 1.75rem;
-  margin-bottom: 0.75rem;
-  color: #1e293b;
+  margin-bottom: 1rem;
 }
 
 .description {
-  margin-bottom: 2.5rem;
-  color: #64748b;
+  margin-bottom: 2rem;
+  color: var(--magic-text-sub);
+  font-weight: 700;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
 .table-container {
   overflow-x: auto;
   margin-bottom: 2rem;
-  background: #f8fafc;
-  padding: 1rem;
-  border-radius: 1.5rem;
-  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0.75rem;
+  border-radius: var(--magic-radius-md);
+  border: 2px solid var(--magic-silver);
 }
 
 table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0.5rem;
+  border-spacing: 0.4rem;
 }
 
 th {
-  padding: 0.5rem;
-  color: #64748b;
-  font-weight: 700;
-  font-size: 1.1rem;
+  padding: 0.4rem;
+  color: var(--magic-text-heading);
+  font-weight: 800;
+  font-size: 1rem;
 }
 
-td {
+.magic-cell {
   background: white;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--magic-silver);
   height: 3.5rem;
-  border-radius: 0.75rem;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s;
   position: relative;
@@ -115,7 +119,7 @@ td {
 td.period-label {
   background: none;
   border: none;
-  width: 3rem;
+  width: 2.5rem;
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -124,34 +128,22 @@ td.period-label {
 }
 
 .period-label .num {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #1e293b;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--magic-text-heading);
   line-height: 1;
 }
 
 .period-label .unit {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  font-weight: 600;
+  font-size: 0.7rem;
+  color: var(--magic-text-sub);
+  font-weight: 800;
 }
 
-td:not(.period-label):hover {
-  border-color: #3b82f6;
-  background-color: #f0f9ff;
-}
-
-td.selected {
-  background-color: #3b82f6;
-  border-color: #3b82f6;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-}
-
-.check {
-  color: white;
-  font-weight: bold;
-  font-size: 1.25rem;
+.magic-cell.selected {
+  background: linear-gradient(135deg, var(--magic-pink-bg) 0%, var(--magic-white) 100%);
+  border-color: var(--magic-pink-accent);
+  box-shadow: 0 4px 15px var(--magic-shadow-pink);
 }
 
 .selection-info {
@@ -161,34 +153,23 @@ td.selected {
 
 .selection-info p {
   margin: 0;
-  color: #475569;
+  color: var(--magic-text-main);
+  font-weight: 800;
 }
 
 .selection-info .hint {
-  color: #94a3b8;
-  font-size: 0.9rem;
+  color: var(--magic-text-sub);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.action-container {
+  display: flex;
+  justify-content: center;
 }
 
 .next-button {
   width: 100%;
-  padding: 1.25rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.next-button:disabled {
-  background-color: #cbd5e1;
-  cursor: not-allowed;
-}
-
-.next-button:not(:disabled):hover {
-  background-color: #2563eb;
-  transform: translateY(-2px);
+  max-width: 320px;
 }
 </style>
