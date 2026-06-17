@@ -146,14 +146,14 @@ const getIcon = (tag: string) => {
 }
 
 /* Cluster above the character's head (which is roughly at 50% bottom center) */
-.pos-0 { top: 0%; left: 10%; transform: rotate(-5deg); }
-.pos-1 { top: 5%; left: 40%; transform: rotate(2deg); }
-.pos-2 { top: 0%; left: 70%; transform: rotate(6deg); }
-.pos-3 { top: 20%; left: 5%; transform: rotate(-8deg); }
-.pos-4 { top: 25%; left: 35%; transform: rotate(-2deg); }
-.pos-5 { top: 20%; left: 65%; transform: rotate(4deg); }
-.pos-6 { top: 45%; left: 20%; transform: rotate(-4deg); }
-.pos-7 { top: 48%; left: 55%; transform: rotate(5deg); }
+.pos-0 { top: 0%; left: 0%; transform: rotate(-3deg); }
+.pos-1 { top: 5%; left: 55%; transform: rotate(2deg); }
+.pos-2 { top: 22%; left: 10%; transform: rotate(4deg); }
+.pos-3 { top: 27%; left: 62%; transform: rotate(-2deg); }
+.pos-4 { top: 48%; left: 0%; transform: rotate(-4deg); }
+.pos-5 { top: 53%; left: 55%; transform: rotate(3deg); }
+.pos-6 { top: 74%; left: 10%; transform: rotate(2deg); }
+.pos-7 { top: 79%; left: 62%; transform: rotate(-3deg); }
 
 /* Tails all pointing downwards towards the character */
 .bubble-tail {
@@ -175,14 +175,13 @@ const getIcon = (tag: string) => {
 }
 
 /* Adjust tail positions based on bubble location */
-.pos-0 .bubble-tail, .pos-3 .bubble-tail { left: 60%; border-width: 15px 0 0 15px; }
-.pos-0::after, .pos-3::after { left: 63%; border-width: 12px 0 0 12px; }
+/* Left side bubbles (0, 2, 4, 6) point towards center-right */
+.pos-0 .bubble-tail, .pos-2 .bubble-tail, .pos-4 .bubble-tail, .pos-6 .bubble-tail { left: 70%; border-width: 15px 0 0 15px; }
+.pos-0::after, .pos-2::after, .pos-4::after, .pos-6::after { left: 73%; border-width: 12px 0 0 12px; }
 
-.pos-1 .bubble-tail, .pos-4 .bubble-tail, .pos-6 .bubble-tail, .pos-7 .bubble-tail { left: 50%; transform: translateX(-50%); border-width: 15px 10px 0 10px; }
-.pos-1::after, .pos-4::after, .pos-6::after, .pos-7::after { left: 50%; transform: translateX(-50%); border-width: 12px 8px 0 8px; }
-
-.pos-2 .bubble-tail, .pos-5 .bubble-tail { left: 30%; border-width: 15px 15px 0 0; }
-.pos-2::after, .pos-5::after { left: 33%; border-width: 12px 12px 0 0; }
+/* Right side bubbles (1, 3, 5, 7) point towards center-left */
+.pos-1 .bubble-tail, .pos-3 .bubble-tail, .pos-5 .bubble-tail, .pos-7 .bubble-tail { left: 20%; border-width: 15px 15px 0 0; }
+.pos-1::after, .pos-3::after, .pos-5::after, .pos-7::after { left: 23%; border-width: 12px 12px 0 0; }
 
 .manga-bubble-tag:hover {
   transform: scale(1.1) !important;
