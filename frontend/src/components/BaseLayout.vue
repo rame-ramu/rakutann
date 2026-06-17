@@ -28,15 +28,25 @@ const currentStep = computed(() => {
 
 <style scoped>
 .base-layout {
-  max-width: 480px;
+  /* スマホ・PC共通の基本設定 */
   margin: 0 auto;
   padding: 1.5rem;
   min-height: 100vh;
   background-color: #FFFFFF; /* Pure white background */
   color: #2D3436;
-  /* Use a consistent, friendly rounded font stack */
   font-family: 'Hiragino Maru Gothic ProN', 'Rounded M+ 1c', 'Yu Gothic', 'Meiryo', sans-serif;
   line-height: 1.6;
+
+  /* スマホ（768px以下）のデフォルト幅 */
+  max-width: 480px; 
+}
+
+/* PC用のレスポンシブ対応（画面幅が769px以上の場合） */
+@media (min-width: 769px) {
+  .base-layout {
+    /* PCではコンテンツを広く見せるために最大幅を広げる */
+    max-width: 900px; 
+  }
 }
 
 header {

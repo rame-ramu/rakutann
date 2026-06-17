@@ -112,10 +112,22 @@ h2 {
 /* タグボタンの並び（フレックスボックス） */
 .condition-tag-list {
   display: flex;
-  flex-wrap: wrap;
+  /* デフォルト（スマホ）では縦に並びやすいように調整 */
+  flex-wrap: wrap; 
   gap: 1rem;
   justify-content: center;
   margin-bottom: 3rem;
+}
+
+/* PC用のレスポンシブ対応（画面幅が769px以上の場合） */
+@media (min-width: 769px) {
+  .condition-tag-list {
+    /* PCでは横並びのレイアウトを強調し、少し大きな隙間を作る */
+    gap: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* 個別のタグボタンのスタイル */

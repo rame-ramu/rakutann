@@ -176,10 +176,21 @@ h2 {
 /* 授業カードのリスト表示 */
 .course-grid {
   display: flex;
-  flex-direction: column;
+  /* スマホ（768px以下）では縦並びにする設定 */
+  flex-direction: column; 
   gap: 1.5rem;
   margin-bottom: 2rem;
   text-align: left;
+}
+
+/* PC用のレスポンシブ対応（画面幅が769px以上の場合） */
+@media (min-width: 769px) {
+  .course-grid {
+    /* PCでは横並び（2列のグリッド）にする設定 */
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; /* PCでは少し広めに隙間をあける */
+  }
 }
 
 .course-card {
