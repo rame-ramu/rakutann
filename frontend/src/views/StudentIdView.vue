@@ -1,173 +1,217 @@
 <template>
   <BaseLayout>
     <div class="student-id-view">
-      <div class="hero">
-        <h1>らくたんん</h1>
-        <p class="subtitle">疲れたあなたに、ちょうどいい履修を。</p>
+      <!-- サービスロゴとキャッチコピー -->
+      <div class="hero-section">
+        <h1 class="service-logo">らくたんん</h1>
+        <p class="catchphrase-badge">疲れたあなたに、ちょうどいい履修を。</p>
       </div>
 
-      <div class="card">
-        <p class="instruction">まずは学籍番号を教えてください。<br>学部や学年を自動で判別します。</p>
+      <!-- 入力カードエリア -->
+      <div class="input-card">
+        <p class="guide-text">
+          まずは学籍番号を教えてください。<br>
+          学部や学年を自動で判別します。
+        </p>
         
-        <div class="input-group">
+        <div class="input-container">
           <input 
-            v-model="inputId" 
+            v-model="studentIdInput" 
             type="text" 
             placeholder="例: 24100123" 
-            @input="onInput"
+            @input="handleIdInput"
             maxlength="10"
             inputmode="numeric"
+            class="id-input-field"
           >
         </div>
 
+        <!-- 判定結果の表示（学籍番号が正しい形式の時のみ表示） -->
         <Transition name="fade">
-          <div v-if="store.department" class="info-badge">
-            <span class="label">判定結果:</span>
-            <span class="value">{{ store.department }} {{ store.grade }}年生</span>
+          <div v-if="store.department" class="result-badge">
+            <span class="result-label">判定結果:</span>
+            <span class="result-value">{{ store.department }} {{ store.grade }}年生</span>
           </div>
         </Transition>
       </div>
 
+      <!-- 次へ進むボタン（判定が完了するまで押せません） -->
       <button 
-        :disabled="!store.department" 
-        @click="$router.push('/conditions')"
-        class="next-button"
+        :disabled="!isReadyToStart" 
+        @click="goToNextStep"
+        class="start-button"
       >
         はじめる
       </button>
 
-      <p class="footer-note">※学籍番号は解析にのみ使用し、保存されません。</p>
+      <p class="privacy-note">※学籍番号は解析にのみ使用し、保存されません。</p>
     </div>
   </BaseLayout>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import BaseLayout from '../components/BaseLayout.vue'
 import { store } from '../store'
 
-const inputId = ref(store.studentId)
+const router = useRouter()
 
-const onInput = () => {
-  store.setStudentId(inputId.value)
+// ユーザーが入力中の学籍番号（リアクティブな変数）
+const studentIdInput = ref(store.studentId)
+
+// 次のステップに進める状態かどうかを判定（学籍番号から学部が判定できているか）
+const isReadyToStart = computed(() => {
+  return store.department !== ''
+})
+
+// 入力があった時に実行される関数
+function handleIdInput() {
+  // ストアに入力値を保存し、自動解析を実行する
+  store.setStudentId(studentIdInput.value)
+}
+
+// ボタンクリック時に次の画面へ移動する関数
+function goToNextStep() {
+  router.push('/conditions')
 }
 </script>
 
 <style scoped>
+/* 全体のレイアウト設定 */
 .student-id-view {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
-.hero {
-  margin-top: 1rem;
+/* ヒーローエリア（ロゴとキャッチコピー） */
+.hero-section {
+  padding: 1rem 0;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: #3b82f6;
+.service-logo {
+  font-size: 3.5rem;
+  margin: 0 0 0.5rem 0;
+  color: #4FB3E8; /* Light Blue Theme */
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  display: inline-block;
+  
+  /* レトロポップなロゴ表現（太い縁取りと影） */
+  -webkit-text-stroke: 2px #2D3436;
+  text-shadow: 4px 4px 0 #2D3436;
+  font-family: 'Hiragino Maru Gothic ProN', sans-serif;
+}
+
+.catchphrase-badge {
+  font-size: 1rem;
+  color: #2D3436;
   font-weight: 800;
-  letter-spacing: -0.05em;
+  background: #EBFBFF; /* Light Blue Accent */
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  border: 2px solid #2D3436;
+  box-shadow: 3px 3px 0 #2D3436;
+  margin-top: 0.5rem;
 }
 
-.subtitle {
-  font-size: 1.1rem;
-  color: #64748b;
-  font-weight: 500;
+/* 入力エリアのカードデザイン */
+.input-card {
+  background: #FFF;
+  padding: 0;
 }
 
-.card {
-  background: #f8fafc;
-  padding: 2rem;
-  border-radius: 1.5rem;
-  border: 1px solid #e2e8f0;
-}
-
-.instruction {
+.guide-text {
   margin-bottom: 2rem;
   line-height: 1.8;
-  color: #475569;
+  color: #2D3436;
   font-size: 1.1rem;
+  font-weight: 800;
 }
 
-.input-group {
-  margin-bottom: 1.5rem;
-}
-
-input {
+/* 学籍番号入力欄のスタイル */
+.id-input-field {
   width: 100%;
   padding: 1.25rem;
-  font-size: 1.75rem;
-  border: 3px solid #e2e8f0;
-  border-radius: 1rem;
+  font-size: 2rem;
+  border: 3px solid #2D3436;
+  border-radius: 1.5rem;
   text-align: center;
+  background: #F8F9FA;
+  color: #2D3436;
+  font-weight: 900;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.05);
   transition: all 0.2s;
-  background: white;
-  color: #1e293b;
-  font-weight: 600;
+  font-family: inherit;
 }
 
-input:focus {
+.id-input-field:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background: #FFF;
+  border-color: #4FB3E8;
+  box-shadow: 5px 5px 0 #4FB3E8;
 }
 
-.info-badge {
+/* 判定結果のバッジ */
+.result-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: #dbeafe;
-  padding: 0.75rem 1.5rem;
-  border-radius: 2rem;
-  color: #1e40af;
-  font-weight: 600;
-  border: 1px solid #bfdbfe;
+  background-color: #F8F9FA;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1.5rem;
+  color: #2D3436;
+  font-weight: 800;
+  border: 2px solid #2D3436;
+  box-shadow: 4px 4px 0 #2D3436;
+  margin-top: 1rem;
 }
 
-.info-badge .label {
-  font-size: 0.875rem;
-  opacity: 0.7;
-}
-
-.next-button {
+/* はじめるボタンのスタイル */
+.start-button {
   width: 100%;
   padding: 1.25rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  background-color: #3b82f6;
+  font-size: 1.4rem;
+  font-weight: 900;
+  background: #4FB3E8;
   color: white;
-  border: none;
-  border-radius: 1rem;
+  border: 3px solid #2D3436;
+  border-radius: 1.5rem;
   cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+  box-shadow: 5px 5px 0 #2D3436;
+  transition: all 0.1s;
+  font-family: inherit;
 }
 
-.next-button:hover:not(:disabled) {
-  background-color: #2563eb;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+.start-button:hover:not(:disabled) {
+  background: #75C6F0;
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 #2D3436;
 }
 
-.next-button:active:not(:disabled) {
-  transform: translateY(0);
+.start-button:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 #2D3436;
 }
 
-.next-button:disabled {
-  background-color: #cbd5e1;
-  box-shadow: none;
+.start-button:disabled {
+  background: #CBD5E0;
+  box-shadow: 3px 3px 0 #2D3436;
+  color: #718096;
   cursor: not-allowed;
+  opacity: 0.8;
 }
 
-.footer-note {
-  font-size: 0.8rem;
-  color: #94a3b8;
+.privacy-note {
+  font-size: 0.85rem;
+  color: #718096;
+  font-weight: 700;
 }
 
+/* 判定結果のアニメーション設定 */
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.3s ease;

@@ -1,25 +1,30 @@
 <template>
   <BaseLayout>
-    <div class="condition-view">
+    <div class="condition-selection-page">
       <h2>どんな授業がいい？</h2>
-      <p class="description">無理のない範囲で、あなたの希望を教えてください。<br>複数選んでも大丈夫です。</p>
+      <p class="instruction-text">
+        無理のない範囲で、あなたの希望を教えてください。<br>
+        複数選んでも大丈夫です。
+      </p>
 
-      <div class="tags">
+      <!-- こだわり条件のボタン一覧 -->
+      <div class="condition-tag-list">
         <button 
-          v-for="tag in availableTags" 
-          :key="tag"
-          :class="{ active: store.selectedConditions.includes(tag) }"
-          @click="store.toggleCondition(tag)"
-          class="tag-button"
+          v-for="tagName in availableConditionTags" 
+          :key="tagName"
+          :class="{ 'is-selected': isConditionActive(tagName) }"
+          @click="toggleConditionSelection(tagName)"
+          class="tag-selection-button"
         >
-          <span class="icon">{{ getIcon(tag) }}</span>
-          {{ tag }}
+          <span class="tag-icon">{{ getIconForTag(tagName) }}</span>
+          {{ tagName }}
         </button>
       </div>
 
+      <!-- 次へボタン -->
       <button 
-        @click="$router.push('/schedule')"
-        class="next-button"
+        @click="goToNextStep"
+        class="navigation-next-button"
       >
         次へ進む
       </button>
@@ -28,10 +33,14 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 import BaseLayout from '../components/BaseLayout.vue'
 import { store } from '../store'
 
-const availableTags = [
+const router = useRouter()
+
+// 選択肢として表示するタグのリスト
+const availableConditionTags = [
   'らくたん',
   '出席なし',
   'テストなし',
@@ -42,8 +51,11 @@ const availableTags = [
   '友達ができる'
 ]
 
-const getIcon = (tag: string) => {
-  const icons: Record<string, string> = {
+/**
+ * タグ名に対応する絵文字を返す関数
+ */
+function getIconForTag(tagName: string): string {
+  const iconMap: Record<string, string> = {
     'らくたん': '✨',
     '出席なし': '🛌',
     'テストなし': '📝',
@@ -53,78 +65,114 @@ const getIcon = (tag: string) => {
     '実用的': '🛠️',
     '友達ができる': '🤝'
   }
-  return icons[tag] || '🏷️'
+  return iconMap[tagName] || '🏷️'
+}
+
+/**
+ * 特定のタグが現在選択されているかを判定する関数
+ */
+function isConditionActive(tagName: string): boolean {
+  return store.selectedConditions.includes(tagName)
+}
+
+/**
+ * タグの選択状態を切り替える関数（選択されていれば解除、されていなければ選択）
+ */
+function toggleConditionSelection(tagName: string) {
+  store.toggleCondition(tagName)
+}
+
+/**
+ * 「次へ進む」ボタンをクリックした時の処理
+ */
+function goToNextStep() {
+  router.push('/schedule')
 }
 </script>
 
 <style scoped>
-.condition-view {
+.condition-selection-page {
   text-align: center;
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   margin-bottom: 0.75rem;
-  color: #1e293b;
+  color: #2D3436;
+  font-weight: 900;
 }
 
-.description {
+.instruction-text {
   margin-bottom: 2.5rem;
-  color: #64748b;
+  color: #4A5568;
   line-height: 1.6;
+  font-weight: 700;
 }
 
-.tags {
+/* タグボタンの並び（フレックスボックス） */
+.condition-tag-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 }
 
-.tag-button {
-  padding: 0.75rem 1.5rem;
-  border: 2px solid #e2e8f0;
+/* 個別のタグボタンのスタイル */
+.tag-selection-button {
+  padding: 0.8rem 1.5rem;
+  border: 3px solid #2D3436;
   background: white;
   border-radius: 3rem;
   cursor: pointer;
   font-size: 1.1rem;
-  font-weight: 600;
-  color: #475569;
-  transition: all 0.2s;
+  font-weight: 800;
+  color: #2D3436;
+  transition: all 0.1s;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 4px 4px 0 #2D3436;
+  font-family: inherit;
 }
 
-.tag-button:hover {
-  border-color: #cbd5e1;
-  background-color: #f8fafc;
+.tag-selection-button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #2D3436;
 }
 
-.tag-button.active {
-  background-color: #3b82f6;
+/* 選択中のタグのスタイル（水色になる） */
+.tag-selection-button.is-selected {
+  background-color: #4FB3E8; 
   color: white;
-  border-color: #3b82f6;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #2D3436;
 }
 
-.next-button {
+/* 次へ進むボタンのスタイル */
+.navigation-next-button {
   width: 100%;
   padding: 1.25rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  background-color: #3b82f6;
+  font-size: 1.4rem;
+  font-weight: 900;
+  background-color: #4FB3E8;
   color: white;
-  border: none;
-  border-radius: 1rem;
+  border: 3px solid #2D3436;
+  border-radius: 1.5rem;
   cursor: pointer;
-  transition: all 0.2s;
+  box-shadow: 5px 5px 0 #2D3436;
+  transition: all 0.1s;
+  font-family: inherit;
 }
 
-.next-button:hover {
-  background-color: #2563eb;
-  transform: translateY(-2px);
+.navigation-next-button:hover {
+  background: #75C6F0;
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 #2D3436;
+}
+
+.navigation-next-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 #2D3436;
 }
 </style>

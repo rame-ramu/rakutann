@@ -1,31 +1,40 @@
 <template>
   <BaseLayout>
-    <div class="schedule-view">
+    <div class="schedule-selection-page">
       <h2>いつ空いてる？</h2>
-      <p class="description">授業を入れたい曜日と時間を選んでください。<br>何個選んでも大丈夫です。</p>
+      <p class="instruction-text">
+        授業を入れたい曜日と時間を選んでください。<br>
+        何個選んでも大丈夫です。
+      </p>
 
-      <div class="table-container">
-        <table>
+      <!-- 曜日と時限の選択テーブル -->
+      <div class="schedule-grid-container">
+        <table class="schedule-table">
           <thead>
             <tr>
+              <!-- 左上の空白セル -->
               <th></th>
-              <th v-for="day in days" :key="day">{{ day }}</th>
+              <th v-for="dayName in availableDays" :key="dayName">{{ dayName }}</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="period in periods" :key="period">
-              <td class="period-label">
-                <span class="num">{{ period }}</span>
-                <span class="unit">限</span>
+            <tr v-for="periodNumber in availablePeriods" :key="periodNumber">
+              <!-- 行の先頭（時限ラベル） -->
+              <td class="period-label-cell">
+                <span class="period-num">{{ periodNumber }}</span>
+                <span class="period-unit">限</span>
               </td>
+              
+              <!-- 各コマのセル -->
               <td 
-                v-for="day in days" 
-                :key="day"
-                :class="{ selected: isSelected(day, period) }"
-                @click="store.toggleSchedule(day, period)"
+                v-for="dayName in availableDays" 
+                :key="dayName"
+                :class="{ 'is-selected': isTimeSlotSelected(dayName, periodNumber) }"
+                @click="handleTimeSlotClick(dayName, periodNumber)"
               >
-                <div class="cell-content">
-                  <div v-if="isSelected(day, period)" class="check">✓</div>
+                <div class="cell-inner-content">
+                  <!-- 選択されている時だけチェックマークを表示 -->
+                  <div v-if="isTimeSlotSelected(dayName, periodNumber)" class="selection-check">✓</div>
                 </div>
               </td>
             </tr>
@@ -33,17 +42,19 @@
         </table>
       </div>
 
-      <div class="selection-info">
-        <p v-if="store.selectedSchedule.length > 0">
+      <!-- 現在の選択状況を表示 -->
+      <div class="selection-status-area">
+        <p v-if="store.selectedSchedule.length > 0" class="status-active">
           <strong>{{ store.selectedSchedule.length }}つ</strong> のコマを選択中
         </p>
-        <p v-else class="hint">マスをタップして選択してください</p>
+        <p v-else class="status-hint">マスをタップして選択してください</p>
       </div>
 
+      <!-- 結果画面へのボタン（1つ以上選択されていないと押せません） -->
       <button 
-        :disabled="store.selectedSchedule.length === 0"
-        @click="$router.push('/results')"
-        class="next-button"
+        :disabled="!isAnyTimeSlotSelected"
+        @click="goToResultsPage"
+        class="show-results-button"
       >
         結果を見る
       </button>
@@ -52,143 +63,198 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import BaseLayout from '../components/BaseLayout.vue'
 import { store } from '../store'
 
-const days = ['月', '火', '水', '木', '金']
-const periods = [1, 2, 3, 4, 5]
+const router = useRouter()
 
-const isSelected = (day: string, period: number) => {
-  return store.selectedSchedule.some(s => s.day === day && s.period === period)
+// テーブルに表示する曜日と時限の定義
+const availableDays = ['月', '火', '水', '木', '金']
+const availablePeriods = [1, 2, 3, 4, 5]
+
+/**
+ * 1つ以上のコマが選択されているかどうかを判定する計算プロパティ
+ */
+const isAnyTimeSlotSelected = computed(() => {
+  return store.selectedSchedule.length > 0
+})
+
+/**
+ * 特定の曜日・時限が現在選択されているかを判定する関数
+ */
+function isTimeSlotSelected(day: string, period: number): boolean {
+  return store.selectedSchedule.some(
+    slot => slot.day === day && slot.period === period
+  )
+}
+
+/**
+ * コマがクリックされた時の処理（選択・解除を切り替える）
+ */
+function handleTimeSlotClick(day: string, period: number) {
+  store.toggleSchedule(day, period)
+}
+
+/**
+ * 結果表示ページへ移動する関数
+ */
+function goToResultsPage() {
+  router.push('/results')
 }
 </script>
 
 <style scoped>
-.schedule-view {
+.schedule-selection-page {
   text-align: center;
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   margin-bottom: 0.75rem;
-  color: #1e293b;
+  color: #2D3436;
+  font-weight: 900;
 }
 
-.description {
-  margin-bottom: 2.5rem;
-  color: #64748b;
-  line-height: 1.6;
-}
-
-.table-container {
-  overflow-x: auto;
+.instruction-text {
   margin-bottom: 2rem;
-  background: #f8fafc;
+  color: #4A5568;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+/* スケジュール表のコンテナ */
+.schedule-grid-container {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  background: #FFFFFF;
   padding: 1rem;
   border-radius: 1.5rem;
-  border: 1px solid #e2e8f0;
+  border: 3px solid #2D3436;
 }
 
-table {
+.schedule-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0.5rem;
 }
 
-th {
+.schedule-table th {
   padding: 0.5rem;
-  color: #64748b;
-  font-weight: 700;
+  color: #2D3436;
+  font-weight: 900;
   font-size: 1.1rem;
 }
 
-td {
+/* 各コマのセルスタイル */
+.schedule-table td {
   background: white;
-  border: 1px solid #e2e8f0;
+  border: 2px solid #2D3436;
   height: 3.5rem;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.1s;
   position: relative;
+  box-shadow: 2px 2px 0 #2D3436;
 }
 
-td.period-label {
-  background: none;
-  border: none;
+/* 時限（1限、2限...）のラベルセル */
+.period-label-cell {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
   width: 3rem;
-  cursor: default;
+  cursor: default !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.period-label .num {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #1e293b;
+.period-num {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #2D3436;
   line-height: 1;
 }
 
-.period-label .unit {
+.period-unit {
   font-size: 0.75rem;
-  color: #94a3b8;
-  font-weight: 600;
+  color: #718096;
+  font-weight: 800;
 }
 
-td:not(.period-label):hover {
-  border-color: #3b82f6;
-  background-color: #f0f9ff;
+/* ホバー時の挙動 */
+.schedule-table td:not(.period-label-cell):hover {
+  background-color: #F8F9FA;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 #2D3436;
 }
 
-td.selected {
-  background-color: #3b82f6;
-  border-color: #3b82f6;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+/* 選択済みセルのスタイル（水色になる） */
+.schedule-table td.is-selected {
+  background-color: #4FB3E8; 
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #2D3436;
 }
 
-.check {
+.selection-check {
   color: white;
-  font-weight: bold;
-  font-size: 1.25rem;
+  font-weight: 900;
+  font-size: 1.4rem;
 }
 
-.selection-info {
+/* 選択状況メッセージエリア */
+.selection-status-area {
   margin-bottom: 2rem;
   height: 1.5rem;
 }
 
-.selection-info p {
+.status-active {
   margin: 0;
-  color: #475569;
+  color: #2D3436;
+  font-weight: 800;
 }
 
-.selection-info .hint {
-  color: #94a3b8;
+.status-hint {
+  color: #718096;
   font-size: 0.9rem;
+  font-weight: 700;
 }
 
-.next-button {
+/* 結果を見るボタン */
+.show-results-button {
   width: 100%;
   padding: 1.25rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  background-color: #3b82f6;
+  font-size: 1.4rem;
+  font-weight: 900;
+  background-color: #4FB3E8;
   color: white;
-  border: none;
-  border-radius: 1rem;
+  border: 3px solid #2D3436;
+  border-radius: 1.5rem;
   cursor: pointer;
-  transition: all 0.2s;
+  box-shadow: 5px 5px 0 #2D3436;
+  transition: all 0.1s;
+  font-family: inherit;
 }
 
-.next-button:disabled {
-  background-color: #cbd5e1;
+.show-results-button:disabled {
+  background-color: #CBD5E0;
+  box-shadow: 3px 3px 0 #2D3436;
+  color: #718096;
   cursor: not-allowed;
+  opacity: 0.8;
 }
 
-.next-button:not(:disabled):hover {
-  background-color: #2563eb;
-  transform: translateY(-2px);
+.show-results-button:not(:disabled):hover {
+  background: #75C6F0;
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 #2D3436;
+}
+
+.show-results-button:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 #2D3436;
 }
 </style>

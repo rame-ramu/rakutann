@@ -1,129 +1,180 @@
 <template>
   <BaseLayout>
-    <div class="course-list-view">
+    <div class="course-list-page">
       <h2>あなたにおすすめの授業</h2>
-      <p class="description">{{ store.grade }}年生・{{ store.department }}向けの結果です。</p>
+      <p class="recommended-info">
+        {{ store.grade }}年生・{{ store.department }}向けの結果です。
+      </p>
 
-      <div v-if="filteredCourses.length > 0" class="course-list">
+      <!-- おすすめの授業一覧 -->
+      <div v-if="recommendedCourses.length > 0" class="course-grid">
         <div 
-          v-for="course in filteredCourses" 
+          v-for="course in recommendedCourses" 
           :key="course.id" 
           class="course-card"
-          @click="openDetail(course)"
+          @click="showCourseDetail(course)"
         >
-          <div class="course-header">
+          <div class="course-card-header">
             <h3>{{ course.name }}</h3>
-            <span class="schedule-badge">{{ course.day }}{{ course.period }}限</span>
+            <span class="time-badge">{{ course.day }}{{ course.period }}限</span>
           </div>
-          <div class="tags">
-            <span v-for="tag in course.conditions" :key="tag" class="tag">#{{ tag }}</span>
+          <div class="course-tags">
+            <span v-for="tag in course.conditions" :key="tag" class="tag-item">#{{ tag }}</span>
           </div>
-          <p class="course-desc">{{ course.description }}</p>
-          <div class="click-hint">タップして詳細を見る</div>
+          <p class="course-summary">{{ course.description }}</p>
+          <div class="tap-guide">タップして詳細を見る</div>
         </div>
       </div>
-      <div v-else class="no-results">
+
+      <!-- 結果がゼロだった場合の表示 -->
+      <div v-else class="empty-state">
         <p>条件に合う授業が見つかりませんでした。</p>
-        <button @click="$router.push('/conditions')" class="retry-button">条件を変えてみる</button>
+        <button @click="goToConditions" class="back-to-filter-button">条件を変えてみる</button>
       </div>
 
-      <!-- Detail Modal -->
-      <Transition name="modal">
-        <div v-if="store.selectedCourse" class="modal-overlay" @click="closeDetail">
-          <div class="modal-content" @click.stop>
-            <button class="close-button" @click="closeDetail">×</button>
+      <!-- 詳細モーダル (Transitionでふわっと表示) -->
+      <Transition name="modal-fade">
+        <div v-if="store.selectedCourse" class="modal-backdrop" @click="hideCourseDetail">
+          <div class="modal-card" @click.stop>
+            <button class="modal-close-button" @click="hideCourseDetail">×</button>
+            
             <div class="modal-header">
-              <span class="schedule-badge-large">{{ store.selectedCourse.day }}{{ store.selectedCourse.period }}限</span>
+              <span class="time-badge-large">{{ store.selectedCourse.day }}{{ store.selectedCourse.period }}限</span>
               <h3>{{ store.selectedCourse.name }}</h3>
             </div>
             
-            <div class="modal-body">
-              <div class="section">
+            <div class="modal-content">
+              <div class="detail-section">
                 <h4>授業の特徴</h4>
-                <div class="tags">
-                  <span v-for="tag in store.selectedCourse.conditions" :key="tag" class="tag-large">#{{ tag }}</span>
+                <div class="course-tags">
+                  <span v-for="tag in store.selectedCourse.conditions" :key="tag" class="tag-item-large">#{{ tag }}</span>
                 </div>
               </div>
 
-              <div class="section">
+              <div class="detail-section">
                 <h4>内容</h4>
                 <p>{{ store.selectedCourse.description }}</p>
               </div>
 
-              <div class="section" v-if="store.selectedCourse.faculty">
+              <div class="detail-section" v-if="store.selectedCourse.faculty">
                 <h4>対象学部</h4>
                 <p>{{ store.selectedCourse.faculty.join('、') }}</p>
               </div>
             </div>
 
-            <button class="add-button" @click="closeDetail">この授業を候補に入れる</button>
+            <button class="add-to-candidate-button" @click="hideCourseDetail">この授業を候補に入れる</button>
           </div>
         </div>
       </Transition>
 
-      <button @click="$router.push('/')" class="restart-button">最初からやり直す</button>
+      <button @click="restartApp" class="reset-button">最初からやり直す</button>
     </div>
   </BaseLayout>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import BaseLayout from '../components/BaseLayout.vue'
 import { store, mockCourses, type Course } from '../store'
 
-const filteredCourses = computed(() => {
+const router = useRouter()
+
+/**
+ * ストアの条件（学部、空き時間、こだわり条件）に基づいて
+ * 表示する授業を抽出し、おすすめ順に並び替える計算プロパティ
+ */
+const recommendedCourses = computed(() => {
   return mockCourses.filter(course => {
-    // 1. Faculty match (if department is known)
+    // 1. 学部が一致するかチェック（学部が判明している場合のみ）
     if (store.department && course.faculty) {
       if (!course.faculty.includes(store.department)) return false
     }
 
-    // 2. Schedule match
-    const dayMatch = store.selectedSchedule.some(s => s.day === course.day && s.period === course.period)
+    // 2. 自分の空き時間（スケジュール）と一致するかチェック
+    const isAvailableTime = store.selectedSchedule.some(
+      s => s.day === course.day && s.period === course.period
+    )
     
-    // 3. Condition match
-    const conditionMatch = course.conditions.some(c => store.selectedConditions.includes(c))
+    // 3. こだわり条件（らくたん、出席なし等）が1つでも含まれるかチェック
+    const hasMatchingCondition = course.conditions.some(
+      c => store.selectedConditions.includes(c)
+    )
     
-    return dayMatch || conditionMatch
+    // 「空き時間」または「こだわり条件」のどちらかが合致すればリストに載せる
+    return isAvailableTime || hasMatchingCondition
+
   }).sort((a, b) => {
-    // Priority: both matches > schedule match > condition match
+    /**
+     * 並び替えロジック（スコアリング）
+     * 優先度1: 時間も条件も両方合致
+     * 優先度2: 時間が合致
+     * 優先度3: 条件の合致数が多い順
+     */
     const aScheduleMatch = store.selectedSchedule.some(s => s.day === a.day && s.period === a.period)
     const bScheduleMatch = store.selectedSchedule.some(s => s.day === b.day && s.period === b.period)
-    const aConditionCount = a.conditions.filter(c => store.selectedConditions.includes(c)).length
-    const bConditionCount = b.conditions.filter(c => store.selectedConditions.includes(c)).length
-
-    if (aScheduleMatch && aConditionCount > 0 && !(bScheduleMatch && bConditionCount > 0)) return -1
-    if (!(aScheduleMatch && aConditionCount > 0) && bScheduleMatch && bConditionCount > 0) return 1
     
-    return bConditionCount - aConditionCount
+    const aConditionScore = a.conditions.filter(c => store.selectedConditions.includes(c)).length
+    const bConditionScore = b.conditions.filter(c => store.selectedConditions.includes(c)).length
+
+    // 両方マッチしているものを最優先
+    const aPerfect = aScheduleMatch && aConditionScore > 0
+    const bPerfect = bScheduleMatch && bConditionScore > 0
+    if (aPerfect && !bPerfect) return -1
+    if (!aPerfect && bPerfect) return 1
+    
+    // 次に条件マッチ数で比較
+    return bConditionScore - aConditionScore
   })
 })
 
-const openDetail = (course: Course) => {
+// 詳細画面を開く
+const showCourseDetail = (course: Course) => {
   store.setSelectedCourse(course)
 }
 
-const closeDetail = () => {
+// 詳細画面を閉じる
+const hideCourseDetail = () => {
   store.setSelectedCourse(null)
+}
+
+// 最初からやり直す（トップへ戻る）
+const restartApp = () => {
+  router.push('/')
+}
+
+// 条件入力画面に戻る
+const goToConditions = () => {
+  router.push('/conditions')
 }
 </script>
 
 <style scoped>
-.course-list-view {
+.course-list-page {
   text-align: center;
 }
 
 h2 {
   margin-bottom: 0.5rem;
-  color: #1e293b;
+  color: #2D3436;
+  font-weight: 900;
+  font-size: 1.8rem;
 }
 
-.description {
+.recommended-info {
   margin-bottom: 2rem;
-  color: #64748b;
+  color: #2D3436;
+  font-weight: 800;
+  background: #EBFBFF; /* Light Blue Accent */
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  border: 2px solid #2D3436;
+  font-size: 0.95rem;
 }
 
-.course-list {
+/* 授業カードのリスト表示 */
+.course-grid {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -133,79 +184,96 @@ h2 {
 
 .course-card {
   padding: 1.5rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 1rem;
+  border: 3px solid #2D3436;
+  border-radius: 1.5rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.1s;
   background: white;
   position: relative;
+  box-shadow: 4px 4px 0 rgba(45, 52, 54, 0.1);
 }
 
 .course-card:hover {
-  border-color: #3b82f6;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 rgba(79, 179, 232, 0.2);
+  border-color: #4FB3E8;
 }
 
-.course-header {
+.course-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #2D3436;
+}
+
+.course-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.75rem;
 }
 
-.course-header h3 {
+.course-card-header h3 {
   margin: 0;
-  color: #0f172a;
-  font-size: 1.25rem;
+  color: #2D3436;
+  font-size: 1.3rem;
+  font-weight: 900;
 }
 
-.schedule-badge {
-  background-color: #f1f5f9;
-  padding: 0.25rem 0.75rem;
+/* 曜日・時限バッジ */
+.time-badge {
+  background-color: #EBFBFF;
+  padding: 0.3rem 0.8rem;
   border-radius: 2rem;
-  font-size: 0.875rem;
-  color: #475569;
-  font-weight: 500;
+  font-size: 0.85rem;
+  color: #2D3436;
+  font-weight: 800;
+  border: 2px solid #2D3436;
 }
 
-.tags {
+/* タグのスタイル */
+.course-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.tag {
-  color: #3b82f6;
-  font-size: 0.875rem;
-  font-weight: 500;
+.tag-item {
+  color: #2D3436;
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: #F0F9FF;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #BEE3F8;
 }
 
-.course-desc {
+.course-summary {
   font-size: 0.95rem;
-  color: #475569;
+  color: #4A5568;
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-weight: 700;
 }
 
-.click-hint {
+.tap-guide {
   margin-top: 1rem;
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: #718096;
   text-align: right;
+  font-weight: 700;
 }
 
-/* Modal Styles */
-.modal-overlay {
+/* --- モーダル (詳細表示) のスタイル --- */
+.modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(45, 52, 54, 0.3);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -214,129 +282,161 @@ h2 {
   padding: 1rem;
 }
 
-.modal-content {
+.modal-card {
   background: white;
   width: 100%;
-  max-width: 500px;
-  border-radius: 1.5rem;
-  padding: 2.5rem;
+  max-width: 440px;
+  border-radius: 2rem;
+  padding: 2.5rem 2rem;
   position: relative;
   text-align: left;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 8px 8px 0 #2D3436;
+  border: 3px solid #2D3436;
 }
 
-.close-button {
+.modal-close-button {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: #94a3b8;
+  top: 1rem;
+  right: 1rem;
+  background: #FFF;
+  border: 2px solid #2D3436;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: #2D3436;
   cursor: pointer;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s;
+}
+
+.modal-close-button:hover {
+  background: #F8F9FA;
+  transform: rotate(90deg);
 }
 
 .modal-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.schedule-badge-large {
+.time-badge-large {
   display: inline-block;
-  background-color: #f1f5f9;
-  padding: 0.375rem 1rem;
+  background-color: #EBFBFF;
+  padding: 0.4rem 1.2rem;
   border-radius: 2rem;
-  font-size: 1rem;
-  color: #475569;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  color: #2D3436;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+  border: 2px solid #2D3436;
 }
 
 .modal-header h3 {
   margin: 0;
-  font-size: 1.75rem;
-  color: #0f172a;
+  font-size: 1.8rem;
+  color: #2D3436;
+  font-weight: 900;
+  line-height: 1.2;
 }
 
-.section {
-  margin-bottom: 2rem;
+.detail-section {
+  margin-bottom: 1.5rem;
 }
 
-.section h4 {
-  margin: 0 0 0.75rem 0;
-  font-size: 1rem;
-  color: #64748b;
-  font-weight: 600;
+.detail-section h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  color: #718096;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.tag-large {
-  color: #3b82f6;
-  font-size: 1.125rem;
-  font-weight: 600;
+.tag-item-large {
+  color: #4FB3E8;
+  font-size: 1.1rem;
+  font-weight: 800;
   margin-right: 0.75rem;
 }
 
-.add-button {
+/* 候補に追加ボタン */
+.add-to-candidate-button {
   width: 100%;
   padding: 1.25rem;
-  background-color: #3b82f6;
+  background: #4FB3E8;
   color: white;
-  border: none;
-  border-radius: 1rem;
-  font-size: 1.125rem;
-  font-weight: 600;
+  border: 3px solid #2D3436;
+  border-radius: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 900;
   cursor: pointer;
-  transition: background-color 0.2s;
+  box-shadow: 4px 4px 0 #2D3436;
+  transition: all 0.1s;
 }
 
-.add-button:hover {
-  background-color: #2563eb;
+.add-to-candidate-button:hover {
+  background: #75C6F0;
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 #2D3436;
 }
 
-/* Transitions */
-.modal-enter-active,
-.modal-leave-active {
-  transition: opacity 0.3s ease;
+/* モーダルの出現アニメーション */
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.2s ease;
 }
 
-.modal-enter-from,
-.modal-leave-to {
+.modal-fade-enter-from,
+.modal-fade-leave-to {
   opacity: 0;
 }
 
-.modal-enter-active .modal-content {
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+.modal-fade-enter-active .modal-card {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.modal-enter-from .modal-content {
+.modal-fade-enter-from .modal-card {
   transform: scale(0.9) translateY(20px);
 }
 
-.no-results {
+/* その他パーツ */
+.empty-state {
   margin: 4rem 0;
-  color: #64748b;
+  color: #2D3436;
+  font-weight: 800;
 }
 
-.retry-button {
+.back-to-filter-button {
   margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  background: none;
-  border: 2px solid #3b82f6;
-  color: #3b82f6;
-  border-radius: 0.75rem;
+  padding: 0.8rem 1.5rem;
+  background: white;
+  border: 2px solid #2D3436;
+  color: #2D3436;
+  border-radius: 1rem;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 800;
+  box-shadow: 3px 3px 0 #2D3436;
+  transition: all 0.1s;
 }
 
-.restart-button {
+.reset-button {
   width: 100%;
   padding: 1rem;
-  font-size: 1.125rem;
-  background-color: #f1f5f9;
-  color: #475569;
-  border: none;
-  border-radius: 0.75rem;
+  font-size: 1rem;
+  background-color: #F8F9FA;
+  color: #718096;
+  border: 2px solid #CBD5E0;
+  border-radius: 1rem;
   cursor: pointer;
   margin-top: 2rem;
+  font-weight: 800;
+  transition: all 0.2s;
+}
+
+.reset-button:hover {
+  background-color: #EDF2F7;
+  color: #2D3436;
 }
 </style>

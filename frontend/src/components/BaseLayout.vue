@@ -28,13 +28,15 @@ const currentStep = computed(() => {
 
 <style scoped>
 .base-layout {
-  max-width: 600px;
+  max-width: 480px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   min-height: 100vh;
-  background-color: #f8fafc;
-  color: #334155;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #FFFFFF; /* Pure white background */
+  color: #2D3436;
+  /* Use a consistent, friendly rounded font stack */
+  font-family: 'Hiragino Maru Gothic ProN', 'Rounded M+ 1c', 'Yu Gothic', 'Meiryo', sans-serif;
+  line-height: 1.6;
 }
 
 header {
@@ -42,25 +44,48 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  padding: 0 0.5rem;
 }
 
 .back-button {
-  background: none;
-  border: none;
-  color: #64748b;
+  background: #FFF;
+  border: 2px solid #2D3436;
+  color: #2D3436;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-weight: 800;
+  box-shadow: 3px 3px 0 #2D3436;
+  transition: all 0.1s;
+}
+
+.back-button:hover {
+  background: #F8F9FA;
+}
+
+.back-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #2D3436;
 }
 
 .progress {
-  font-weight: bold;
-  color: #94a3b8;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #FFF;
+  background: #4FB3E8; /* Light Blue Theme */
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  border: 2px solid #2D3436;
+  box-shadow: 3px 3px 0 #2D3436;
 }
 
 main {
   background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  padding: 2.5rem 1.5rem;
+  border-radius: 2rem;
+  border: 3px solid #2D3436;
+  box-shadow: 6px 6px 0 rgba(45, 52, 54, 0.1);
+  position: relative;
 }
 </style>
