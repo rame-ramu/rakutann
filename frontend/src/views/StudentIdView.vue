@@ -2,11 +2,11 @@
   <BaseLayout>
     <div class="student-id-view">
       <div class="hero">
-        <h1>らくたんん</h1>
-        <p class="subtitle">疲れたあなたに、ちょうどいい履修を。</p>
+        <h1 class="logo-text">楽単日和</h1>
+        <p class="subtitle">今日は楽単日和だよ。<br>ゆっくり進もうね。</p>
       </div>
 
-      <div class="card">
+      <div class="input-card">
         <p class="instruction">まずは学籍番号を教えてください。<br>学部や学年を自動で判別します。</p>
         
         <div class="input-group">
@@ -18,12 +18,16 @@
             maxlength="10"
             inputmode="numeric"
           >
+          <div class="input-underline"></div>
         </div>
 
-        <Transition name="fade">
-          <div v-if="store.department" class="info-badge">
-            <span class="label">判定結果:</span>
-            <span class="value">{{ store.department }} {{ store.grade }}年生</span>
+        <Transition name="cloud-fade">
+          <div v-if="store.department" class="info-cloud">
+            <span class="label">あなたは...</span>
+            <div class="value-container">
+              <span class="value">{{ store.department }} {{ store.grade }}年生</span>
+            </div>
+            <span class="label">ですね！</span>
           </div>
         </Transition>
       </div>
@@ -31,9 +35,9 @@
       <button 
         :disabled="!store.department" 
         @click="$router.push('/conditions')"
-        class="next-button"
+        class="jewel-button"
       >
-        はじめる
+        <span>はじめる</span>
       </button>
 
       <p class="footer-note">※学籍番号は解析にのみ使用し、保存されません。</p>
@@ -58,124 +62,162 @@ const onInput = () => {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .hero {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: #3b82f6;
+.logo-text {
+  font-size: 3.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--theme-jewel);
   font-weight: 800;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
+  text-shadow: 4px 4px 0 var(--theme-pink);
 }
 
 .subtitle {
-  font-size: 1.1rem;
-  color: #64748b;
+  font-size: 1.2rem;
+  color: var(--theme-text);
   font-weight: 500;
+  line-height: 1.6;
+  opacity: 0.8;
 }
 
-.card {
-  background: #f8fafc;
-  padding: 2rem;
-  border-radius: 1.5rem;
-  border: 1px solid #e2e8f0;
+.input-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .instruction {
-  margin-bottom: 2rem;
   line-height: 1.8;
-  color: #475569;
-  font-size: 1.1rem;
+  color: var(--theme-text);
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .input-group {
-  margin-bottom: 1.5rem;
+  position: relative;
+  margin: 1rem 0;
 }
 
 input {
   width: 100%;
-  padding: 1.25rem;
-  font-size: 1.75rem;
-  border: 3px solid #e2e8f0;
-  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  border: none;
+  background: transparent;
   text-align: center;
-  transition: all 0.2s;
-  background: white;
-  color: #1e293b;
-  font-weight: 600;
+  color: var(--theme-text);
+  font-weight: 800;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  letter-spacing: 0.1em;
 }
 
 input:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
-.info-badge {
-  display: inline-flex;
+.input-underline {
+  height: 4px;
+  background: var(--theme-pink);
+  border-radius: 2px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.info-cloud {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  background-color: #dbeafe;
-  padding: 0.75rem 1.5rem;
+  gap: 0.5rem;
+  background-color: var(--theme-lavender);
+  padding: 1.5rem;
   border-radius: 2rem;
-  color: #1e40af;
-  font-weight: 600;
-  border: 1px solid #bfdbfe;
+  color: var(--theme-text);
+  border: 3px solid white;
+  box-shadow: 0 8px 20px var(--theme-shadow);
+  margin-top: 1rem;
 }
 
-.info-badge .label {
-  font-size: 0.875rem;
-  opacity: 0.7;
+.info-cloud .label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  opacity: 0.6;
 }
 
-.next-button {
+.value-container {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--theme-jewel);
+}
+
+.jewel-button {
   width: 100%;
   padding: 1.25rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  background-color: #3b82f6;
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--theme-jewel-light), var(--theme-jewel));
   color: white;
   border: none;
-  border-radius: 1rem;
+  border-radius: 2rem;
   cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 0 #e91e6344, 0 15px 25px #ff80ab44;
+  position: relative;
+  overflow: hidden;
 }
 
-.next-button:hover:not(:disabled) {
-  background-color: #2563eb;
+.jewel-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%);
+  transform: scale(0);
+  transition: transform 0.6s;
+}
+
+.jewel-button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+  filter: brightness(1.05);
 }
 
-.next-button:active:not(:disabled) {
-  transform: translateY(0);
+.jewel-button:hover:not(:disabled)::after {
+  transform: scale(1);
 }
 
-.next-button:disabled {
-  background-color: #cbd5e1;
+.jewel-button:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #e91e6344, 0 8px 15px #ff80ab44;
+}
+
+.jewel-button:disabled {
+  background: #e2e8f0;
   box-shadow: none;
   cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .footer-note {
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: var(--theme-text);
+  opacity: 0.5;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.3s ease;
+.cloud-fade-enter-active,
+.cloud-fade-leave-active {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.fade-enter-from,
-.fade-leave-to {
+.cloud-fade-enter-from,
+.cloud-fade-leave-to {
   opacity: 0;
-  transform: translateY(10px);
+  transform: scale(0.8) translateY(20px);
 }
 </style>

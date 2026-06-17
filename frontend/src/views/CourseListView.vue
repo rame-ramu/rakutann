@@ -1,7 +1,7 @@
 <template>
   <BaseLayout>
     <div class="course-list-view">
-      <h2>あなたにおすすめの授業</h2>
+      <h2 class="title">今日のおすすめ、見つけたよ</h2>
       <p class="description">{{ store.grade }}年生・{{ store.department }}向けの結果です。</p>
 
       <div v-if="filteredCourses.length > 0" class="course-list">
@@ -16,7 +16,7 @@
             <span class="schedule-badge">{{ course.day }}{{ course.period }}限</span>
           </div>
           <div class="tags">
-            <span v-for="tag in course.conditions" :key="tag" class="tag">#{{ tag }}</span>
+            <span v-for="tag in course.conditions" :key="tag" class="tag">✨#{{ tag }}</span>
           </div>
           <p class="course-desc">{{ course.description }}</p>
           <div class="click-hint">タップして詳細を見る</div>
@@ -28,7 +28,7 @@
       </div>
 
       <!-- Detail Modal -->
-      <Transition name="modal">
+      <Transition name="modal-bounce">
         <div v-if="store.selectedCourse" class="modal-overlay" @click="closeDetail">
           <div class="modal-content" @click.stop>
             <button class="close-button" @click="closeDetail">×</button>
@@ -40,7 +40,7 @@
             <div class="modal-body">
               <div class="section">
                 <h4>授業の特徴</h4>
-                <div class="tags">
+                <div class="tags-row">
                   <span v-for="tag in store.selectedCourse.conditions" :key="tag" class="tag-large">#{{ tag }}</span>
                 </div>
               </div>
@@ -56,7 +56,9 @@
               </div>
             </div>
 
-            <button class="add-button" @click="closeDetail">この授業を候補に入れる</button>
+            <button class="jewel-button" @click="closeDetail">
+              <span>この授業を候補に入れる</span>
+            </button>
           </div>
         </div>
       </Transition>
@@ -113,59 +115,67 @@ const closeDetail = () => {
   text-align: center;
 }
 
-h2 {
+.title {
   margin-bottom: 0.5rem;
-  color: #1e293b;
+  color: var(--theme-text);
+  font-weight: 800;
+  font-size: 1.8rem;
 }
 
 .description {
-  margin-bottom: 2rem;
-  color: #64748b;
+  margin-bottom: 2.5rem;
+  color: var(--theme-text);
+  opacity: 0.7;
+  font-weight: 500;
 }
 
 .course-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   text-align: left;
 }
 
 .course-card {
   padding: 1.5rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 1rem;
+  border: 3px solid var(--theme-lavender);
+  border-radius: 2rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   background: white;
   position: relative;
+  box-shadow: 0 8px 0 var(--theme-lavender);
 }
 
 .course-card:hover {
-  border-color: #3b82f6;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  transform: translateY(-4px);
+  border-color: var(--theme-pink);
+  box-shadow: 0 12px 0 var(--theme-pink);
 }
 
 .course-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .course-header h3 {
   margin: 0;
-  color: #0f172a;
-  font-size: 1.25rem;
+  color: var(--theme-text);
+  font-size: 1.3rem;
+  font-weight: 800;
 }
 
 .schedule-badge {
-  background-color: #f1f5f9;
-  padding: 0.25rem 0.75rem;
+  background-color: var(--theme-cream);
+  padding: 0.4rem 0.8rem;
   border-radius: 2rem;
-  font-size: 0.875rem;
-  color: #475569;
-  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--theme-text);
+  font-weight: 700;
+  border: 2px solid var(--theme-pink);
 }
 
 .tags {
@@ -176,15 +186,16 @@ h2 {
 }
 
 .tag {
-  color: #3b82f6;
-  font-size: 0.875rem;
-  font-weight: 500;
+  color: var(--theme-jewel);
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
 .course-desc {
   font-size: 0.95rem;
-  color: #475569;
+  color: var(--theme-text);
   line-height: 1.6;
+  opacity: 0.8;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -194,8 +205,10 @@ h2 {
 .click-hint {
   margin-top: 1rem;
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: var(--theme-text);
+  opacity: 0.4;
   text-align: right;
+  font-weight: 700;
 }
 
 /* Modal Styles */
@@ -205,57 +218,69 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(4px);
+  background: rgba(93, 64, 55, 0.4);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .modal-content {
   background: white;
   width: 100%;
-  max-width: 500px;
-  border-radius: 1.5rem;
-  padding: 2.5rem;
+  max-width: 450px;
+  border-radius: 3rem;
+  padding: 3rem 2rem;
   position: relative;
   text-align: left;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border: 4px solid var(--theme-lavender);
 }
 
 .close-button {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  background: none;
+  background: var(--theme-pink);
   border: none;
-  font-size: 2rem;
-  color: #94a3b8;
+  font-size: 1.5rem;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
+  font-weight: 800;
 }
 
 .modal-header {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .schedule-badge-large {
   display: inline-block;
-  background-color: #f1f5f9;
-  padding: 0.375rem 1rem;
+  background-color: var(--theme-lavender);
+  padding: 0.5rem 1.2rem;
   border-radius: 2rem;
   font-size: 1rem;
-  color: #475569;
+  color: var(--theme-text);
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 800;
+  border: 3px solid white;
+  box-shadow: 0 4px 10px var(--theme-shadow);
 }
 
 .modal-header h3 {
   margin: 0;
-  font-size: 1.75rem;
-  color: #0f172a;
+  font-size: 1.8rem;
+  color: var(--theme-text);
+  font-weight: 800;
 }
 
 .section {
@@ -264,79 +289,81 @@ h2 {
 
 .section h4 {
   margin: 0 0 0.75rem 0;
-  font-size: 1rem;
-  color: #64748b;
-  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--theme-text);
+  opacity: 0.5;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .tag-large {
-  color: #3b82f6;
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-right: 0.75rem;
+  color: var(--theme-jewel);
+  font-size: 1.1rem;
+  font-weight: 800;
 }
 
-.add-button {
+.jewel-button {
   width: 100%;
   padding: 1.25rem;
-  background-color: #3b82f6;
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--theme-jewel-light), var(--theme-jewel));
   color: white;
   border: none;
-  border-radius: 1rem;
-  font-size: 1.125rem;
-  font-weight: 600;
+  border-radius: 2rem;
   cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.add-button:hover {
-  background-color: #2563eb;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 0 #e91e6344, 0 15px 25px #ff80ab44;
 }
 
 /* Transitions */
-.modal-enter-active,
-.modal-leave-active {
-  transition: opacity 0.3s ease;
+.modal-bounce-enter-active,
+.modal-bounce-leave-active {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.modal-enter-from,
-.modal-leave-to {
+.modal-bounce-enter-from,
+.modal-bounce-leave-to {
   opacity: 0;
-}
-
-.modal-enter-active .modal-content {
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.modal-enter-from .modal-content {
-  transform: scale(0.9) translateY(20px);
+  transform: scale(0.8) translateY(40px);
 }
 
 .no-results {
   margin: 4rem 0;
-  color: #64748b;
+  color: var(--theme-text);
+  opacity: 0.6;
 }
 
 .retry-button {
   margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  background: none;
-  border: 2px solid #3b82f6;
-  color: #3b82f6;
-  border-radius: 0.75rem;
+  padding: 0.8rem 1.6rem;
+  background: white;
+  border: 3px solid var(--theme-pink);
+  color: var(--theme-text);
+  border-radius: 2rem;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 800;
+  box-shadow: 0 4px 0 var(--theme-pink);
 }
 
 .restart-button {
   width: 100%;
   padding: 1rem;
-  font-size: 1.125rem;
-  background-color: #f1f5f9;
-  color: #475569;
-  border: none;
-  border-radius: 0.75rem;
+  font-size: 1rem;
+  background-color: var(--theme-cream);
+  color: var(--theme-text);
+  border: 2px solid var(--theme-pink);
+  border-radius: 1.5rem;
   cursor: pointer;
   margin-top: 2rem;
+  font-weight: 700;
+  opacity: 0.8;
 }
 </style>

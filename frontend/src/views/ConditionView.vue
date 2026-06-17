@@ -1,7 +1,7 @@
 <template>
   <BaseLayout>
     <div class="condition-view">
-      <h2>どんな授業がいい？</h2>
+      <h2 class="title">どんな授業がいい？</h2>
       <p class="description">無理のない範囲で、あなたの希望を教えてください。<br>複数選んでも大丈夫です。</p>
 
       <div class="tags">
@@ -19,9 +19,9 @@
 
       <button 
         @click="$router.push('/schedule')"
-        class="next-button"
+        class="jewel-button"
       >
-        次へ進む
+        <span>次へ進む</span>
       </button>
     </div>
   </BaseLayout>
@@ -62,69 +62,81 @@ const getIcon = (tag: string) => {
   text-align: center;
 }
 
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
-  color: #1e293b;
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--theme-text);
+  font-weight: 800;
 }
 
 .description {
-  margin-bottom: 2.5rem;
-  color: #64748b;
-  line-height: 1.6;
+  margin-bottom: 3rem;
+  color: var(--theme-text);
+  opacity: 0.7;
+  line-height: 1.8;
+  font-weight: 500;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.25rem;
   justify-content: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
 }
 
 .tag-button {
-  padding: 0.75rem 1.5rem;
-  border: 2px solid #e2e8f0;
+  padding: 0.8rem 1.6rem;
+  border: 3px solid var(--theme-pink);
   background: white;
   border-radius: 3rem;
   cursor: pointer;
   font-size: 1.1rem;
-  font-weight: 600;
-  color: #475569;
-  transition: all 0.2s;
+  font-weight: 700;
+  color: var(--theme-text);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
+  box-shadow: 0 4px 0 var(--theme-pink);
 }
 
 .tag-button:hover {
-  border-color: #cbd5e1;
-  background-color: #f8fafc;
+  transform: translateY(-2px);
+  background-color: var(--theme-cream);
 }
 
 .tag-button.active {
-  background-color: #3b82f6;
-  color: white;
-  border-color: #3b82f6;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  background-color: var(--theme-lavender);
+  border-color: var(--theme-jewel);
+  color: var(--theme-text);
+  transform: scale(1.1);
+  box-shadow: 0 6px 0 var(--theme-jewel-light);
 }
 
-.next-button {
+.jewel-button {
   width: 100%;
   padding: 1.25rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  background-color: #3b82f6;
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--theme-jewel-light), var(--theme-jewel));
   color: white;
   border: none;
-  border-radius: 1rem;
+  border-radius: 2rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 0 #e91e6344, 0 15px 25px #ff80ab44;
+  position: relative;
+  overflow: hidden;
 }
 
-.next-button:hover {
-  background-color: #2563eb;
+.jewel-button:hover {
   transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.jewel-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #e91e6344, 0 8px 15px #ff80ab44;
 }
 </style>

@@ -1,36 +1,32 @@
 <template>
   <BaseLayout>
     <div class="schedule-view">
-      <h2>いつ空いてる？</h2>
+      <h2 class="title">いつ空いてる？</h2>
       <p class="description">授業を入れたい曜日と時間を選んでください。<br>何個選んでも大丈夫です。</p>
 
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th v-for="day in days" :key="day">{{ day }}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="period in periods" :key="period">
-              <td class="period-label">
-                <span class="num">{{ period }}</span>
-                <span class="unit">限</span>
-              </td>
-              <td 
-                v-for="day in days" 
-                :key="day"
-                :class="{ selected: isSelected(day, period) }"
-                @click="store.toggleSchedule(day, period)"
-              >
-                <div class="cell-content">
-                  <div v-if="isSelected(day, period)" class="check">✓</div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="grid-container">
+        <div class="schedule-grid">
+          <div class="grid-header"></div>
+          <div v-for="day in days" :key="day" class="grid-header day-label">{{ day }}</div>
+          
+          <template v-for="period in periods" :key="period">
+            <div class="period-label">
+              <span class="num">{{ period }}</span>
+              <span class="unit">限</span>
+            </div>
+            <div 
+              v-for="day in days" 
+              :key="`${day}-${period}`"
+              class="grid-cell"
+              :class="{ active: isSelected(day, period) }"
+              @click="store.toggleSchedule(day, period)"
+            >
+              <div class="cell-inner">
+                <span v-if="isSelected(day, period)" class="check">✨</span>
+              </div>
+            </div>
+          </template>
+        </div>
       </div>
 
       <div class="selection-info">
@@ -43,9 +39,9 @@
       <button 
         :disabled="store.selectedSchedule.length === 0"
         @click="$router.push('/results')"
-        class="next-button"
+        class="jewel-button"
       >
-        結果を見る
+        <span>結果を見る</span>
       </button>
     </div>
   </BaseLayout>
@@ -68,127 +64,139 @@ const isSelected = (day: string, period: number) => {
   text-align: center;
 }
 
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
-  color: #1e293b;
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--theme-text);
+  font-weight: 800;
 }
 
 .description {
   margin-bottom: 2.5rem;
-  color: #64748b;
+  color: var(--theme-text);
+  opacity: 0.7;
   line-height: 1.6;
+  font-weight: 500;
 }
 
-.table-container {
-  overflow-x: auto;
-  margin-bottom: 2rem;
-  background: #f8fafc;
-  padding: 1rem;
-  border-radius: 1.5rem;
-  border: 1px solid #e2e8f0;
-}
-
-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0.5rem;
-}
-
-th {
-  padding: 0.5rem;
-  color: #64748b;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-td {
+.grid-container {
   background: white;
-  border: 1px solid #e2e8f0;
-  height: 3.5rem;
-  border-radius: 0.75rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  position: relative;
+  padding: 1.5rem 1rem;
+  border-radius: 2.5rem;
+  border: 3px solid var(--theme-lavender);
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 20px var(--theme-shadow);
 }
 
-td.period-label {
-  background: none;
-  border: none;
-  width: 3rem;
-  cursor: default;
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 40px repeat(5, 1fr);
+  gap: 10px;
+}
+
+.grid-header {
+  font-weight: 800;
+  color: var(--theme-text);
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.period-label {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .period-label .num {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  color: #1e293b;
+  color: var(--theme-text);
   line-height: 1;
 }
 
 .period-label .unit {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  font-weight: 600;
+  font-size: 0.7rem;
+  color: var(--theme-text);
+  opacity: 0.5;
+  font-weight: 700;
 }
 
-td:not(.period-label):hover {
-  border-color: #3b82f6;
-  background-color: #f0f9ff;
+.grid-cell {
+  aspect-ratio: 1;
+  background: var(--theme-cream);
+  border: 3px solid transparent;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-td.selected {
-  background-color: #3b82f6;
-  border-color: #3b82f6;
+.grid-cell:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  background-color: white;
+  border-color: var(--theme-pink);
+}
+
+.grid-cell.active {
+  background-color: var(--theme-lavender);
+  border-color: var(--theme-jewel);
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px var(--theme-shadow);
 }
 
 .check {
-  color: white;
-  font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pop {
+  0% { transform: scale(0) rotate(-45deg); }
+  100% { transform: scale(1) rotate(0); }
 }
 
 .selection-info {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   height: 1.5rem;
-}
-
-.selection-info p {
-  margin: 0;
-  color: #475569;
+  font-weight: 700;
+  color: var(--theme-text);
 }
 
 .selection-info .hint {
-  color: #94a3b8;
+  opacity: 0.5;
   font-size: 0.9rem;
 }
 
-.next-button {
+.jewel-button {
   width: 100%;
   padding: 1.25rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  background-color: #3b82f6;
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--theme-jewel-light), var(--theme-jewel));
   color: white;
   border: none;
-  border-radius: 1rem;
+  border-radius: 2rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 0 #e91e6344, 0 15px 25px #ff80ab44;
 }
 
-.next-button:disabled {
-  background-color: #cbd5e1;
+.jewel-button:disabled {
+  background: #e2e8f0;
+  box-shadow: none;
   cursor: not-allowed;
+  opacity: 0.6;
 }
 
-.next-button:not(:disabled):hover {
-  background-color: #2563eb;
+.jewel-button:not(:disabled):hover {
   transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.jewel-button:not(:disabled):active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #e91e6344, 0 8px 15px #ff80ab44;
 }
 </style>
