@@ -13,10 +13,9 @@
           <input 
             v-model="inputId" 
             type="text" 
-            placeholder="例: 24100123" 
+            placeholder="例: 24XXXNKU01" 
             @input="onInput"
             maxlength="10"
-            inputmode="numeric"
           >
         </div>
 

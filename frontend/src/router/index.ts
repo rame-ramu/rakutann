@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import StudentIdView from '../views/StudentIdView.vue'
+import { store } from '../store'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +26,12 @@ const router = createRouter({
       component: () => import('../views/CourseListView.vue'),
     },
   ],
+})
+
+router.beforeEach((to) => {
+  if (store.department && !store.isHumanInfoStudent && to.name !== 'student-id' && to.name !== 'conditions') {
+    return { name: 'conditions' }
+  }
 })
 
 export default router

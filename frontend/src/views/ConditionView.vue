@@ -1,42 +1,50 @@
 <template>
   <BaseLayout>
     <div class="condition-view">
-      <h2>どんな授業がいい？</h2>
-      <p class="description">無理のない範囲で、あなたの希望を教えてください。<br>複数選んでも大丈夫です。</p>
+      <div v-if="store.department && !store.isHumanInfoStudent" class="unsupported-message">
+        <h2>あなたに対応してません</h2>
+        <p class="description">このシラバスは人間情報学部の学生のみ利用できます。</p>
+        <button @click="$router.push('/')" class="next-button">学籍番号を入力し直す</button>
+      </div>
 
-      <div v-for="group in tagGroups" :key="group.title" class="condition-group">
-        <h3>{{ group.title }}</h3>
-        <div class="tags">
-          <button
-            v-for="tag in group.tags"
-            :key="tag"
-            :class="{ active: store.selectedConditions.includes(tag) }"
-            @click="store.toggleCondition(tag)"
-            class="tag-button"
-          >
-            <span class="icon">{{ getIcon(tag) }}</span>
-            {{ tag }}
-          </button>
+      <template v-else>
+        <h2>どんな授業がいい？</h2>
+        <p class="description">無理のない範囲で、あなたの希望を教えてください。<br>複数選んでも大丈夫です。</p>
+
+        <div v-for="group in tagGroups" :key="group.title" class="condition-group">
+          <h3>{{ group.title }}</h3>
+          <div class="tags">
+            <button
+              v-for="tag in group.tags"
+              :key="tag"
+              :class="{ active: store.selectedConditions.includes(tag) }"
+              @click="store.toggleCondition(tag)"
+              class="tag-button"
+            >
+              <span class="icon">{{ getIcon(tag) }}</span>
+              {{ tag }}
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div class="teacher-filter">
-        <label for="avoided-teachers">受けたくない先生</label>
-        <input
-          id="avoided-teachers"
-          :value="store.avoidedTeachersText"
-          type="text"
-          placeholder="例: 山田、Suzuki"
-          @input="store.setAvoidedTeachers(($event.target as HTMLInputElement).value)"
-        />
-      </div>
+        <div class="teacher-filter">
+          <label for="avoided-teachers">受けたくない先生</label>
+          <input
+            id="avoided-teachers"
+            :value="store.avoidedTeachersText"
+            type="text"
+            placeholder="例: 山田、Suzuki"
+            @input="store.setAvoidedTeachers(($event.target as HTMLInputElement).value)"
+          />
+        </div>
 
-      <button 
-        @click="$router.push('/schedule')"
-        class="next-button"
-      >
-        次へ進む
-      </button>
+        <button 
+          @click="$router.push('/schedule')"
+          class="next-button"
+        >
+          次へ進む
+        </button>
+      </template>
     </div>
   </BaseLayout>
 </template>
@@ -51,15 +59,24 @@ const tagGroups = [
     tags: [
       'レポート・課題重視',
       'レポート・課題あり',
+      '試験あり',
       '試験重視',
       '試験なし',
       '出席点なし',
       '出席点低め',
+      '出席点高め',
     ],
   },
   {
     title: '授業形態',
-    tags: ['オンデマンド多め', 'オンデマンド少なめ', 'オンデマンドなし', 'すべてオンデマンド', '前提履修なし'],
+    tags: [
+      'オンデマンド多め',
+      'オンデマンド少なめ',
+      'オンデマンドなし',
+      'すべてオンデマンド',
+      '前提履修なし',
+      '前提履修あり',
+    ],
   },
   {
     title: '受けたい系統',
@@ -81,15 +98,18 @@ const getIcon = (tag: string) => {
   const icons: Record<string, string> = {
     'レポート・課題重視': '📝',
     'レポート・課題あり': '📄',
+    '試験あり': '有',
     '試験重視': '✍️',
     '試験なし': '🚫',
     '出席点なし': '0',
     '出席点低め': '↓',
+    '出席点高め': '↑',
     'オンデマンド多め': '▶',
     'オンデマンド少なめ': '◐',
     'オンデマンドなし': '□',
     'すべてオンデマンド': '◎',
     '前提履修なし': '✓',
+    '前提履修あり': '要',
     '情報・データ': '💻',
     '心理・人間': '🧠',
     'ビジネス・経営': '💼',
@@ -107,6 +127,12 @@ const getIcon = (tag: string) => {
 <style scoped>
 .condition-view {
   text-align: center;
+}
+
+.unsupported-message {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 h2 {

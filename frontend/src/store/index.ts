@@ -38,6 +38,7 @@ export const store = reactive({
   studentId: '',
   grade: null as number | null,
   department: null as string | null,
+  isHumanInfoStudent: false,
   selectedConditions: [] as string[],
   selectedSchedule: [] as { day: string; period: number }[],
   candidateCourses: [] as Course[],
@@ -54,6 +55,7 @@ export const store = reactive({
       this.grade = currentYear - year + 1
 
       const facultyCode = id.substring(5, 8).toUpperCase()
+      this.isHumanInfoStudent = facultyCode === 'NKU' || facultyCode === 'NDU'
       const facultyMap: Record<string, string> = {
         LJU: '文学部 国文学科',
         LAU: '文学部 総合英語学科',
@@ -88,6 +90,7 @@ export const store = reactive({
     } else {
       this.grade = null
       this.department = null
+      this.isHumanInfoStudent = false
     }
   },
 
