@@ -1,10 +1,10 @@
 <template>
-  <div class="base-layout" :class="{ wide: route.name === 'results' }">
+  <div class="base-layout" :class="{ wide: route.name === 'results', medium: route.name === 'conditions' }">
     <header v-if="$route.name !== 'student-id'">
       <div class="nav-buttons">
-        <button @click="goFixedBack" class="back-button">← 固定戻り</button>
+        <button @click="goFixedBack" class="back-button">← 戻る</button>
         <button @click="goFixedForward" class="back-button" :disabled="!canGoFixedForward">
-          固定進み →
+          次へ →
         </button>
       </div>
       <div class="progress">Step {{ currentStep }} / 4</div>
@@ -68,17 +68,20 @@ const goFixedForward = () => {
 
 <style scoped>
 .base-layout {
-  max-width: 600px;
+  max-width: 820px;
   margin: 0 auto;
   padding: 2rem;
   min-height: 100vh;
-  background-color: #f8fafc;
-  color: #334155;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text);
+  font-family: inherit;
 }
 
 .base-layout.wide {
   max-width: 1180px;
+}
+
+.base-layout.medium {
+  max-width: 980px;
 }
 
 header {
@@ -96,27 +99,54 @@ header {
 }
 
 .back-button {
-  background: none;
-  border: none;
-  color: #64748b;
+  background: #fffdf4;
+  border: 3px solid var(--color-border);
+  border-radius: 0.7rem;
+  color: #111827;
   cursor: pointer;
   font-size: 1rem;
+  font-weight: 900;
+  padding: 0.55rem 0.8rem;
+  box-shadow: 4px 4px 0 var(--comic-shadow);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.back-button:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--comic-shadow);
 }
 
 .back-button:disabled {
-  color: #cbd5e1;
+  color: #6b7280;
+  background: #e5e7eb;
   cursor: not-allowed;
+  box-shadow: 2px 2px 0 var(--comic-shadow);
 }
 
 .progress {
-  font-weight: bold;
-  color: #94a3b8;
+  background: var(--comic-yellow);
+  border: 3px solid var(--color-border);
+  border-radius: 999px;
+  color: #111827;
+  font-weight: 900;
+  padding: 0.4rem 0.9rem;
+  box-shadow: 3px 3px 0 var(--comic-shadow);
 }
 
 main {
-  background: white;
+  background: #ffffff;
   padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  border: 4px solid var(--color-border);
+  border-radius: 0.6rem;
+  box-shadow: 10px 10px 0 var(--comic-shadow);
+  position: relative;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 2px dashed rgba(17, 24, 39, 0.2);
+  pointer-events: none;
 }
 </style>

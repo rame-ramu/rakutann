@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Hachi+Maru+Pop&family=M+PLUS+1p:wght@900&family=M+PLUS+Rounded+1c:wght@900&family=Yomogi&family=Zen+Kaku+Gothic+New:wght@900&family=Zen+Maru+Gothic:wght@900&display=swap');
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   --vt-c-white: #ffffff;
@@ -23,30 +25,45 @@
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+  --color-background: #ffffff;
+  --color-background-soft: #fffdf4;
+  --color-background-mute: #f7e343;
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
+  --color-border: #111827;
+  --color-border-hover: #111827;
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  --color-heading: #111827;
+  --color-text: #111827;
+  --comic-blue: #12a996;
+  --comic-red: #111827;
+  --comic-yellow: #f7e343;
+  --comic-green: #12a996;
+  --comic-shadow: #111827;
+  --font-comic-gothic:
+    "M PLUS 1p",
+    "M PLUS Rounded 1c",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Yu Gothic",
+    "YuGothic",
+    "Meiryo",
+    "Arial Black",
+    sans-serif;
 
   --section-gap: 160px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+    --color-background: #ffffff;
+    --color-background-soft: #fffdf4;
+    --color-background-mute: #f7e343;
 
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
+    --color-border: #111827;
+    --color-border-hover: #111827;
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --color-heading: #111827;
+    --color-text: #111827;
   }
 }
 
@@ -61,26 +78,36 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background-color: var(--color-background);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='180' viewBox='0 0 360 180'%3E%3Cg fill='%23111827' fill-opacity='0.045' font-family='Hiragino Kaku Gothic ProN, Yu Gothic, sans-serif' font-size='28' font-weight='500'%3E%3Ctext x='20' y='44' transform='rotate(-8 20 44)'%3E%E3%82%89%E3%81%8F%E3%81%9F%E3%82%93%E3%82%93%3C/text%3E%3Ctext x='204' y='44' transform='rotate(-8 204 44)'%3E%E3%82%89%E3%81%8F%E3%81%9F%E3%82%93%E3%82%93%3C/text%3E%3Ctext x='112' y='128' transform='rotate(-8 112 128)'%3E%E3%82%89%E3%81%8F%E3%81%9F%E3%82%93%E3%82%93%3C/text%3E%3Ctext x='292' y='128' transform='rotate(-8 292 128)'%3E%E3%82%89%E3%81%8F%E3%81%9F%E3%82%93%E3%82%93%3C/text%3E%3C/g%3E%3C/svg%3E");
+  background-size: 360px 180px;
   transition:
     color 0.5s,
     background-color 0.5s;
   line-height: 1.6;
   font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+    var(--font-comic-gothic);
   font-size: 15px;
+  font-weight: 700;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+strong,
+button,
+.progress {
+  font-family: var(--font-comic-gothic);
+  font-weight: 900;
 }

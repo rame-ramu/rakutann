@@ -11,6 +11,21 @@
         <h2>どんな授業がいい？</h2>
         <p class="description">無理のない範囲で、あなたの希望を教えてください。<br>複数選んでも大丈夫です。</p>
 
+        <div class="condition-group">
+          <h3>開講学期</h3>
+          <div class="semester-options" role="group" aria-label="開講学期">
+            <button
+              v-for="semester in semesterOptions"
+              :key="semester"
+              :class="{ active: store.selectedSemester === semester }"
+              @click="store.setSelectedSemester(semester)"
+              class="semester-button"
+            >
+              {{ semester }}
+            </button>
+          </div>
+        </div>
+
         <div v-for="group in tagGroups" :key="group.title" class="condition-group">
           <h3>{{ group.title }}</h3>
           <div class="tags">
@@ -52,6 +67,8 @@
 <script setup lang="ts">
 import BaseLayout from '../components/BaseLayout.vue'
 import { store } from '../store'
+
+const semesterOptions = ['前期', '後期'] as const
 
 const tagGroups = [
   {
@@ -138,12 +155,15 @@ const getIcon = (tag: string) => {
 h2 {
   font-size: 1.75rem;
   margin-bottom: 0.75rem;
-  color: #1e293b;
+  color: #111827;
+  font-weight: 900;
+  text-shadow: 2px 2px 0 var(--comic-yellow);
 }
 
 .description {
   margin-bottom: 2.5rem;
-  color: #64748b;
+  color: #111827;
+  font-weight: 700;
   line-height: 1.6;
 }
 
@@ -154,8 +174,9 @@ h2 {
 
 .condition-group h3 {
   margin: 0 0 0.875rem;
-  color: #334155;
+  color: #111827;
   font-size: 1rem;
+  font-weight: 900;
 }
 
 .tags {
@@ -167,30 +188,65 @@ h2 {
 
 .tag-button {
   padding: 0.7rem 1rem;
-  border: 2px solid #e2e8f0;
+  border: 3px solid #111827;
   background: white;
-  border-radius: 3rem;
+  border-radius: 0.7rem;
   cursor: pointer;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #475569;
+  color: #111827;
   transition: all 0.2s;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 4px 4px 0 #111827;
 }
 
 .tag-button:hover {
-  border-color: #cbd5e1;
-  background-color: #f8fafc;
+  background-color: #fffbe6;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #111827;
 }
 
 .tag-button.active {
-  background-color: #3b82f6;
+  background-color: var(--comic-green);
   color: white;
-  border-color: #3b82f6;
+  border-color: #111827;
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  box-shadow: 5px 5px 0 #111827;
+}
+
+.semester-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.semester-button {
+  min-height: 3.75rem;
+  padding: 0.85rem 1rem;
+  border: 4px solid #111827;
+  border-radius: 0.7rem;
+  background: white;
+  color: #111827;
+  cursor: pointer;
+  font-size: 1.15rem;
+  font-weight: 900;
+  box-shadow: 5px 5px 0 #111827;
+  transition: all 0.2s;
+}
+
+.semester-button:hover {
+  background: #fffbe6;
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 #111827;
+}
+
+.semester-button.active {
+  background: var(--comic-yellow);
+  color: #111827;
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 #111827;
 }
 
 .teacher-filter {
@@ -201,40 +257,42 @@ h2 {
 .teacher-filter label {
   display: block;
   margin-bottom: 0.75rem;
-  color: #334155;
-  font-weight: 700;
+  color: #111827;
+  font-weight: 900;
 }
 
 .teacher-filter input {
   width: 100%;
   padding: 1rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 0.875rem;
-  color: #1e293b;
+  border: 3px solid #111827;
+  border-radius: 0.7rem;
+  color: #111827;
   font-size: 1rem;
 }
 
 .teacher-filter input:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  border-color: var(--comic-green);
+  box-shadow: 0 0 0 4px rgba(0, 166, 166, 0.2);
 }
 
 .next-button {
   width: 100%;
   padding: 1.25rem;
   font-size: 1.25rem;
-  font-weight: 700;
-  background-color: #3b82f6;
+  font-weight: 900;
+  background-color: var(--comic-green);
   color: white;
-  border: none;
-  border-radius: 1rem;
+  border: 4px solid #111827;
+  border-radius: 0.7rem;
   cursor: pointer;
   transition: all 0.2s;
+  box-shadow: 7px 7px 0 #111827;
 }
 
 .next-button:hover {
-  background-color: #2563eb;
-  transform: translateY(-2px);
+  background-color: #008a8a;
+  transform: translate(-2px, -2px);
+  box-shadow: 9px 9px 0 #111827;
 }
 </style>

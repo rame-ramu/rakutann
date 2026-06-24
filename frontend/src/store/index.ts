@@ -40,6 +40,7 @@ export const store = reactive({
   department: null as string | null,
   isHumanInfoStudent: false,
   selectedConditions: [] as string[],
+  selectedSemester: '' as '' | '前期' | '後期',
   selectedSchedule: [] as { day: string; period: number }[],
   candidateCourses: [] as Course[],
   classrooms: {} as Record<string, string>,
@@ -101,6 +102,10 @@ export const store = reactive({
     } else {
       this.selectedConditions.splice(index, 1)
     }
+  },
+
+  setSelectedSemester(semester: '' | '前期' | '後期') {
+    this.selectedSemester = this.selectedSemester === semester ? '' : semester
   },
 
   toggleSchedule(day: string, period: number) {
