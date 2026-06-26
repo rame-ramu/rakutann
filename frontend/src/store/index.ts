@@ -3,6 +3,7 @@ import { courses } from '../data/courses'
 
 export interface Course {
   id: string
+  years: number[]
   name: string
   instructor: string
   semester: string
