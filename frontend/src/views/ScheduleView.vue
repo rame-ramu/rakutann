@@ -48,7 +48,7 @@
 
       <div class="selection-info">
         <p v-if="selectedAddSlotCount > 0">
-          追加ボタンで <strong>{{ selectedAddSlotCount }}つ</strong> のコマを選択中
+          授業を追加ボタンで <strong>{{ selectedAddSlotCount }}つ</strong> のコマを選択中
         </p>
         <p v-else class="hint">マスをタップして選択してください</p>
       </div>
@@ -151,42 +151,51 @@ const cancelClassroomPress = () => {
 h2 {
   font-size: 1.75rem;
   margin-bottom: 0.75rem;
-  color: #1e293b;
+  color: #111827;
+  font-weight: 900;
+  text-shadow: 2px 2px 0 var(--comic-yellow);
 }
 
 .description {
   margin-bottom: 2.5rem;
-  color: #64748b;
+  color: #111827;
+  font-weight: 700;
   line-height: 1.6;
 }
 
 .table-container {
   overflow-x: auto;
   margin-bottom: 2rem;
-  background: #f8fafc;
+  background: #fffdf4;
   padding: 1rem;
-  border-radius: 1.5rem;
-  border: 1px solid #e2e8f0;
+  border-radius: 0.7rem;
+  border: 4px solid #111827;
+  box-shadow: 7px 7px 0 #111827;
 }
 
 table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0.5rem;
 }
 
+th:first-child {
+  width: 7.5rem;
+}
+
 th {
   padding: 0.5rem;
-  color: #64748b;
-  font-weight: 700;
+  color: #111827;
+  font-weight: 900;
   font-size: 1.1rem;
 }
 
 td {
   background: white;
-  border: 1px solid #e2e8f0;
+  border: 3px solid #111827;
   height: 3.5rem;
-  border-radius: 0.75rem;
+  border-radius: 0.55rem;
   cursor: pointer;
   transition: all 0.2s;
   position: relative;
@@ -197,65 +206,71 @@ td {
   align-items: center;
   justify-content: center;
   height: 100%;
+  min-width: 0;
+  overflow: hidden;
 }
 
 td.period-label {
   background: none;
   border: none;
-  width: 4.6rem;
+  width: 7.5rem;
   cursor: default;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 0.2rem;
+  flex-wrap: wrap;
 }
 
 .period-label .num {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #1e293b;
+  color: #111827;
   line-height: 1;
 }
 
 .period-label .unit {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  font-weight: 600;
+  font-size: 0.9rem;
+  color: #111827;
+  font-weight: 900;
 }
 
 .period-label .time {
-  margin-top: 0.15rem;
-  color: #64748b;
-  font-size: 0.52rem;
-  font-weight: 700;
+  flex-basis: 100%;
+  margin-top: 0.1rem;
+  color: #111827;
+  font-size: 0.72rem;
+  font-weight: 900;
   white-space: nowrap;
 }
 
 td:not(.period-label):hover {
-  border-color: #3b82f6;
-  background-color: #f0f9ff;
+  border-color: #111827;
+  background-color: #fff8ad;
+  box-shadow: 4px 4px 0 #111827;
 }
 
 td.selected {
-  background-color: #3b82f6;
-  border-color: #3b82f6;
+  background-color: var(--comic-green);
+  border-color: #111827;
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  box-shadow: 4px 4px 0 #111827;
 }
 
 td.locked {
-  background-color: #0f766e;
-  border-color: #0f766e;
+  background-color: #d4d4d8;
+  border-color: #111827;
   cursor: not-allowed;
 }
 
 td.locked:hover {
-  background-color: #0f766e;
-  border-color: #0f766e;
+  background-color: #d4d4d8;
+  border-color: #111827;
 }
 
 .check {
-  color: white;
+  color: #111827;
   font-weight: bold;
   font-size: 1.25rem;
 }
@@ -266,33 +281,37 @@ td.locked:hover {
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
-  color: white;
+  color: #111827;
   font-size: 0.65rem;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.15;
   width: 100%;
+  min-width: 0;
   padding: 0 0.25rem;
 }
 
 .candidate-slot span {
   display: -webkit-box;
+  max-width: 100%;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  overflow-wrap: anywhere;
 }
 
 .candidate-slot small {
   display: block;
   margin-top: 0.12rem;
   font-size: 0.58rem;
-  font-weight: 800;
+  font-weight: 500;
   opacity: 0.9;
 }
 
 .empty-slot {
-  color: #cbd5e1;
+  color: #111827;
   font-size: 0.75rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .selection-info {
@@ -302,11 +321,12 @@ td.locked:hover {
 
 .selection-info p {
   margin: 0;
-  color: #475569;
+  color: #111827;
+  font-weight: 800;
 }
 
 .selection-info .hint {
-  color: #94a3b8;
+  color: #111827;
   font-size: 0.9rem;
 }
 
@@ -314,23 +334,27 @@ td.locked:hover {
   width: 100%;
   padding: 1.25rem;
   font-size: 1.25rem;
-  font-weight: 700;
-  background-color: #3b82f6;
+  font-weight: 900;
+  background-color: var(--comic-green);
   color: white;
-  border: none;
-  border-radius: 1rem;
+  border: 4px solid #111827;
+  border-radius: 0.7rem;
   cursor: pointer;
   transition: all 0.2s;
+  box-shadow: 7px 7px 0 #111827;
 }
 
 .next-button:disabled {
-  background-color: #cbd5e1;
+  background-color: #d1d5db;
+  color: #6b7280;
   cursor: not-allowed;
+  box-shadow: 4px 4px 0 #111827;
 }
 
 .next-button:not(:disabled):hover {
-  background-color: #2563eb;
-  transform: translateY(-2px);
+  background-color: #008a8a;
+  transform: translate(-2px, -2px);
+  box-shadow: 9px 9px 0 #111827;
 }
 
 .registered-section {
@@ -340,7 +364,7 @@ td.locked:hover {
 
 .registered-section h3 {
   margin: 0 0 1rem;
-  color: #334155;
+  color: #111827;
   font-size: 1rem;
 }
 
@@ -356,21 +380,22 @@ td.locked:hover {
   gap: 1rem;
   align-items: center;
   padding: 0.85rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
-  background: #f8fafc;
+  border: 3px solid #111827;
+  border-radius: 0.65rem;
+  background: white;
+  box-shadow: 4px 4px 0 #111827;
   user-select: none;
 }
 
 .registered-item span {
-  color: #0f766e;
+  color: var(--comic-green);
   font-size: 0.8rem;
   font-weight: 800;
 }
 
 .registered-item p {
   margin: 0.25rem 0 0;
-  color: #0f172a;
+  color: #111827;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -378,17 +403,17 @@ td.locked:hover {
 .registered-item small {
   display: block;
   margin-top: 0.35rem;
-  color: #64748b;
+  color: #111827;
   font-size: 0.75rem;
   font-weight: 700;
 }
 
 .registered-item button {
   padding: 0.6rem 0.8rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 0.5rem;
+  border: 3px solid #111827;
+  border-radius: 0.55rem;
   background: white;
-  color: #64748b;
+  color: #111827;
   cursor: pointer;
   font-weight: 700;
 }

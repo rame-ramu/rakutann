@@ -2,7 +2,7 @@
   <BaseLayout>
     <div class="student-id-view">
       <div class="hero">
-        <h1>らくたんん</h1>
+        <h1>らくたんん!!</h1>
         <p class="subtitle">疲れたあなたに、ちょうどいい履修を。</p>
       </div>
 
@@ -65,30 +65,63 @@ const onInput = () => {
 }
 
 h1 {
-  font-size: 3rem;
+  font-family:
+    "にくまるフォント",
+    "Nikumarufont",
+    "Nikumarufont Regular",
+    "M PLUS Rounded 1c",
+    "Zen Maru Gothic",
+    "Arial Black",
+    "Hiragino Maru Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
+  box-sizing: border-box;
+  display: block;
+  width: min(100%, 30rem);
+  margin-inline: auto;
+  padding-right: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: clamp(2.25rem, 8.5vw, 4.75rem);
   margin-bottom: 0.5rem;
-  color: #3b82f6;
-  font-weight: 800;
-  letter-spacing: -0.05em;
+  color: #111827;
+  font-weight: 1000;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+  -webkit-text-stroke: 2.5px #111827;
+  paint-order: stroke fill;
+  text-shadow:
+    1px 0 0 #111827,
+    -1px 0 0 #111827,
+    0 -1px 0 #111827,
+    2px 0 0 #111827,
+    0 2px 0 #111827,
+    3px 3px 0 var(--comic-green),
+    6px 6px 0 var(--comic-green),
+    9px 9px 0 var(--comic-green),
+    -3px -4px 0 rgba(255, 244, 74, 0.85),
+    -6px -2px 0 rgba(255, 244, 74, 0.85),
+    -9px 0 0 rgba(255, 244, 74, 0.7);
 }
 
 .subtitle {
   font-size: 1.1rem;
-  color: #64748b;
-  font-weight: 500;
+  color: #111827;
+  font-weight: 800;
 }
 
 .card {
-  background: #f8fafc;
+  background: white;
   padding: 2rem;
-  border-radius: 1.5rem;
-  border: 1px solid #e2e8f0;
+  border-radius: 0.7rem;
+  border: 4px solid #111827;
+  box-shadow: 7px 7px 0 #111827;
 }
 
 .instruction {
   margin-bottom: 2rem;
   line-height: 1.8;
-  color: #475569;
+  color: #111827;
   font-size: 1.1rem;
 }
 
@@ -100,31 +133,33 @@ input {
   width: 100%;
   padding: 1.25rem;
   font-size: 1.75rem;
-  border: 3px solid #e2e8f0;
-  border-radius: 1rem;
+  border: 4px solid #111827;
+  border-radius: 0.7rem;
   text-align: center;
   transition: all 0.2s;
-  background: white;
-  color: #1e293b;
-  font-weight: 600;
+  background: #ffffff;
+  color: #111827;
+  font-weight: 900;
+  box-shadow: inset 4px 4px 0 rgba(17, 24, 39, 0.08);
 }
 
 input:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  border-color: var(--comic-green);
+  box-shadow: 0 0 0 4px rgba(0, 166, 166, 0.22), inset 4px 4px 0 rgba(17, 24, 39, 0.08);
 }
 
 .info-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: #dbeafe;
+  background: var(--comic-yellow);
   padding: 0.75rem 1.5rem;
-  border-radius: 2rem;
-  color: #1e40af;
-  font-weight: 600;
-  border: 1px solid #bfdbfe;
+  border-radius: 0.7rem;
+  color: #111827;
+  font-weight: 900;
+  border: 3px solid #111827;
+  box-shadow: 4px 4px 0 #111827;
 }
 
 .info-badge .label {
@@ -136,20 +171,20 @@ input:focus {
   width: 100%;
   padding: 1.25rem;
   font-size: 1.25rem;
-  font-weight: 700;
-  background-color: #3b82f6;
+  font-weight: 900;
+  background-color: var(--comic-green);
   color: white;
-  border: none;
-  border-radius: 1rem;
+  border: 4px solid #111827;
+  border-radius: 0.7rem;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+  box-shadow: 7px 7px 0 #111827;
 }
 
 .next-button:hover:not(:disabled) {
-  background-color: #2563eb;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+  background-color: #008a8a;
+  transform: translate(-2px, -2px);
+  box-shadow: 9px 9px 0 #111827;
 }
 
 .next-button:active:not(:disabled) {
@@ -157,14 +192,16 @@ input:focus {
 }
 
 .next-button:disabled {
-  background-color: #cbd5e1;
-  box-shadow: none;
+  background-color: #d1d5db;
+  color: #6b7280;
+  box-shadow: 4px 4px 0 #111827;
   cursor: not-allowed;
 }
 
 .footer-note {
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: #4b5563;
+  font-weight: 800;
 }
 
 .fade-enter-active,

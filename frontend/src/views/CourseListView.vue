@@ -180,6 +180,11 @@ const isAvoidedTeacher = (course: Course) => {
   return avoidedTeachers.value.some((name) => instructor.includes(name))
 }
 
+const isSemesterMatch = (course: Course) => {
+  if (!store.selectedSemester) return true
+  return course.semester.includes(store.selectedSemester) || course.semester.includes('通年')
+}
+
 const isScheduleMatch = (course: Course) => {
   if (course.period === null) return false
   return store.selectedSchedule.some((s) => s.day === course.day && s.period === course.period)
@@ -203,7 +208,13 @@ const courseScore = (course: Course) => {
 
 const filteredCourses = computed(() => {
   return mockCourses
-    .filter((course) => isScheduleMatch(course) && !isLockedSchedule(course) && !isAvoidedTeacher(course))
+    .filter(
+      (course) =>
+        isSemesterMatch(course) &&
+        isScheduleMatch(course) &&
+        !isLockedSchedule(course) &&
+        !isAvoidedTeacher(course),
+    )
     .sort((a, b) => {
       const scoreDiff = courseScore(b) - courseScore(a)
       if (scoreDiff !== 0) return scoreDiff
@@ -282,21 +293,26 @@ const getMatchSummary = (course: Course) => {
 
 h2 {
   margin-bottom: 0.5rem;
-  color: #1e293b;
+  color: #111827;
+  font-weight: 900;
+  text-shadow: 2px 2px 0 var(--comic-yellow);
 }
 
 .description {
   margin: 0;
-  color: #64748b;
+  color: #111827;
+  font-weight: 700;
 }
 
 .result-count {
   flex: 0 0 auto;
   padding: 0.45rem 0.8rem;
+  border: 3px solid #111827;
   border-radius: 999px;
-  background: #eff6ff;
-  color: #2563eb;
-  font-weight: 800;
+  background: var(--comic-yellow);
+  color: #111827;
+  font-weight: 900;
+  box-shadow: 3px 3px 0 #111827;
 }
 
 .results-layout {
@@ -316,24 +332,25 @@ h2 {
 
 .course-card {
   padding: 1.25rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
+  border: 3px solid #111827;
+  border-radius: 0.65rem;
   cursor: pointer;
   transition: all 0.2s;
   background: white;
   position: relative;
-  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
+  box-shadow: 5px 5px 0 #111827;
 }
 
 .course-card:hover {
-  border-color: #3b82f6;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  border-color: #111827;
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 #111827;
 }
 
 .course-card.chosen {
-  border-color: #0f766e;
-  background: #f0fdfa;
-  box-shadow: 0 0 0 3px rgb(15 118 110 / 0.12);
+  border-color: #111827;
+  background: #e7fffb;
+  box-shadow: 5px 5px 0 #111827, inset 0 0 0 4px var(--comic-green);
 }
 
 .course-header {
@@ -346,18 +363,19 @@ h2 {
 
 .course-header h3 {
   margin: 0;
-  color: #0f172a;
+  color: #111827;
   font-size: 1.1rem;
   line-height: 1.45;
 }
 
 .schedule-badge {
-  background-color: #f1f5f9;
+  background-color: var(--comic-yellow);
   padding: 0.3rem 0.6rem;
-  border-radius: 0.6rem;
+  border: 2px solid #111827;
+  border-radius: 0.45rem;
   font-size: 0.8rem;
-  color: #475569;
-  font-weight: 800;
+  color: #111827;
+  font-weight: 900;
   line-height: 1;
   text-align: right;
   white-space: nowrap;
@@ -365,7 +383,7 @@ h2 {
 
 .teacher {
   margin: 0.35rem 0 0;
-  color: #64748b;
+  color: #111827;
   font-size: 0.9rem;
 }
 
@@ -379,9 +397,10 @@ h2 {
 .score-row span {
   min-width: 0;
   padding: 0.55rem 0.5rem;
-  border-radius: 0.5rem;
-  background: #f8fafc;
-  color: #334155;
+  border: 2px solid #111827;
+  border-radius: 0.45rem;
+  background: #fffbe6;
+  color: #111827;
   font-size: 0.78rem;
   font-weight: 800;
   text-align: center;
@@ -395,17 +414,19 @@ h2 {
 }
 
 .tag {
-  padding: 0.25rem 0.5rem;
+  padding: 0.32rem 0.6rem;
+  border: 3px solid #111827;
   border-radius: 999px;
-  background: #eff6ff;
-  color: #2563eb;
-  font-size: 0.78rem;
-  font-weight: 700;
+  background: var(--comic-green);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 900;
+  box-shadow: 2px 2px 0 #111827;
 }
 
 .match-line {
   margin-top: 0.75rem;
-  color: #0f766e;
+  color: var(--comic-green);
   font-size: 0.85rem;
   font-weight: 700;
 }
@@ -413,7 +434,7 @@ h2 {
 .click-hint {
   margin-top: 1rem;
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: #111827;
   text-align: right;
 }
 
@@ -423,10 +444,10 @@ h2 {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
+  border: 4px solid #111827;
+  border-radius: 0.65rem;
   background: white;
-  box-shadow: 0 4px 14px rgb(15 23 42 / 0.06);
+  box-shadow: 7px 7px 0 #111827;
 }
 
 .panel-header {
@@ -441,13 +462,13 @@ h2 {
 
 .panel-header h3 {
   margin: 0;
-  color: #0f172a;
+  color: #111827;
   font-size: 1.1rem;
 }
 
 .panel-header span {
-  color: #0f766e;
-  font-weight: 800;
+  color: var(--comic-green);
+  font-weight: 900;
 }
 
 .candidate-list {
@@ -466,21 +487,21 @@ h2 {
   gap: 0.75rem;
   align-items: center;
   padding: 0.75rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.65rem;
-  background: #f8fafc;
+  border: 3px solid #111827;
+  border-radius: 0.55rem;
+  background: #fffbe6;
 }
 
 .candidate-item p {
   margin: 0.25rem 0 0;
-  color: #0f172a;
+  color: #111827;
   font-size: 0.85rem;
   font-weight: 700;
   line-height: 1.35;
 }
 
 .candidate-schedule {
-  color: #2563eb;
+  color: var(--comic-green);
   font-size: 0.68rem;
   font-weight: 800;
   line-height: 1.35;
@@ -488,17 +509,17 @@ h2 {
 
 .remove-button {
   padding: 0.45rem 0.65rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 0.5rem;
+  border: 3px solid #111827;
+  border-radius: 0.45rem;
   background: white;
-  color: #64748b;
+  color: #111827;
   cursor: pointer;
   font-weight: 700;
 }
 
 .empty-preview {
   margin: 0;
-  color: #64748b;
+  color: #111827;
   line-height: 1.6;
   font-size: 0.9rem;
 }
@@ -507,13 +528,14 @@ h2 {
   width: auto;
   min-width: 9rem;
   padding: 1rem;
-  border: none;
-  border-radius: 0.75rem;
-  background: #0f766e;
+  border: 4px solid #111827;
+  border-radius: 0.65rem;
+  background: var(--comic-green);
   color: white;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 900;
+  box-shadow: 5px 5px 0 #111827;
 }
 
 .confirm-button:disabled {
@@ -543,11 +565,12 @@ h2 {
   max-width: 680px;
   max-height: calc(100vh - 2rem);
   overflow-y: auto;
-  border-radius: 1.5rem;
+  border: 4px solid #111827;
+  border-radius: 0.7rem;
   padding: 2.5rem;
   position: relative;
   text-align: left;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 10px 10px 0 #111827;
 }
 
 .close-button {
@@ -557,7 +580,7 @@ h2 {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #94a3b8;
+  color: #111827;
   cursor: pointer;
   line-height: 1;
 }
@@ -568,11 +591,12 @@ h2 {
 
 .schedule-badge-large {
   display: inline-block;
-  background-color: #f1f5f9;
+  background-color: var(--comic-yellow);
+  border: 3px solid #111827;
   padding: 0.375rem 1rem;
-  border-radius: 2rem;
+  border-radius: 999px;
   font-size: 1rem;
-  color: #475569;
+  color: #111827;
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -580,12 +604,12 @@ h2 {
 .modal-header h3 {
   margin: 0;
   font-size: 1.75rem;
-  color: #0f172a;
+  color: #111827;
 }
 
 .modal-header p {
   margin: 0.75rem 0 0;
-  color: #64748b;
+  color: #111827;
 }
 
 .section {
@@ -595,15 +619,21 @@ h2 {
 .section h4 {
   margin: 0 0 0.75rem 0;
   font-size: 1rem;
-  color: #64748b;
-  font-weight: 600;
+  color: #111827;
+  font-weight: 900;
 }
 
 .tag-large {
-  color: #3b82f6;
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-right: 0.75rem;
+  display: inline-block;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.35rem 0.7rem;
+  border: 3px solid #111827;
+  border-radius: 999px;
+  background: var(--comic-yellow);
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 900;
+  box-shadow: 2px 2px 0 #111827;
 }
 
 .detail-grid {
@@ -614,14 +644,14 @@ h2 {
 }
 
 .detail-grid div {
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
+  border: 3px solid #111827;
+  border-radius: 0.55rem;
   padding: 0.75rem;
-  background: #f8fafc;
+  background: #fffbe6;
 }
 
 .detail-grid dt {
-  color: #64748b;
+  color: #111827;
   font-size: 0.75rem;
   font-weight: 700;
   margin-bottom: 0.35rem;
@@ -629,36 +659,37 @@ h2 {
 
 .detail-grid dd {
   margin: 0;
-  color: #0f172a;
+  color: #111827;
   font-weight: 700;
 }
 
 .reason-list {
   padding-left: 1.25rem;
   margin: 0;
-  color: #475569;
+  color: #111827;
   line-height: 1.7;
 }
 
 .reason-list strong {
-  color: #2563eb;
+  color: var(--comic-green);
 }
 
 .add-button {
   width: 100%;
   padding: 1.25rem;
-  background-color: #3b82f6;
+  background-color: var(--comic-green);
   color: white;
-  border: none;
-  border-radius: 1rem;
+  border: 4px solid #111827;
+  border-radius: 0.65rem;
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 900;
+  box-shadow: 5px 5px 0 #111827;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .add-button:hover {
-  background-color: #2563eb;
+  background-color: #008a8a;
 }
 
 /* Transitions */
@@ -682,30 +713,33 @@ h2 {
 
 .no-results {
   margin: 4rem 0;
-  color: #64748b;
+  color: #111827;
 }
 
 .retry-button {
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
   background: none;
-  border: 2px solid #3b82f6;
-  color: #3b82f6;
-  border-radius: 0.75rem;
+  border: 3px solid #111827;
+  color: #111827;
+  border-radius: 0.55rem;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 900;
+  box-shadow: 4px 4px 0 #111827;
 }
 
 .restart-button {
   width: 100%;
   padding: 1rem;
   font-size: 1.125rem;
-  background-color: #f1f5f9;
-  color: #475569;
-  border: none;
-  border-radius: 0.75rem;
+  background-color: var(--comic-yellow);
+  color: #111827;
+  border: 4px solid #111827;
+  border-radius: 0.65rem;
   cursor: pointer;
   margin-top: 2rem;
+  font-weight: 900;
+  box-shadow: 5px 5px 0 #111827;
 }
 
 @media (max-width: 900px) {
