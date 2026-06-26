@@ -68,6 +68,7 @@ const goFixedForward = () => {
 
 <style scoped>
 .base-layout {
+  width: 100%;
   max-width: 820px;
   margin: 0 auto;
   padding: 2rem;
@@ -134,6 +135,7 @@ header {
 }
 
 main {
+  min-width: 0;
   background: #ffffff;
   padding: 2rem;
   border: 4px solid var(--color-border);
@@ -148,5 +150,42 @@ main::before {
   inset: 10px;
   border: 2px dashed rgba(17, 24, 39, 0.2);
   pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .base-layout {
+    padding: 0.5rem 0;
+  }
+
+  header {
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .nav-buttons {
+    width: 100%;
+  }
+
+  .back-button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.55rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .progress {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  main {
+    padding: 1rem;
+    border-width: 3px;
+    box-shadow: 5px 5px 0 var(--comic-shadow);
+  }
+
+  main::before {
+    inset: 6px;
+  }
 }
 </style>

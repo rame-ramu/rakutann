@@ -187,6 +187,7 @@ h2 {
 }
 
 .tag-button {
+  min-width: 0;
   padding: 0.7rem 1rem;
   border: 3px solid #111827;
   background: white;
@@ -294,5 +295,82 @@ h2 {
   background-color: #008a8a;
   transform: translate(-2px, -2px);
   box-shadow: 9px 9px 0 #111827;
+}
+
+@media (max-width: 640px) {
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  .description {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .condition-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .condition-group h3 {
+    margin-bottom: 0.65rem;
+  }
+
+  .tags {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .tag-button {
+    min-height: 3rem;
+    justify-content: flex-start;
+    padding: 0.6rem 0.55rem;
+    border-width: 2px;
+    border-radius: 0.55rem;
+    font-size: 0.78rem;
+    line-height: 1.25;
+    box-shadow: 3px 3px 0 #111827;
+    overflow-wrap: anywhere;
+  }
+
+  .tag-button:hover,
+  .tag-button.active {
+    transform: none;
+    box-shadow: 3px 3px 0 #111827;
+  }
+
+  .icon {
+    flex: 0 0 auto;
+    width: 1.25rem;
+    text-align: center;
+  }
+
+  .semester-options {
+    gap: 0.55rem;
+  }
+
+  .semester-button {
+    min-height: 3rem;
+    padding: 0.7rem 0.5rem;
+    border-width: 3px;
+    font-size: 1rem;
+    box-shadow: 4px 4px 0 #111827;
+  }
+
+  .teacher-filter {
+    margin: 1.75rem 0 2rem;
+  }
+
+  .teacher-filter input {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .next-button {
+    padding: 1rem;
+    border-width: 3px;
+    font-size: 1.05rem;
+    box-shadow: 5px 5px 0 #111827;
+  }
 }
 </style>

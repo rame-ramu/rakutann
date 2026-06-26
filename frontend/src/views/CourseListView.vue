@@ -190,6 +190,11 @@ const isScheduleMatch = (course: Course) => {
   return store.selectedSchedule.some((s) => s.day === course.day && s.period === course.period)
 }
 
+const isGradeMatch = (course: Course) => {
+  if (store.grade === null) return true
+  return course.years.includes(store.grade)
+}
+
 const isLockedSchedule = (course: Course) => {
   return store.candidateCourses.some(
     (candidate) => candidate.day === course.day && candidate.period === course.period,
@@ -210,6 +215,7 @@ const filteredCourses = computed(() => {
   return mockCourses
     .filter(
       (course) =>
+        isGradeMatch(course) &&
         isSemesterMatch(course) &&
         isScheduleMatch(course) &&
         !isLockedSchedule(course) &&
@@ -767,16 +773,127 @@ h2 {
 }
 
 @media (max-width: 560px) {
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  .description {
+    font-size: 0.88rem;
+  }
+
   .page-heading {
     flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .result-count {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .course-list {
+    gap: 0.8rem;
+  }
+
+  .course-card {
+    padding: 0.9rem;
+    border-width: 2px;
+    box-shadow: 4px 4px 0 #111827;
+  }
+
+  .course-card:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 #111827;
   }
 
   .course-header {
     flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .course-header h3 {
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .schedule-badge {
+    align-self: flex-start;
   }
 
   .score-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0.75rem 0;
+  }
+
+  .score-row span {
+    padding: 0.45rem 0.35rem;
+    font-size: 0.72rem;
+  }
+
+  .candidate-panel {
+    padding: 0.75rem;
+    border-width: 3px;
+    box-shadow: 5px 5px 0 #111827;
+  }
+
+  .candidate-list {
+    grid-auto-flow: row;
+    grid-auto-columns: unset;
+    grid-template-columns: 1fr;
+    overflow-x: visible;
+  }
+
+  .candidate-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .remove-button {
+    width: 100%;
+  }
+
+  .tag {
+    border-width: 2px;
+    padding: 0.26rem 0.45rem;
+    font-size: 0.7rem;
+    box-shadow: 1px 1px 0 #111827;
+  }
+
+  .match-line,
+  .click-hint {
+    font-size: 0.72rem;
+  }
+
+  .modal-overlay {
+    align-items: stretch;
+    padding: 0.75rem;
+  }
+
+  .modal-content {
+    max-height: calc(100vh - 1.5rem);
+    padding: 1.25rem;
+    border-width: 3px;
+    box-shadow: 5px 5px 0 #111827;
+  }
+
+  .close-button {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .modal-header h3 {
+    padding-right: 2rem;
+    font-size: 1.25rem;
+    overflow-wrap: anywhere;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tag-large {
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
   }
 }
 </style>

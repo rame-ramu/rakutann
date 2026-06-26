@@ -141,6 +141,7 @@ input {
   color: #111827;
   font-weight: 900;
   box-shadow: inset 4px 4px 0 rgba(17, 24, 39, 0.08);
+  text-transform: uppercase;
 }
 
 input:focus {
@@ -213,5 +214,76 @@ input:focus {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(10px);
+}
+
+@media (max-width: 640px) {
+  .student-id-view {
+    gap: 1.25rem;
+  }
+
+  .hero {
+    margin-top: 0.25rem;
+  }
+
+  h1 {
+    width: 100%;
+    padding-right: 0.35rem;
+    padding-bottom: 0.45rem;
+    font-size: clamp(2.15rem, 13vw, 3.2rem);
+    -webkit-text-stroke-width: 1.8px;
+    text-shadow:
+      1px 0 0 #111827,
+      -1px 0 0 #111827,
+      0 1px 0 #111827,
+      3px 3px 0 var(--comic-green),
+      6px 6px 0 var(--comic-green),
+      -3px -2px 0 rgba(255, 244, 74, 0.85);
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    padding: 1.1rem;
+    border-width: 3px;
+    box-shadow: 5px 5px 0 #111827;
+  }
+
+  .instruction {
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .input-group {
+    margin-bottom: 1rem;
+  }
+
+  input {
+    padding: 0.95rem 0.75rem;
+    border-width: 3px;
+    font-size: 1.25rem;
+  }
+
+  .info-badge {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.6rem;
+    padding: 0.65rem 0.75rem;
+    box-shadow: 3px 3px 0 #111827;
+  }
+
+  .info-badge .value {
+    overflow-wrap: anywhere;
+  }
+
+  .next-button {
+    padding: 1rem;
+    font-size: 1.05rem;
+    border-width: 3px;
+    box-shadow: 5px 5px 0 #111827;
+  }
 }
 </style>

@@ -30,9 +30,12 @@
                     <span
                       v-for="course in getCandidateCourses(day, period).slice(0, 2)"
                       :key="course.id"
+                      class="slot-course"
                     >
-                      {{ displayCourseName(course.name) }}
-                      <small v-if="store.classrooms[course.id]">{{ store.classrooms[course.id] }}</small>
+                      <span class="slot-course-name">{{ displayCourseName(course.name) }}</span>
+                      <small v-if="store.classrooms[course.id]" class="classroom-badge">
+                        {{ store.classrooms[course.id] }}
+                      </small>
                     </span>
                   </div>
                   <div v-else-if="isSelected(day, period)" class="check">✓</div>
@@ -290,21 +293,41 @@ td.locked:hover {
   padding: 0 0.25rem;
 }
 
-.candidate-slot span {
-  display: -webkit-box;
+.slot-course {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12rem;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.slot-course-name {
+  display: block;
   max-width: 100%;
   overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow-wrap: anywhere;
 }
 
-.candidate-slot small {
-  display: block;
-  margin-top: 0.12rem;
+.classroom-badge {
+  display: inline-flex;
+  max-width: 100%;
+  min-height: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.05rem 0.25rem;
+  border: 1px solid #111827;
+  border-radius: 999px;
+  background: var(--comic-yellow);
+  color: #111827;
   font-size: 0.58rem;
-  font-weight: 500;
-  opacity: 0.9;
+  font-weight: 900;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .empty-slot {
@@ -416,5 +439,119 @@ td.locked:hover {
   color: #111827;
   cursor: pointer;
   font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  .description {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .table-container {
+    padding: 0.4rem;
+    border-width: 3px;
+    box-shadow: 5px 5px 0 #111827;
+  }
+
+  table {
+    border-spacing: 0.25rem;
+  }
+
+  th:first-child,
+  td.period-label {
+    width: 3.65rem;
+  }
+
+  th {
+    padding: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  td {
+    height: 3rem;
+    border-width: 2px;
+    border-radius: 0.45rem;
+  }
+
+  td.selected {
+    transform: none;
+    box-shadow: 2px 2px 0 #111827;
+  }
+
+  .period-label .num {
+    font-size: 1rem;
+  }
+
+  .period-label .unit {
+    font-size: 0.7rem;
+  }
+
+  .period-label .time {
+    font-size: 0.52rem;
+    white-space: normal;
+    line-height: 1.15;
+  }
+
+  .empty-slot {
+    font-size: 0;
+  }
+
+  .empty-slot::before {
+    content: "+";
+    font-size: 1rem;
+    font-weight: 900;
+  }
+
+  .candidate-slot {
+    font-size: 0.55rem;
+    padding: 0 0.1rem;
+    gap: 0.1rem;
+  }
+
+  .slot-course {
+    gap: 0.08rem;
+  }
+
+  .classroom-badge {
+    max-width: 2.7rem;
+    min-height: 0.82rem;
+    padding: 0 0.18rem;
+    font-size: 0.48rem;
+  }
+
+  .selection-info {
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .next-button {
+    padding: 1rem;
+    border-width: 3px;
+    font-size: 1.05rem;
+    box-shadow: 5px 5px 0 #111827;
+  }
+
+  .registered-item {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-width: 2px;
+    box-shadow: 3px 3px 0 #111827;
+  }
+
+  .registered-item p {
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+  }
+
+  .registered-item button {
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    border-width: 2px;
+  }
 }
 </style>
