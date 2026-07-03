@@ -35,6 +35,11 @@ export interface Course {
   faculty?: string[]
 }
 
+export interface ScheduleSlot {
+  day: string
+  period: number
+}
+
 export const store = reactive({
   studentId: '',
   grade: null as number | null,
@@ -42,11 +47,12 @@ export const store = reactive({
   isHumanInfoStudent: false,
   selectedConditions: [] as string[],
   selectedSemester: '' as '' | '前期' | '後期',
-  selectedSchedule: [] as { day: string; period: number }[],
+  selectedSchedule: [] as ScheduleSlot[],
   candidateCourses: [] as Course[],
   classrooms: {} as Record<string, string>,
   avoidedTeachersText: '',
   selectedCourse: null as Course | null,
+  lastPage: '',
 
   setStudentId(id: string) {
     this.studentId = id
@@ -159,6 +165,21 @@ export const store = reactive({
 
   setSelectedCourse(course: Course | null) {
     this.selectedCourse = course
+  },
+
+  resetSelections() {
+    this.studentId = ''
+    this.grade = null
+    this.department = null
+    this.isHumanInfoStudent = false
+    this.selectedConditions = []
+    this.selectedSemester = ''
+    this.selectedSchedule = []
+    this.candidateCourses = []
+    this.classrooms = {}
+    this.avoidedTeachersText = ''
+    this.selectedCourse = null
+    this.lastPage = ''
   },
 })
 

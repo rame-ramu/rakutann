@@ -6,6 +6,7 @@
         <button @click="goFixedForward" class="back-button" :disabled="!canGoFixedForward">
           次へ →
         </button>
+        <button @click="deleteSavedData" class="delete-save-button">保存データを削除する</button>
       </div>
       <div class="progress">Step {{ currentStep }} / 4</div>
     </header>
@@ -18,6 +19,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { clearPersistedState, resumePersistence } from '../utils/persistence'
 
 const route = useRoute()
 const router = useRouter()
@@ -62,6 +64,17 @@ const goFixedForward = () => {
     case 'schedule':
       router.push('/results')
       break
+  }
+}
+
+const deleteSavedData = async () => {
+  if (window.confirm('保存された時間割やお気に入りをすべて削除しますか？')) {
+    clearPersistedState()
+    try {
+      await router.push('/')
+    } finally {
+      resumePersistence()
+    }
   }
 }
 </script>
@@ -124,6 +137,25 @@ header {
   box-shadow: 2px 2px 0 var(--comic-shadow);
 }
 
+.delete-save-button {
+  background: #fffdf4;
+  border: 3px solid #111827;
+  border-radius: 0.7rem;
+  color: #b91c1c;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 900;
+  padding: 0.55rem 0.8rem;
+  box-shadow: 4px 4px 0 var(--comic-shadow);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.delete-save-button:hover {
+  background: #fee2e2;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--comic-shadow);
+}
+
 .progress {
   background: var(--comic-yellow);
   border: 3px solid var(--color-border);
@@ -171,6 +203,12 @@ main::before {
     min-width: 0;
     padding: 0.55rem 0.5rem;
     font-size: 0.9rem;
+  }
+
+  .delete-save-button {
+    flex: 1 1 100%;
+    padding: 0.55rem 0.5rem;
+    font-size: 0.85rem;
   }
 
   .progress {
