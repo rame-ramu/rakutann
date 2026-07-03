@@ -36,19 +36,35 @@
       </button>
 
       <p class="footer-note">※学籍番号は解析にのみ使用し、保存されません。</p>
+      <button @click="deleteSavedData" class="delete-save-button">保存データを削除する</button>
     </div>
   </BaseLayout>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import BaseLayout from '../components/BaseLayout.vue'
 import { store } from '../store'
+import { clearPersistedState, resumePersistence } from '../utils/persistence'
 
+const router = useRouter()
 const inputId = ref(store.studentId)
 
 const onInput = () => {
   store.setStudentId(inputId.value)
+}
+
+const deleteSavedData = async () => {
+  if (window.confirm('保存された時間割やお気に入りをすべて削除しますか？')) {
+    clearPersistedState()
+    inputId.value = ''
+    try {
+      await router.push('/')
+    } finally {
+      resumePersistence()
+    }
+  }
 }
 </script>
 
@@ -205,6 +221,26 @@ input:focus {
   font-weight: 800;
 }
 
+.delete-save-button {
+  align-self: center;
+  padding: 0.7rem 1rem;
+  border: 3px solid #111827;
+  border-radius: 0.7rem;
+  background: #fffdf4;
+  color: #b91c1c;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 900;
+  box-shadow: 4px 4px 0 #111827;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.delete-save-button:hover {
+  background: #fee2e2;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #111827;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.3s ease;
@@ -284,6 +320,12 @@ input:focus {
     font-size: 1.05rem;
     border-width: 3px;
     box-shadow: 5px 5px 0 #111827;
+  }
+
+  .delete-save-button {
+    width: 100%;
+    padding: 0.65rem;
+    font-size: 0.85rem;
   }
 }
 </style>
