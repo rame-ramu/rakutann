@@ -40,6 +40,11 @@ export interface ScheduleSlot {
   period: number
 }
 
+export interface CourseDetail {
+  room: string
+  memo: string
+}
+
 export const store = reactive({
   studentId: '',
   grade: null as number | null,
@@ -50,6 +55,7 @@ export const store = reactive({
   selectedSchedule: [] as ScheduleSlot[],
   candidateCourses: [] as Course[],
   classrooms: {} as Record<string, string>,
+  courseDetails: {} as Record<string, CourseDetail>,
   avoidedTeachersText: '',
   selectedCourse: null as Course | null,
   lastPage: '',
@@ -148,14 +154,47 @@ export const store = reactive({
   removeCandidateCourse(courseId: string) {
     this.candidateCourses = this.candidateCourses.filter((course) => course.id !== courseId)
     delete this.classrooms[courseId]
+    delete this.courseDetails[courseId]
   },
 
   setClassroom(courseId: string, classroom: string) {
-    const value = classroom.trim()
+    this.setCourseRoom(courseId, classroom)
+  },
+
+  getCourseRoom(courseId: string) {
+    return this.courseDetails[courseId]?.room || this.classrooms[courseId] || ''
+  },
+
+  setCourseRoom(courseId: string, room: string) {
+    const detail = this.courseDetails[courseId] || { room: '', memo: '' }
+    const value = room.trim()
+
     if (value) {
       this.classrooms[courseId] = value
     } else {
       delete this.classrooms[courseId]
+    }
+
+    detail.room = value
+    if (detail.room || detail.memo) {
+      this.courseDetails[courseId] = detail
+    } else {
+      delete this.courseDetails[courseId]
+    }
+  },
+
+  getCourseMemo(courseId: string) {
+    return this.courseDetails[courseId]?.memo || ''
+  },
+
+  setCourseMemo(courseId: string, memo: string) {
+    const detail = this.courseDetails[courseId] || { room: this.classrooms[courseId] || '', memo: '' }
+    detail.memo = memo
+
+    if (detail.room || detail.memo) {
+      this.courseDetails[courseId] = detail
+    } else {
+      delete this.courseDetails[courseId]
     }
   },
 
@@ -177,6 +216,7 @@ export const store = reactive({
     this.selectedSchedule = []
     this.candidateCourses = []
     this.classrooms = {}
+    this.courseDetails = {}
     this.avoidedTeachersText = ''
     this.selectedCourse = null
     this.lastPage = ''
