@@ -164,6 +164,7 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import BaseLayout from '../components/BaseLayout.vue'
+import { getPeriodTime } from '../constants/classTimes'
 import { store, mockCourses, type Course } from '../store'
 
 const router = useRouter()
@@ -258,17 +259,6 @@ const formatScheduleWithTime = (course: Course) => {
 
 const displayCourseName = (name: string) => {
   return name.split('／')[0]
-}
-
-const getPeriodTime = (period: number) => {
-  const periodTimes: Record<number, string> = {
-    1: '9:30〜11:00',
-    2: '11:10〜12:40',
-    3: '13:30〜15:00',
-    4: '15:10〜16:40',
-    5: '16:50〜18:20',
-  }
-  return periodTimes[period] || ''
 }
 
 const visibleTags = (course: Course) => {

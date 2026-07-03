@@ -1,6 +1,6 @@
 import { watch } from 'vue'
 import type { Router } from 'vue-router'
-import { store, mockCourses, type ScheduleSlot } from '../store'
+import { store, mockCourses, type CourseDetail, type ScheduleSlot } from '../store'
 
 export const STORAGE_KEY = 'rakutann-user-state-v1'
 const STORAGE_VERSION = 1
@@ -14,6 +14,7 @@ interface PersistedState {
     courseIds: string[]
     classrooms: Record<string, string>
   }
+  courseDetails: Record<string, CourseDetail>
   favorites: string[]
   selectedTags: string[]
   selectedSemester: '' | '前期' | '後期'
@@ -66,6 +67,24 @@ const sanitizeClassrooms = (value: unknown) => {
   return Object.fromEntries(entries)
 }
 
+const sanitizeCourseDetails = (value: unknown) => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {}
+
+  const details: Record<string, CourseDetail> = {}
+  for (const [courseId, detailValue] of Object.entries(value as Record<string, unknown>)) {
+    if (!courseId || !detailValue || typeof detailValue !== 'object' || Array.isArray(detailValue)) continue
+
+    const detail = detailValue as Partial<CourseDetail>
+    const room = typeof detail.room === 'string' ? detail.room.trim() : ''
+    const memo = typeof detail.memo === 'string' ? detail.memo : ''
+    if (room || memo) {
+      details[courseId] = { room, memo }
+    }
+  }
+
+  return details
+}
+
 const readStoredState = () => {
   if (!canUseLocalStorage()) return null
 
@@ -89,6 +108,7 @@ const buildPersistedState = (): PersistedState => ({
     courseIds: store.candidateCourses.map((course) => course.id),
     classrooms: store.classrooms,
   },
+  courseDetails: store.courseDetails,
   favorites: [],
   selectedTags: store.selectedConditions,
   selectedSemester: store.selectedSemester,
@@ -113,6 +133,16 @@ export const loadPersistedState = () => {
 
   const courseIds = sanitizeStringArray(savedState.timetable?.courseIds)
   const coursesById = new Map(mockCourses.map((course) => [course.id, course]))
+  const savedClassrooms = sanitizeClassrooms(savedState.timetable?.classrooms)
+  const savedCourseDetails = sanitizeCourseDetails(savedState.courseDetails)
+
+  for (const [courseId, classroom] of Object.entries(savedClassrooms)) {
+    if (!savedCourseDetails[courseId]) {
+      savedCourseDetails[courseId] = { room: classroom, memo: '' }
+    } else if (!savedCourseDetails[courseId].room) {
+      savedCourseDetails[courseId].room = classroom
+    }
+  }
 
   store.selectedConditions = sanitizeStringArray(savedState.selectedTags)
   store.selectedSemester = sanitizeSemester(savedState.selectedSemester)
@@ -120,7 +150,14 @@ export const loadPersistedState = () => {
   store.candidateCourses = courseIds
     .map((courseId) => coursesById.get(courseId))
     .filter((course): course is NonNullable<typeof course> => Boolean(course))
-  store.classrooms = sanitizeClassrooms(savedState.timetable?.classrooms)
+  store.courseDetails = savedCourseDetails
+  store.classrooms = sanitizeClassrooms(
+    Object.fromEntries(
+      Object.entries(savedCourseDetails)
+        .filter(([, detail]) => detail.room)
+        .map(([courseId, detail]) => [courseId, detail.room]),
+    ),
+  )
   store.avoidedTeachersText =
     typeof savedState.avoidedTeachersText === 'string' ? savedState.avoidedTeachersText : ''
   store.lastPage =
@@ -138,6 +175,7 @@ export const startPersistence = (router: Router) => {
     () => ({
       timetable: store.candidateCourses.map((course) => course.id),
       classrooms: { ...store.classrooms },
+      courseDetails: { ...store.courseDetails },
       selectedTags: [...store.selectedConditions],
       selectedSemester: store.selectedSemester,
       avoidedTeachersText: store.avoidedTeachersText,
