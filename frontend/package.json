@@ -15,7 +15,6 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
-    "@vercel/analytics": "^2.0.1",
     "vue": "^3.5.32",
     "vue-router": "^5.0.4"
   },
