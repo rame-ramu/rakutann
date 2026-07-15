@@ -46,6 +46,12 @@ const sanitizeStringArray = (value: unknown) => {
   return Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string') : []
 }
 
+const legacyAttendancePointLabel = ['出席', '点'].join('')
+
+const normalizeTagName = (tag: string) => {
+  return tag.replace(legacyAttendancePointLabel, '態度点')
+}
+
 const sanitizeSchedule = (value: unknown) => {
   return Array.isArray(value) ? value.filter(isScheduleSlot) : []
 }
@@ -144,7 +150,7 @@ export const loadPersistedState = () => {
     }
   }
 
-  store.selectedConditions = sanitizeStringArray(savedState.selectedTags)
+  store.selectedConditions = sanitizeStringArray(savedState.selectedTags).map(normalizeTagName)
   store.selectedSemester = sanitizeSemester(savedState.selectedSemester)
   store.selectedSchedule = sanitizeSchedule(savedState.freePeriods)
   store.candidateCourses = courseIds

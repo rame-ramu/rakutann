@@ -45,9 +45,20 @@ export interface CourseDetail {
   memo: string
 }
 
+const getCurrentAcademicYear = () => {
+  const today = new Date()
+  return today.getMonth() >= 3 ? today.getFullYear() : today.getFullYear() - 1
+}
+
+const getGradeFromEnrollmentYear = (enrollmentYear: number) => {
+  return Math.max(1, getCurrentAcademicYear() - enrollmentYear + 1)
+}
+
 export const store = reactive({
   studentId: '',
   grade: null as number | null,
+  autoDetectedGrade: null as number | null,
+  isGradeManuallySelected: false,
   department: null as string | null,
   isHumanInfoStudent: false,
   selectedConditions: [] as string[],
@@ -64,9 +75,12 @@ export const store = reactive({
     this.studentId = id
     if (id.length >= 8) {
       const yearStr = id.substring(0, 2)
-      const year = parseInt(yearStr)
-      const currentYear = new Date().getFullYear() % 100
-      this.grade = currentYear - year + 1
+      const enrollmentYearSuffix = parseInt(yearStr, 10)
+      this.autoDetectedGrade = Number.isNaN(enrollmentYearSuffix)
+        ? null
+        : getGradeFromEnrollmentYear(2000 + enrollmentYearSuffix)
+      this.grade = this.autoDetectedGrade
+      this.isGradeManuallySelected = false
 
       const facultyCode = id.substring(5, 8).toUpperCase()
       this.isHumanInfoStudent = facultyCode === 'NKU' || facultyCode === 'NDU'
@@ -103,9 +117,16 @@ export const store = reactive({
       this.department = facultyMap[facultyCode] || '不明な学部'
     } else {
       this.grade = null
+      this.autoDetectedGrade = null
+      this.isGradeManuallySelected = false
       this.department = null
       this.isHumanInfoStudent = false
     }
+  },
+
+  setGrade(grade: number) {
+    this.grade = grade
+    this.isGradeManuallySelected = this.autoDetectedGrade !== grade
   },
 
   toggleCondition(condition: string) {
@@ -209,6 +230,8 @@ export const store = reactive({
   resetSelections() {
     this.studentId = ''
     this.grade = null
+    this.autoDetectedGrade = null
+    this.isGradeManuallySelected = false
     this.department = null
     this.isHumanInfoStudent = false
     this.selectedConditions = []
