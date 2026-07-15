@@ -36,6 +36,60 @@
           </button>
         </aside>
 
+        <section class="name-search-panel" aria-labelledby="name-search-title">
+          <div class="name-search-header">
+            <div>
+              <h3 id="name-search-title">授業名で探す</h3>
+              <p>{{ nameSearchScopeText }}</p>
+            </div>
+            <span>{{ nameSearchResults.length }}件</span>
+          </div>
+
+          <input
+            v-model="nameSearchQuery"
+            class="name-search-input"
+            type="search"
+            placeholder="例: 情報検索、心理学、Information"
+            :disabled="!canUseNameSearch"
+          >
+
+          <p v-if="!store.selectedSemester" class="name-search-message">
+            条件画面で前期か後期を選ぶと検索できます。
+          </p>
+          <p v-else-if="selectedNameSearchSlotCount === 0" class="name-search-message">
+            時間割画面で授業を入れたい曜日・時限を選ぶと検索できます。
+          </p>
+          <div v-else-if="normalizedNameQuery && nameSearchResults.length > 0" class="name-search-results">
+            <div
+              v-for="{ course } in nameSearchResults"
+              :key="course.id"
+              class="name-search-result"
+              :class="{ chosen: isCandidate(course.id) }"
+              role="button"
+              tabindex="0"
+              @click="openDetail(course)"
+              @keydown.enter="openDetail(course)"
+            >
+              <div class="name-result-main">
+                <span class="candidate-schedule">{{ formatScheduleWithTime(course) }}</span>
+                <h4>{{ displayCourseName(course.name) }}</h4>
+                <p>{{ course.instructor }}</p>
+              </div>
+              <button
+                class="inline-add-button"
+                type="button"
+                :disabled="isCandidate(course.id) || !canRegisterCourse(course)"
+                @click.stop="addCandidate(course)"
+              >
+                {{ getNameSearchActionLabel(course) }}
+              </button>
+            </div>
+          </div>
+          <p v-else-if="normalizedNameQuery" class="name-search-message">
+            選択中の曜日・時限で、名前が近い授業は見つかりませんでした。
+          </p>
+        </section>
+
         <div class="results-main">
           <div v-if="filteredCourses.length > 0" class="course-list">
             <div
@@ -55,7 +109,7 @@
               <div class="score-row">
                 <span>レポート {{ course.reportPercent }}%</span>
                 <span>試験 {{ course.examPercent }}%</span>
-                <span>出席 {{ course.attendancePercent }}%</span>
+                <span>態度 {{ course.attendancePercent }}%</span>
                 <span>{{ course.onDemandLabel }}</span>
               </div>
               <div class="tags">
@@ -104,7 +158,7 @@
                     <dd>{{ store.selectedCourse.classFormat }}</dd>
                   </div>
                   <div>
-                    <dt>出席割合</dt>
+                    <dt>態度割合</dt>
                     <dd>{{ store.selectedCourse.attendancePercent }}%</dd>
                   </div>
                   <div>
@@ -161,13 +215,19 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import BaseLayout from '../components/BaseLayout.vue'
 import { getPeriodTime } from '../constants/classTimes'
 import { store, mockCourses, type Course } from '../store'
 
 const router = useRouter()
+const nameSearchQuery = ref('')
+
+interface NameSearchResult {
+  course: Course
+  score: number
+}
 
 const avoidedTeachers = computed(() => {
   return store.avoidedTeachersText
@@ -229,6 +289,37 @@ const filteredCourses = computed(() => {
     })
 })
 
+const normalizedNameQuery = computed(() => normalizeSearchText(nameSearchQuery.value))
+const selectedNameSearchSlotCount = computed(() => store.selectedSchedule.length)
+
+const canUseNameSearch = computed(() => {
+  return Boolean(store.selectedSemester && selectedNameSearchSlotCount.value > 0)
+})
+
+const nameSearchScopeText = computed(() => {
+  if (!store.selectedSemester) return '前期/後期を選ぶと名前で検索できます。'
+  if (selectedNameSearchSlotCount.value === 0) {
+    return `${store.selectedSemester}の授業を、選択した曜日・時限に絞って検索します。`
+  }
+  return `${store.selectedSemester}・選択中の${selectedNameSearchSlotCount.value}コマに合う授業だけを名前で検索します。`
+})
+
+const nameSearchResults = computed<NameSearchResult[]>(() => {
+  const query = normalizedNameQuery.value
+  if (!canUseNameSearch.value || !query) return []
+
+  return mockCourses
+    .filter((course) => isSemesterMatch(course) && isScheduleMatch(course))
+    .map((course) => ({ course, score: getCourseNameScore(course, query) }))
+    .filter((result) => result.score >= 45)
+    .sort((a, b) => {
+      const scoreDiff = b.score - a.score
+      if (scoreDiff !== 0) return scoreDiff
+      return displayCourseName(a.course.name).localeCompare(displayCourseName(b.course.name), 'ja')
+    })
+    .slice(0, 12)
+})
+
 const openDetail = (course: Course) => {
   store.setSelectedCourse(course)
 }
@@ -258,7 +349,100 @@ const formatScheduleWithTime = (course: Course) => {
 }
 
 const displayCourseName = (name: string) => {
-  return name.split('／')[0]
+  return name.split('／')[0] ?? name
+}
+
+const normalizeSearchText = (value: string) => {
+  return value
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/[、，,\s／/()（）［］\[\]「」『』・:：-]/g, '')
+}
+
+const levenshteinDistance = (a: string, b: string) => {
+  const previous = Array.from({ length: b.length + 1 }, (_, index) => index)
+  const current = Array.from({ length: b.length + 1 }, () => 0)
+
+  for (let i = 1; i <= a.length; i += 1) {
+    current[0] = i
+    for (let j = 1; j <= b.length; j += 1) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1
+      current[j] = Math.min(
+        (current[j - 1] ?? 0) + 1,
+        (previous[j] ?? 0) + 1,
+        (previous[j - 1] ?? 0) + cost,
+      )
+    }
+    previous.splice(0, previous.length, ...current)
+  }
+
+  return previous[b.length] ?? 0
+}
+
+const closestEditSimilarity = (query: string, target: string) => {
+  if (!query || !target) return 0
+  if (target.length <= query.length) {
+    const distance = levenshteinDistance(query, target)
+    return 1 - distance / Math.max(query.length, target.length)
+  }
+
+  let best = 0
+  const windowSizes = [query.length, query.length + 1, query.length + 2]
+  for (const size of windowSizes) {
+    if (size > target.length) continue
+    for (let index = 0; index <= target.length - size; index += 1) {
+      const piece = target.slice(index, index + size)
+      const distance = levenshteinDistance(query, piece)
+      const similarity = 1 - distance / Math.max(query.length, piece.length)
+      best = Math.max(best, similarity)
+    }
+  }
+  return best
+}
+
+const subsequenceScore = (query: string, target: string) => {
+  let queryIndex = 0
+  for (const character of target) {
+    if (character === query[queryIndex]) {
+      queryIndex += 1
+      if (queryIndex === query.length) {
+        return 55 + (query.length / target.length) * 10
+      }
+    }
+  }
+  return 0
+}
+
+const getTextNameScore = (query: string, target: string) => {
+  if (!target) return 0
+  if (target === query) return 120
+  if (target.startsWith(query)) return 100 + (query.length / target.length) * 10
+  if (target.includes(query)) return 80 + (query.length / target.length) * 10
+  if (query.includes(target)) return 70
+
+  const similarity = closestEditSimilarity(query, target)
+  const editScore = similarity >= 0.55 ? similarity * 70 : 0
+  return Math.max(subsequenceScore(query, target), editScore)
+}
+
+const getCourseNameScore = (course: Course, query: string) => {
+  const names = [
+    course.name,
+    displayCourseName(course.name),
+    ...course.name.split(/[／/]/),
+  ].map(normalizeSearchText)
+
+  return Math.max(...names.map((name) => getTextNameScore(query, name)))
+}
+
+const canRegisterCourse = (course: Course) => {
+  return course.period !== null && course.day !== '他'
+}
+
+const getNameSearchActionLabel = (course: Course) => {
+  if (isCandidate(course.id)) return '登録済み'
+  if (!canRegisterCourse(course)) return '時間未定'
+  return '登録'
 }
 
 const visibleTags = (course: Course) => {
@@ -537,6 +721,148 @@ h2 {
 .confirm-button:disabled {
   background: #cbd5e1;
   cursor: not-allowed;
+}
+
+.name-search-panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem;
+  border: 4px solid #111827;
+  border-radius: 0.65rem;
+  background: #fffdf4;
+  box-shadow: 7px 7px 0 #111827;
+}
+
+.name-search-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.name-search-header h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 1.1rem;
+}
+
+.name-search-header p {
+  margin: 0.35rem 0 0;
+  color: #111827;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.name-search-header span {
+  flex: 0 0 auto;
+  padding: 0.35rem 0.7rem;
+  border: 3px solid #111827;
+  border-radius: 999px;
+  background: var(--comic-yellow);
+  color: #111827;
+  font-weight: 900;
+  box-shadow: 2px 2px 0 #111827;
+}
+
+.name-search-input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.85rem 1rem;
+  border: 3px solid #111827;
+  border-radius: 0.55rem;
+  background: white;
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.name-search-input:focus {
+  outline: none;
+  border-color: var(--comic-green);
+  box-shadow: 0 0 0 4px rgba(0, 166, 166, 0.2);
+}
+
+.name-search-input:disabled {
+  background: #e5e7eb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.name-search-message {
+  margin: 0;
+  color: #111827;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.name-search-results {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.name-search-result {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.85rem;
+  border: 3px solid #111827;
+  border-radius: 0.55rem;
+  background: white;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #111827;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.name-search-result:hover,
+.name-search-result:focus {
+  outline: none;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #111827;
+}
+
+.name-search-result.chosen {
+  background: #e7fffb;
+  box-shadow: 4px 4px 0 #111827, inset 0 0 0 4px var(--comic-green);
+}
+
+.name-result-main {
+  min-width: 0;
+}
+
+.name-result-main h4 {
+  margin: 0.25rem 0 0;
+  color: #111827;
+  font-size: 1rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.name-result-main p {
+  margin: 0.3rem 0 0;
+  color: #111827;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.inline-add-button {
+  min-width: 5.25rem;
+  padding: 0.65rem 0.85rem;
+  border: 3px solid #111827;
+  border-radius: 0.5rem;
+  background: var(--comic-green);
+  color: white;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 3px 3px 0 #111827;
+}
+
+.inline-add-button:disabled {
+  background: #cbd5e1;
+  color: #475569;
+  cursor: not-allowed;
+  box-shadow: 2px 2px 0 #111827;
 }
 
 /* Modal Styles */
@@ -839,6 +1165,48 @@ h2 {
   }
 
   .remove-button {
+    width: 100%;
+  }
+
+  .name-search-panel {
+    padding: 0.75rem;
+    border-width: 3px;
+    box-shadow: 5px 5px 0 #111827;
+  }
+
+  .name-search-header {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .name-search-header h3 {
+    font-size: 1rem;
+  }
+
+  .name-search-header span {
+    align-self: flex-start;
+  }
+
+  .name-search-input {
+    min-height: 2.8rem;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .name-search-result {
+    grid-template-columns: minmax(0, 1fr);
+    border-width: 2px;
+    box-shadow: 3px 3px 0 #111827;
+  }
+
+  .name-search-result:hover,
+  .name-search-result:focus,
+  .name-search-result.chosen {
+    transform: none;
+    box-shadow: 3px 3px 0 #111827;
+  }
+
+  .inline-add-button {
     width: 100%;
   }
 

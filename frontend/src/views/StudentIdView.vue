@@ -23,12 +23,36 @@
           <div v-if="store.department" class="info-badge">
             <span class="label">判定結果:</span>
             <span class="value">{{ store.department }} {{ store.grade }}年生</span>
+            <span v-if="store.isGradeManuallySelected" class="manual-note">手動選択</span>
+          </div>
+        </Transition>
+
+        <Transition name="fade">
+          <div v-if="store.department" class="grade-picker">
+            <div class="grade-picker-header">
+              <span>学年</span>
+              <small v-if="store.autoDetectedGrade">
+                自動判定: {{ store.autoDetectedGrade }}年生
+              </small>
+            </div>
+            <div class="grade-options" role="group" aria-label="学年を選択">
+              <button
+                v-for="grade in gradeOptions"
+                :key="grade"
+                type="button"
+                class="grade-button"
+                :class="{ active: store.grade === grade }"
+                @click="store.setGrade(grade)"
+              >
+                {{ grade }}年
+              </button>
+            </div>
           </div>
         </Transition>
       </div>
 
       <button 
-        :disabled="!store.department" 
+        :disabled="!store.department || !store.grade" 
         @click="$router.push('/conditions')"
         class="next-button"
       >
@@ -50,6 +74,7 @@ import { clearPersistedState, resumePersistence } from '../utils/persistence'
 
 const router = useRouter()
 const inputId = ref(store.studentId)
+const gradeOptions = [1, 2, 3, 4]
 
 const onInput = () => {
   store.setStudentId(inputId.value)
@@ -184,6 +209,69 @@ input:focus {
   opacity: 0.7;
 }
 
+.manual-note {
+  padding: 0.25rem 0.5rem;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  background: white;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.grade-picker {
+  margin-top: 1.25rem;
+  text-align: left;
+}
+
+.grade-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+  font-weight: 900;
+}
+
+.grade-picker-header small {
+  color: #4b5563;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.grade-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.grade-button {
+  min-height: 3rem;
+  padding: 0.7rem 0.5rem;
+  border: 3px solid #111827;
+  border-radius: 0.6rem;
+  background: white;
+  color: #111827;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 900;
+  box-shadow: 4px 4px 0 #111827;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.grade-button:hover {
+  background: #fffbe6;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #111827;
+}
+
+.grade-button.active {
+  background: var(--comic-green);
+  color: white;
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #111827;
+}
+
 .next-button {
   width: 100%;
   padding: 1.25rem;
@@ -313,6 +401,38 @@ input:focus {
 
   .info-badge .value {
     overflow-wrap: anywhere;
+  }
+
+  .manual-note {
+    font-size: 0.7rem;
+  }
+
+  .grade-picker {
+    margin-top: 1rem;
+  }
+
+  .grade-picker-header {
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .grade-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .grade-button {
+    min-height: 2.7rem;
+    border-width: 2px;
+    font-size: 0.95rem;
+    box-shadow: 3px 3px 0 #111827;
+  }
+
+  .grade-button:hover,
+  .grade-button.active {
+    transform: none;
+    box-shadow: 3px 3px 0 #111827;
   }
 
   .next-button {
