@@ -6,7 +6,8 @@ export const STORAGE_KEY = 'rakutann-user-state-v1'
 const STORAGE_VERSION = 1
 const VALID_DAYS = new Set(['月', '火', '水', '木', '金'])
 const VALID_PERIODS = new Set([1, 2, 3, 4, 5])
-let isPersistencePaused = false
+let activeStorageKey: string | null = null
+let isPersistencePaused = true
 
 interface PersistedState {
   version: typeof STORAGE_VERSION
@@ -31,6 +32,24 @@ const canUseLocalStorage = () => {
   }
 }
 
+const getUserStorageKey = (userId: string) => `${STORAGE_KEY}:${userId}`
+
+const migrateLegacyState = (userStorageKey: string) => {
+  if (!canUseLocalStorage()) return
+
+  try {
+    if (window.localStorage.getItem(userStorageKey)) return
+
+    const legacyState = window.localStorage.getItem(STORAGE_KEY)
+    if (!legacyState) return
+
+    window.localStorage.setItem(userStorageKey, legacyState)
+    window.localStorage.removeItem(STORAGE_KEY)
+  } catch (error) {
+    console.warn('以前の保存データの引き継ぎに失敗しました。', error)
+  }
+}
+
 const isScheduleSlot = (value: unknown): value is ScheduleSlot => {
   if (!value || typeof value !== 'object') return false
   const slot = value as Partial<ScheduleSlot>
@@ -43,7 +62,9 @@ const isScheduleSlot = (value: unknown): value is ScheduleSlot => {
 }
 
 const sanitizeStringArray = (value: unknown) => {
-  return Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string') : []
+  return Array.isArray(value)
+    ? value.filter((item): item is string => typeof item === 'string')
+    : []
 }
 
 const legacyAttendancePointLabel = ['出席', '点'].join('')
@@ -65,9 +86,7 @@ const sanitizeClassrooms = (value: unknown) => {
 
   const entries = Object.entries(value as Record<string, unknown>).filter(
     ([courseId, classroom]) =>
-      typeof courseId === 'string' &&
-      typeof classroom === 'string' &&
-      classroom.trim().length > 0,
+      typeof courseId === 'string' && typeof classroom === 'string' && classroom.trim().length > 0,
   ) as [string, string][]
 
   return Object.fromEntries(entries)
@@ -78,7 +97,8 @@ const sanitizeCourseDetails = (value: unknown) => {
 
   const details: Record<string, CourseDetail> = {}
   for (const [courseId, detailValue] of Object.entries(value as Record<string, unknown>)) {
-    if (!courseId || !detailValue || typeof detailValue !== 'object' || Array.isArray(detailValue)) continue
+    if (!courseId || !detailValue || typeof detailValue !== 'object' || Array.isArray(detailValue))
+      continue
 
     const detail = detailValue as Partial<CourseDetail>
     const room = typeof detail.room === 'string' ? detail.room.trim() : ''
@@ -92,10 +112,10 @@ const sanitizeCourseDetails = (value: unknown) => {
 }
 
 const readStoredState = () => {
-  if (!canUseLocalStorage()) return null
+  if (!canUseLocalStorage() || !activeStorageKey) return null
 
   try {
-    const rawState = window.localStorage.getItem(STORAGE_KEY)
+    const rawState = window.localStorage.getItem(activeStorageKey)
     if (!rawState) return null
 
     const parsed = JSON.parse(rawState) as Partial<PersistedState>
@@ -124,10 +144,10 @@ const buildPersistedState = (): PersistedState => ({
 })
 
 export const savePersistedState = () => {
-  if (isPersistencePaused || !canUseLocalStorage()) return
+  if (isPersistencePaused || !canUseLocalStorage() || !activeStorageKey) return
 
   try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(buildPersistedState()))
+    window.localStorage.setItem(activeStorageKey, JSON.stringify(buildPersistedState()))
   } catch (error) {
     console.warn('保存データの書き込みに失敗しました。', error)
   }
@@ -172,6 +192,23 @@ export const loadPersistedState = () => {
       : ''
 }
 
+export const activateUserPersistence = (userId: string) => {
+  isPersistencePaused = true
+  store.resetSelections()
+
+  activeStorageKey = getUserStorageKey(userId)
+  migrateLegacyState(activeStorageKey)
+  loadPersistedState()
+
+  isPersistencePaused = false
+}
+
+export const deactivateUserPersistence = () => {
+  isPersistencePaused = true
+  activeStorageKey = null
+  store.resetSelections()
+}
+
 export const startPersistence = (router: Router) => {
   router.afterEach((to) => {
     store.lastPage = to.fullPath
@@ -196,9 +233,9 @@ export const startPersistence = (router: Router) => {
 export const clearPersistedState = () => {
   isPersistencePaused = true
 
-  if (canUseLocalStorage()) {
+  if (canUseLocalStorage() && activeStorageKey) {
     try {
-      window.localStorage.removeItem(STORAGE_KEY)
+      window.localStorage.removeItem(activeStorageKey)
     } catch (error) {
       console.warn('保存データの削除に失敗しました。', error)
     }

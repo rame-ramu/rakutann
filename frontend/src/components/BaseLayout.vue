@@ -1,5 +1,29 @@
 <template>
-  <div class="base-layout" :class="{ wide: route.name === 'results', medium: route.name === 'conditions' }">
+  <div
+    class="base-layout"
+    :class="{ wide: route.name === 'results', medium: route.name === 'conditions' }"
+  >
+    <div class="account-bar">
+      <div class="account-profile">
+        <img
+          v-if="currentUser?.photoURL"
+          :src="currentUser.photoURL"
+          alt=""
+          referrerpolicy="no-referrer"
+        />
+        <div v-else class="account-avatar" aria-hidden="true">
+          {{ accountInitial }}
+        </div>
+        <div class="account-copy">
+          <span>ログイン中</span>
+          <strong>{{ accountName }}</strong>
+        </div>
+      </div>
+      <button class="logout-button" type="button" :disabled="isSigningOut" @click="signOutOfApp">
+        {{ isSigningOut ? 'ログアウト中…' : 'ログアウト' }}
+      </button>
+    </div>
+    <p v-if="authError" class="account-error" role="alert">{{ authError }}</p>
     <header v-if="$route.name !== 'student-id'">
       <div class="nav-buttons">
         <button @click="goFixedBack" class="back-button">← 戻る</button>
@@ -19,18 +43,29 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { authError, currentUser, isSigningOut, signOutOfApp } from '../auth'
 import { clearPersistedState, resumePersistence } from '../utils/persistence'
 
 const route = useRoute()
 const router = useRouter()
 
+const accountName = computed(
+  () => currentUser.value?.displayName || currentUser.value?.email || 'Googleユーザー',
+)
+const accountInitial = computed(() => accountName.value.trim().charAt(0).toUpperCase() || 'G')
+
 const currentStep = computed(() => {
   switch (route.name) {
-    case 'student-id': return 1
-    case 'conditions': return 2
-    case 'schedule': return 3
-    case 'results': return 4
-    default: return 1
+    case 'student-id':
+      return 1
+    case 'conditions':
+      return 2
+    case 'schedule':
+      return 3
+    case 'results':
+      return 4
+    default:
+      return 1
   }
 })
 
@@ -90,6 +125,102 @@ const deleteSavedData = async () => {
   font-family: inherit;
 }
 
+.account-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.7rem 0.85rem;
+  border: 3px solid #111827;
+  border-radius: 0.7rem;
+  background: #fffdf4;
+  box-shadow: 4px 4px 0 #111827;
+}
+
+.account-profile {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.account-profile img,
+.account-avatar {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 auto;
+  border: 2px solid #111827;
+  border-radius: 50%;
+  background: var(--comic-yellow);
+}
+
+.account-profile img {
+  object-fit: cover;
+}
+
+.account-avatar {
+  display: grid;
+  place-items: center;
+  color: #111827;
+  font-weight: 900;
+}
+
+.account-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.account-copy span {
+  color: #6b7280;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.account-copy strong {
+  overflow: hidden;
+  color: #111827;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logout-button {
+  flex: 0 0 auto;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #111827;
+  border-radius: 0.55rem;
+  background: #ffffff;
+  box-shadow: 3px 3px 0 #111827;
+  color: #111827;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.logout-button:hover:not(:disabled) {
+  background: var(--comic-yellow);
+}
+
+.logout-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.account-error {
+  margin: -0.5rem 0 1.5rem;
+  padding: 0.65rem 0.8rem;
+  border: 2px solid #991b1b;
+  border-radius: 0.5rem;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
 .base-layout.wide {
   max-width: 1180px;
 }
@@ -122,7 +253,9 @@ header {
   font-weight: 900;
   padding: 0.55rem 0.8rem;
   box-shadow: 4px 4px 0 var(--comic-shadow);
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
 }
 
 .back-button:hover:not(:disabled) {
@@ -147,7 +280,9 @@ header {
   font-weight: 900;
   padding: 0.55rem 0.8rem;
   box-shadow: 4px 4px 0 var(--comic-shadow);
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
 }
 
 .delete-save-button:hover {
@@ -177,7 +312,7 @@ main {
 }
 
 main::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 10px;
   border: 2px dashed rgba(17, 24, 39, 0.2);
@@ -187,6 +322,30 @@ main::before {
 @media (max-width: 640px) {
   .base-layout {
     padding: 0.5rem 0;
+  }
+
+  .account-bar {
+    margin: 0 0 1rem;
+    padding: 0.6rem;
+    border-width: 2px;
+    box-shadow: 3px 3px 0 #111827;
+  }
+
+  .account-profile img,
+  .account-avatar {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .account-copy strong {
+    max-width: 42vw;
+    font-size: 0.8rem;
+  }
+
+  .logout-button {
+    padding: 0.45rem 0.55rem;
+    box-shadow: 2px 2px 0 #111827;
+    font-size: 0.72rem;
   }
 
   header {
