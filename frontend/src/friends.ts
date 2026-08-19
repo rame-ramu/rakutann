@@ -480,6 +480,8 @@ export const startFriendPersistence = () => {
 }
 
 export const initializeFriendFeatures = async (user: User) => {
+  if (activeUserId === user.uid && isFriendFeatureLoading.value) return
+
   deactivateFriendFeatures()
   const generation = ++initializationGeneration
   activeUserId = user.uid

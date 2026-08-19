@@ -28,10 +28,12 @@
             <p>このコードを友達に伝えてください。</p>
           </div>
           <div class="friend-code-row">
-            <strong>{{ formattedFriendCode }}</strong>
-            <button type="button" :disabled="!myFriendProfile" @click="copyFriendCode">
+            <strong v-if="myFriendProfile">{{ formattedFriendCode }}</strong>
+            <strong v-else class="friend-code-unavailable">未作成</strong>
+            <button v-if="myFriendProfile" type="button" @click="copyFriendCode">
               {{ isCodeCopied ? 'コピー済み' : 'コピー' }}
             </button>
+            <button v-else type="button" @click="createFriendCode">コードを作成</button>
           </div>
         </section>
 
@@ -186,8 +188,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { currentUser } from '../auth'
 import BaseLayout from '../components/BaseLayout.vue'
 import FriendAvatar from '../components/FriendAvatar.vue'
 import {
@@ -197,6 +200,7 @@ import {
   friendFeatureError,
   friends,
   incomingFriendRequests,
+  initializeFriendFeatures,
   isFriendFeatureLoading,
   myFriendProfile,
   removeFriend,
@@ -220,6 +224,15 @@ const periods = [1, 2, 3, 4, 5]
 const formattedFriendCode = computed(() => {
   const code = myFriendProfile.value?.friendCode || '--------'
   return `${code.slice(0, 4)} ${code.slice(4)}`
+})
+
+const createFriendCode = async () => {
+  if (!currentUser.value || isFriendFeatureLoading.value) return
+  await initializeFriendFeatures(currentUser.value)
+}
+
+onMounted(() => {
+  if (!myFriendProfile.value) void createFriendCode()
 })
 
 const normalizeFriendCodeInput = () => {
@@ -379,6 +392,12 @@ const displayCourseName = (name: SharedScheduleCourse['name']) => name.split('�
   font-size: clamp(1.2rem, 5vw, 1.7rem);
   letter-spacing: 0.08em;
   white-space: nowrap;
+}
+
+.friend-code-row .friend-code-unavailable {
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0;
 }
 
 .friend-code-row button {
