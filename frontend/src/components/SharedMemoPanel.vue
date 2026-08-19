@@ -27,7 +27,7 @@
 
       <div v-if="currentGroup" class="shared-editor">
         <div class="shared-members">
-          <FriendAvatarStack :friends="getGroupProfiles(currentGroup)" :max="4" />
+          <FriendAvatarStack :friends="getGroupProfiles(currentGroup)" :max="5" />
           <span>このメンバー全員が編集できます</span>
         </div>
         <textarea
@@ -42,14 +42,14 @@
 
       <details class="create-memo-group" :open="courseGroups.length === 0">
         <summary>新しい共有メモを作る</summary>
-        <p>自分を含めて4人まで。選んだ全員がお互いに友達の場合だけ作成できます。</p>
+        <p>自分を含めて5人まで。選んだ全員がお互いに友達の場合だけ作成できます。</p>
         <div class="friend-options">
           <label v-for="friend in courseFriends" :key="friend.uid">
             <input
               v-model="selectedFriendIds"
               type="checkbox"
               :value="friend.uid"
-              :disabled="!selectedFriendIds.includes(friend.uid) && selectedFriendIds.length >= 3"
+              :disabled="!selectedFriendIds.includes(friend.uid) && selectedFriendIds.length >= 4"
             />
             <FriendAvatar :profile="friend" />
             <span>{{ friend.displayName }}</span>

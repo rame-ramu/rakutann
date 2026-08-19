@@ -53,7 +53,7 @@ service cloud.firestore {
     function validMemoMembers(memberIds) {
       return memberIds is list
         && memberIds.size() >= 2
-        && memberIds.size() <= 4
+        && memberIds.size() <= 5
         && memberIds.toSet().size() == memberIds.size();
     }
 
@@ -74,6 +74,18 @@ service cloud.firestore {
         && isFriend(memberIds[1], memberIds[2])
         && isFriend(memberIds[1], memberIds[3])
         && isFriend(memberIds[2], memberIds[3])
+      ) || (
+        memberIds.size() == 5
+        && isFriend(memberIds[0], memberIds[1])
+        && isFriend(memberIds[0], memberIds[2])
+        && isFriend(memberIds[0], memberIds[3])
+        && isFriend(memberIds[0], memberIds[4])
+        && isFriend(memberIds[1], memberIds[2])
+        && isFriend(memberIds[1], memberIds[3])
+        && isFriend(memberIds[1], memberIds[4])
+        && isFriend(memberIds[2], memberIds[3])
+        && isFriend(memberIds[2], memberIds[4])
+        && isFriend(memberIds[3], memberIds[4])
       );
     }
 

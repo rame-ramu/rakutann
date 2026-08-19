@@ -22,7 +22,7 @@ const FRIEND_CODE_CHARACTERS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
 const FRIEND_CODE_LENGTH = 8
 const SCHEDULE_SAVE_DELAY_MS = 700
 const MEMO_SAVE_DELAY_MS = 700
-const MAX_SHARED_MEMO_MEMBERS = 4
+const MAX_SHARED_MEMO_MEMBERS = 5
 
 export interface FriendProfile {
   uid: string
@@ -726,7 +726,7 @@ export const createSharedMemoGroup = async (course: Course, selectedFriendIds: s
     return null
   }
   if (memberIds.length > MAX_SHARED_MEMO_MEMBERS) {
-    friendFeatureError.value = '共有メモは自分を含めて4人までです。'
+    friendFeatureError.value = '共有メモは自分を含めて5人までです。'
     return null
   }
 

@@ -204,8 +204,8 @@ test('a group memo requires every member pair to be friends', async () => {
   )
 })
 
-test('four mutually connected friends can create a shared memo', async () => {
-  const memberIds = ['alice', 'bob', 'carol', 'dave']
+test('five mutually connected friends can create a shared memo', async () => {
+  const memberIds = ['alice', 'bob', 'carol', 'dave', 'eve']
   for (let first = 0; first < memberIds.length; first += 1) {
     for (let second = first + 1; second < memberIds.length; second += 1) {
       await acceptFriendship(memberIds[first], memberIds[second])
@@ -214,7 +214,7 @@ test('four mutually connected friends can create a shared memo', async () => {
 
   const database = firestoreFor('alice')
   const batch = writeBatch(database)
-  batch.set(doc(database, 'sharedMemoGroups', 'group-4'), {
+  batch.set(doc(database, 'sharedMemoGroups', 'group-5'), {
     academicYear: 2026,
     courseId: '2026_course-1',
     courseName: 'テスト授業',
@@ -225,8 +225,8 @@ test('four mutually connected friends can create a shared memo', async () => {
     updatedAt: serverTimestamp(),
   })
   for (const memberId of memberIds) {
-    batch.set(doc(database, 'memoMemberships', memberId, 'groups', 'group-4'), {
-      groupId: 'group-4',
+    batch.set(doc(database, 'memoMemberships', memberId, 'groups', 'group-5'), {
+      groupId: 'group-5',
       memberId,
       createdAt: serverTimestamp(),
     })
