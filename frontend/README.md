@@ -1,6 +1,19 @@
-# .
+# らくたんん!! フロントエンド
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue 3、Vite、Firebaseで構成された履修支援アプリです。Webサイトとインストール版（PWA）は同じコード・Googleログイン・保存データを使用します。
+
+## アプリとしてインストール
+
+- Android・PC: サイト内の「アプリをインストール」、またはブラウザメニューの「アプリをインストール」を選びます。
+- iPhone・iPad: Safariの共有メニューから「ホーム画面に追加」を選び、「Webアプリとして開く」を有効にします。
+
+アプリストアへの登録は不要です。`main`へ反映すると、VercelとGitHub PagesのPWAも更新されます。
+
+PWAの設定は `vite.config.ts`、インストール案内は `src/components/PwaInstallPrompt.vue` にあります。アイコンを再生成するときは次を実行します。
+
+```sh
+npm run generate:pwa-icons
+```
 
 ## Recommended IDE Setup
 

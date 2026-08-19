@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/vue'
 import { RouterView } from 'vue-router'
 import { currentUser, isAuthReady } from './auth'
 import { isUserDataReady } from './utils/persistence'
+import PwaInstallPrompt from './components/PwaInstallPrompt.vue'
 import LoginView from './views/LoginView.vue'
 
 const feedbackFormUrl =
@@ -34,6 +35,7 @@ const feedbackFormUrl =
       フィードバック
     </a>
   </template>
+  <PwaInstallPrompt />
   <Analytics />
 </template>
 

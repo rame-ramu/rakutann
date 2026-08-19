@@ -3,6 +3,7 @@ import './assets/main.css'
 import { createApp, watch } from 'vue'
 import App from './App.vue'
 import { currentUser, initializeAuthentication, isAuthReady } from './auth'
+import { initializePwa } from './pwa'
 import router from './router'
 import {
   activateUserPersistence,
@@ -16,6 +17,7 @@ const app = createApp(App)
 app.use(router)
 
 startPersistence(router)
+initializePwa()
 
 watch(
   [isAuthReady, currentUser],
