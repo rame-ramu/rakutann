@@ -81,8 +81,8 @@ const onInput = () => {
 }
 
 const deleteSavedData = async () => {
-  if (window.confirm('保存された時間割やお気に入りをすべて削除しますか？')) {
-    clearPersistedState()
+  if (window.confirm('端末とクラウドに保存された時間割やメモをすべて削除しますか？')) {
+    await clearPersistedState()
     inputId.value = ''
     try {
       await router.push('/')

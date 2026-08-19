@@ -1,16 +1,36 @@
-import { watch } from 'vue'
+import { FirebaseError } from 'firebase/app'
+import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore'
+import { ref, watch } from 'vue'
 import type { Router } from 'vue-router'
+import { firestoreDb } from '../firebase'
 import { store, mockCourses, type CourseDetail, type ScheduleSlot } from '../store'
 
 export const STORAGE_KEY = 'rakutann-user-state-v1'
 const STORAGE_VERSION = 1
+const CLOUD_SCHEMA_VERSION = 1
+const CLOUD_SAVE_DELAY_MS = 700
 const VALID_DAYS = new Set(['月', '火', '水', '木', '金'])
 const VALID_PERIODS = new Set([1, 2, 3, 4, 5])
 let activeStorageKey: string | null = null
+let activeUserId: string | null = null
 let isPersistencePaused = true
+let isCloudPersistenceReady = false
+let hasPendingCloudSave = false
+let cloudSaveTimer: ReturnType<typeof setTimeout> | null = null
+let cloudWriteQueue: Promise<void> = Promise.resolve()
+let activationGeneration = 0
+let changeRevision = 0
+let lastModifiedAt = 0
+
+export type CloudSyncStatus = 'idle' | 'syncing' | 'saving' | 'synced' | 'offline'
+
+export const cloudSyncStatus = ref<CloudSyncStatus>('idle')
+export const cloudSyncError = ref('')
+export const isUserDataReady = ref(false)
 
 interface PersistedState {
   version: typeof STORAGE_VERSION
+  updatedAt: number
   timetable: {
     courseIds: string[]
     classrooms: Record<string, string>
@@ -111,6 +131,32 @@ const sanitizeCourseDetails = (value: unknown) => {
   return details
 }
 
+const normalizePersistedState = (value: unknown): PersistedState | null => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null
+
+  const state = value as Partial<PersistedState>
+  if (state.version !== STORAGE_VERSION) return null
+
+  return {
+    version: STORAGE_VERSION,
+    updatedAt:
+      typeof state.updatedAt === 'number' && Number.isFinite(state.updatedAt) ? state.updatedAt : 0,
+    timetable: {
+      courseIds: sanitizeStringArray(state.timetable?.courseIds),
+      classrooms: sanitizeClassrooms(state.timetable?.classrooms),
+    },
+    courseDetails: sanitizeCourseDetails(state.courseDetails),
+    favorites: sanitizeStringArray(state.favorites),
+    selectedTags: sanitizeStringArray(state.selectedTags),
+    selectedSemester: sanitizeSemester(state.selectedSemester),
+    avoidedTeachersText:
+      typeof state.avoidedTeachersText === 'string' ? state.avoidedTeachersText : '',
+    freePeriods: sanitizeSchedule(state.freePeriods),
+    lastPage:
+      typeof state.lastPage === 'string' && state.lastPage.startsWith('/') ? state.lastPage : '',
+  }
+}
+
 const readStoredState = () => {
   if (!canUseLocalStorage() || !activeStorageKey) return null
 
@@ -118,10 +164,7 @@ const readStoredState = () => {
     const rawState = window.localStorage.getItem(activeStorageKey)
     if (!rawState) return null
 
-    const parsed = JSON.parse(rawState) as Partial<PersistedState>
-    if (parsed.version !== STORAGE_VERSION) return null
-
-    return parsed
+    return normalizePersistedState(JSON.parse(rawState))
   } catch (error) {
     console.warn('保存データの読み込みに失敗しました。初期状態で起動します。', error)
     return null
@@ -130,6 +173,7 @@ const readStoredState = () => {
 
 const buildPersistedState = (): PersistedState => ({
   version: STORAGE_VERSION,
+  updatedAt: lastModifiedAt,
   timetable: {
     courseIds: store.candidateCourses.map((course) => course.id),
     classrooms: store.classrooms,
@@ -143,9 +187,8 @@ const buildPersistedState = (): PersistedState => ({
   lastPage: store.lastPage,
 })
 
-export const savePersistedState = () => {
-  if (isPersistencePaused || !canUseLocalStorage() || !activeStorageKey) return
-
+const writeLocalState = () => {
+  if (!canUseLocalStorage() || !activeStorageKey) return
   try {
     window.localStorage.setItem(activeStorageKey, JSON.stringify(buildPersistedState()))
   } catch (error) {
@@ -153,14 +196,16 @@ export const savePersistedState = () => {
   }
 }
 
-export const loadPersistedState = () => {
-  const savedState = readStoredState()
-  if (!savedState) return
+export const savePersistedState = () => {
+  if (isPersistencePaused) return
+  writeLocalState()
+}
 
-  const courseIds = sanitizeStringArray(savedState.timetable?.courseIds)
+const applyPersistedState = (savedState: PersistedState) => {
+  const courseIds = savedState.timetable.courseIds
   const coursesById = new Map(mockCourses.map((course) => [course.id, course]))
-  const savedClassrooms = sanitizeClassrooms(savedState.timetable?.classrooms)
-  const savedCourseDetails = sanitizeCourseDetails(savedState.courseDetails)
+  const savedClassrooms = savedState.timetable.classrooms
+  const savedCourseDetails = savedState.courseDetails
 
   for (const [courseId, classroom] of Object.entries(savedClassrooms)) {
     if (!savedCourseDetails[courseId]) {
@@ -170,13 +215,13 @@ export const loadPersistedState = () => {
     }
   }
 
-  store.selectedConditions = sanitizeStringArray(savedState.selectedTags).map(normalizeTagName)
-  store.selectedSemester = sanitizeSemester(savedState.selectedSemester)
-  store.selectedSchedule = sanitizeSchedule(savedState.freePeriods)
+  store.selectedConditions = savedState.selectedTags.map(normalizeTagName)
+  store.selectedSemester = savedState.selectedSemester
+  store.selectedSchedule = savedState.freePeriods
   store.candidateCourses = courseIds
     .map((courseId) => coursesById.get(courseId))
     .filter((course): course is NonNullable<typeof course> => Boolean(course))
-  store.courseDetails = savedCourseDetails
+  store.courseDetails = { ...savedCourseDetails }
   store.classrooms = sanitizeClassrooms(
     Object.fromEntries(
       Object.entries(savedCourseDetails)
@@ -184,28 +229,171 @@ export const loadPersistedState = () => {
         .map(([courseId, detail]) => [courseId, detail.room]),
     ),
   )
-  store.avoidedTeachersText =
-    typeof savedState.avoidedTeachersText === 'string' ? savedState.avoidedTeachersText : ''
-  store.lastPage =
-    typeof savedState.lastPage === 'string' && savedState.lastPage.startsWith('/')
-      ? savedState.lastPage
-      : ''
+  store.avoidedTeachersText = savedState.avoidedTeachersText
+  store.lastPage = savedState.lastPage
+  lastModifiedAt = savedState.updatedAt
 }
 
-export const activateUserPersistence = (userId: string) => {
+export const loadPersistedState = () => {
+  const savedState = readStoredState()
+  if (!savedState) return null
+
+  applyPersistedState(savedState)
+  return savedState
+}
+
+const cancelScheduledCloudSave = () => {
+  if (cloudSaveTimer) {
+    clearTimeout(cloudSaveTimer)
+    cloudSaveTimer = null
+  }
+}
+
+const getCloudSyncErrorMessage = (error: unknown) => {
+  if (!(error instanceof FirebaseError)) {
+    return 'クラウド保存に接続できません。データはこの端末に保存されています。'
+  }
+
+  switch (error.code) {
+    case 'permission-denied':
+      return 'クラウド保存のアクセス設定を確認してください。データはこの端末に保存されています。'
+    case 'failed-precondition':
+    case 'not-found':
+      return 'Cloud Firestoreの設定が必要です。データはこの端末に保存されています。'
+    case 'unavailable':
+      return 'オフラインのため、データはこの端末に保存されています。'
+    default:
+      return 'クラウド保存に接続できません。データはこの端末に保存されています。'
+  }
+}
+
+const writeCloudState = (userId: string) => {
+  const state = buildPersistedState()
+  const queuedWrite = cloudWriteQueue.then(() =>
+    setDoc(doc(firestoreDb, 'users', userId), {
+      schemaVersion: CLOUD_SCHEMA_VERSION,
+      state,
+      updatedAt: serverTimestamp(),
+    }),
+  )
+
+  cloudWriteQueue = queuedWrite.catch(() => undefined)
+  return queuedWrite
+}
+
+export const flushCloudSave = async () => {
+  cancelScheduledCloudSave()
+  if (!isCloudPersistenceReady || !activeUserId || !hasPendingCloudSave) return
+
+  const userId = activeUserId
+  const generation = activationGeneration
+  const savedRevision = changeRevision
+  cloudSyncStatus.value = 'saving'
+  cloudSyncError.value = ''
+
+  try {
+    await writeCloudState(userId)
+    if (generation === activationGeneration && userId === activeUserId) {
+      if (savedRevision === changeRevision) {
+        hasPendingCloudSave = false
+        cloudSyncStatus.value = 'synced'
+      }
+    }
+  } catch (error) {
+    if (generation === activationGeneration && userId === activeUserId) {
+      cloudSyncStatus.value = 'offline'
+      cloudSyncError.value = getCloudSyncErrorMessage(error)
+    }
+  }
+}
+
+const scheduleCloudSave = () => {
+  if (!isCloudPersistenceReady || !activeUserId || !hasPendingCloudSave) return
+
+  cancelScheduledCloudSave()
+  cloudSyncStatus.value = 'saving'
+  cloudSyncError.value = ''
+
+  const userId = activeUserId
+  const generation = activationGeneration
+
+  cloudSaveTimer = setTimeout(async () => {
+    cloudSaveTimer = null
+    if (generation !== activationGeneration || userId !== activeUserId) return
+
+    await flushCloudSave()
+  }, CLOUD_SAVE_DELAY_MS)
+}
+
+export const activateUserPersistence = async (userId: string) => {
+  const generation = ++activationGeneration
+
+  cancelScheduledCloudSave()
   isPersistencePaused = true
+  isCloudPersistenceReady = false
+  hasPendingCloudSave = false
+  isUserDataReady.value = false
+  cloudSyncStatus.value = 'syncing'
+  cloudSyncError.value = ''
+  activeUserId = userId
   store.resetSelections()
 
   activeStorageKey = getUserStorageKey(userId)
   migrateLegacyState(activeStorageKey)
-  loadPersistedState()
+  const localState = loadPersistedState()
 
-  isPersistencePaused = false
+  try {
+    const userDocument = await getDoc(doc(firestoreDb, 'users', userId))
+    if (generation !== activationGeneration || userId !== activeUserId) return
+
+    if (userDocument.exists()) {
+      const cloudState = normalizePersistedState(userDocument.data().state)
+      if (!cloudState) {
+        throw new Error('Invalid cloud state')
+      }
+
+      if (!localState || cloudState.updatedAt >= localState.updatedAt) {
+        store.resetSelections()
+        applyPersistedState(cloudState)
+      } else {
+        await writeCloudState(userId)
+      }
+    } else {
+      if (lastModifiedAt === 0) lastModifiedAt = Date.now()
+      await writeCloudState(userId)
+    }
+
+    if (generation !== activationGeneration || userId !== activeUserId) return
+
+    isCloudPersistenceReady = true
+    cloudSyncStatus.value = 'synced'
+    writeLocalState()
+  } catch (error) {
+    if (generation !== activationGeneration || userId !== activeUserId) return
+
+    console.warn('クラウド保存の初期化に失敗しました。端末内の保存を使用します。', error)
+    cloudSyncStatus.value = 'offline'
+    cloudSyncError.value = getCloudSyncErrorMessage(error)
+  } finally {
+    if (generation === activationGeneration && userId === activeUserId) {
+      isPersistencePaused = false
+      isUserDataReady.value = true
+    }
+  }
 }
 
 export const deactivateUserPersistence = () => {
+  activationGeneration += 1
+  cancelScheduledCloudSave()
   isPersistencePaused = true
+  isCloudPersistenceReady = false
+  hasPendingCloudSave = false
+  isUserDataReady.value = false
+  cloudSyncStatus.value = 'idle'
+  cloudSyncError.value = ''
   activeStorageKey = null
+  activeUserId = null
+  lastModifiedAt = 0
   store.resetSelections()
 }
 
@@ -225,13 +413,23 @@ export const startPersistence = (router: Router) => {
       freePeriods: store.selectedSchedule.map((slot) => ({ ...slot })),
       lastPage: store.lastPage,
     }),
-    savePersistedState,
-    { deep: true },
+    () => {
+      if (isPersistencePaused) return
+
+      lastModifiedAt = Date.now()
+      changeRevision += 1
+      hasPendingCloudSave = true
+      savePersistedState()
+      scheduleCloudSave()
+    },
+    { deep: true, flush: 'sync' },
   )
 }
 
-export const clearPersistedState = () => {
+export const clearPersistedState = async () => {
+  cancelScheduledCloudSave()
   isPersistencePaused = true
+  hasPendingCloudSave = false
 
   if (canUseLocalStorage() && activeStorageKey) {
     try {
@@ -241,7 +439,29 @@ export const clearPersistedState = () => {
     }
   }
 
+  const userId = activeUserId
+  lastModifiedAt = Date.now()
+  changeRevision += 1
   store.resetSelections()
+  writeLocalState()
+
+  if (!userId) return
+
+  cloudSyncStatus.value = 'saving'
+  cloudSyncError.value = ''
+
+  try {
+    await writeCloudState(userId)
+    if (userId === activeUserId) {
+      cloudSyncStatus.value = 'synced'
+    }
+  } catch (error) {
+    if (userId === activeUserId) {
+      hasPendingCloudSave = true
+      cloudSyncStatus.value = 'offline'
+      cloudSyncError.value = getCloudSyncErrorMessage(error)
+    }
+  }
 }
 
 export const resumePersistence = () => {

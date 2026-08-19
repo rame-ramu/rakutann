@@ -30,7 +30,7 @@ watch(
       return
     }
 
-    activateUserPersistence(user.uid)
+    await activateUserPersistence(user.uid)
 
     if (typeof window !== 'undefined' && store.lastPage) {
       const basePath = new URL(import.meta.env.BASE_URL, window.location.origin).pathname

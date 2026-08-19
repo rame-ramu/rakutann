@@ -17,6 +17,13 @@
         <div class="account-copy">
           <span>ログイン中</span>
           <strong>{{ accountName }}</strong>
+          <span
+            class="account-sync"
+            :class="`account-sync--${cloudSyncStatus}`"
+            :title="cloudSyncError"
+          >
+            {{ cloudSyncLabel }}
+          </span>
         </div>
       </div>
       <button class="logout-button" type="button" :disabled="isSigningOut" @click="signOutOfApp">
@@ -44,7 +51,12 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { authError, currentUser, isSigningOut, signOutOfApp } from '../auth'
-import { clearPersistedState, resumePersistence } from '../utils/persistence'
+import {
+  clearPersistedState,
+  cloudSyncError,
+  cloudSyncStatus,
+  resumePersistence,
+} from '../utils/persistence'
 
 const route = useRoute()
 const router = useRouter()
@@ -53,6 +65,20 @@ const accountName = computed(
   () => currentUser.value?.displayName || currentUser.value?.email || 'Googleユーザー',
 )
 const accountInitial = computed(() => accountName.value.trim().charAt(0).toUpperCase() || 'G')
+const cloudSyncLabel = computed(() => {
+  switch (cloudSyncStatus.value) {
+    case 'syncing':
+      return 'データを読み込み中…'
+    case 'saving':
+      return 'クラウドへ保存中…'
+    case 'synced':
+      return 'クラウド保存済み'
+    case 'offline':
+      return '端末内に保存（同期できません）'
+    default:
+      return '端末内に保存'
+  }
+})
 
 const currentStep = computed(() => {
   switch (route.name) {
@@ -103,8 +129,8 @@ const goFixedForward = () => {
 }
 
 const deleteSavedData = async () => {
-  if (window.confirm('保存された時間割やお気に入りをすべて削除しますか？')) {
-    clearPersistedState()
+  if (window.confirm('端末とクラウドに保存された時間割やメモをすべて削除しますか？')) {
+    await clearPersistedState()
     try {
       await router.push('/')
     } finally {
@@ -177,6 +203,22 @@ const deleteSavedData = async () => {
   color: #6b7280;
   font-size: 0.7rem;
   font-weight: 800;
+}
+
+.account-copy .account-sync {
+  margin-top: 0.15rem;
+  color: #047857;
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.account-copy .account-sync--saving,
+.account-copy .account-sync--syncing {
+  color: #92400e;
+}
+
+.account-copy .account-sync--offline {
+  color: #b91c1c;
 }
 
 .account-copy strong {

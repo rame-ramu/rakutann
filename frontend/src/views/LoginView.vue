@@ -40,7 +40,7 @@
 
         <p v-if="authError" class="login-error" role="alert">{{ authError }}</p>
         <p class="privacy-note">
-          Googleアカウントは本人確認に使用します。学籍番号は保存されません。
+          Googleアカウントは本人確認と時間割のクラウド保存に使用します。学籍番号は保存されません。
         </p>
       </div>
     </main>

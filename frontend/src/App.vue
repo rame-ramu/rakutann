@@ -2,6 +2,7 @@
 import { Analytics } from '@vercel/analytics/vue'
 import { RouterView } from 'vue-router'
 import { currentUser, isAuthReady } from './auth'
+import { isUserDataReady } from './utils/persistence'
 import LoginView from './views/LoginView.vue'
 
 const feedbackFormUrl =
@@ -9,10 +10,15 @@ const feedbackFormUrl =
 </script>
 
 <template>
-  <div v-if="!isAuthReady" class="auth-loading" role="status" aria-live="polite">
+  <div
+    v-if="!isAuthReady || (currentUser && !isUserDataReady)"
+    class="auth-loading"
+    role="status"
+    aria-live="polite"
+  >
     <div class="auth-loading-card">
       <span class="auth-loading-dot" aria-hidden="true"></span>
-      <p>ログイン状態を確認しています…</p>
+      <p>{{ !isAuthReady ? 'ログイン状態を確認しています…' : '保存データを読み込んでいます…' }}</p>
     </div>
   </div>
   <LoginView v-else-if="!currentUser" />

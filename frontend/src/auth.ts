@@ -9,6 +9,7 @@ import {
 } from 'firebase/auth'
 import { ref, shallowRef } from 'vue'
 import { firebaseAuth, googleAuthProvider } from './firebase'
+import { flushCloudSave } from './utils/persistence'
 
 export const currentUser = shallowRef<User | null>(null)
 export const isAuthReady = ref(false)
@@ -85,6 +86,7 @@ export const signOutOfApp = async () => {
   authError.value = ''
 
   try {
+    await flushCloudSave()
     await signOut(firebaseAuth)
   } catch (error) {
     authError.value = getAuthErrorMessage(error)
