@@ -3,6 +3,11 @@ import './assets/main.css'
 import { createApp, watch } from 'vue'
 import App from './App.vue'
 import { currentUser, initializeAuthentication, isAuthReady } from './auth'
+import {
+  deactivateFriendFeatures,
+  initializeFriendFeatures,
+  startFriendPersistence,
+} from './friends'
 import { initializePwa } from './pwa'
 import router from './router'
 import {
@@ -13,18 +18,22 @@ import {
 import { store } from './store'
 
 const app = createApp(App)
+let authenticationTransition = 0
 
 app.use(router)
 
 startPersistence(router)
+startFriendPersistence()
 initializePwa()
 
 watch(
   [isAuthReady, currentUser],
   async ([authReady, user]) => {
     if (!authReady) return
+    const transition = ++authenticationTransition
 
     if (!user) {
+      deactivateFriendFeatures()
       deactivateUserPersistence()
       if (router.currentRoute.value.name !== 'student-id') {
         await router.replace({ name: 'student-id' })
@@ -33,6 +42,9 @@ watch(
     }
 
     await activateUserPersistence(user.uid)
+    if (transition !== authenticationTransition || currentUser.value?.uid !== user.uid) return
+    await initializeFriendFeatures(user)
+    if (transition !== authenticationTransition || currentUser.value?.uid !== user.uid) return
 
     if (typeof window !== 'undefined' && store.lastPage) {
       const basePath = new URL(import.meta.env.BASE_URL, window.location.origin).pathname

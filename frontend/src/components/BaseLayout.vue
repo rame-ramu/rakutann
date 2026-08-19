@@ -31,7 +31,7 @@
       </button>
     </div>
     <p v-if="authError" class="account-error" role="alert">{{ authError }}</p>
-    <header v-if="$route.name !== 'student-id'">
+    <header v-if="$route.name !== 'student-id' && $route.name !== 'friends'">
       <div class="nav-buttons">
         <button @click="goFixedBack" class="back-button">← 戻る</button>
         <button @click="goFixedForward" class="back-button" :disabled="!canGoFixedForward">

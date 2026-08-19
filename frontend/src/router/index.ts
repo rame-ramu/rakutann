@@ -25,11 +25,21 @@ const router = createRouter({
       name: 'results',
       component: () => import('../views/CourseListView.vue'),
     },
+    {
+      path: '/friends',
+      name: 'friends',
+      component: () => import('../views/FriendsView.vue'),
+    },
   ],
 })
 
 router.beforeEach((to) => {
-  if (store.department && !store.isHumanInfoStudent && to.name !== 'student-id' && to.name !== 'conditions') {
+  if (
+    store.department &&
+    !store.isHumanInfoStudent &&
+    to.name !== 'student-id' &&
+    to.name !== 'conditions'
+  ) {
     return { name: 'conditions' }
   }
 })

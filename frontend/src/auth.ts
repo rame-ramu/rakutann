@@ -9,6 +9,7 @@ import {
 } from 'firebase/auth'
 import { ref, shallowRef } from 'vue'
 import { firebaseAuth, googleAuthProvider } from './firebase'
+import { flushFriendSchedule, flushSharedMemos } from './friends'
 import { flushCloudSave } from './utils/persistence'
 
 export const currentUser = shallowRef<User | null>(null)
@@ -87,6 +88,8 @@ export const signOutOfApp = async () => {
 
   try {
     await flushCloudSave()
+    await flushFriendSchedule()
+    await flushSharedMemos()
     await signOut(firebaseAuth)
   } catch (error) {
     authError.value = getAuthErrorMessage(error)

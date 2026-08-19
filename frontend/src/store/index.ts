@@ -1,5 +1,6 @@
 import { reactive } from 'vue'
 import { courses } from '../data/courses'
+import { getCurrentAcademicYear } from '../utils/academicYear'
 
 export interface Course {
   id: string
@@ -43,11 +44,6 @@ export interface ScheduleSlot {
 export interface CourseDetail {
   room: string
   memo: string
-}
-
-const getCurrentAcademicYear = () => {
-  const today = new Date()
-  return today.getMonth() >= 3 ? today.getFullYear() : today.getFullYear() - 1
 }
 
 const getGradeFromEnrollmentYear = (enrollmentYear: number) => {
@@ -209,7 +205,10 @@ export const store = reactive({
   },
 
   setCourseMemo(courseId: string, memo: string) {
-    const detail = this.courseDetails[courseId] || { room: this.classrooms[courseId] || '', memo: '' }
+    const detail = this.courseDetails[courseId] || {
+      room: this.classrooms[courseId] || '',
+      memo: '',
+    }
     detail.memo = memo
 
     if (detail.room || detail.memo) {

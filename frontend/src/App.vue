@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { Analytics } from '@vercel/analytics/vue'
-import { RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router'
 import { currentUser, isAuthReady } from './auth'
+import { pendingFriendRequestCount } from './friends'
 import { isUserDataReady } from './utils/persistence'
 import PwaInstallPrompt from './components/PwaInstallPrompt.vue'
 import LoginView from './views/LoginView.vue'
@@ -35,6 +36,13 @@ const feedbackFormUrl =
       フィードバック
     </a>
   </template>
+  <RouterLink v-if="currentUser" class="friend-button" to="/friends" aria-label="友達画面を開く">
+    <span class="friend-button-icon" aria-hidden="true">●●</span>
+    友達
+    <span v-if="pendingFriendRequestCount > 0" class="friend-button-badge">
+      {{ pendingFriendRequestCount > 9 ? '9+' : pendingFriendRequestCount }}
+    </span>
+  </RouterLink>
   <PwaInstallPrompt />
   <Analytics />
 </template>
@@ -111,6 +119,62 @@ body {
     background-color 0.2s ease;
 }
 
+.friend-button {
+  position: fixed;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  left: 50%;
+  z-index: 1001;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.95rem;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  background: var(--comic-yellow);
+  box-shadow: 3px 3px 0 #111827;
+  color: #111827;
+  font-size: 0.85rem;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+
+.friend-button:hover,
+.friend-button:focus-visible {
+  box-shadow: 2px 2px 0 #111827;
+  transform: translate(-50%, 1px);
+}
+
+.friend-button:focus-visible {
+  outline: 3px solid var(--comic-green);
+  outline-offset: 3px;
+}
+
+.friend-button-icon {
+  color: var(--comic-green);
+  font-size: 0.55rem;
+  letter-spacing: -0.08rem;
+}
+
+.friend-button-badge {
+  position: absolute;
+  top: -0.45rem;
+  right: -0.35rem;
+  display: grid;
+  min-width: 1.3rem;
+  height: 1.3rem;
+  place-items: center;
+  padding: 0 0.25rem;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 0.65rem;
+}
+
 .feedback-button:hover,
 .feedback-button:focus-visible {
   background-color: var(--comic-yellow);
@@ -130,6 +194,13 @@ body {
     min-height: 40px;
     padding: 0.6rem 0.8rem;
     font-size: 0.8rem;
+  }
+
+  .friend-button {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    min-height: 40px;
+    padding: 0.55rem 0.72rem;
+    font-size: 0.76rem;
   }
 }
 </style>

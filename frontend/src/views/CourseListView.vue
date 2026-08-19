@@ -22,7 +22,9 @@
                 <span class="candidate-schedule">{{ formatScheduleWithTime(course) }}</span>
                 <p>{{ displayCourseName(course.name) }}</p>
               </div>
-              <button class="remove-button" @click="store.removeCandidateCourse(course.id)">外す</button>
+              <button class="remove-button" @click="store.removeCandidateCourse(course.id)">
+                外す
+              </button>
             </div>
           </div>
           <p v-else class="empty-preview">授業詳細から候補に入れるとここに表示されます。</p>
@@ -51,7 +53,7 @@
             type="search"
             placeholder="例: 情報検索、心理学、Information"
             :disabled="!canUseNameSearch"
-          >
+          />
 
           <p v-if="!store.selectedSemester" class="name-search-message">
             条件画面で前期か後期を選ぶと検索できます。
@@ -59,12 +61,18 @@
           <p v-else-if="selectedNameSearchSlotCount === 0" class="name-search-message">
             時間割画面で授業を入れたい曜日・時限を選ぶと検索できます。
           </p>
-          <div v-else-if="normalizedNameQuery && nameSearchResults.length > 0" class="name-search-results">
+          <div
+            v-else-if="normalizedNameQuery && nameSearchResults.length > 0"
+            class="name-search-results"
+          >
             <div
               v-for="{ course } in nameSearchResults"
               :key="course.id"
               class="name-search-result"
-              :class="{ chosen: isCandidate(course.id) }"
+              :class="{
+                chosen: isCandidate(course.id),
+                'friend-match': getFriendsForCourse(course.id).length > 0,
+              }"
               role="button"
               tabindex="0"
               @click="openDetail(course)"
@@ -74,6 +82,10 @@
                 <span class="candidate-schedule">{{ formatScheduleWithTime(course) }}</span>
                 <h4>{{ displayCourseName(course.name) }}</h4>
                 <p>{{ course.instructor }}</p>
+                <div v-if="getFriendsForCourse(course.id).length > 0" class="friend-match-line">
+                  <FriendAvatarStack :friends="getFriendsForCourse(course.id)" />
+                  <strong>友達もこの授業を登録しています</strong>
+                </div>
               </div>
               <button
                 class="inline-add-button"
@@ -96,7 +108,10 @@
               v-for="course in filteredCourses"
               :key="course.id"
               class="course-card"
-              :class="{ chosen: isCandidate(course.id) }"
+              :class="{
+                chosen: isCandidate(course.id),
+                'friend-match': getFriendsForCourse(course.id).length > 0,
+              }"
               @click="openDetail(course)"
             >
               <div class="course-header">
@@ -104,7 +119,13 @@
                   <h3>{{ displayCourseName(course.name) }}</h3>
                   <p class="teacher">{{ course.instructor }}</p>
                 </div>
-                <span class="schedule-badge">{{ formatSchedule(course) }}</span>
+                <div class="course-friend-badges">
+                  <FriendAvatarStack
+                    v-if="getFriendsForCourse(course.id).length > 0"
+                    :friends="getFriendsForCourse(course.id)"
+                  />
+                  <span class="schedule-badge">{{ formatSchedule(course) }}</span>
+                </div>
               </div>
               <div class="score-row">
                 <span>レポート {{ course.reportPercent }}%</span>
@@ -116,12 +137,16 @@
                 <span v-for="tag in visibleTags(course)" :key="tag" class="tag">#{{ tag }}</span>
               </div>
               <div class="match-line">{{ getMatchSummary(course) }}</div>
-              <div class="click-hint">{{ isCandidate(course.id) ? '候補に追加済み' : 'タップして詳細を見る' }}</div>
+              <div class="click-hint">
+                {{ isCandidate(course.id) ? '候補に追加済み' : 'タップして詳細を見る' }}
+              </div>
             </div>
           </div>
           <div v-else class="no-results">
             <p>条件に合う授業が見つかりませんでした。</p>
-            <button @click="$router.push('/conditions')" class="retry-button">条件を変えてみる</button>
+            <button @click="$router.push('/conditions')" class="retry-button">
+              条件を変えてみる
+            </button>
           </div>
         </div>
       </div>
@@ -132,11 +157,13 @@
           <div class="modal-content" @click.stop>
             <button class="close-button" @click="closeDetail">×</button>
             <div class="modal-header">
-              <span class="schedule-badge-large">{{ formatScheduleWithTime(store.selectedCourse) }}</span>
+              <span class="schedule-badge-large">{{
+                formatScheduleWithTime(store.selectedCourse)
+              }}</span>
               <h3>{{ store.selectedCourse.name }}</h3>
               <p>{{ store.selectedCourse.instructor }}</p>
             </div>
-            
+
             <div class="modal-body">
               <div class="section">
                 <h4>シラバス情報</h4>
@@ -171,7 +198,11 @@
                   </div>
                   <div>
                     <dt>オンデマンド</dt>
-                    <dd>{{ store.selectedCourse.onDemandLabel }}（{{ store.selectedCourse.onDemandPercent }}%）</dd>
+                    <dd>
+                      {{ store.selectedCourse.onDemandLabel }}（{{
+                        store.selectedCourse.onDemandPercent
+                      }}%）
+                    </dd>
                   </div>
                   <div>
                     <dt>前提履修</dt>
@@ -183,7 +214,29 @@
               <div class="section">
                 <h4>授業の特徴</h4>
                 <div class="tags">
-                  <span v-for="tag in store.selectedCourse.conditions" :key="tag" class="tag-large">#{{ tag }}</span>
+                  <span v-for="tag in store.selectedCourse.conditions" :key="tag" class="tag-large"
+                    >#{{ tag }}</span
+                  >
+                </div>
+              </div>
+
+              <div
+                v-if="getFriendsForCourse(store.selectedCourse.id).length > 0"
+                class="section friend-course-section"
+              >
+                <h4>この授業を登録している友達</h4>
+                <div class="friend-match-line">
+                  <FriendAvatarStack
+                    :friends="getFriendsForCourse(store.selectedCourse.id)"
+                    :max="4"
+                  />
+                  <strong>
+                    {{
+                      getFriendsForCourse(store.selectedCourse.id)
+                        .map((friend) => friend.displayName)
+                        .join('、')
+                    }}
+                  </strong>
                 </div>
               </div>
 
@@ -203,7 +256,9 @@
             </div>
 
             <button class="add-button" @click="addCandidate(store.selectedCourse)">
-              {{ isCandidate(store.selectedCourse.id) ? '候補に追加済み' : 'この授業を候補に入れる' }}
+              {{
+                isCandidate(store.selectedCourse.id) ? '候補に追加済み' : 'この授業を候補に入れる'
+              }}
             </button>
           </div>
         </div>
@@ -218,7 +273,9 @@
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import BaseLayout from '../components/BaseLayout.vue'
+import FriendAvatarStack from '../components/FriendAvatarStack.vue'
 import { getPeriodTime } from '../constants/classTimes'
+import { getFriendsForCourse } from '../friends'
 import { store, mockCourses, type Course } from '../store'
 
 const router = useRouter()
@@ -263,7 +320,8 @@ const isLockedSchedule = (course: Course) => {
 }
 
 const conditionCount = (course: Course) => {
-  return course.conditions.filter((condition) => store.selectedConditions.includes(condition)).length
+  return course.conditions.filter((condition) => store.selectedConditions.includes(condition))
+    .length
 }
 
 const courseScore = (course: Course) => {
@@ -356,7 +414,7 @@ const normalizeSearchText = (value: string) => {
   return value
     .normalize('NFKC')
     .toLowerCase()
-    .replace(/[、，,\s／/()（）［］\[\]「」『』・:：-]/g, '')
+    .replace(/[、，,\s／/()（）［］[\]「」『』・:：-]/g, '')
 }
 
 const levenshteinDistance = (a: string, b: string) => {
@@ -426,11 +484,9 @@ const getTextNameScore = (query: string, target: string) => {
 }
 
 const getCourseNameScore = (course: Course, query: string) => {
-  const names = [
-    course.name,
-    displayCourseName(course.name),
-    ...course.name.split(/[／/]/),
-  ].map(normalizeSearchText)
+  const names = [course.name, displayCourseName(course.name), ...course.name.split(/[／/]/)].map(
+    normalizeSearchText,
+  )
 
   return Math.max(...names.map((name) => getTextNameScore(query, name)))
 }
@@ -446,8 +502,12 @@ const getNameSearchActionLabel = (course: Course) => {
 }
 
 const visibleTags = (course: Course) => {
-  const selectedTags = course.conditions.filter((condition) => store.selectedConditions.includes(condition))
-  const otherTags = course.conditions.filter((condition) => !store.selectedConditions.includes(condition))
+  const selectedTags = course.conditions.filter((condition) =>
+    store.selectedConditions.includes(condition),
+  )
+  const otherTags = course.conditions.filter(
+    (condition) => !store.selectedConditions.includes(condition),
+  )
   return [...selectedTags, ...otherTags].slice(0, 5)
 }
 
@@ -521,6 +581,33 @@ h2 {
   box-shadow: 5px 5px 0 #111827;
 }
 
+.course-card.friend-match,
+.name-search-result.friend-match {
+  border-color: var(--comic-green);
+  background: #ecfeff;
+  box-shadow: 5px 5px 0 var(--comic-green);
+}
+
+.course-friend-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.friend-match-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.55rem;
+  color: #047857;
+  font-size: 0.75rem;
+}
+
+.friend-course-section {
+  border-color: var(--comic-green);
+  background: #ecfeff;
+}
+
 .course-card:hover {
   border-color: #111827;
   transform: translate(-2px, -2px);
@@ -530,7 +617,9 @@ h2 {
 .course-card.chosen {
   border-color: #111827;
   background: #e7fffb;
-  box-shadow: 5px 5px 0 #111827, inset 0 0 0 4px var(--comic-green);
+  box-shadow:
+    5px 5px 0 #111827,
+    inset 0 0 0 4px var(--comic-green);
 }
 
 .course-header {
@@ -812,7 +901,9 @@ h2 {
   background: white;
   cursor: pointer;
   box-shadow: 4px 4px 0 #111827;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
 }
 
 .name-search-result:hover,
@@ -824,7 +915,9 @@ h2 {
 
 .name-search-result.chosen {
   background: #e7fffb;
-  box-shadow: 4px 4px 0 #111827, inset 0 0 0 4px var(--comic-green);
+  box-shadow:
+    4px 4px 0 #111827,
+    inset 0 0 0 4px var(--comic-green);
 }
 
 .name-result-main {

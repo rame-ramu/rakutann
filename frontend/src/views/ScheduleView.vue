@@ -4,7 +4,10 @@
       <section class="today-overview" aria-label="今日の時間割">
         <div class="today-date">{{ formattedToday }}</div>
 
-        <div class="next-class-card" :class="{ muted: nextClassStatus.kind !== 'next' && nextClassStatus.kind !== 'current' }">
+        <div
+          class="next-class-card"
+          :class="{ muted: nextClassStatus.kind !== 'next' && nextClassStatus.kind !== 'current' }"
+        >
           <p class="next-label">{{ nextClassStatus.label }}</p>
           <template v-if="nextClassStatus.course">
             <h3>{{ displayCourseName(nextClassStatus.course.name) }}</h3>
@@ -30,8 +33,12 @@
               @click="slot.course && openCourseDetail(slot.course)"
             >
               <span class="today-period">{{ slot.period }}限</span>
-              <span class="today-course">{{ slot.course ? displayCourseName(slot.course.name) : '空き' }}</span>
-              <span v-if="slot.course && getCourseRoom(slot.course)" class="today-room">{{ getCourseRoom(slot.course) }}</span>
+              <span class="today-course">{{
+                slot.course ? displayCourseName(slot.course.name) : '空き'
+              }}</span>
+              <span v-if="slot.course && getCourseRoom(slot.course)" class="today-room">{{
+                getCourseRoom(slot.course)
+              }}</span>
             </button>
           </div>
           <p v-else class="today-empty">今日は授業がありません</p>
@@ -39,7 +46,9 @@
       </section>
 
       <h2>いつ空いてる？</h2>
-      <p class="description">授業を入れたい曜日と時間を選んでください。<br>何個選んでも大丈夫です。</p>
+      <p class="description">
+        授業を入れたい曜日と時間を選んでください。<br />何個選んでも大丈夫です。
+      </p>
 
       <div class="table-container">
         <table>
@@ -56,12 +65,21 @@
                 <span class="unit">限</span>
                 <span class="time">{{ getPeriodTime(period) }}</span>
               </td>
-              <td 
-                v-for="day in days" 
+              <td
+                v-for="day in days"
                 :key="day"
-                :class="{ selected: isSelected(day, period), locked: getCandidateCourses(day, period).length > 0 }"
+                :class="{
+                  selected: isSelected(day, period),
+                  locked: getCandidateCourses(day, period).length > 0,
+                }"
                 @click="handleCellClick(day, period)"
               >
+                <FriendAvatarStack
+                  v-if="getFriendsInSlot(day, period).length > 0"
+                  class="slot-friend-avatars"
+                  :friends="getFriendsInSlot(day, period)"
+                  :max="3"
+                />
                 <div class="cell-content">
                   <div v-if="getCandidateCourses(day, period).length > 0" class="candidate-slot">
                     <span
@@ -76,9 +94,7 @@
                     </span>
                   </div>
                   <div v-else-if="isSelected(day, period)" class="check">✓</div>
-                  <div v-else class="empty-slot">
-                    追加
-                  </div>
+                  <div v-else class="empty-slot">追加</div>
                 </div>
               </td>
             </tr>
@@ -93,7 +109,7 @@
         <p v-else class="hint">マスをタップして選択してください</p>
       </div>
 
-      <button 
+      <button
         :disabled="store.selectedSchedule.length === 0"
         @click="$router.push('/results')"
         class="next-button"
@@ -117,9 +133,18 @@
             @click="openCourseDetail(course)"
           >
             <div>
-              <span>{{ course.day }}{{ course.period }}限 {{ course.period ? getPeriodTime(course.period) : '' }}</span>
+              <span
+                >{{ course.day }}{{ course.period }}限
+                {{ course.period ? getPeriodTime(course.period) : '' }}</span
+              >
               <p>{{ displayCourseName(course.name) }}</p>
-              <small>{{ getCourseRoom(course) ? `教室 ${getCourseRoom(course)}` : '長押しで教室番号を登録' }}</small>
+              <small>{{
+                getCourseRoom(course) ? `教室 ${getCourseRoom(course)}` : '長押しで教室番号を登録'
+              }}</small>
+              <FriendAvatarStack
+                v-if="getFriendsForCourse(course.id).length > 0"
+                :friends="getFriendsForCourse(course.id)"
+              />
             </div>
             <button @click.stop="store.removeCandidateCourse(course.id)">登録解除</button>
           </div>
@@ -130,7 +155,10 @@
         <div v-if="detailCourse" class="modal-overlay" @click="closeCourseDetail">
           <div class="course-detail-modal" @click.stop>
             <button class="close-button" type="button" @click="closeCourseDetail">×</button>
-            <span class="detail-schedule">{{ detailCourse.day }}{{ detailCourse.period }}限 {{ detailCourse.period ? getPeriodTime(detailCourse.period) : '' }}</span>
+            <span class="detail-schedule"
+              >{{ detailCourse.day }}{{ detailCourse.period }}限
+              {{ detailCourse.period ? getPeriodTime(detailCourse.period) : '' }}</span
+            >
             <h3>{{ displayCourseName(detailCourse.name) }}</h3>
             <label class="detail-field">
               <span>教室</span>
@@ -139,10 +167,10 @@
                 type="text"
                 placeholder="例: 8号棟203"
                 @input="updateSelectedCourseRoom"
-              >
+              />
             </label>
             <label class="detail-field">
-              <span>メモ</span>
+              <span>個人メモ（自分だけ）</span>
               <textarea
                 :value="selectedCourseMemo"
                 rows="4"
@@ -151,6 +179,7 @@
                 @input="updateSelectedCourseMemo"
               />
             </label>
+            <SharedMemoPanel :course="detailCourse" />
           </div>
         </div>
       </Transition>
@@ -161,7 +190,10 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import BaseLayout from '../components/BaseLayout.vue'
+import FriendAvatarStack from '../components/FriendAvatarStack.vue'
+import SharedMemoPanel from '../components/SharedMemoPanel.vue'
 import { CLASS_TIMES, getPeriodTime } from '../constants/classTimes'
+import { getFriendsForCourse, getFriendsInSlot } from '../friends'
 import { store, type Course } from '../store'
 
 const days = ['月', '火', '水', '木', '金']
@@ -196,15 +228,19 @@ const todayDay = computed(() => {
 })
 
 const isSelected = (day: string, period: number) => {
-  return store.selectedSchedule.some(s => s.day === day && s.period === period)
+  return store.selectedSchedule.some((s) => s.day === day && s.period === period)
 }
 
 const getCandidateCourses = (day: string, period: number) => {
-  return store.candidateCourses.filter((course: Course) => course.day === day && course.period === period)
+  return store.candidateCourses.filter(
+    (course: Course) => course.day === day && course.period === period,
+  )
 }
 
 const selectedAddSlotCount = computed(() => {
-  return store.selectedSchedule.filter((slot) => getCandidateCourses(slot.day, slot.period).length === 0).length
+  return store.selectedSchedule.filter(
+    (slot) => getCandidateCourses(slot.day, slot.period).length === 0,
+  ).length
 })
 
 const todaySchedule = computed<TodayScheduleSlot[]>(() => {
@@ -244,7 +280,13 @@ const formatRemainingTime = (minutes: number) => {
 
 const nextClassStatus = computed<NextClassStatus>(() => {
   if (!todayDay.value || todayCourses.value.length === 0) {
-    return { kind: 'none', label: '今日は授業がありません', course: null, period: null, startTime: '' }
+    return {
+      kind: 'none',
+      label: '今日は授業がありません',
+      course: null,
+      period: null,
+      startTime: '',
+    }
   }
 
   for (const slot of todayCourses.value) {
@@ -276,7 +318,13 @@ const nextClassStatus = computed<NextClassStatus>(() => {
     }
   }
 
-  return { kind: 'done', label: '今日の授業は終了しました', course: null, period: null, startTime: '' }
+  return {
+    kind: 'done',
+    label: '今日の授業は終了しました',
+    course: null,
+    period: null,
+    startTime: '',
+  }
 })
 
 const selectedCourseRoom = computed(() => {
@@ -559,6 +607,14 @@ td {
   overflow: hidden;
 }
 
+.slot-friend-avatars {
+  position: absolute;
+  top: -0.85rem;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+}
+
 td.period-label {
   background: none;
   border: none;
@@ -804,6 +860,8 @@ td.locked:hover {
   position: relative;
   width: 100%;
   max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
   padding: 2rem;
   border: 4px solid #111827;
   border-radius: 0.7rem;
@@ -981,7 +1039,7 @@ td.locked:hover {
   }
 
   .empty-slot::before {
-    content: "+";
+    content: '+';
     font-size: 1rem;
     font-weight: 900;
   }
