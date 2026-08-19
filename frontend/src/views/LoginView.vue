@@ -4,12 +4,12 @@
       <div class="login-hero">
         <p class="eyebrow">履修選びを、もっと気楽に。</p>
         <h1>らくたんん!!</h1>
-        <p class="subtitle">Googleアカウントでログインして始めましょう。</p>
+        <p class="subtitle">ログインして同期するか、この端末だけですぐに始められます。</p>
       </div>
 
       <div class="login-panel">
         <h2>ログイン</h2>
-        <p>時間割を利用するには、Googleアカウントでログインしてください。</p>
+        <p>使い方に合わせて、始め方を選んでください。</p>
 
         <button
           class="google-login-button"
@@ -38,9 +38,20 @@
           <span>{{ isSigningIn ? 'ログインしています…' : 'Googleでログイン' }}</span>
         </button>
 
+        <div class="login-divider" aria-hidden="true"><span>または</span></div>
+
+        <button class="guest-login-button" type="button" @click="enterGuestMode">
+          <span class="device-icon" aria-hidden="true">▣</span>
+          <span class="guest-button-copy">
+            <strong>ログインせずに使う</strong>
+            <small>データはこの端末だけに保存</small>
+          </span>
+          <span aria-hidden="true">→</span>
+        </button>
+
         <p v-if="authError" class="login-error" role="alert">{{ authError }}</p>
         <p class="privacy-note">
-          Googleアカウントは本人確認と時間割のクラウド保存に使用します。学籍番号は保存されません。
+          ログインなしでも、授業検索・希望条件・時間割を利用できます。友達機能とクラウド同期はGoogleログイン時のみ利用できます。
         </p>
       </div>
     </main>
@@ -48,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import { authError, isSigningIn, signInWithGoogle } from '../auth'
+import { authError, enterGuestMode, isSigningIn, signInWithGoogle } from '../auth'
 </script>
 
 <style scoped>
@@ -169,6 +180,84 @@ h1 {
   width: 1.5rem;
   height: 1.5rem;
   flex: 0 0 auto;
+}
+
+.login-divider {
+  display: flex;
+  width: min(100%, 360px);
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.15rem auto;
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.login-divider::before,
+.login-divider::after {
+  height: 2px;
+  flex: 1;
+  background: #d1d5db;
+  content: '';
+}
+
+.guest-login-button {
+  display: grid;
+  width: min(100%, 360px);
+  min-height: 3.75rem;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  border: 3px solid #111827;
+  border-radius: 0.65rem;
+  background: var(--comic-yellow);
+  box-shadow: 5px 5px 0 #111827;
+  color: #111827;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.guest-login-button:hover,
+.guest-login-button:focus-visible {
+  box-shadow: 7px 7px 0 #111827;
+  outline: none;
+  transform: translate(-2px, -2px);
+}
+
+.guest-login-button:focus-visible {
+  outline: 3px solid var(--comic-green);
+  outline-offset: 4px;
+}
+
+.device-icon {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 2px solid #111827;
+  border-radius: 0.4rem;
+  background: #ffffff;
+}
+
+.guest-button-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.guest-button-copy strong {
+  font-size: 0.95rem;
+}
+
+.guest-button-copy small {
+  color: #4b5563;
+  font-size: 0.7rem;
+  font-weight: 800;
 }
 
 .login-error {

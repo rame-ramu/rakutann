@@ -32,7 +32,7 @@
           <button
             :disabled="store.candidateCourses.length === 0"
             class="confirm-button"
-            @click="router.push('/schedule')"
+            @click="router.push('/')"
           >
             この候補で決定
           </button>

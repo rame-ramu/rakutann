@@ -2,7 +2,7 @@ import './assets/main.css'
 
 import { createApp, watch } from 'vue'
 import App from './App.vue'
-import { currentUser, initializeAuthentication, isAuthReady } from './auth'
+import { currentUser, initializeAuthentication, isAuthReady, isGuestMode } from './auth'
 import {
   deactivateFriendFeatures,
   initializeFriendFeatures,
@@ -12,6 +12,7 @@ import { initializePwa } from './pwa'
 import router from './router'
 import {
   activateUserPersistence,
+  activateGuestPersistence,
   deactivateUserPersistence,
   startPersistence,
 } from './utils/persistence'
@@ -27,12 +28,12 @@ startFriendPersistence()
 initializePwa()
 
 watch(
-  [isAuthReady, currentUser],
-  async ([authReady, user]) => {
+  [isAuthReady, currentUser, isGuestMode],
+  async ([authReady, user, guestMode]) => {
     if (!authReady) return
     const transition = ++authenticationTransition
 
-    if (!user) {
+    if (!user && !guestMode) {
       deactivateFriendFeatures()
       deactivateUserPersistence()
       if (router.currentRoute.value.name !== 'student-id') {
@@ -41,24 +42,36 @@ watch(
       return
     }
 
-    await activateUserPersistence(user.uid)
-    if (transition !== authenticationTransition || currentUser.value?.uid !== user.uid) return
-    await initializeFriendFeatures(user)
-    if (transition !== authenticationTransition || currentUser.value?.uid !== user.uid) return
-
-    if (typeof window !== 'undefined' && store.lastPage) {
-      const basePath = new URL(import.meta.env.BASE_URL, window.location.origin).pathname
-      if (
-        window.location.pathname === basePath &&
-        router.resolve(store.lastPage).matched.length > 0
-      ) {
-        await router.replace(store.lastPage)
-        return
+    if (guestMode && !user) {
+      deactivateFriendFeatures()
+      activateGuestPersistence()
+      if (router.currentRoute.value.name === 'friends') {
+        await router.replace({ name: 'home' })
       }
+    } else if (user) {
+      await activateUserPersistence(user.uid)
+      if (transition !== authenticationTransition || currentUser.value?.uid !== user.uid) return
+      await initializeFriendFeatures(user)
+      if (transition !== authenticationTransition || currentUser.value?.uid !== user.uid) return
     }
 
-    if (!store.lastPage && router.currentRoute.value.name !== 'student-id') {
-      await router.replace({ name: 'student-id' })
+    if (!store.department) {
+      if (router.currentRoute.value.name !== 'student-id') {
+        await router.replace({ name: 'student-id' })
+      }
+      return
+    }
+
+    if (
+      router.currentRoute.value.name === 'student-id' &&
+      router.currentRoute.value.query.edit !== '1'
+    ) {
+      await router.replace({ name: 'home' })
+      return
+    }
+
+    if (!router.currentRoute.value.matched.length) {
+      await router.replace({ name: 'home' })
     }
   },
   { immediate: true },

@@ -179,7 +179,7 @@
                 @input="updateSelectedCourseMemo"
               />
             </label>
-            <SharedMemoPanel :course="detailCourse" />
+            <SharedMemoPanel v-if="currentUser" :course="detailCourse" />
           </div>
         </div>
       </Transition>
@@ -189,6 +189,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { currentUser } from '../auth'
 import BaseLayout from '../components/BaseLayout.vue'
 import FriendAvatarStack from '../components/FriendAvatarStack.vue'
 import SharedMemoPanel from '../components/SharedMemoPanel.vue'

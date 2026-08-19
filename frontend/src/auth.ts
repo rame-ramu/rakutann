@@ -14,11 +14,46 @@ import { flushCloudSave } from './utils/persistence'
 
 export const currentUser = shallowRef<User | null>(null)
 export const isAuthReady = ref(false)
+export const isGuestMode = ref(false)
 export const isSigningIn = ref(false)
 export const isSigningOut = ref(false)
 export const authError = ref('')
 
 let isAuthenticationInitialized = false
+const GUEST_MODE_KEY = 'rakutann-guest-mode'
+
+const canUseLocalStorage = () => {
+  try {
+    return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
+  } catch {
+    return false
+  }
+}
+
+const saveGuestMode = (enabled: boolean) => {
+  if (!canUseLocalStorage()) return
+
+  try {
+    if (enabled) {
+      window.localStorage.setItem(GUEST_MODE_KEY, '1')
+    } else {
+      window.localStorage.removeItem(GUEST_MODE_KEY)
+    }
+  } catch {
+    // Storage can be unavailable in private browsing; session-only guest mode still works.
+  }
+}
+
+export const enterGuestMode = () => {
+  authError.value = ''
+  saveGuestMode(true)
+  isGuestMode.value = true
+}
+
+export const exitGuestMode = () => {
+  saveGuestMode(false)
+  isGuestMode.value = false
+}
 
 const getAuthErrorMessage = (error: unknown) => {
   if (!(error instanceof FirebaseError)) {
@@ -44,6 +79,14 @@ export const initializeAuthentication = async () => {
   if (isAuthenticationInitialized) return
   isAuthenticationInitialized = true
 
+  if (canUseLocalStorage()) {
+    try {
+      isGuestMode.value = window.localStorage.getItem(GUEST_MODE_KEY) === '1'
+    } catch {
+      isGuestMode.value = false
+    }
+  }
+
   try {
     await setPersistence(firebaseAuth, browserLocalPersistence)
   } catch (error) {
@@ -53,6 +96,7 @@ export const initializeAuthentication = async () => {
   onAuthStateChanged(
     firebaseAuth,
     (user) => {
+      if (user) exitGuestMode()
       currentUser.value = user
       authError.value = ''
       isAuthReady.value = true

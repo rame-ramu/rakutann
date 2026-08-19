@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import StudentIdView from '../views/StudentIdView.vue'
+import ScheduleView from '../views/ScheduleView.vue'
+import { currentUser } from '../auth'
 import { store } from '../store'
 
 const router = createRouter({
@@ -7,6 +9,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'home',
+      component: ScheduleView,
+    },
+    {
+      path: '/student-id',
       name: 'student-id',
       component: StudentIdView,
     },
@@ -17,8 +24,7 @@ const router = createRouter({
     },
     {
       path: '/schedule',
-      name: 'schedule',
-      component: () => import('../views/ScheduleView.vue'),
+      redirect: '/',
     },
     {
       path: '/results',
@@ -34,6 +40,14 @@ const router = createRouter({
 })
 
 router.beforeEach((to) => {
+  if (to.name === 'friends' && !currentUser.value) {
+    return { name: 'home' }
+  }
+
+  if (!store.department && to.name !== 'student-id') {
+    return { name: 'student-id' }
+  }
+
   if (
     store.department &&
     !store.isHumanInfoStudent &&

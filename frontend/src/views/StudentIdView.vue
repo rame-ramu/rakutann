@@ -59,20 +59,18 @@
         はじめる
       </button>
 
-      <p class="footer-note">※学籍番号は解析にのみ使用し、保存されません。</p>
-      <button @click="deleteSavedData" class="delete-save-button">保存データを削除する</button>
+      <p class="footer-note">
+        ※学籍番号そのものは保存されません。判定した学部・学年のみ保存します。
+      </p>
     </div>
   </BaseLayout>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 import BaseLayout from '../components/BaseLayout.vue'
 import { store } from '../store'
-import { clearPersistedState, resumePersistence } from '../utils/persistence'
 
-const router = useRouter()
 const inputId = ref(store.studentId)
 const gradeOptions = [1, 2, 3, 4]
 
@@ -80,17 +78,6 @@ const onInput = () => {
   store.setStudentId(inputId.value)
 }
 
-const deleteSavedData = async () => {
-  if (window.confirm('端末とクラウドに保存された時間割やメモをすべて削除しますか？')) {
-    await clearPersistedState()
-    inputId.value = ''
-    try {
-      await router.push('/')
-    } finally {
-      resumePersistence()
-    }
-  }
-}
 </script>
 
 <style scoped>

@@ -6,6 +6,7 @@ import { firestoreDb } from '../firebase'
 import { store, mockCourses, type CourseDetail, type ScheduleSlot } from '../store'
 
 export const STORAGE_KEY = 'rakutann-user-state-v1'
+const GUEST_STORAGE_KEY = `${STORAGE_KEY}:guest`
 const STORAGE_VERSION = 1
 const CLOUD_SCHEMA_VERSION = 1
 const CLOUD_SAVE_DELAY_MS = 700
@@ -31,6 +32,13 @@ export const isUserDataReady = ref(false)
 interface PersistedState {
   version: typeof STORAGE_VERSION
   updatedAt: number
+  studentProfile: {
+    department: string
+    grade: number
+    autoDetectedGrade: number | null
+    isGradeManuallySelected: boolean
+    isHumanInfoStudent: boolean
+  } | null
   timetable: {
     courseIds: string[]
     classrooms: Record<string, string>
@@ -101,6 +109,31 @@ const sanitizeSemester = (value: unknown): '' | '前期' | '後期' => {
   return value === '前期' || value === '後期' ? value : ''
 }
 
+const sanitizeStudentProfile = (value: unknown): PersistedState['studentProfile'] => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null
+
+  const profile = value as Partial<NonNullable<PersistedState['studentProfile']>>
+  if (
+    typeof profile.department !== 'string' ||
+    !profile.department.trim() ||
+    typeof profile.grade !== 'number' ||
+    !Number.isFinite(profile.grade)
+  ) {
+    return null
+  }
+
+  return {
+    department: profile.department,
+    grade: profile.grade,
+    autoDetectedGrade:
+      typeof profile.autoDetectedGrade === 'number' && Number.isFinite(profile.autoDetectedGrade)
+        ? profile.autoDetectedGrade
+        : null,
+    isGradeManuallySelected: profile.isGradeManuallySelected === true,
+    isHumanInfoStudent: profile.isHumanInfoStudent === true,
+  }
+}
+
 const sanitizeClassrooms = (value: unknown) => {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return {}
 
@@ -141,6 +174,7 @@ const normalizePersistedState = (value: unknown): PersistedState | null => {
     version: STORAGE_VERSION,
     updatedAt:
       typeof state.updatedAt === 'number' && Number.isFinite(state.updatedAt) ? state.updatedAt : 0,
+    studentProfile: sanitizeStudentProfile(state.studentProfile),
     timetable: {
       courseIds: sanitizeStringArray(state.timetable?.courseIds),
       classrooms: sanitizeClassrooms(state.timetable?.classrooms),
@@ -174,6 +208,16 @@ const readStoredState = () => {
 const buildPersistedState = (): PersistedState => ({
   version: STORAGE_VERSION,
   updatedAt: lastModifiedAt,
+  studentProfile:
+    store.department && store.grade
+      ? {
+          department: store.department,
+          grade: store.grade,
+          autoDetectedGrade: store.autoDetectedGrade,
+          isGradeManuallySelected: store.isGradeManuallySelected,
+          isHumanInfoStudent: store.isHumanInfoStudent,
+        }
+      : null,
   timetable: {
     courseIds: store.candidateCourses.map((course) => course.id),
     classrooms: store.classrooms,
@@ -215,6 +259,14 @@ const applyPersistedState = (savedState: PersistedState) => {
     }
   }
 
+  if (savedState.studentProfile) {
+    store.studentId = ''
+    store.department = savedState.studentProfile.department
+    store.grade = savedState.studentProfile.grade
+    store.autoDetectedGrade = savedState.studentProfile.autoDetectedGrade
+    store.isGradeManuallySelected = savedState.studentProfile.isGradeManuallySelected
+    store.isHumanInfoStudent = savedState.studentProfile.isHumanInfoStudent
+  }
   store.selectedConditions = savedState.selectedTags.map(normalizeTagName)
   store.selectedSemester = savedState.selectedSemester
   store.selectedSchedule = savedState.freePeriods
@@ -382,6 +434,24 @@ export const activateUserPersistence = async (userId: string) => {
   }
 }
 
+export const activateGuestPersistence = () => {
+  activationGeneration += 1
+  cancelScheduledCloudSave()
+  isPersistencePaused = true
+  isCloudPersistenceReady = false
+  hasPendingCloudSave = false
+  isUserDataReady.value = false
+  cloudSyncStatus.value = 'idle'
+  cloudSyncError.value = ''
+  activeUserId = null
+  activeStorageKey = GUEST_STORAGE_KEY
+  lastModifiedAt = 0
+  store.resetSelections()
+  loadPersistedState()
+  isPersistencePaused = false
+  isUserDataReady.value = true
+}
+
 export const deactivateUserPersistence = () => {
   activationGeneration += 1
   cancelScheduledCloudSave()
@@ -404,6 +474,13 @@ export const startPersistence = (router: Router) => {
 
   watch(
     () => ({
+      studentProfile: {
+        department: store.department,
+        grade: store.grade,
+        autoDetectedGrade: store.autoDetectedGrade,
+        isGradeManuallySelected: store.isGradeManuallySelected,
+        isHumanInfoStudent: store.isHumanInfoStudent,
+      },
       timetable: store.candidateCourses.map((course) => course.id),
       classrooms: { ...store.classrooms },
       courseDetails: { ...store.courseDetails },

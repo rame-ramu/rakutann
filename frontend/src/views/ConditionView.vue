@@ -4,7 +4,12 @@
       <div v-if="store.department && !store.isHumanInfoStudent" class="unsupported-message">
         <h2>あなたに対応してません</h2>
         <p class="description">このシラバスは人間情報学部の学生のみ利用できます。</p>
-        <button @click="$router.push('/')" class="next-button">学籍番号を入力し直す</button>
+        <button
+          @click="$router.push({ name: 'student-id', query: { edit: '1' } })"
+          class="next-button"
+        >
+          学籍番号を入力し直す
+        </button>
       </div>
 
       <template v-else>
@@ -54,10 +59,10 @@
         </div>
 
         <button 
-          @click="$router.push('/schedule')"
+          @click="$router.push('/')"
           class="next-button"
         >
-          次へ進む
+          希望条件を保存してホームへ
         </button>
       </template>
     </div>
