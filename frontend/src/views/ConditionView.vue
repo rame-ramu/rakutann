@@ -1,149 +1,72 @@
 <template>
   <BaseLayout>
     <div class="condition-view">
-      <div v-if="store.department && !store.isHumanInfoStudent" class="unsupported-message">
-        <h2>あなたに対応してません</h2>
-        <p class="description">このシラバスは人間情報学部の学生のみ利用できます。</p>
-        <button
-          @click="$router.push({ name: 'student-id', query: { edit: '1' } })"
-          class="next-button"
-        >
-          学籍番号を入力し直す
-        </button>
+      <h2>どんな授業がいい？</h2>
+      <p class="description">
+        無理のない範囲で、あなたの希望を教えてください。<br />複数選んでも大丈夫です。
+      </p>
+
+      <div class="condition-group">
+        <h3>開講学期</h3>
+        <div class="semester-options" role="group" aria-label="開講学期">
+          <button
+            v-for="semester in semesterOptions"
+            :key="semester"
+            :class="{ active: store.selectedSemester === semester }"
+            :aria-pressed="store.selectedSemester === semester"
+            @click="store.setSelectedSemester(semester)"
+            class="semester-button"
+          >
+            {{ semester }}
+          </button>
+        </div>
       </div>
 
-      <template v-else>
-        <h2>どんな授業がいい？</h2>
-        <p class="description">無理のない範囲で、あなたの希望を教えてください。<br>複数選んでも大丈夫です。</p>
-
-        <div class="condition-group">
-          <h3>開講学期</h3>
-          <div class="semester-options" role="group" aria-label="開講学期">
-            <button
-              v-for="semester in semesterOptions"
-              :key="semester"
-              :class="{ active: store.selectedSemester === semester }"
-              @click="store.setSelectedSemester(semester)"
-              class="semester-button"
-            >
-              {{ semester }}
-            </button>
-          </div>
+      <div v-for="group in tagGroups" :key="group.title" class="condition-group">
+        <h3>{{ group.title }}</h3>
+        <div class="tags">
+          <button
+            v-for="tag in group.tags"
+            :key="tag"
+            :class="{ active: store.selectedConditions.includes(tag) }"
+            :aria-pressed="store.selectedConditions.includes(tag)"
+            @click="store.toggleCondition(tag)"
+            class="tag-button"
+          >
+            <span class="icon">{{ getIcon(tag) }}</span>
+            {{ tag }}
+          </button>
         </div>
+      </div>
 
-        <div v-for="group in tagGroups" :key="group.title" class="condition-group">
-          <h3>{{ group.title }}</h3>
-          <div class="tags">
-            <button
-              v-for="tag in group.tags"
-              :key="tag"
-              :class="{ active: store.selectedConditions.includes(tag) }"
-              @click="store.toggleCondition(tag)"
-              class="tag-button"
-            >
-              <span class="icon">{{ getIcon(tag) }}</span>
-              {{ tag }}
-            </button>
-          </div>
-        </div>
+      <div class="teacher-filter">
+        <label for="avoided-teachers">受けたくない先生</label>
+        <input
+          id="avoided-teachers"
+          :value="store.avoidedTeachersText"
+          type="text"
+          placeholder="例: 山田、Suzuki"
+          @input="store.setAvoidedTeachers(($event.target as HTMLInputElement).value)"
+        />
+      </div>
 
-        <div class="teacher-filter">
-          <label for="avoided-teachers">受けたくない先生</label>
-          <input
-            id="avoided-teachers"
-            :value="store.avoidedTeachersText"
-            type="text"
-            placeholder="例: 山田、Suzuki"
-            @input="store.setAvoidedTeachers(($event.target as HTMLInputElement).value)"
-          />
-        </div>
-
-        <button 
-          @click="$router.push('/')"
-          class="next-button"
-        >
-          希望条件を保存してホームへ
-        </button>
-      </template>
+      <button type="button" class="next-button" @click="$router.push('/')">
+        希望条件を保存してホームへ
+      </button>
     </div>
   </BaseLayout>
 </template>
 
 <script setup lang="ts">
 import BaseLayout from '../components/BaseLayout.vue'
+import { CONDITION_GROUPS, CONDITION_ICONS } from '../constants/courseConditions'
 import { store } from '../store'
 
 const semesterOptions = ['前期', '後期'] as const
 
-const tagGroups = [
-  {
-    title: '成績評価',
-    tags: [
-      'レポート・課題重視',
-      'レポート・課題あり',
-      '試験あり',
-      '試験重視',
-      '試験なし',
-      '態度点なし',
-      '態度点低め',
-      '態度点高め',
-    ],
-  },
-  {
-    title: '授業形態',
-    tags: [
-      'オンデマンド多め',
-      'オンデマンド少なめ',
-      'オンデマンドなし',
-      'すべてオンデマンド',
-      '前提履修なし',
-      '前提履修あり',
-    ],
-  },
-  {
-    title: '受けたい系統',
-    tags: [
-      '情報・データ',
-      '心理・人間',
-      'ビジネス・経営',
-      '語学・国際',
-      'デザイン・表現',
-      '健康・福祉',
-      '教育・文学',
-      '法律・社会',
-      'その他',
-    ],
-  },
-]
+const tagGroups = CONDITION_GROUPS
 
-const getIcon = (tag: string) => {
-  const icons: Record<string, string> = {
-    'レポート・課題重視': '📝',
-    'レポート・課題あり': '📄',
-    '試験あり': '有',
-    '試験重視': '✍️',
-    '試験なし': '🚫',
-    '態度点なし': '0',
-    '態度点低め': '↓',
-    '態度点高め': '↑',
-    'オンデマンド多め': '▶',
-    'オンデマンド少なめ': '◐',
-    'オンデマンドなし': '□',
-    'すべてオンデマンド': '◎',
-    '前提履修なし': '✓',
-    '前提履修あり': '要',
-    '情報・データ': '💻',
-    '心理・人間': '🧠',
-    'ビジネス・経営': '💼',
-    '語学・国際': '🌐',
-    'デザイン・表現': '🎨',
-    '健康・福祉': '＋',
-    '教育・文学': '本',
-    '法律・社会': '§',
-    'その他': '…',
-  }
-  return icons[tag] || '🏷️'
-}
+const getIcon = (tag: string) => CONDITION_ICONS[tag] || '🏷️'
 </script>
 
 <style scoped>

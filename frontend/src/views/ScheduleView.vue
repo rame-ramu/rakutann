@@ -51,7 +51,7 @@
       </p>
 
       <div class="table-container">
-        <table>
+        <table id="schedule-period-table">
           <thead>
             <tr>
               <th></th>
@@ -68,11 +68,16 @@
               <td
                 v-for="day in days"
                 :key="day"
+                role="button"
+                tabindex="0"
+                :aria-label="getCellAriaLabel(day, period)"
                 :class="{
                   selected: isSelected(day, period),
                   locked: getCandidateCourses(day, period).length > 0,
                 }"
                 @click="handleCellClick(day, period)"
+                @keydown.enter.prevent="handleCellClick(day, period)"
+                @keydown.space.prevent="handleCellClick(day, period)"
               >
                 <FriendAvatarStack
                   v-if="getFriendsInSlot(day, period).length > 0"
@@ -100,6 +105,15 @@
             </tr>
           </tbody>
         </table>
+        <button
+          type="button"
+          class="show-additional-periods-button"
+          aria-controls="schedule-period-table"
+          :aria-expanded="showAdditionalPeriods"
+          @click="toggleAdditionalPeriods"
+        >
+          {{ showAdditionalPeriods ? '追加時間を閉じる' : 'さらに時間を追加' }}
+        </button>
       </div>
 
       <div class="selection-info">
@@ -110,7 +124,7 @@
       </div>
 
       <button
-        :disabled="store.selectedSchedule.length === 0"
+        :disabled="store.selectedSchedule.length === 0 && !store.includeUnscheduledCourses"
         @click="$router.push('/results')"
         class="next-button"
       >
@@ -120,23 +134,19 @@
       <div v-if="store.candidateCourses.length > 0" class="registered-section">
         <h3>登録済みの授業</h3>
         <div class="registered-list">
-          <div
-            v-for="course in store.candidateCourses"
-            :key="course.id"
-            class="registered-item"
-            @mousedown="startClassroomPress(course)"
-            @mouseup="cancelClassroomPress"
-            @mouseleave="cancelClassroomPress"
-            @touchstart.passive="startClassroomPress(course)"
-            @touchend="cancelClassroomPress"
-            @touchcancel="cancelClassroomPress"
-            @click="openCourseDetail(course)"
-          >
-            <div>
-              <span
-                >{{ course.day }}{{ course.period }}限
-                {{ course.period ? getPeriodTime(course.period) : '' }}</span
-              >
+          <div v-for="course in store.candidateCourses" :key="course.id" class="registered-item">
+            <button
+              type="button"
+              class="registered-main"
+              @mousedown="startClassroomPress(course)"
+              @mouseup="cancelClassroomPress"
+              @mouseleave="cancelClassroomPress"
+              @touchstart.passive="startClassroomPress(course)"
+              @touchend="cancelClassroomPress"
+              @touchcancel="cancelClassroomPress"
+              @click="openCourseDetail(course)"
+            >
+              <span>{{ formatScheduleWithTime(course) }}</span>
               <p>{{ displayCourseName(course.name) }}</p>
               <small>{{
                 getCourseRoom(course) ? `教室 ${getCourseRoom(course)}` : '長押しで教室番号を登録'
@@ -145,21 +155,45 @@
                 v-if="getFriendsForCourse(course.id).length > 0"
                 :friends="getFriendsForCourse(course.id)"
               />
-            </div>
-            <button @click.stop="store.removeCandidateCourse(course.id)">登録解除</button>
+            </button>
+            <button class="registered-remove" @click="store.removeCandidateCourse(course.id)">
+              登録解除
+            </button>
           </div>
         </div>
       </div>
 
       <Transition name="modal">
-        <div v-if="detailCourse" class="modal-overlay" @click="closeCourseDetail">
-          <div class="course-detail-modal" @click.stop>
-            <button class="close-button" type="button" @click="closeCourseDetail">×</button>
-            <span class="detail-schedule"
-              >{{ detailCourse.day }}{{ detailCourse.period }}限
-              {{ detailCourse.period ? getPeriodTime(detailCourse.period) : '' }}</span
+        <div
+          v-if="detailCourse"
+          class="modal-overlay"
+          @click="closeCourseDetail"
+          @keydown.esc.stop="closeCourseDetail"
+        >
+          <div
+            ref="detailDialog"
+            class="course-detail-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="schedule-detail-title"
+            tabindex="-1"
+            @click.stop
+            @keydown.tab="trapDetailFocus"
+          >
+            <button
+              class="close-button"
+              type="button"
+              aria-label="授業詳細を閉じる"
+              @click="closeCourseDetail"
             >
-            <h3>{{ displayCourseName(detailCourse.name) }}</h3>
+              ×
+            </button>
+            <span class="detail-schedule">{{ formatScheduleWithTime(detailCourse) }}</span>
+            <h3 id="schedule-detail-title">{{ displayCourseName(detailCourse.name) }}</h3>
+            <section class="detail-section" aria-labelledby="registered-syllabus-heading">
+              <h4 id="registered-syllabus-heading">シラバス情報</h4>
+              <CourseSyllabusDetails :course="detailCourse" />
+            </section>
             <label class="detail-field">
               <span>教室</span>
               <input
@@ -188,22 +222,36 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { currentUser } from '../auth'
 import BaseLayout from '../components/BaseLayout.vue'
+import CourseSyllabusDetails from '../components/CourseSyllabusDetails.vue'
 import FriendAvatarStack from '../components/FriendAvatarStack.vue'
 import SharedMemoPanel from '../components/SharedMemoPanel.vue'
 import { CLASS_TIMES, getPeriodTime } from '../constants/classTimes'
 import { getFriendsForCourse, getFriendsInSlot } from '../friends'
 import { store, type Course } from '../store'
+import {
+  COURSE_DAYS,
+  COURSE_PERIODS,
+  formatCourseSchedule,
+  getCourseScheduleSlots,
+} from '../utils/courseSchedule'
+import { trapDialogFocus } from '../utils/dialogFocus'
 
-const days = ['月', '火', '水', '木', '金']
-const periods = [1, 2, 3, 4, 5]
+const days = [...COURSE_DAYS]
+const defaultPeriods = COURSE_PERIODS.filter((period) => period <= 5)
+const additionalPeriods = COURSE_PERIODS.filter((period) => period > 5)
+const additionalPeriodSet = new Set<number>(additionalPeriods)
+const todayPeriods = [1, 2, 3, 4, 5]
 const weekDays = ['日', '月', '火', '水', '木', '金', '土']
 let classroomPressTimer: number | undefined
 let clockTimer: number | undefined
 const now = ref(new Date())
 const detailCourse = ref<Course | null>(null)
+const detailDialog = ref<HTMLElement | null>(null)
+const additionalPeriodsVisibility = ref<boolean | null>(null)
+let detailTrigger: HTMLElement | null = null
 
 interface TodayScheduleSlot {
   period: number
@@ -225,7 +273,7 @@ const formattedToday = computed(() => {
 
 const todayDay = computed(() => {
   const day = weekDays[now.value.getDay()] || ''
-  return days.includes(day) ? day : ''
+  return days.some((candidate) => candidate === day) ? day : ''
 })
 
 const isSelected = (day: string, period: number) => {
@@ -233,10 +281,34 @@ const isSelected = (day: string, period: number) => {
 }
 
 const getCandidateCourses = (day: string, period: number) => {
-  return store.candidateCourses.filter(
-    (course: Course) => course.day === day && course.period === period,
+  return store.candidateCourses.filter((course: Course) =>
+    getCourseScheduleSlots(course).some((slot) => slot.day === day && slot.period === period),
   )
 }
+
+const hasAdditionalPeriodData = computed(() => {
+  const isAdditionalPeriod = (period: number) => additionalPeriodSet.has(period)
+  return (
+    store.selectedSchedule.some((slot) => isAdditionalPeriod(slot.period)) ||
+    store.candidateCourses.some((course) =>
+      getCourseScheduleSlots(course).some((slot) => isAdditionalPeriod(slot.period)),
+    )
+  )
+})
+
+const showAdditionalPeriods = computed(
+  () => additionalPeriodsVisibility.value ?? hasAdditionalPeriodData.value,
+)
+
+const toggleAdditionalPeriods = () => {
+  additionalPeriodsVisibility.value = !showAdditionalPeriods.value
+}
+
+const periods = computed(() =>
+  showAdditionalPeriods.value || hasAdditionalPeriodData.value
+    ? [...defaultPeriods, ...additionalPeriods]
+    : defaultPeriods,
+)
 
 const selectedAddSlotCount = computed(() => {
   return store.selectedSchedule.filter(
@@ -250,7 +322,7 @@ const todaySchedule = computed<TodayScheduleSlot[]>(() => {
   }
 
   const day = todayDay.value
-  return periods.map((period) => ({
+  return todayPeriods.map((period) => ({
     period,
     course: getCandidateCourses(day, period)[0] || null,
   }))
@@ -340,6 +412,12 @@ const displayCourseName = (name: string) => {
   return name.split('／')[0]
 }
 
+const formatScheduleWithTime = (course: Course) => {
+  const schedule = formatCourseSchedule(course)
+  const periodTime = course.period === null ? '' : getPeriodTime(course.period)
+  return periodTime ? `${schedule} ${periodTime}` : schedule
+}
+
 const getCourseRoom = (course: Course) => {
   return store.getCourseRoom(course.id)
 }
@@ -354,12 +432,29 @@ const handleCellClick = (day: string, period: number) => {
   store.toggleSchedule(day, period)
 }
 
+const getCellAriaLabel = (day: string, period: number) => {
+  const courses = getCandidateCourses(day, period)
+  if (courses.length > 0) {
+    return `${day}曜日${period}限、登録済み、${courses
+      .map((course) => displayCourseName(course.name))
+      .join('、')}。授業詳細を開く`
+  }
+  return `${day}曜日${period}限、${isSelected(day, period) ? '選択中。選択を解除' : '空き。選択する'}`
+}
+
 const openCourseDetail = (course: Course) => {
+  detailTrigger = document.activeElement instanceof HTMLElement ? document.activeElement : null
   detailCourse.value = course
+  void nextTick(() => detailDialog.value?.focus())
 }
 
 const closeCourseDetail = () => {
   detailCourse.value = null
+  void nextTick(() => detailTrigger?.focus())
+}
+
+const trapDetailFocus = (event: KeyboardEvent) => {
+  trapDialogFocus(event, detailDialog.value)
 }
 
 const updateSelectedCourseRoom = (event: Event) => {
@@ -569,6 +664,28 @@ h2 {
   border-radius: 0.7rem;
   border: 4px solid #111827;
   box-shadow: 7px 7px 0 #111827;
+}
+
+.show-additional-periods-button {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.8rem 1rem;
+  border: 3px dashed #111827;
+  border-radius: 0.6rem;
+  background: #ffffff;
+  color: #111827;
+  cursor: pointer;
+  font-weight: 900;
+  transition:
+    background 0.15s,
+    transform 0.15s;
+}
+
+.show-additional-periods-button:hover,
+.show-additional-periods-button:focus-visible {
+  background: var(--comic-yellow);
+  outline: none;
+  transform: translateY(-1px);
 }
 
 table {
@@ -835,7 +952,7 @@ td.locked:hover {
   font-weight: 700;
 }
 
-.registered-item button {
+.registered-remove {
   padding: 0.6rem 0.8rem;
   border: 3px solid #111827;
   border-radius: 0.55rem;
@@ -843,6 +960,22 @@ td.locked:hover {
   color: #111827;
   cursor: pointer;
   font-weight: 700;
+}
+
+.registered-main {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.registered-main:focus-visible {
+  outline: 3px solid var(--comic-green);
+  outline-offset: 4px;
 }
 
 .modal-overlay {
@@ -901,6 +1034,19 @@ td.locked:hover {
   font-size: 1.4rem;
   font-weight: 900;
   overflow-wrap: anywhere;
+}
+
+.detail-section {
+  margin-bottom: 1.25rem;
+  padding-top: 1rem;
+  border-top: 3px dashed #111827;
+}
+
+.detail-section h4 {
+  margin: 0 0 0.75rem;
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 900;
 }
 
 .detail-field {

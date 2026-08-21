@@ -6,10 +6,48 @@
           <h2>あなたにおすすめの授業</h2>
           <p class="description">{{ store.grade }}年生・{{ store.department }}向けの結果です。</p>
         </div>
-        <div class="result-count">{{ filteredCourses.length }}件</div>
+        <div class="page-heading-actions">
+          <button
+            type="button"
+            class="conditions-button"
+            @click="router.push({ path: '/conditions', query: { from: 'results' } })"
+          >
+            希望条件を変更
+          </button>
+          <div class="result-count">{{ filteredCourses.length }}件</div>
+        </div>
       </div>
 
-      <div class="results-layout">
+      <div class="selected-condition-summary" aria-label="選択中の希望タグ">
+        <span class="selected-condition-label">選択中の希望タグ</span>
+        <div v-if="store.selectedConditions.length > 0" class="selected-condition-tags">
+          <span
+            v-for="condition in store.selectedConditions"
+            :key="condition"
+            class="selected-condition-tag"
+          >
+            #{{ condition }}
+          </span>
+        </div>
+        <span v-else class="selected-condition-empty">選択なし</span>
+      </div>
+
+      <div class="recommendation-notice" role="note">
+        <span class="recommendation-notice-icon" aria-hidden="true">💡</span>
+        <p>
+          <strong>希望タグに合う授業から優先して表示しています。</strong>
+          タグに一致しない授業も、学年・学期・曜日・時限に合う履修候補として一覧に表示されます。
+        </p>
+      </div>
+
+      <div v-if="isEligibilityLoading" class="result-state" role="status">
+        履修候補を読み込んでいます…
+      </div>
+      <div v-else-if="eligibilityError" class="result-state result-state--error" role="alert">
+        <p>{{ eligibilityError }}</p>
+        <button type="button" @click="loadEligibility">再読み込み</button>
+      </div>
+      <div v-else class="results-layout">
         <aside class="candidate-panel">
           <div class="panel-header">
             <h3>選んだ授業</h3>
@@ -58,7 +96,10 @@
           <p v-if="!store.selectedSemester" class="name-search-message">
             条件画面で前期か後期を選ぶと検索できます。
           </p>
-          <p v-else-if="selectedNameSearchSlotCount === 0" class="name-search-message">
+          <p
+            v-else-if="selectedNameSearchSlotCount === 0 && !store.includeUnscheduledCourses"
+            class="name-search-message"
+          >
             時間割画面で授業を入れたい曜日・時限を選ぶと検索できます。
           </p>
           <div
@@ -73,12 +114,8 @@
                 chosen: isCandidate(course.id),
                 'friend-match': getFriendsForCourse(course.id).length > 0,
               }"
-              role="button"
-              tabindex="0"
-              @click="openDetail(course)"
-              @keydown.enter="openDetail(course)"
             >
-              <div class="name-result-main">
+              <button class="name-result-main" type="button" @click="openDetail(course)">
                 <span class="candidate-schedule">{{ formatScheduleWithTime(course) }}</span>
                 <h4>{{ displayCourseName(course.name) }}</h4>
                 <p>{{ course.instructor }}</p>
@@ -86,7 +123,7 @@
                   <FriendAvatarStack :friends="getFriendsForCourse(course.id)" />
                   <strong>友達もこの授業を登録しています</strong>
                 </div>
-              </div>
+              </button>
               <button
                 class="inline-add-button"
                 type="button"
@@ -104,9 +141,10 @@
 
         <div class="results-main">
           <div v-if="filteredCourses.length > 0" class="course-list">
-            <div
+            <button
               v-for="course in filteredCourses"
               :key="course.id"
+              type="button"
               class="course-card"
               :class="{
                 chosen: isCandidate(course.id),
@@ -140,7 +178,7 @@
               <div class="click-hint">
                 {{ isCandidate(course.id) ? '候補に追加済み' : 'タップして詳細を見る' }}
               </div>
-            </div>
+            </button>
           </div>
           <div v-else class="no-results">
             <p>条件に合う授業が見つかりませんでした。</p>
@@ -153,62 +191,37 @@
 
       <!-- Detail Modal -->
       <Transition name="modal">
-        <div v-if="store.selectedCourse" class="modal-overlay" @click="closeDetail">
-          <div class="modal-content" @click.stop>
-            <button class="close-button" @click="closeDetail">×</button>
+        <div
+          v-if="store.selectedCourse"
+          class="modal-overlay"
+          @click="closeDetail"
+          @keydown.esc.stop="closeDetail"
+        >
+          <div
+            ref="detailDialog"
+            class="modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="course-detail-title"
+            tabindex="-1"
+            @click.stop
+            @keydown.tab="trapDetailFocus"
+          >
+            <button class="close-button" aria-label="授業詳細を閉じる" @click="closeDetail">
+              ×
+            </button>
             <div class="modal-header">
               <span class="schedule-badge-large">{{
                 formatScheduleWithTime(store.selectedCourse)
               }}</span>
-              <h3>{{ store.selectedCourse.name }}</h3>
+              <h3 id="course-detail-title">{{ store.selectedCourse.name }}</h3>
               <p>{{ store.selectedCourse.instructor }}</p>
             </div>
 
             <div class="modal-body">
               <div class="section">
                 <h4>シラバス情報</h4>
-                <dl class="detail-grid">
-                  <div>
-                    <dt>開講学期</dt>
-                    <dd>{{ store.selectedCourse.semester }}</dd>
-                  </div>
-                  <div>
-                    <dt>曜日・時限</dt>
-                    <dd>{{ formatScheduleWithTime(store.selectedCourse) }}</dd>
-                  </div>
-                  <div>
-                    <dt>単位数</dt>
-                    <dd>{{ store.selectedCourse.credits }}単位</dd>
-                  </div>
-                  <div>
-                    <dt>授業形態</dt>
-                    <dd>{{ store.selectedCourse.classFormat }}</dd>
-                  </div>
-                  <div>
-                    <dt>態度割合</dt>
-                    <dd>{{ store.selectedCourse.attendancePercent }}%</dd>
-                  </div>
-                  <div>
-                    <dt>レポート・課題</dt>
-                    <dd>{{ store.selectedCourse.reportPercent }}%</dd>
-                  </div>
-                  <div>
-                    <dt>試験</dt>
-                    <dd>{{ store.selectedCourse.examPercent }}%</dd>
-                  </div>
-                  <div>
-                    <dt>オンデマンド</dt>
-                    <dd>
-                      {{ store.selectedCourse.onDemandLabel }}（{{
-                        store.selectedCourse.onDemandPercent
-                      }}%）
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>前提履修</dt>
-                    <dd>{{ store.selectedCourse.prerequisiteLabel }}</dd>
-                  </div>
-                </dl>
+                <CourseSyllabusDetails :course="store.selectedCourse" />
               </div>
 
               <div class="section">
@@ -255,9 +268,17 @@
               </div>
             </div>
 
-            <button class="add-button" @click="addCandidate(store.selectedCourse)">
+            <button
+              class="add-button"
+              :disabled="!canRegisterCourse(store.selectedCourse)"
+              @click="addCandidate(store.selectedCourse)"
+            >
               {{
-                isCandidate(store.selectedCourse.id) ? '候補に追加済み' : 'この授業を候補に入れる'
+                isCandidate(store.selectedCourse.id)
+                  ? '候補に追加済み'
+                  : isLockedSchedule(store.selectedCourse)
+                    ? '同じ時限に授業が登録されています'
+                    : 'この授業を候補に入れる'
               }}
             </button>
           </div>
@@ -270,21 +291,81 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref, shallowRef, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import BaseLayout from '../components/BaseLayout.vue'
+import CourseSyllabusDetails from '../components/CourseSyllabusDetails.vue'
 import FriendAvatarStack from '../components/FriendAvatarStack.vue'
 import { getPeriodTime } from '../constants/classTimes'
 import { getFriendsForCourse } from '../friends'
-import { store, mockCourses, type Course } from '../store'
+import type { EligibilityResult } from '../services/eligibilityEngine'
+import { getRuntimeEligibilityResult } from '../services/eligibilityRuntime'
+import { compareCoursesByConditions, getConditionMatchCount } from '../services/recommendation'
+import { isValidStudentProfile } from '../services/studentProfile'
+import { store, type Course } from '../store'
+import {
+  courseMatchesSelectedSchedule,
+  coursesHaveScheduleConflict,
+  formatCourseSchedule,
+  isUnscheduledCourse,
+} from '../utils/courseSchedule'
+import { trapDialogFocus } from '../utils/dialogFocus'
 
 const router = useRouter()
 const nameSearchQuery = ref('')
+const detailDialog = ref<HTMLElement | null>(null)
+const eligibilityResult = shallowRef<EligibilityResult | null>(null)
+const isEligibilityLoading = ref(false)
+const eligibilityError = ref('')
+let detailTrigger: HTMLElement | null = null
+let eligibilityRequestId = 0
 
 interface NameSearchResult {
   course: Course
   score: number
 }
+
+const loadEligibility = async () => {
+  const profile = store.studentProfile
+  if (!profile || !isValidStudentProfile(profile)) {
+    eligibilityResult.value = null
+    return
+  }
+
+  const requestId = ++eligibilityRequestId
+  isEligibilityLoading.value = true
+  eligibilityError.value = ''
+  try {
+    const result = await getRuntimeEligibilityResult(profile, {
+      currentYear: store.grade ?? profile.currentYear,
+    })
+    if (requestId === eligibilityRequestId) eligibilityResult.value = result
+  } catch (error) {
+    if (requestId !== eligibilityRequestId) return
+    eligibilityResult.value = null
+    eligibilityError.value =
+      error instanceof Error
+        ? error.message
+        : '履修候補を読み込めませんでした。通信状態を確認してください。'
+  } finally {
+    if (requestId === eligibilityRequestId) isEligibilityLoading.value = false
+  }
+}
+
+watch(
+  () => [
+    store.studentProfile?.organizationCode,
+    store.studentProfile?.admissionYear,
+    store.grade,
+    JSON.stringify(store.studentProfile?.attributes ?? {}),
+  ],
+  loadEligibility,
+  { immediate: true },
+)
+
+const eligibleCourses = computed(
+  () => (eligibilityResult.value?.eligibleOfferings ?? []) as Course[],
+)
 
 const avoidedTeachers = computed(() => {
   return store.avoidedTeachersText
@@ -304,34 +385,31 @@ const isSemesterMatch = (course: Course) => {
 }
 
 const isScheduleMatch = (course: Course) => {
-  if (course.period === null) return false
-  return store.selectedSchedule.some((s) => s.day === course.day && s.period === course.period)
+  return courseMatchesSelectedSchedule(
+    course,
+    store.selectedSchedule,
+    store.includeUnscheduledCourses,
+  )
 }
 
 const isGradeMatch = (course: Course) => {
   if (store.grade === null) return true
-  return course.years.includes(store.grade)
+  if (course.years.length === 0) return true
+  return Math.min(...course.years) <= store.grade
 }
 
 const isLockedSchedule = (course: Course) => {
   return store.candidateCourses.some(
-    (candidate) => candidate.day === course.day && candidate.period === course.period,
+    (candidate) => candidate.id !== course.id && coursesHaveScheduleConflict(course, candidate),
   )
 }
 
 const conditionCount = (course: Course) => {
-  return course.conditions.filter((condition) => store.selectedConditions.includes(condition))
-    .length
-}
-
-const courseScore = (course: Course) => {
-  const conditionScore = conditionCount(course) * 10
-  const scheduleScore = isScheduleMatch(course) ? 3 : 0
-  return conditionScore + scheduleScore
+  return getConditionMatchCount(course, store.selectedConditions)
 }
 
 const filteredCourses = computed(() => {
-  return mockCourses
+  return eligibleCourses.value
     .filter(
       (course) =>
         isGradeMatch(course) &&
@@ -341,9 +419,9 @@ const filteredCourses = computed(() => {
         !isAvoidedTeacher(course),
     )
     .sort((a, b) => {
-      const scoreDiff = courseScore(b) - courseScore(a)
-      if (scoreDiff !== 0) return scoreDiff
-      return conditionCount(b) - conditionCount(a)
+      const conditionDiff = compareCoursesByConditions(a, b, store.selectedConditions)
+      if (conditionDiff !== 0) return conditionDiff
+      return displayCourseName(a.name).localeCompare(displayCourseName(b.name), 'ja')
     })
 })
 
@@ -351,23 +429,36 @@ const normalizedNameQuery = computed(() => normalizeSearchText(nameSearchQuery.v
 const selectedNameSearchSlotCount = computed(() => store.selectedSchedule.length)
 
 const canUseNameSearch = computed(() => {
-  return Boolean(store.selectedSemester && selectedNameSearchSlotCount.value > 0)
+  return Boolean(
+    store.selectedSemester &&
+    (selectedNameSearchSlotCount.value > 0 || store.includeUnscheduledCourses),
+  )
 })
 
 const nameSearchScopeText = computed(() => {
   if (!store.selectedSemester) return '前期/後期を選ぶと名前で検索できます。'
   if (selectedNameSearchSlotCount.value === 0) {
+    if (store.includeUnscheduledCourses) {
+      return `${store.selectedSemester}の集中・曜日時限未定授業を検索します。`
+    }
     return `${store.selectedSemester}の授業を、選択した曜日・時限に絞って検索します。`
   }
-  return `${store.selectedSemester}・選択中の${selectedNameSearchSlotCount.value}コマに合う授業だけを名前で検索します。`
+  const specialText = store.includeUnscheduledCourses ? '＋集中・曜日時限未定' : ''
+  return `${store.selectedSemester}・選択中の${selectedNameSearchSlotCount.value}コマ${specialText}に合う授業だけを名前で検索します。`
 })
 
 const nameSearchResults = computed<NameSearchResult[]>(() => {
   const query = normalizedNameQuery.value
   if (!canUseNameSearch.value || !query) return []
 
-  return mockCourses
-    .filter((course) => isSemesterMatch(course) && isScheduleMatch(course))
+  return eligibleCourses.value
+    .filter(
+      (course) =>
+        isGradeMatch(course) &&
+        isSemesterMatch(course) &&
+        isScheduleMatch(course) &&
+        !isAvoidedTeacher(course),
+    )
     .map((course) => ({ course, score: getCourseNameScore(course, query) }))
     .filter((result) => result.score >= 45)
     .sort((a, b) => {
@@ -379,16 +470,23 @@ const nameSearchResults = computed<NameSearchResult[]>(() => {
 })
 
 const openDetail = (course: Course) => {
+  detailTrigger = document.activeElement instanceof HTMLElement ? document.activeElement : null
   store.setSelectedCourse(course)
+  void nextTick(() => detailDialog.value?.focus())
 }
 
 const closeDetail = () => {
   store.setSelectedCourse(null)
+  void nextTick(() => detailTrigger?.focus())
+}
+
+const trapDetailFocus = (event: KeyboardEvent) => {
+  trapDialogFocus(event, detailDialog.value)
 }
 
 const addCandidate = (course: Course | null) => {
   if (!course) return
-  store.addCandidateCourse(course)
+  if (!store.addCandidateCourse(course)) return
   store.setSelectedCourse(null)
 }
 
@@ -397,13 +495,13 @@ const isCandidate = (courseId: string) => {
 }
 
 const formatSchedule = (course: Course) => {
-  if (course.period === null || course.day === '他') return `${course.day}`
-  return `${course.day}${course.period}限`
+  return formatCourseSchedule(course)
 }
 
 const formatScheduleWithTime = (course: Course) => {
-  if (course.period === null || course.day === '他') return `${course.day}`
-  return `${formatSchedule(course)} ${getPeriodTime(course.period)}`
+  if (course.period === null) return formatSchedule(course)
+  const periodTime = getPeriodTime(course.period)
+  return periodTime ? `${formatSchedule(course)} ${periodTime}` : formatSchedule(course)
 }
 
 const displayCourseName = (name: string) => {
@@ -492,12 +590,15 @@ const getCourseNameScore = (course: Course, query: string) => {
 }
 
 const canRegisterCourse = (course: Course) => {
-  return course.period !== null && course.day !== '他'
+  if (isCandidate(course.id)) return false
+  if (isLockedSchedule(course)) return false
+  return !isUnscheduledCourse(course) || store.includeUnscheduledCourses
 }
 
 const getNameSearchActionLabel = (course: Course) => {
   if (isCandidate(course.id)) return '登録済み'
-  if (!canRegisterCourse(course)) return '時間未定'
+  if (isLockedSchedule(course)) return '同じ時限に登録済み'
+  if (isUnscheduledCourse(course) && !store.includeUnscheduledCourses) return '時間割外'
   return '登録'
 }
 
@@ -513,7 +614,7 @@ const visibleTags = (course: Course) => {
 
 const getMatchSummary = (course: Course) => {
   const count = conditionCount(course)
-  const schedule = isScheduleMatch(course) ? '曜日時限も一致' : 'タグで推薦'
+  const schedule = isUnscheduledCourse(course) ? '集中・曜日時限未定' : '曜日時限も一致'
   return `希望タグ ${count}件一致・${schedule}`
 }
 </script>
@@ -531,6 +632,77 @@ const getMatchSummary = (course: Course) => {
   margin-bottom: 1.5rem;
 }
 
+.page-heading-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.conditions-button {
+  padding: 0.65rem 0.9rem;
+  border: 3px solid #111827;
+  border-radius: 0.6rem;
+  background: white;
+  color: #111827;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 900;
+  box-shadow: 3px 3px 0 #111827;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
+}
+
+.conditions-button:hover {
+  background: var(--comic-yellow);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #111827;
+}
+
+.selected-condition-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: -0.45rem 0 1.25rem;
+  padding: 0.8rem 1rem;
+  border: 3px solid #111827;
+  border-radius: 0.65rem;
+  background: white;
+  box-shadow: 4px 4px 0 #111827;
+}
+
+.selected-condition-label {
+  flex: 0 0 auto;
+  color: #111827;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.selected-condition-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.selected-condition-tag {
+  padding: 0.35rem 0.65rem;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  background: var(--comic-green);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 900;
+  box-shadow: 2px 2px 0 #111827;
+}
+
+.selected-condition-empty {
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
 h2 {
   margin-bottom: 0.5rem;
   color: #111827;
@@ -542,6 +714,34 @@ h2 {
   margin: 0;
   color: #111827;
   font-weight: 700;
+}
+
+.recommendation-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin: -0.45rem 0 1.5rem;
+  padding: 0.8rem 1rem;
+  border: 2px solid #111827;
+  border-radius: 0.65rem;
+  background: #fffbe6;
+  color: #111827;
+  box-shadow: 3px 3px 0 #111827;
+}
+
+.recommendation-notice-icon {
+  flex: 0 0 auto;
+  line-height: 1.5;
+}
+
+.recommendation-notice p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.recommendation-notice strong {
+  display: block;
 }
 
 .result-count {
@@ -571,6 +771,7 @@ h2 {
 }
 
 .course-card {
+  width: 100%;
   padding: 1.25rem;
   border: 3px solid #111827;
   border-radius: 0.65rem;
@@ -579,6 +780,9 @@ h2 {
   background: white;
   position: relative;
   box-shadow: 5px 5px 0 #111827;
+  color: inherit;
+  font: inherit;
+  text-align: left;
 }
 
 .course-card.friend-match,
@@ -612,6 +816,12 @@ h2 {
   border-color: #111827;
   transform: translate(-2px, -2px);
   box-shadow: 7px 7px 0 #111827;
+}
+
+.course-card:focus-visible,
+.name-search-result:focus-visible {
+  outline: 4px solid var(--comic-green);
+  outline-offset: 4px;
 }
 
 .course-card.chosen {
@@ -921,7 +1131,20 @@ h2 {
 }
 
 .name-result-main {
+  width: 100%;
   min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.name-result-main:focus-visible {
+  outline: 3px solid var(--comic-green);
+  outline-offset: 3px;
 }
 
 .name-result-main h4 {
@@ -1051,33 +1274,6 @@ h2 {
   box-shadow: 2px 2px 0 #111827;
 }
 
-.detail-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.875rem;
-  margin: 0;
-}
-
-.detail-grid div {
-  border: 3px solid #111827;
-  border-radius: 0.55rem;
-  padding: 0.75rem;
-  background: #fffbe6;
-}
-
-.detail-grid dt {
-  color: #111827;
-  font-size: 0.75rem;
-  font-weight: 700;
-  margin-bottom: 0.35rem;
-}
-
-.detail-grid dd {
-  margin: 0;
-  color: #111827;
-  font-weight: 700;
-}
-
 .reason-list {
   padding-left: 1.25rem;
   margin: 0;
@@ -1105,6 +1301,41 @@ h2 {
 
 .add-button:hover {
   background-color: #008a8a;
+}
+
+.add-button:disabled {
+  background: #d1d5db;
+  color: #4b5563;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 5px 5px 0 #111827;
+}
+
+.result-state {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border: 3px solid #111827;
+  border-radius: 0.65rem;
+  background: #fffbe6;
+  color: #111827;
+  font-weight: 900;
+  text-align: center;
+}
+
+.result-state--error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.result-state button {
+  margin-top: 0.75rem;
+  padding: 0.55rem 0.8rem;
+  border: 3px solid #111827;
+  border-radius: 0.5rem;
+  background: white;
+  color: #111827;
+  cursor: pointer;
+  font-weight: 900;
 }
 
 /* Transitions */
@@ -1190,9 +1421,30 @@ h2 {
     font-size: 0.88rem;
   }
 
+  .recommendation-notice {
+    margin-top: 0;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .recommendation-notice p {
+    font-size: 0.82rem;
+  }
+
   .page-heading {
     flex-direction: column;
     gap: 0.75rem;
+  }
+
+  .page-heading-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .selected-condition-summary {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 0;
+    padding: 0.75rem 0.8rem;
   }
 
   .result-count {

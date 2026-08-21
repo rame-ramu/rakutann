@@ -17,6 +17,7 @@ import { computed, ref, shallowRef, watch } from 'vue'
 import { firestoreDb } from './firebase'
 import { store, type Course } from './store'
 import { getCurrentAcademicYear } from './utils/academicYear'
+import { COURSE_PERIODS, getCourseDays } from './utils/courseSchedule'
 
 const FRIEND_CODE_CHARACTERS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
 const FRIEND_CODE_LENGTH = 8
@@ -114,8 +115,7 @@ const normalizeCourses = (value: unknown): SharedScheduleCourse[] => {
         typeof item.day === 'string' &&
         typeof item.period === 'number' &&
         Number.isInteger(item.period) &&
-        item.period >= 1 &&
-        item.period <= 5 &&
+        COURSE_PERIODS.includes(item.period as (typeof COURSE_PERIODS)[number]) &&
         typeof item.semester === 'string'
       )
     })
@@ -686,7 +686,9 @@ export const removeFriend = async (friendUid: string) => {
 
 export const getFriendsInSlot = (day: string, period: number) => {
   return friends.value.filter((friend) =>
-    friend.courses.some((course) => course.day === day && course.period === period),
+    friend.courses.some(
+      (course) => getCourseDays(course).includes(day) && course.period === period,
+    ),
   )
 }
 

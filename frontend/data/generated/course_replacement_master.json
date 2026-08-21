@@ -1,0 +1,5320 @@
+[
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2010,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "108001",
+    "fromCourseName": "日本語表現T1",
+    "toCourseCode": "108003",
+    "toCourseName": "日本語表現 (2022~2024  日本語表現 1 年度入学者 用)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 34,
+    "sourcePrintedPage": 33
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2010,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "108002",
+    "fromCourseName": "日本語表現T2",
+    "toCourseCode": "108004",
+    "toCourseName": "日本語表現 (2022~2024  日本語表現 2 年度入学者 用)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 34,
+    "sourcePrintedPage": 33
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2010,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "108021",
+    "fromCourseName": "日本語表現B1  (ライティング)",
+    "toCourseCode": "108005",
+    "toCourseName": "(2022~2024  日本語表現 3 年度入学者",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 34,
+    "sourcePrintedPage": 33
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "110001",
+    "fromCourseName": "英語海外セミナーI",
+    "toCourseCode": "110014",
+    "toCourseName": "英語海外  セミナー I[M]",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 37,
+    "sourcePrintedPage": 36
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "110005",
+    "fromCourseName": "中国語海外セミナーI(中国)",
+    "toCourseCode": "110015",
+    "toCourseName": "中国語海  外セミナ ーI",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 37,
+    "sourcePrintedPage": 36
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "110006",
+    "fromCourseName": "韓国 ・ 朝鮮語海外セミナーI (韓国) 2",
+    "toCourseCode": "110016",
+    "toCourseName": "韓国・朝 鮮語海外  セミナー I",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 37,
+    "sourcePrintedPage": 36
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "110013",
+    "fromCourseName": "米国NPOインターンシッププログラム概論",
+    "toCourseCode": "110017",
+    "toCourseName": "海外アク ティブラ  アクティ ーニング ブラーニ 入門 ング",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 37,
+    "sourcePrintedPage": 36
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "110004",
+    "fromCourseName": "米国NPOインターンシッププログラム",
+    "toCourseCode": "110018",
+    "toCourseName": "海外アク ティブラ  ーニング 研修",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 37,
+    "sourcePrintedPage": 36
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "110009",
+    "fromCourseName": "Central Japan",
+    "toCourseCode": "110019",
+    "toCourseName": "Globalization  and Society",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 37,
+    "sourcePrintedPage": 36
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "110011",
+    "fromCourseName": "TOEFL iBTトレーニングI  (Speaking & Writing)",
+    "toCourseCode": "110020",
+    "toCourseName": "English for Study  AbroadI",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 37,
+    "sourcePrintedPage": 36
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "110012",
+    "fromCourseName": "TOEFL iBTトレーニングII  (Listening & Reading)",
+    "toCourseCode": "110021",
+    "toCourseName": "English for Study  AbroadII",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 37,
+    "sourcePrintedPage": 36
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "110205",
+    "fromCourseName": "まちづくりマーケティング",
+    "toCourseCode": "110209",
+    "toCourseName": "まちづく アクティ  りと地域 ブラーニ 活動 ング",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 38,
+    "sourcePrintedPage": 37
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "110404",
+    "fromCourseName": "インターンシップ研修",
+    "toCourseCode": "110410",
+    "toCourseName": "アクティブ インター ラーニング ンシッ  (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 38,
+    "sourcePrintedPage": 37
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "110405",
+    "fromCourseName": "海外インターンシップ",
+    "toCourseCode": "110411",
+    "toCourseName": "アクティブ 海外イン ラーニング ターンシ  (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 38,
+    "sourcePrintedPage": 37
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "102367",
+    "fromCourseName": "Advanced English IIa",
+    "toCourseCode": "102369",
+    "toCourseName": "Advanced  言活 (英語) English A",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41,
+    "sourcePrintedPage": 40
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU",
+      "LCU",
+      "LAU",
+      "KEU",
+      "NKU",
+      "NDU",
+      "NMU",
+      "PFU",
+      "CSU",
+      "CMU",
+      "CKU",
+      "AAU",
+      "ARU",
+      "HCU",
+      "HVU",
+      "HPU",
+      "HMU",
+      "HHU",
+      "HAU",
+      "HEU",
+      "SEU",
+      "SFU",
+      "FSU",
+      "FCU",
+      "GLU",
+      "GMU",
+      "VBU",
+      "EXU"
+    ],
+    "fromCourseCode": "102368",
+    "fromCourseName": "Advanced English IIb",
+    "toCourseCode": "102370",
+    "toCourseName": "Advanced 言活 (英語)  English B",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41,
+    "sourcePrintedPage": 40
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "108001",
+    "fromCourseName": "日本語表現T1",
+    "toCourseCode": "108003",
+    "toCourseName": "日本語 アクティブ (2025)  表現 1",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 81,
+    "sourcePrintedPage": 80
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "108002",
+    "fromCourseName": "日本語表現T2",
+    "toCourseCode": "108004",
+    "toCourseName": "日本語  アクティブ (2025) 表現 2",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 81,
+    "sourcePrintedPage": 80
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "032994",
+    "fromCourseName": "くずし字読解Ia",
+    "toCourseCode": "033051",
+    "toCourseName": "くずし字 国文学科  読解a (2025)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 81,
+    "sourcePrintedPage": 80
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "032995",
+    "fromCourseName": "くずし字読解Ib",
+    "toCourseCode": "033052",
+    "toCourseName": "くずし字 国文学科  読解b (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 81,
+    "sourcePrintedPage": 80
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "031151",
+    "fromCourseName": "国文学特殊講義 和歌文学a",
+    "toCourseCode": "033053",
+    "toCourseName": "和歌文 国文学科  学a (2025)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 82,
+    "sourcePrintedPage": 81
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "031152",
+    "fromCourseName": "国文学特殊講義 和歌文学b",
+    "toCourseCode": "033054",
+    "toCourseName": "国文学科 和歌文  (2025) 学b",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 82,
+    "sourcePrintedPage": 81
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "030931",
+    "fromCourseName": "国文学特殊講義 王朝物語a",
+    "toCourseCode": "033058",
+    "toCourseName": "国文学特 国文学科  殊講義1a (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 82,
+    "sourcePrintedPage": 81
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "030932",
+    "fromCourseName": "国文学特殊講義 王朝物語b",
+    "toCourseCode": "033059",
+    "toCourseName": "国文学特 国文学科  殊講義1b (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 82,
+    "sourcePrintedPage": 81
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "030481",
+    "fromCourseName": "国文学特殊講義 仏教文学a",
+    "toCourseCode": "033060",
+    "toCourseName": "国文学特 国文学科  殊講義2a (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 82,
+    "sourcePrintedPage": 81
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "030482",
+    "fromCourseName": "国文学特殊講義 仏教文学b",
+    "toCourseCode": "033061",
+    "toCourseName": "国文学特 国文学科  殊講義2b (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 82,
+    "sourcePrintedPage": 81
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "032996",
+    "fromCourseName": "国文学特殊講義 俳文学a",
+    "toCourseCode": "033062",
+    "toCourseName": "国文学特 国文学科  殊講義3a (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "032997",
+    "fromCourseName": "国文学特殊講義 俳文学b",
+    "toCourseCode": "033063",
+    "toCourseName": "国文学特 国文学科  殊講義3b (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "030941",
+    "fromCourseName": "国文学特殊講義 近代詩a",
+    "toCourseCode": "033064",
+    "toCourseName": "国文学特 国文学科  殊講義4a (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "030942",
+    "fromCourseName": "国文学特殊講義 近代詩b",
+    "toCourseCode": "033065",
+    "toCourseName": "国文学特 国文学科  殊講義4b (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "033011",
+    "fromCourseName": "国文学特殊講義 現代小説a",
+    "toCourseCode": "033066",
+    "toCourseName": "国文学特 国文学科  殊講義5a (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "033012",
+    "fromCourseName": "国文学特殊講義 現代小説b",
+    "toCourseCode": "033067",
+    "toCourseName": "国文学特 国文学科  殊講義5b (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "031171",
+    "fromCourseName": "国文学特殊講義 現代短歌a",
+    "toCourseCode": "033068",
+    "toCourseName": "国文学特 国文学科  殊講義6a (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "031172",
+    "fromCourseName": "国文学特殊講義 現代短歌b",
+    "toCourseCode": "033069",
+    "toCourseName": "国文学特 国文学科  殊講義6b (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "033013",
+    "fromCourseName": "国文学特殊講義 日本芸能史a",
+    "toCourseCode": "033070",
+    "toCourseName": "国文学特 国文学科  殊講義7a (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "033014",
+    "fromCourseName": "国文学特殊講義 日本芸能史b",
+    "toCourseCode": "033071",
+    "toCourseName": "国文学特 国文学科  殊講義7b (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "032987",
+    "fromCourseName": "国文学特殊講義 文献学a",
+    "toCourseCode": "033072",
+    "toCourseName": "国文学特 国文学科  殊講義8a (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "032988",
+    "fromCourseName": "国文学特殊講義 文献学b",
+    "toCourseCode": "033073",
+    "toCourseName": "国文学特 国文学科  殊講義8b (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "033009",
+    "fromCourseName": "国文学特殊講義 批評理論",
+    "toCourseCode": "033055",
+    "toCourseName": "国文学科 批評理  (2025) 論",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "033015",
+    "fromCourseName": "国文学特殊講義 文学と映像表現a",
+    "toCourseCode": "033074",
+    "toCourseName": "国文学特 国文学科  殊講義9a (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "033016",
+    "fromCourseName": "国文学特殊講義 文学と映像表現b",
+    "toCourseCode": "033075",
+    "toCourseName": "国文学特 国文学科  殊講義9b (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "030970",
+    "fromCourseName": "国語学特殊講義 言語学a",
+    "toCourseCode": "033056",
+    "toCourseName": "国文学科 言語学  (2025) a",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "030980",
+    "fromCourseName": "国語学特殊講義 言語学b",
+    "toCourseCode": "033057",
+    "toCourseName": "国文学科 言語学  (2025) b",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "033017",
+    "fromCourseName": "国語学特殊講義 ことばの認知科学a",
+    "toCourseCode": "033088",
+    "toCourseName": "国語学特 国文学科  殊講義1a (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "033018",
+    "fromCourseName": "国語学特殊講義 ことばの認知科学b",
+    "toCourseCode": "033089",
+    "toCourseName": "国語学特 国文学科  殊講義1b (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "032989",
+    "fromCourseName": "くずし字読解IIa",
+    "toCourseCode": "033076",
+    "toCourseName": "国文学特 国文学科  殊講義10a (2025)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LJU"
+    ],
+    "fromCourseCode": "032990",
+    "fromCourseName": "くずし字読解IIb",
+    "toCourseCode": "033077",
+    "toCourseName": "国文学特 国文学科  殊講義10b (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83,
+    "sourcePrintedPage": 82
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "108001",
+    "fromCourseName": "日本語表現T1",
+    "toCourseCode": "108003",
+    "toCourseName": "日本語 アクティブ  表現 1 (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 93,
+    "sourcePrintedPage": 92
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "108002",
+    "fromCourseName": "日本語表現T2",
+    "toCourseCode": "108004",
+    "toCourseName": "日本語 アクティブ  表現 2 (2025)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 93,
+    "sourcePrintedPage": 92
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126141",
+    "fromCourseName": "Tell your Story ! I",
+    "toCourseCode": "127124",
+    "toCourseName": "Acitve  教育学部 Literature",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 94,
+    "sourcePrintedPage": 93
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126143",
+    "fromCourseName": "Famous Stories for Use",
+    "toCourseCode": "127117",
+    "toCourseName": "クラシ ック英  教育学部 語圏文 学",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 95,
+    "sourcePrintedPage": 94
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126202",
+    "fromCourseName": "英語文化の歴史I",
+    "toCourseCode": "127122",
+    "toCourseName": "文学史  教育学部 I",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 95,
+    "sourcePrintedPage": 94
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126203",
+    "fromCourseName": "英語文化の歴史II",
+    "toCourseCode": "127123",
+    "toCourseName": "文学史 教育学部  II",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 95,
+    "sourcePrintedPage": 94
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126204",
+    "fromCourseName": "Film Studies I",
+    "toCourseCode": "127118",
+    "toCourseName": "Film 教育学部  Studies I",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 95,
+    "sourcePrintedPage": 94
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126205",
+    "fromCourseName": "Film Studies II",
+    "toCourseCode": "127119",
+    "toCourseName": "Film 教育学部  Studies II",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 95,
+    "sourcePrintedPage": 94
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126208",
+    "fromCourseName": "English Media",
+    "toCourseCode": "127115",
+    "toCourseName": "Media  教育学部 English",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 95,
+    "sourcePrintedPage": 94
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126215",
+    "fromCourseName": "Topics in International  Culture and Society 4",
+    "toCourseCode": "127125",
+    "toCourseName": "Topics in International  教育学部 Culture and Society",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 95,
+    "sourcePrintedPage": 94
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126414",
+    "fromCourseName": "Career Planning",
+    "toCourseCode": "110019",
+    "toCourseName": "Globalization  アクティブ and Society",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 97,
+    "sourcePrintedPage": 96
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "110404",
+    "fromCourseName": "インターンシップ研修",
+    "toCourseCode": "110410",
+    "toCourseName": "インタ ーンシ  ップ・ アクティブ (2025) 就業実 践",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 97,
+    "sourcePrintedPage": 96
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "110405",
+    "fromCourseName": "海外インターンシップ",
+    "toCourseCode": "110411",
+    "toCourseName": "海外イ ンター  ンシッ アクティブ (2025) プ・就 業実践",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 97,
+    "sourcePrintedPage": 96
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "110004",
+    "fromCourseName": "米国NPOインターンシップ  プログラム",
+    "toCourseCode": "110018",
+    "toCourseName": "海外ア クティ  ブラー アクティブ ニング",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 98,
+    "sourcePrintedPage": 97
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126425",
+    "fromCourseName": "中学校英語教育実践演習  (学校文法)",
+    "toCourseCode": "127068",
+    "toCourseName": "中高英 語教育  教育学部 実践演 習I",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 98,
+    "sourcePrintedPage": 97
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126427",
+    "fromCourseName": "高校英語教育実践演習I  (学校文法)",
+    "toCourseCode": "127070",
+    "toCourseName": "中高英 語教育  教育学部 実践演 習III",
+    "effectiveAcademicYear": 2028,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 98,
+    "sourcePrintedPage": 97
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126429",
+    "fromCourseName": "高校英語教育実践演習II  (オーラルコミュニケーション)",
+    "toCourseCode": "127071",
+    "toCourseName": "中高英 語教育  教育学部 実践演 習IV",
+    "effectiveAcademicYear": 2028,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 98,
+    "sourcePrintedPage": 97
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "LCU"
+    ],
+    "fromCourseCode": "126432",
+    "fromCourseName": "中・高英語教育実践演習",
+    "toCourseCode": "127069",
+    "toCourseName": "中高英 語教育  教育学部 実践演 習II",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 98,
+    "sourcePrintedPage": 97
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "108001",
+    "fromCourseName": "日本語表現T1",
+    "toCourseCode": "108003",
+    "toCourseName": null,
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 103,
+    "sourcePrintedPage": 102
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "108002",
+    "fromCourseName": "日本語表現T2",
+    "toCourseCode": "108004",
+    "toCourseName": null,
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 103,
+    "sourcePrintedPage": 102
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124103",
+    "fromCourseName": "職業としての教育",
+    "toCourseCode": "127007",
+    "toCourseName": "職業と  しての 教育学部 教育",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 103,
+    "sourcePrintedPage": 102
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124009",
+    "fromCourseName": "専門演習Ia",
+    "toCourseCode": "127015",
+    "toCourseName": "専門演 教育学部  習Ia",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 103,
+    "sourcePrintedPage": 102
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124010",
+    "fromCourseName": "専門演習Ib",
+    "toCourseCode": "127016",
+    "toCourseName": "専門演  教育学部 習Ib",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 103,
+    "sourcePrintedPage": 102
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124011",
+    "fromCourseName": "専門演習IIa",
+    "toCourseCode": "127017",
+    "toCourseName": "専門演  教育学部 習IIa",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 103,
+    "sourcePrintedPage": 102
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124012",
+    "fromCourseName": "専門演習IIb",
+    "toCourseCode": "127018",
+    "toCourseName": "専門演  教育学部 習IIb",
+    "effectiveAcademicYear": 2028,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 103,
+    "sourcePrintedPage": 102
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124013",
+    "fromCourseName": "卒業研究",
+    "toCourseCode": "127019",
+    "toCourseName": "卒業研  教育学部 究",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 103,
+    "sourcePrintedPage": 102
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124014",
+    "fromCourseName": "総合表現",
+    "toCourseCode": "127102",
+    "toCourseName": "総合表  教育学部 現",
+    "effectiveAcademicYear": 2028,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124015",
+    "fromCourseName": "ポルトガル語I",
+    "toCourseCode": "127097",
+    "toCourseName": "ポルト 教育学部  ガル語 I",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124016",
+    "fromCourseName": "ポルトガル語II",
+    "toCourseCode": "127098",
+    "toCourseName": "ポルト  ガル語 教育学部 II",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124019",
+    "fromCourseName": "幼児教育論",
+    "toCourseCode": "127131",
+    "toCourseName": "幼児教  教育学部 育論",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124020",
+    "fromCourseName": "スポーツ指導法",
+    "toCourseCode": "127100",
+    "toCourseName": "スポーツ 教育学部  指導法",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124022",
+    "fromCourseName": "児童福祉論",
+    "toCourseCode": "127099",
+    "toCourseName": "児童福  教育学部 祉論",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124025",
+    "fromCourseName": "キャリア発達論",
+    "toCourseCode": "127133",
+    "toCourseName": "キャリア  教育学部 発達論",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124107",
+    "fromCourseName": "外国人児童生徒教育概論I",
+    "toCourseCode": "127104",
+    "toCourseName": "外国人児 童生徒教 教育学部  育概論I",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124108",
+    "fromCourseName": "外国人児童生徒教育概論II",
+    "toCourseCode": "127105",
+    "toCourseName": "外国人児 童生徒教 教育学部  育概論II",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124115",
+    "fromCourseName": "学校教育と情報リテラシー",
+    "toCourseCode": "127093",
+    "toCourseName": "学校教 育と情  教育学部 報リテ ラシー",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124116",
+    "fromCourseName": "学校経営と学校図書館",
+    "toCourseCode": "127092",
+    "toCourseName": "学校経営 と学校図 教育学部  書館",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124117",
+    "fromCourseName": "読書と豊かな人間性",
+    "toCourseCode": "127091",
+    "toCourseName": "読書と  豊かな 教育学部 人間性",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124118",
+    "fromCourseName": "学校図書館メディアの構成",
+    "toCourseCode": "127094",
+    "toCourseName": "学校図 書館メ  教育学部 ディア の構成",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124119",
+    "fromCourseName": "学習指導と学校図書館",
+    "toCourseCode": "127095",
+    "toCourseName": "学習指導 と学校図 教育学部  書館",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "LAU"
+    ],
+    "fromCourseCode": "124120",
+    "fromCourseName": "情報メディアの活用",
+    "toCourseCode": "127096",
+    "toCourseName": "情報メ  ディア 教育学部 の活用",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 106,
+    "sourcePrintedPage": 105
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "215001",
+    "fromCourseName": "データサイエンスI(心理基礎)",
+    "toCourseCode": "215100",
+    "toCourseName": "心理デー 専攻/  タサイエ データサ ンス入門 イエンス 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 140,
+    "sourcePrintedPage": 139
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "211019",
+    "fromCourseName": "心理実験演習I",
+    "toCourseCode": "215309",
+    "toCourseName": "データサ データサ  イエンス イエンス 演習I 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 140,
+    "sourcePrintedPage": 139
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "214001",
+    "fromCourseName": "認知心理学",
+    "toCourseCode": "215303",
+    "toCourseName": "データサ  認知科学 イエンス 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 140,
+    "sourcePrintedPage": 139
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "214003",
+    "fromCourseName": "データサイエンスII 1020  (心理実験設計)",
+    "toCourseCode": "215306",
+    "toCourseName": "データサ データ分  イエンス 析演習I 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 140,
+    "sourcePrintedPage": 139
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "215003",
+    "fromCourseName": "Technical English for Information 1002  Services",
+    "toCourseCode": "215106",
+    "toCourseName": "感性工学 専攻/ Practical  データサ English イエンス",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141,
+    "sourcePrintedPage": 140
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "211015",
+    "fromCourseName": "ユニバーサルデザイン論",
+    "toCourseCode": "215203",
+    "toCourseName": "ユニバー 感性工学 サルデザ  専攻 イン",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141,
+    "sourcePrintedPage": 140
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "212116",
+    "fromCourseName": "評価法演習",
+    "toCourseCode": "215207",
+    "toCourseName": "ユーザ評 感性工学  価演習 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141,
+    "sourcePrintedPage": 140
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "212115",
+    "fromCourseName": "実験計測演習",
+    "toCourseCode": "215206",
+    "toCourseName": "測定法演 感性工学  習 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141,
+    "sourcePrintedPage": 140
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "214008",
+    "fromCourseName": "データアナリティクス",
+    "toCourseCode": "215208",
+    "toCourseName": "データ解 感性工学  析演習 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141,
+    "sourcePrintedPage": 140
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "212314",
+    "fromCourseName": "認知情報システム論",
+    "toCourseCode": "215211",
+    "toCourseName": "感性情報 感性工学  システム 専攻 論",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141,
+    "sourcePrintedPage": 140
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "214009",
+    "fromCourseName": "数理科学入門",
+    "toCourseCode": "215104",
+    "toCourseName": "数理科学 専攻/ 入門II  データサ (微分・ イエンス 積分) 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141,
+    "sourcePrintedPage": 140
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "212221",
+    "fromCourseName": "フィジカルコンピューティング演習",
+    "toCourseCode": "215216",
+    "toCourseName": "ンタラク 感性工学 ティブア  専攻 ート制作 演習",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 142,
+    "sourcePrintedPage": 141
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "214012",
+    "fromCourseName": "制御プログラミング演習",
+    "toCourseCode": "215214",
+    "toCourseName": "センサー 感性工学  工学演習 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 142,
+    "sourcePrintedPage": 141
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "212206",
+    "fromCourseName": "学習メディア論",
+    "toCourseCode": "215222",
+    "toCourseName": "学習と 感性工学  AI 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 142,
+    "sourcePrintedPage": 141
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "214007",
+    "fromCourseName": "海外フィールドスタディI",
+    "toCourseCode": "215107",
+    "toCourseName": "感性工学 海外フィ 専攻/ ールドス データサ  タディ イエンス",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 142,
+    "sourcePrintedPage": 141
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "212213",
+    "fromCourseName": "サウンド制作演習",
+    "toCourseCode": "215127",
+    "toCourseName": "サウンド 専攻/  データ制 データサ 作演習 イエンス 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 142,
+    "sourcePrintedPage": 141
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "212209",
+    "fromCourseName": "Web・アニメ制作演習",
+    "toCourseCode": "215205",
+    "toCourseName": "Webデ ザイン・ 感性工学 プログラ  専攻 ミング演 習",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 142,
+    "sourcePrintedPage": 141
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "215007",
+    "fromCourseName": "CGゲームAI数学入門",
+    "toCourseCode": "215103",
+    "toCourseName": "感性工学 数理科学 専攻/ 入門I データサ  (ベクト イエンス ル ・ 行列)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 142,
+    "sourcePrintedPage": 141
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "214011",
+    "fromCourseName": "デジタルファブリケーション演習",
+    "toCourseCode": "215215",
+    "toCourseName": "感性プロ 感性工学  トタイピ 専攻 ング演習",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 142,
+    "sourcePrintedPage": 141
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "212212",
+    "fromCourseName": "映像制作演習",
+    "toCourseCode": "215213",
+    "toCourseName": "映像コン 感性工学  テンツ制 専攻 作演習",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 142,
+    "sourcePrintedPage": 141
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "212114",
+    "fromCourseName": "心理実験演習II",
+    "toCourseCode": "215310",
+    "toCourseName": "データサ データサ  イエンス イエンス 演習II 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 143,
+    "sourcePrintedPage": 142
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "214013",
+    "fromCourseName": "視覚心理学",
+    "toCourseCode": "215316",
+    "toCourseName": "データサ 視覚情報  イエンス 処理 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 143,
+    "sourcePrintedPage": 142
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "214014",
+    "fromCourseName": "こども心理学",
+    "toCourseCode": "215314",
+    "toCourseName": "データサ 発達心理 イエンス  学 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 143,
+    "sourcePrintedPage": 142
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "214015",
+    "fromCourseName": "比較心理学",
+    "toCourseCode": "215313",
+    "toCourseName": "データサ 生理・比 イエンス  較心理学 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 143,
+    "sourcePrintedPage": 142
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "214021",
+    "fromCourseName": "脳情報処理",
+    "toCourseCode": "215317",
+    "toCourseName": "データサ 脳・生体  イエンス 情報処理 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 143,
+    "sourcePrintedPage": 142
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "211035",
+    "fromCourseName": "SE入門",
+    "toCourseCode": "215102",
+    "toCourseName": "専攻/ IT人材  データサ 入門 イエンス",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 144,
+    "sourcePrintedPage": 143
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "215009",
+    "fromCourseName": "子どもシステム論",
+    "toCourseCode": "215212",
+    "toCourseName": "子どもと 感性工学  AI 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 144,
+    "sourcePrintedPage": 143
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "215010",
+    "fromCourseName": "学習環境論",
+    "toCourseCode": "024000",
+    "toCourseName": null,
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 144,
+    "sourcePrintedPage": 143
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "211036",
+    "fromCourseName": "システム開発演習 1 (Webアプリ)",
+    "toCourseCode": "215219",
+    "toCourseName": "AIシス 感性工学  テム開発 専攻 演習 1",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 144,
+    "sourcePrintedPage": 143
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2020,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "NKU",
+      "NDU",
+      "NMU"
+    ],
+    "fromCourseCode": "211038",
+    "fromCourseName": "システム開発演習 3 (Android)",
+    "toCourseCode": "215220",
+    "toCourseName": "AIシス 感性工学 テム開発  専攻 演習 2",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 144,
+    "sourcePrintedPage": 143
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2021,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CMU"
+    ],
+    "fromCourseCode": "273173",
+    "fromCourseName": "映像制作a",
+    "toCourseCode": "273204",
+    "toCourseName": "メデプロ 映像表 専攻  現a (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 191,
+    "sourcePrintedPage": 190
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2021,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CMU"
+    ],
+    "fromCourseCode": "273174",
+    "fromCourseName": "映像制作b",
+    "toCourseCode": "273203",
+    "toCourseName": "創造表現 メデプロ 映像制 専攻  作 (",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 191,
+    "sourcePrintedPage": 190
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274101",
+    "fromCourseName": "建築のための数学I(基礎編)",
+    "toCourseCode": "274159",
+    "toCourseName": "建築・イ 建築の ンテリア  ための デザイン 数学 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 193,
+    "sourcePrintedPage": 192
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274159",
+    "fromCourseName": "建築のための数学",
+    "toCourseCode": "274211",
+    "toCourseName": "建築学部 建築の (2025年  ための 度入学者 数学 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 193,
+    "sourcePrintedPage": 192
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274103",
+    "fromCourseName": "建築・インテリア概論",
+    "toCourseCode": "274200",
+    "toCourseName": "建築学部 (2025年 建築学  度入学者 概論 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 193,
+    "sourcePrintedPage": 192
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274165",
+    "fromCourseName": "人間生活工学",
+    "toCourseCode": "274202",
+    "toCourseName": "建築学部 (2025年 人間生  度入学者 活工学 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 193,
+    "sourcePrintedPage": 192
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274161",
+    "fromCourseName": "ベーシックデザインA",
+    "toCourseCode": "274207",
+    "toCourseName": "ベーシ 建築学部 ックデ (2025年  ザイン 度入学者 演習 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 193,
+    "sourcePrintedPage": 192
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274162",
+    "fromCourseName": "ベーシックデザインB",
+    "toCourseCode": "274208",
+    "toCourseName": "建築学部 グラフ (2025年 ィック  度入学者 デザイ 用) ン演習",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 193,
+    "sourcePrintedPage": 192
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274106",
+    "fromCourseName": "基礎製図",
+    "toCourseCode": "274206",
+    "toCourseName": "建築学部 基礎製 (2025年  図 度入学者 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 193,
+    "sourcePrintedPage": 192
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274166",
+    "fromCourseName": "ドローイング演習",
+    "toCourseCode": "274210",
+    "toCourseName": "建築学部 ドロー (2025年  イング 度入学者 演習 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 193,
+    "sourcePrintedPage": 192
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274107",
+    "fromCourseName": "CAD基礎",
+    "toCourseCode": "274209",
+    "toCourseName": "建築学部 (2025年 CAD  度入学者 基礎 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 193,
+    "sourcePrintedPage": 192
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274108",
+    "fromCourseName": "建築構造力学I",
+    "toCourseCode": "274229",
+    "toCourseName": "建築学部 建築構 (2025年  造力学 度入学者 I 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 193,
+    "sourcePrintedPage": 192
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274109",
+    "fromCourseName": "建築構造力学II",
+    "toCourseCode": "274230",
+    "toCourseName": "建築学部 建築構 (2025年  造力学 度入学者 II 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 193,
+    "sourcePrintedPage": 192
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274110",
+    "fromCourseName": "建築構法",
+    "toCourseCode": "274235",
+    "toCourseName": "建築学部 (2025年 建築構  度入学者 法 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194,
+    "sourcePrintedPage": 193
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274111",
+    "fromCourseName": "建築構造設計法A",
+    "toCourseCode": "274268",
+    "toCourseName": "建築学部 コンク (2025年 リート  度入学者 構造設 用) 計法",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194,
+    "sourcePrintedPage": 193
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274113",
+    "fromCourseName": "建築基礎の構造",
+    "toCourseCode": "274232",
+    "toCourseName": "建築学部 建築基 (2025年  礎構造 度入学者 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194,
+    "sourcePrintedPage": 193
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274114",
+    "fromCourseName": "建築材料",
+    "toCourseCode": "274237",
+    "toCourseName": "建築学部 (2025年 建築材  度入学者 料 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194,
+    "sourcePrintedPage": 193
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274115",
+    "fromCourseName": "建築材料実験",
+    "toCourseCode": "274238",
+    "toCourseName": "建築学部 (2025年 建築材  度入学者 料実験 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194,
+    "sourcePrintedPage": 193
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274116",
+    "fromCourseName": "建築環境学A (熱・空気)",
+    "toCourseCode": "274240",
+    "toCourseName": "建築学部 建築環 (2025年 境学A  度入学者 (熱 ・ 空 用) 気)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194,
+    "sourcePrintedPage": 193
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274117",
+    "fromCourseName": "建築環境学B (音・光)",
+    "toCourseCode": "274160",
+    "toCourseName": "建築・イ 建築環境 ンテリア 学B (光・  デザイン 色彩 ・ 音) 専攻",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194,
+    "sourcePrintedPage": 193
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274160",
+    "fromCourseName": "建築環境学B (光・色彩・音)",
+    "toCourseCode": "274241",
+    "toCourseName": "建築学部 建築環境 (2025年  学B (光・ 度入学者 色彩 ・ 音) 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194,
+    "sourcePrintedPage": 193
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274118",
+    "fromCourseName": "建築環境学実験",
+    "toCourseCode": "274218",
+    "toCourseName": "建築学部 建築環 (2025年  境学実 度入学者 験 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194,
+    "sourcePrintedPage": 193
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274167",
+    "fromCourseName": "環境と心理",
+    "toCourseCode": "274239",
+    "toCourseName": "建築学部 (2025年 環境と  度入学者 心理 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194,
+    "sourcePrintedPage": 193
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274168",
+    "fromCourseName": "住環境計画概論",
+    "toCourseCode": "274257",
+    "toCourseName": "建築学部 住環境 (2025年  計画概 度入学者 論 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194,
+    "sourcePrintedPage": 193
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274169",
+    "fromCourseName": "福祉住環境論",
+    "toCourseCode": "274222",
+    "toCourseName": "建築学部 (2025年 福祉住  度入学者 環境論 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274120",
+    "fromCourseName": "建築設備",
+    "toCourseCode": "274242",
+    "toCourseName": "建築学部 (2025年 建築設  度入学者 備 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274121",
+    "fromCourseName": "住まいの文化史",
+    "toCourseCode": "274221",
+    "toCourseName": "建築学部 (2025年  住居史 度入学者 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274123",
+    "fromCourseName": "建築の歴史A (西洋)",
+    "toCourseCode": "274203",
+    "toCourseName": "建築学部 建築史 (2025年  A (西 度入学者 洋) 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274124",
+    "fromCourseName": "建築の歴史B (日本・東洋)",
+    "toCourseCode": "274204",
+    "toCourseName": "建築学部 建築史 (2025年 B (日  度入学者 本・東 用) 洋)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274125",
+    "fromCourseName": "都市の歴史",
+    "toCourseCode": "274216",
+    "toCourseName": "建築学部 (2025年 都市形  度入学者 成史 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274126",
+    "fromCourseName": "建築法規",
+    "toCourseCode": "274228",
+    "toCourseName": "建築学部 (2025年 建築法  度入学者 規 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274127",
+    "fromCourseName": "住まいと生活",
+    "toCourseCode": "274219",
+    "toCourseName": "建築学部 (2025年 住まい  度入学者 と生活 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274128",
+    "fromCourseName": "建築計画I",
+    "toCourseCode": "274214",
+    "toCourseName": "建築学部 (2025年 建築計  度入学者 画I 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274129",
+    "fromCourseName": "建築計画II",
+    "toCourseCode": "274225",
+    "toCourseName": "建築学部 (2025年 建築計  度入学者 画II 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274130",
+    "fromCourseName": "建築デザインと構造",
+    "toCourseCode": "274231",
+    "toCourseName": "建築学部 (2025年 構造デ  度入学者 ザイン 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274131",
+    "fromCourseName": "インテリアデザイン論",
+    "toCourseCode": "274260",
+    "toCourseName": "インテリ 建築学部 アデザイ (2025年  ン論A 度入学者 (住宅) 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274132",
+    "fromCourseName": "商業スペースデザイン",
+    "toCourseCode": "274277",
+    "toCourseName": "建築学部 商業ス (2025年 ペース  度入学者 デザイ 用) ン",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274133",
+    "fromCourseName": "人の行動と空間",
+    "toCourseCode": "274255",
+    "toCourseName": "建築学部 (2025年 建築行  度入学者 動学 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274134",
+    "fromCourseName": "まちづくり",
+    "toCourseCode": "274243",
+    "toCourseName": "建築学部 まちづ (2025年  くり概 度入学者 論 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 195,
+    "sourcePrintedPage": 194
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274135",
+    "fromCourseName": "都市観察実習",
+    "toCourseCode": "274248",
+    "toCourseName": "建築学部 (2025年 都市観  度入学者 察演習 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274136",
+    "fromCourseName": "都市の景観",
+    "toCourseCode": "274244",
+    "toCourseName": "建築学部 (2025年 都市景  度入学者 観論 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274137",
+    "fromCourseName": "都市計画論",
+    "toCourseCode": "274245",
+    "toCourseName": "建築学部 (2025年 都市計  度入学者 画論 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274138",
+    "fromCourseName": "ランドスケープデザイン",
+    "toCourseCode": "274246",
+    "toCourseName": "建築学部 ランド (2025年 スケー  度入学者 プデザ 用) イン",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274170",
+    "fromCourseName": "保存再生計画",
+    "toCourseCode": "274249",
+    "toCourseName": "建築学部 (2025年 保存再  度入学者 生計画 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274139",
+    "fromCourseName": "建築と都市の防災",
+    "toCourseCode": "274270",
+    "toCourseName": "建築学部 (2025年 都市防  度入学者 災学 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274140",
+    "fromCourseName": "ハウジング論",
+    "toCourseCode": "274256",
+    "toCourseName": "建築学部 (2025年 ハウジ  度入学者 ング論 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274141",
+    "fromCourseName": "ファシリティマネジメント論",
+    "toCourseCode": "274272",
+    "toCourseName": "ファシリ 建築学部 ティマネ (2025年  ジメント 度入学者 論 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274142",
+    "fromCourseName": "建築生産システム",
+    "toCourseCode": "274236",
+    "toCourseName": "建築学部 建築生 (2025年  産シス 度入学者 テム 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274143",
+    "fromCourseName": "建築と経済",
+    "toCourseCode": "274271",
+    "toCourseName": "建築学部 (2025年 建築と  度入学者 経済 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274144",
+    "fromCourseName": "CAD応用I",
+    "toCourseCode": "274223",
+    "toCourseName": "建築学部 CAD (2025年  応用I 度入学者 用)",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274145",
+    "fromCourseName": "CAD応用II",
+    "toCourseCode": "274224",
+    "toCourseName": "建築学部 (2025年 CAD  度入学者 応用II 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 196,
+    "sourcePrintedPage": 195
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274147",
+    "fromCourseName": "インテリア設計",
+    "toCourseCode": "274263",
+    "toCourseName": "インテ 建築学部 リアデ (2025年  ザイン 度入学者 演習 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 197,
+    "sourcePrintedPage": 196
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274164",
+    "fromCourseName": "インテリアデザイン基礎",
+    "toCourseCode": "274262",
+    "toCourseName": "インテリ 建築学部 アデザイ (2025年  ン基礎演 度入学者 習 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 197,
+    "sourcePrintedPage": 196
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274152",
+    "fromCourseName": "空間設計V",
+    "toCourseCode": "274267",
+    "toCourseName": "建築学部 建築設 (2025年  計V 度入学者 用)",
+    "effectiveAcademicYear": 2028,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 197,
+    "sourcePrintedPage": 196
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274153",
+    "fromCourseName": "建築・インテリア演習Ia",
+    "toCourseCode": "274278",
+    "toCourseName": "建築学部 (2025年 総合演  度入学者 習Ia 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 197,
+    "sourcePrintedPage": 196
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274154",
+    "fromCourseName": "建築・インテリア演習Ib",
+    "toCourseCode": "274279",
+    "toCourseName": "建築学部 (2025年 総合演  度入学者 習Ib 用)",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 197,
+    "sourcePrintedPage": 196
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274155",
+    "fromCourseName": "建築・インテリア演習IIa",
+    "toCourseCode": "274280",
+    "toCourseName": "建築学部 (2025年 総合演  度入学者 習IIa 用)",
+    "effectiveAcademicYear": 2028,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 197,
+    "sourcePrintedPage": 196
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274156",
+    "fromCourseName": "建築・インテリア演習IIb",
+    "toCourseCode": "274281",
+    "toCourseName": "建築学部 (2025年 総合演  度入学者 習IIb 用)",
+    "effectiveAcademicYear": 2028,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 197,
+    "sourcePrintedPage": 196
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274157",
+    "fromCourseName": "卒業プロジェクト",
+    "toCourseCode": "274282",
+    "toCourseName": "建築学部 卒業プ (2025年  ロジェ 度入学者 クト 用)",
+    "effectiveAcademicYear": 2028,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 197,
+    "sourcePrintedPage": 196
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "CKU"
+    ],
+    "fromCourseCode": "274158",
+    "fromCourseName": "基礎数学",
+    "toCourseCode": "274283",
+    "toCourseName": "建築学部 (2025年 基礎数  度入学者 学 用)",
+    "effectiveAcademicYear": 2025,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 198,
+    "sourcePrintedPage": 197
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "241005",
+    "fromCourseName": "統計の基礎",
+    "toCourseCode": "291003",
+    "toCourseName": "食健康 実践統 科学部  計学 健康栄 養学科",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 294,
+    "sourcePrintedPage": 18
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "241006",
+    "fromCourseName": "健康科学統計演習",
+    "toCourseCode": "290003",
+    "toCourseName": "食健康 統計学 科学部  演習 健康栄 養学科",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 294,
+    "sourcePrintedPage": 18
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "241009",
+    "fromCourseName": "対人技術演習",
+    "toCourseCode": "290004",
+    "toCourseName": "食健康 対人技 科学部  術演習 健康栄 養学科",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 294,
+    "sourcePrintedPage": 18
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "241102",
+    "fromCourseName": "キャリアデザイン",
+    "toCourseCode": "290005",
+    "toCourseName": "食健康 キャリ 科学部  アデザ 健康栄 イン 養学科",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 294,
+    "sourcePrintedPage": 18
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "245101",
+    "fromCourseName": "管理栄養士概論",
+    "toCourseCode": "290002",
+    "toCourseName": "食健康 食健康 科学部  科学概 健康栄 論 養学科 食健康 管理栄 科学部 291001 養士概 健康栄 論",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 294,
+    "sourcePrintedPage": 18
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "245101",
+    "fromCourseName": "管理栄養士概論",
+    "toCourseCode": "291001",
+    "toCourseName": "食健康 食健康 科学部 290002 科学概 健康栄 論 養学科 食健康 管理栄 科学部  養士概 健康栄 論",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 294,
+    "sourcePrintedPage": 18
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 1900,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "245102",
+    "fromCourseName": "早期体験学習",
+    "toCourseCode": "291002",
+    "toCourseName": "養学科 食健康 早期体 科学部  験学習 健康栄 養学科",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 294,
+    "sourcePrintedPage": 18
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2022,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "245156",
+    "fromCourseName": "健康栄養学研究I",
+    "toCourseCode": "291058",
+    "toCourseName": "食健康 健康栄 科学部  養学研 健康栄 究I 養学科",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 296,
+    "sourcePrintedPage": null
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2022,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "245157",
+    "fromCourseName": "健康栄養学研究II",
+    "toCourseCode": "291059",
+    "toCourseName": "食健康 健康栄 科学部  養学研 健康栄 究II 養学科",
+    "effectiveAcademicYear": 2026,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 296,
+    "sourcePrintedPage": null
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2022,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "245158",
+    "fromCourseName": "健康栄養学研究III",
+    "toCourseCode": "291060",
+    "toCourseName": "食健康 健康栄 科学部  養学研 健康栄 究III 養学科",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 296,
+    "sourcePrintedPage": null
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2022,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "245159",
+    "fromCourseName": "健康栄養学研究IV",
+    "toCourseCode": "291061",
+    "toCourseName": "食健康 健康栄 科学部  養学研 健康栄 究IV 養学科",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 296,
+    "sourcePrintedPage": null
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2022,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "245160",
+    "fromCourseName": "卒業論文",
+    "toCourseCode": "291062",
+    "toCourseName": "食健康 卒業論 科学部  文 健康栄 養学科",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 296,
+    "sourcePrintedPage": null
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2022,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "245161",
+    "fromCourseName": "管理栄養士特論I",
+    "toCourseCode": "291063",
+    "toCourseName": "食健康 管理栄 科学部  養士特 健康栄 論I 養学科",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 296,
+    "sourcePrintedPage": null
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2022,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "HEU"
+    ],
+    "fromCourseCode": "245162",
+    "fromCourseName": "管理栄養士特論II",
+    "toCourseCode": "291064",
+    "toCourseName": "食健康 管理栄 科学部  養士特 健康栄 論II 養学科",
+    "effectiveAcademicYear": 2027,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 296,
+    "sourcePrintedPage": null
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "267130",
+    "fromCourseName": "RBS (ロシア語入門)",
+    "toCourseCode": "267218",
+    "toCourseName": "交流文 ロシア 化 (2024  語A 年度以 267219 ロシア 降入学 語B",
+    "effectiveAcademicYear": 2024,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 398,
+    "sourcePrintedPage": 397
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "267130",
+    "fromCourseName": "RBS (ロシア語入門)",
+    "toCourseCode": "267219",
+    "toCourseName": "交流文 ロシア 化 (2024 267218 語A 年度以  ロシア 降入学 語B",
+    "effectiveAcademicYear": 2024,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 398,
+    "sourcePrintedPage": 397
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "267143",
+    "fromCourseName": "日本語教育実習",
+    "toCourseCode": "267225",
+    "toCourseName": "日本語 教育実 交流文 習(国  化 (2024 内) 267226 年度以 日本語 降入学 教育実 度~) 者用) 習(海 外)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 399,
+    "sourcePrintedPage": 398
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "267143",
+    "fromCourseName": "日本語教育実習",
+    "toCourseCode": "267226",
+    "toCourseName": "日本語 教育実 交流文 習(国 267225 化 (2024 内)  年度以 日本語 降入学 教育実 度~) 者用) 習(海 外)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 399,
+    "sourcePrintedPage": 398
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263108",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 1 (前期)",
+    "toCourseCode": "267107",
+    "toCourseName": "KLS4 (韓 国・朝鮮 語作文1) 267107)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 402,
+    "sourcePrintedPage": 401
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263109",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 2 (前期)",
+    "toCourseCode": "267118",
+    "toCourseName": "KCS4 (韓 国・朝鮮 語聴解1) 267118)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 402,
+    "sourcePrintedPage": 401
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263110",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 3 (前期)",
+    "toCourseCode": "267109",
+    "toCourseName": "KLS6 (韓 国・朝鮮 語翻訳1) 267109)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 402,
+    "sourcePrintedPage": 401
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263111",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 4 (前期)",
+    "toCourseCode": "267120",
+    "toCourseName": "KCS6 (韓 国・朝鮮 語プレゼ ンテーシ ョン1) 267120)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 402,
+    "sourcePrintedPage": 401
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263112",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 5 (前期)",
+    "toCourseCode": "267111",
+    "toCourseName": "KLS8 (韓 国・朝鮮 語作文3) 267111)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 402,
+    "sourcePrintedPage": 401
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263113",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 6 (前期)",
+    "toCourseCode": "267122",
+    "toCourseName": "KCS8 (韓 国・朝鮮 語聴解3) 267122)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 402,
+    "sourcePrintedPage": 401
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263114",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 7 (前期)",
+    "toCourseCode": "267113",
+    "toCourseName": "KLS10 (韓 国・朝鮮 語通訳1) 267113)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 402,
+    "sourcePrintedPage": 401
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263115",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 8 (前期)",
+    "toCourseCode": "267124",
+    "toCourseName": "(韓 267124)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 403,
+    "sourcePrintedPage": 402
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263116",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 9 (前期)",
+    "toCourseCode": "267034",
+    "toCourseName": "交流文化 9 (東ア ジア国際 関係論) 267034)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 403,
+    "sourcePrintedPage": 402
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263117",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語10 (前期)",
+    "toCourseCode": "267154",
+    "toCourseName": "ケーススタ ディ言語 8 語と社会) 267154)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 403,
+    "sourcePrintedPage": 402
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263118",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 1 (後期)",
+    "toCourseCode": "267108",
+    "toCourseName": "KLS5 (韓 国・朝鮮 語作文2) 267108)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 403,
+    "sourcePrintedPage": 402
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263119",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 2 (後期)",
+    "toCourseCode": "267119",
+    "toCourseName": "KCS5 (韓 国・朝鮮 語聴解2) 267119)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 403,
+    "sourcePrintedPage": 402
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263120",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 3 (後期)",
+    "toCourseCode": "267110",
+    "toCourseName": "KLS7 (韓 国・朝鮮 語翻訳2) 267110)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 403,
+    "sourcePrintedPage": 402
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263121",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 4 (後期)",
+    "toCourseCode": "267121",
+    "toCourseName": "KCS7 (韓 国・朝鮮語 プレゼンテ ーション 2) (科目番 号267121)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 404,
+    "sourcePrintedPage": 403
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263122",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 5 (後期)",
+    "toCourseCode": "267112",
+    "toCourseName": "KLS9 (韓 国・朝鮮 語作文4) 267112)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 404,
+    "sourcePrintedPage": 403
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263123",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 6 (後期)",
+    "toCourseCode": "267123",
+    "toCourseName": "KCS9 (韓 国・朝鮮 語聴解4) 267123)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 404,
+    "sourcePrintedPage": 403
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263124",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 7 (後期)",
+    "toCourseCode": "267114",
+    "toCourseName": "KLS11 (韓 国・朝鮮 語通訳2) 267114)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 404,
+    "sourcePrintedPage": 403
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263125",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 8 (後期)",
+    "toCourseCode": "267125",
+    "toCourseName": "(韓 267125)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 404,
+    "sourcePrintedPage": 403
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263126",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語 9 (後期)",
+    "toCourseCode": "267016",
+    "toCourseName": "地域文化 4 (韓国・ 朝鮮) (科 目番号 267016)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 404,
+    "sourcePrintedPage": 403
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263127",
+    "fromCourseName": "長期海外セミナー韓国・  朝鮮語10 (後期)",
+    "toCourseCode": "267108",
+    "toCourseName": "KLS5 (韓 国・朝鮮 語作文2) 267108)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 404,
+    "sourcePrintedPage": 403
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263128",
+    "fromCourseName": "長期海外セミナー中国語 1  (前期)",
+    "toCourseCode": "267090",
+    "toCourseName": "CCS3 (実践 的中国語 1) (科目番 号267090)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 405,
+    "sourcePrintedPage": 404
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263129",
+    "fromCourseName": "長期海外セミナー中国語 2  (前期)",
+    "toCourseCode": "267090",
+    "toCourseName": "CCS3 (実践 的中国語 1) (科目番 号267090)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 405,
+    "sourcePrintedPage": 404
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263130",
+    "fromCourseName": "長期海外セミナー中国語 3  (前期)",
+    "toCourseCode": "267092",
+    "toCourseName": "CCS5 (動画 中国語1) 267092)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 405,
+    "sourcePrintedPage": 404
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263131",
+    "fromCourseName": "長期海外セミナー中国語 4  (前期)",
+    "toCourseCode": "262205",
+    "toCourseName": "CLS5 (中国 語読解3) 262205)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 405,
+    "sourcePrintedPage": 404
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263132",
+    "fromCourseName": "長期海外セミナー中国語 5  (前期)",
+    "toCourseCode": "267085",
+    "toCourseName": "CLS7 (中 国語作文) 267085)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 405,
+    "sourcePrintedPage": 404
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263133",
+    "fromCourseName": "長期海外セミナー中国語 6  (前期)",
+    "toCourseCode": "267087",
+    "toCourseName": "CLS9 (ビジ ネス中国語 1) (科目番 号267087)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 405,
+    "sourcePrintedPage": 404
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263134",
+    "fromCourseName": "長期海外セミナー中国語 7  (前期)",
+    "toCourseCode": "267089",
+    "toCourseName": "CLS11 (中 国語多読) 267089)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 405,
+    "sourcePrintedPage": 404
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263135",
+    "fromCourseName": "長期海外セミナー中国語 8  (前期)",
+    "toCourseCode": "267152",
+    "toCourseName": "案内実践) 267152)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 405,
+    "sourcePrintedPage": 404
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263136",
+    "fromCourseName": "長期海外セミナー中国語 9  (前期)",
+    "toCourseCode": "261211",
+    "toCourseName": "中国現代文 学(科目番 号261211)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 405,
+    "sourcePrintedPage": 404
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263137",
+    "fromCourseName": "長期海外セミナー中国語10  (前期)",
+    "toCourseCode": "261503",
+    "toCourseName": "地域文化 3 (中国) 261503)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 405,
+    "sourcePrintedPage": 404
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263138",
+    "fromCourseName": "長期海外セミナー中国語 1  (後期)",
+    "toCourseCode": "262202",
+    "toCourseName": "CLS2 (中国 語入門2) 262202)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 406,
+    "sourcePrintedPage": 405
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263139",
+    "fromCourseName": "長期海外セミナー中国語 2  (後期)",
+    "toCourseCode": "262202",
+    "toCourseName": "CLS2 (中国 語入門2) 262202)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 406,
+    "sourcePrintedPage": 405
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263140",
+    "fromCourseName": "長期海外セミナー中国語 3  (後期)",
+    "toCourseCode": "262204",
+    "toCourseName": "CLS4 (中国 語読解2) 262204)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 406,
+    "sourcePrintedPage": 405
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263141",
+    "fromCourseName": "長期海外セミナー中国語 4  (後期)",
+    "toCourseCode": "262214",
+    "toCourseName": "CCS2 (中国 語会話2) 262214)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 406,
+    "sourcePrintedPage": 405
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263142",
+    "fromCourseName": "長期海外セミナー中国語 5  (後期)",
+    "toCourseCode": "267093",
+    "toCourseName": "CCS6 (動画 中国語2) 267093)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 406,
+    "sourcePrintedPage": 405
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263143",
+    "fromCourseName": "長期海外セミナー中国語 6  (後期)",
+    "toCourseCode": "267086",
+    "toCourseName": "CLS8 (中 国語翻訳) 267086)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 406,
+    "sourcePrintedPage": 405
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263144",
+    "fromCourseName": "長期海外セミナー中国語 7  (後期)",
+    "toCourseCode": "267088",
+    "toCourseName": "CLS10 (ビジ ネス中国語 2) (科目番 号267088)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 406,
+    "sourcePrintedPage": 405
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263145",
+    "fromCourseName": "長期海外セミナー中国語 8  (後期)",
+    "toCourseCode": "267100",
+    "toCourseName": "CCS13 (ト ピック中国 語) (科目番 号267100)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 406,
+    "sourcePrintedPage": 405
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263146",
+    "fromCourseName": "長期海外セミナー中国語 9  (後期)",
+    "toCourseCode": "267153",
+    "toCourseName": "7 (中国語 267153)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 406,
+    "sourcePrintedPage": 405
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2023,
+    "organizationCodes": [
+      "GMU"
+    ],
+    "fromCourseCode": "263147",
+    "fromCourseName": "長期海外セミナー中国語10  (後期)",
+    "toCourseCode": "262206",
+    "toCourseName": "CLS6 (中国 語読解4) 262206)",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 406,
+    "sourcePrintedPage": 405
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2018,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "281109",
+    "fromCourseName": "Advertising and Communication",
+    "toCourseCode": "284011",
+    "toCourseName": "グロウコム (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 470,
+    "sourcePrintedPage": 469
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2018,
+    "admissionYearTo": 2022,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "281110",
+    "fromCourseName": "Conflict Management and Negotiation",
+    "toCourseCode": "284004",
+    "toCourseName": "グロウコム (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 470,
+    "sourcePrintedPage": 469
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "110009",
+    "fromCourseName": "Central Japan",
+    "toCourseCode": "110019",
+    "toCourseName": "修得済み学生は履修不可 「Globalization and Society」 (科目番号110019)に読替",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 471,
+    "sourcePrintedPage": 470
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "281202",
+    "fromCourseName": "Japanese Culture",
+    "toCourseCode": "284008",
+    "toCourseName": "グロウコム Modern (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 471,
+    "sourcePrintedPage": 470
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "281204",
+    "fromCourseName": "Introduction to Social Media",
+    "toCourseCode": "284012",
+    "toCourseName": "グロウコム Social (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 471,
+    "sourcePrintedPage": 470
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "281316",
+    "fromCourseName": "Organizational Behavior",
+    "toCourseCode": "284005",
+    "toCourseName": "グロウコム Organizational (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 472,
+    "sourcePrintedPage": 471
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "282106",
+    "fromCourseName": "Readings in Human Communication I",
+    "toCourseCode": "284003",
+    "toCourseName": "Readings in グロウコム  Language and (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 473,
+    "sourcePrintedPage": 472
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "282108",
+    "fromCourseName": "Readings in Japanology I",
+    "toCourseCode": "284007",
+    "toCourseName": "Readings in グロウコム Global Japan (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 473,
+    "sourcePrintedPage": 472
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "282114",
+    "fromCourseName": "TOEFL I 3421  (Listening and Reading)",
+    "toCourseCode": "284013",
+    "toCourseName": "Basic English グロウコム Proficiency (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 473,
+    "sourcePrintedPage": 472
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "282115",
+    "fromCourseName": "TOEFL II 3421  (Speaking and Writing)",
+    "toCourseCode": "284014",
+    "toCourseName": "Intermediate グロウコム English Proficiency (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 473,
+    "sourcePrintedPage": 472
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "282120",
+    "fromCourseName": "English for Graduate Study",
+    "toCourseCode": "284015",
+    "toCourseName": "Advanced English グロウコム Proficiency (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 473,
+    "sourcePrintedPage": 472
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "282209",
+    "fromCourseName": "Presentation I",
+    "toCourseCode": "284020",
+    "toCourseName": "グロウコム Digital (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 474,
+    "sourcePrintedPage": 473
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "282210",
+    "fromCourseName": "Presentation II",
+    "toCourseCode": "284021",
+    "toCourseName": "グロウコム Business (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 474,
+    "sourcePrintedPage": 473
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "282213",
+    "fromCourseName": "Translation Practice I",
+    "toCourseCode": "284016",
+    "toCourseName": "グロウコム Translation (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 474,
+    "sourcePrintedPage": 473
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "282215",
+    "fromCourseName": "Interpretation Practice I",
+    "toCourseCode": "284017",
+    "toCourseName": "グロウコム Interpretation (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 474,
+    "sourcePrintedPage": 473
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "282313",
+    "fromCourseName": "Research Design",
+    "toCourseCode": "284023",
+    "toCourseName": "Research グロウコム in Global (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 475,
+    "sourcePrintedPage": 474
+  },
+  {
+    "studentLevel": "undergraduate",
+    "studentTypes": [
+      "U"
+    ],
+    "admissionYearFrom": 2016,
+    "admissionYearTo": 2021,
+    "organizationCodes": [
+      "EXU"
+    ],
+    "fromCourseCode": "283103",
+    "fromCourseName": "Internship Abroad",
+    "toCourseCode": "284009",
+    "toCourseName": "Internship グロウコム in the (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 475,
+    "sourcePrintedPage": 474
+  },
+  {
+    "studentLevel": "graduate",
+    "studentTypes": [
+      "M"
+    ],
+    "admissionYearFrom": 2019,
+    "admissionYearTo": 2024,
+    "organizationCodes": [
+      "KMM"
+    ],
+    "fromCourseCode": "099413",
+    "fromCourseName": "ビジネスプレゼンテーション",
+    "toCourseCode": "099621",
+    "toCourseName": "ビジネス グローバ 専攻博士  ルリーダ 前期課程 ー研修 (",
+    "effectiveAcademicYear": null,
+    "sourceFile": "summary_graduate_2024.pdf",
+    "sourcePage": 120,
+    "sourcePrintedPage": 119
+  }
+]

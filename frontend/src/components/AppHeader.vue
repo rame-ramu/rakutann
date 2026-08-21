@@ -10,13 +10,9 @@ import {
   signOutOfApp,
 } from '../auth'
 import { pendingFriendRequestCount } from '../friends'
-import {
-  installApp,
-  isAppInstalled,
-  isInstallPromptReady,
-  isIosDevice,
-} from '../pwa'
+import { installApp, isAppInstalled, isInstallPromptReady, isIosDevice } from '../pwa'
 import { store } from '../store'
+import { isValidStudentProfile } from '../services/studentProfile'
 import {
   clearPersistedState,
   cloudSyncError,
@@ -42,9 +38,14 @@ const accountName = computed(
 const accountInitial = computed(() =>
   isGuestMode.value ? '端' : accountName.value.trim().charAt(0).toUpperCase() || 'G',
 )
-const isStudentIdRegistered = computed(() => Boolean(store.department && store.grade))
+const isStudentIdRegistered = computed(() =>
+  Boolean(store.studentProfile && isValidStudentProfile(store.studentProfile) && store.grade),
+)
 const showHomeLink = computed(
   () => route.name !== 'home' && (route.name !== 'student-id' || isStudentIdRegistered.value),
+)
+const showResultsBackLink = computed(
+  () => route.name === 'conditions' && route.query.from === 'results',
 )
 const cloudSyncLabel = computed(() => {
   if (isGuestMode.value) return 'この端末だけに保存'
@@ -138,6 +139,10 @@ onBeforeUnmount(() => {
       <span aria-hidden="true">✦</span>
       希望条件
     </RouterLink>
+    <RouterLink v-else-if="showResultsBackLink" class="header-action home-link" to="/results">
+      <span aria-hidden="true">←</span>
+      戻る
+    </RouterLink>
     <RouterLink v-else-if="showHomeLink" class="header-action home-link" to="/">
       <span aria-hidden="true">←</span>
       ホーム
@@ -197,14 +202,39 @@ onBeforeUnmount(() => {
               <span v-else class="chevron" aria-hidden="true">›</span>
             </RouterLink>
 
+            <button
+              class="menu-item special-course-menu-item"
+              :class="{ active: store.includeUnscheduledCourses }"
+              type="button"
+              :aria-pressed="store.includeUnscheduledCourses"
+              @click="store.setIncludeUnscheduledCourses(!store.includeUnscheduledCourses)"
+            >
+              <span class="menu-icon" aria-hidden="true">
+                {{ store.includeUnscheduledCourses ? '✓' : '＋' }}
+              </span>
+              <span>
+                <strong>集中・曜日時限未定の授業も探す</strong>
+                <small>通常の時間割表に置けない授業は、登録済み一覧へ分けて表示します。</small>
+              </span>
+              <span class="menu-toggle-state" aria-hidden="true">
+                {{ store.includeUnscheduledCourses ? 'ON' : 'OFF' }}
+              </span>
+            </button>
+
             <button v-if="!isAppInstalled" class="menu-item" type="button" @click="handleInstall">
               <span class="menu-icon" aria-hidden="true">＋</span>
-              <span><strong>{{ installButtonLabel }}</strong><small>ホーム画面からすぐに開く</small></span>
+              <span
+                ><strong>{{ installButtonLabel }}</strong
+                ><small>ホーム画面からすぐに開く</small></span
+              >
               <span class="chevron" aria-hidden="true">›</span>
             </button>
             <div v-else class="menu-item menu-item--status">
               <span class="menu-icon" aria-hidden="true">✓</span>
-              <span><strong>アプリインストール済み</strong><small>ホーム画面から利用できます</small></span>
+              <span
+                ><strong>アプリインストール済み</strong
+                ><small>ホーム画面から利用できます</small></span
+              >
             </div>
             <p v-if="isInstallHelpOpen" class="install-help" role="status">
               {{ installInstructions }}
@@ -248,11 +278,7 @@ onBeforeUnmount(() => {
             @click="handleSignOut"
           >
             {{
-              isGuestMode
-                ? 'Googleログイン画面へ'
-                : isSigningOut
-                  ? 'ログアウト中…'
-                  : 'ログアウト'
+              isGuestMode ? 'Googleログイン画面へ' : isSigningOut ? 'ログアウト中…' : 'ログアウト'
             }}
           </button>
         </section>
@@ -290,7 +316,10 @@ onBeforeUnmount(() => {
   font-weight: 900;
   line-height: 1;
   text-decoration: none;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
 }
 
 .header-action:hover,
@@ -576,6 +605,32 @@ onBeforeUnmount(() => {
   background: transparent;
 }
 
+.special-course-menu-item.active {
+  background: #e7fffb;
+}
+
+.special-course-menu-item.active .menu-icon {
+  background: var(--comic-green);
+  color: #ffffff;
+}
+
+.menu-toggle-state {
+  min-width: 2.6rem;
+  padding: 0.2rem 0.35rem;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 0.62rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.special-course-menu-item.active .menu-toggle-state {
+  background: var(--comic-green);
+  color: #ffffff;
+}
+
 .menu-item--danger {
   color: #b91c1c;
 }
@@ -609,7 +664,9 @@ onBeforeUnmount(() => {
 
 .menu-pop-enter-active,
 .menu-pop-leave-active {
-  transition: opacity 0.16s ease, transform 0.16s ease;
+  transition:
+    opacity 0.16s ease,
+    transform 0.16s ease;
   transform-origin: top right;
 }
 

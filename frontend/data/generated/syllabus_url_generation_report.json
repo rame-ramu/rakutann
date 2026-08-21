@@ -1,0 +1,19 @@
+{
+  "sourceFile": "授業一覧.csv",
+  "sourceSha256": "df84e6e26b14739e184b0633e5778a94f3c4cb16c2ed21bba56477670d6624a8",
+  "csvDataRows": 6298,
+  "offeringClasses": 6298,
+  "matchedUrls": 6298,
+  "offeringsWithoutUrl": 0,
+  "csvRowsWithoutOffering": 0,
+  "duplicateCourseIds": 0,
+  "invalidUrls": 0,
+  "nameMismatches": 0,
+  "issues": {
+    "offeringsWithoutUrl": [],
+    "csvRowsWithoutOffering": [],
+    "duplicateCourseIds": [],
+    "invalidUrls": [],
+    "nameMismatches": []
+  }
+}

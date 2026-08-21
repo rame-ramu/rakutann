@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import StudentIdView from '../views/StudentIdView.vue'
 import ScheduleView from '../views/ScheduleView.vue'
 import { currentUser } from '../auth'
+import { getMissingRequiredStudentAttributes } from '../services/studentAttributes'
+import { isValidStudentProfile } from '../services/studentProfile'
 import { store } from '../store'
 
 const router = createRouter({
@@ -44,17 +46,17 @@ router.beforeEach((to) => {
     return { name: 'home' }
   }
 
-  if (!store.department && to.name !== 'student-id') {
+  const studentProfile = store.studentProfile
+  const hasValidStudentProfile = studentProfile && isValidStudentProfile(studentProfile)
+  if (!hasValidStudentProfile && to.name !== 'student-id') {
     return { name: 'student-id' }
   }
-
   if (
-    store.department &&
-    !store.isHumanInfoStudent &&
-    to.name !== 'student-id' &&
-    to.name !== 'conditions'
+    hasValidStudentProfile &&
+    getMissingRequiredStudentAttributes(studentProfile).length > 0 &&
+    to.name !== 'student-id'
   ) {
-    return { name: 'conditions' }
+    return { name: 'student-id', query: { edit: '1' } }
   }
 })
 

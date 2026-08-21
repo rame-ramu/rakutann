@@ -2,6 +2,8 @@
 
 Vue 3、Vite、Firebaseで構成された履修支援アプリです。Webサイトとインストール版（PWA）は同じコード・Googleログイン・保存データを使用します。
 
+現在の基本機能バージョンは **0.8.0** です。
+
 ## アプリとしてインストール
 
 - Android・PC: サイト内の「アプリをインストール」、またはブラウザメニューの「アプリをインストール」を選びます。
@@ -52,6 +54,21 @@ npm run dev
 
 ```sh
 npm run build
+```
+
+### 2026年度データの生成・検証
+
+```sh
+npm run generate:data
+npm run validate:data
+```
+
+履修判定の正式入力は `2026 初期データー　ベータ版/` のPDF・Excel 9ファイルに限定します。`授業一覧.csv` は公式シラバスURL表示だけに使用します。
+
+### Test
+
+```sh
+npm test
 ```
 
 ### Lint with [ESLint](https://eslint.org/)

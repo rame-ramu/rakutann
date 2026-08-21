@@ -1,0 +1,6145 @@
+[
+  {
+    "type": "eligible_years_unresolved",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 465,
+    "courseCode": "110009",
+    "courseName": "Central Japan"
+  },
+  {
+    "type": "eligible_years_unresolved",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 471,
+    "courseCode": "110009",
+    "courseName": "Central Japan"
+  },
+  {
+    "type": "change_addition_years_unresolved",
+    "sourceFile": "summary_change_2025_0325.pdf",
+    "sourcePage": 1,
+    "courseCode": "106011",
+    "explanation": "変更後欄に単位数・履修年次・開講学期が記載されていないためconditionalで保持"
+  },
+  {
+    "type": "change_addition_years_unresolved",
+    "sourceFile": "summary_change_2025_0325.pdf",
+    "sourcePage": 1,
+    "courseCode": "106012",
+    "explanation": "変更後欄に単位数・履修年次・開講学期が記載されていないためconditionalで保持"
+  },
+  {
+    "type": "change_addition_years_unresolved",
+    "sourceFile": "summary_change_2025_0325.pdf",
+    "sourcePage": 1,
+    "courseCode": "106013",
+    "explanation": "変更後欄に単位数・履修年次・開講学期が記載されていないためconditionalで保持"
+  },
+  {
+    "type": "change_addition_years_unresolved",
+    "sourceFile": "summary_change_2025_0325.pdf",
+    "sourcePage": 2,
+    "courseCode": "106014",
+    "explanation": "変更後欄に単位数・履修年次・開講学期が記載されていないためconditionalで保持"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|LJU,LCU,LAU,KEU,NKU,NDU,NMU,PFU,CSU,CMU,CKU,AAU,ARU,HCU,HVU,HPU,HMU,HHU,HAU,HEU,SEU,SFU,FSU,FCU,GLU,GMU,VBU,EXU|university_common|025070",
+    "keptSource": "summary_2026.pdf:43",
+    "duplicateSource": "summary_2026.pdf:45"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241516",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241517",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241518",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241503",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241504",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241505",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241519",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241520",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241521",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241522",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241523",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241524",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241525",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241526",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241527",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241514",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:189"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241516",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241517",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241518",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241503",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241504",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241505",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241519",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241520",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241521",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241522",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241523",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241524",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241525",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241526",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241527",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241514",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:194"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241516",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241517",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241518",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241503",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241504",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241505",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241519",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241520",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241521",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241522",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241523",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241524",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241525",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241526",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241527",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU|department_common|241514",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:199"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:204"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:204"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:204"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:204"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2026.pdf:183",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|246101",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|246102",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244123",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244133",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244110",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|246103",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244119",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244279",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244130",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|246104",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244118",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244117",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244134",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|246105",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244218",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244132",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244232",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244233",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244234",
+    "keptSource": "summary_2026.pdf:204",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244235",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244236",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244237",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244238",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244239",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244240",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244241",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244242",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244243",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:211"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244244",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:212"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244245",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:212"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244246",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:212"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244249",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:212"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244248",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:212"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244219",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:212"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244217",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:212"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244229",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:212"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244131",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:212"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244271",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:212"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|HHU,HAU|department_common|244272",
+    "keptSource": "summary_2026.pdf:205",
+    "duplicateSource": "summary_2026.pdf:212"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|251002",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|251108",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|251009",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|251109",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|251110",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|251111",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|251112",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|251114",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|252002",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|255064",
+    "keptSource": "summary_2026.pdf:245",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|255065",
+    "keptSource": "summary_2026.pdf:245",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|254110",
+    "keptSource": "summary_2026.pdf:247",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|254111",
+    "keptSource": "summary_2026.pdf:247",
+    "duplicateSource": "summary_2026.pdf:248"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|253059",
+    "keptSource": "summary_2026.pdf:247",
+    "duplicateSource": "summary_2026.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|253060",
+    "keptSource": "summary_2026.pdf:247",
+    "duplicateSource": "summary_2026.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|253061",
+    "keptSource": "summary_2026.pdf:247",
+    "duplicateSource": "summary_2026.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|253062",
+    "keptSource": "summary_2026.pdf:247",
+    "duplicateSource": "summary_2026.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|253066",
+    "keptSource": "summary_2026.pdf:247",
+    "duplicateSource": "summary_2026.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|253063",
+    "keptSource": "summary_2026.pdf:247",
+    "duplicateSource": "summary_2026.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|252236",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|252238",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|252240",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|252205",
+    "keptSource": "summary_2026.pdf:244",
+    "duplicateSource": "summary_2026.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2026|2026|FSU,FCU|faculty_common|253070",
+    "keptSource": "summary_2026.pdf:245",
+    "duplicateSource": "summary_2026.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|LJU,LCU,LAU,KEU,NKU,NDU,NMU,PFU,CSU,CMU,CKU,AAU,ARU,HCU,HVU,HPU,HMU,HHU,HAU,HEU,SEU,SFU,FSU,FCU,GLU,GMU,VBU,EXU|university_common|023289",
+    "keptSource": "summary_2025.pdf:41",
+    "duplicateSource": "summary_2025.pdf:42"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|LJU,LCU,LAU,KEU,NKU,NDU,NMU,PFU,CSU,CMU,CKU,AAU,ARU,HCU,HVU,HPU,HMU,HHU,HAU,HEU,SEU,SFU,FSU,FCU,GLU,GMU,VBU,EXU|university_common|025070",
+    "keptSource": "summary_2025.pdf:45",
+    "duplicateSource": "summary_2025.pdf:47"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241516",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241517",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241518",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241503",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241504",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241505",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241519",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241520",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241521",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241522",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241523",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241524",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241525",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241526",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241527",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241514",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:183"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241516",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241517",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241518",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241503",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241504",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241505",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241519",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241520",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241521",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241522",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241523",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241524",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241525",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241526",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241527",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241514",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:188"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241516",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241517",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241518",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241503",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241504",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241505",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241519",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241520",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241521",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241522",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241523",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241524",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241525",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241526",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241527",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU|department_common|241514",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:193"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:198"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:198"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:198"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:198"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2025.pdf:177",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|246101",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|246102",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244123",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244133",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244110",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|246103",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244119",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244279",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244130",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|246104",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244118",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244117",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244134",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|246105",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244218",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244132",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244232",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244233",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244234",
+    "keptSource": "summary_2025.pdf:198",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244235",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244236",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244237",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244238",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244239",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244240",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244241",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244242",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244243",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:205"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244244",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:206"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244245",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:206"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244246",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:206"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244249",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:206"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244248",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:206"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244219",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:206"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244217",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:206"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244229",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:206"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244131",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:206"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244271",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:206"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|HHU,HAU|department_common|244272",
+    "keptSource": "summary_2025.pdf:199",
+    "duplicateSource": "summary_2025.pdf:206"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|251002",
+    "keptSource": "summary_2025.pdf:238",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|251108",
+    "keptSource": "summary_2025.pdf:238",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|251009",
+    "keptSource": "summary_2025.pdf:238",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|251109",
+    "keptSource": "summary_2025.pdf:238",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|251110",
+    "keptSource": "summary_2025.pdf:238",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|251111",
+    "keptSource": "summary_2025.pdf:238",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|251112",
+    "keptSource": "summary_2025.pdf:238",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|251114",
+    "keptSource": "summary_2025.pdf:238",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|252002",
+    "keptSource": "summary_2025.pdf:238",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|255064",
+    "keptSource": "summary_2025.pdf:239",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|255065",
+    "keptSource": "summary_2025.pdf:239",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|254110",
+    "keptSource": "summary_2025.pdf:242",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|254111",
+    "keptSource": "summary_2025.pdf:242",
+    "duplicateSource": "summary_2025.pdf:243"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|253059",
+    "keptSource": "summary_2025.pdf:241",
+    "duplicateSource": "summary_2025.pdf:245"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|253060",
+    "keptSource": "summary_2025.pdf:241",
+    "duplicateSource": "summary_2025.pdf:245"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|253061",
+    "keptSource": "summary_2025.pdf:241",
+    "duplicateSource": "summary_2025.pdf:245"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|253062",
+    "keptSource": "summary_2025.pdf:241",
+    "duplicateSource": "summary_2025.pdf:245"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|253066",
+    "keptSource": "summary_2025.pdf:242",
+    "duplicateSource": "summary_2025.pdf:245"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|253063",
+    "keptSource": "summary_2025.pdf:242",
+    "duplicateSource": "summary_2025.pdf:245"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|252236",
+    "keptSource": "summary_2025.pdf:239",
+    "duplicateSource": "summary_2025.pdf:246"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|252238",
+    "keptSource": "summary_2025.pdf:239",
+    "duplicateSource": "summary_2025.pdf:246"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|252240",
+    "keptSource": "summary_2025.pdf:239",
+    "duplicateSource": "summary_2025.pdf:246"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|252205",
+    "keptSource": "summary_2025.pdf:238",
+    "duplicateSource": "summary_2025.pdf:246"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2025|2025|FSU,FCU|faculty_common|253070",
+    "keptSource": "summary_2025.pdf:239",
+    "duplicateSource": "summary_2025.pdf:246"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2019|2024|LJU,LCU,LAU,KEU,NKU,NDU,NMU,PFU,CSU,CMU,CKU,AAU,ARU,HCU,HVU,HPU,HMU,HHU,HAU,HEU,SEU,SFU,FSU,FCU,GLU,GMU,VBU,EXU|university_common|023120",
+    "keptSource": "summary_2024.pdf:49",
+    "duplicateSource": "summary_2024.pdf:51"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|1900|2024|LJU,LCU,LAU,KEU,NKU,NDU,NMU,PFU,CSU,CMU,CKU,AAU,ARU,HCU,HVU,HPU,HMU,HHU,HAU,HEU,SEU,SFU,FSU,FCU,GLU,GMU,VBU,EXU|university_common|025070",
+    "keptSource": "summary_2024.pdf:54",
+    "duplicateSource": "summary_2024.pdf:57"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2020|2022|NKU,NDU,NMU|faculty_common|213001",
+    "keptSource": "summary_2024.pdf:142",
+    "duplicateSource": "summary_2024.pdf:143"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2020|2022|NKU,NDU,NMU|faculty_common|213002",
+    "keptSource": "summary_2024.pdf:142",
+    "duplicateSource": "summary_2024.pdf:143"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2020|2022|NKU,NDU,NMU|faculty_common|213003",
+    "keptSource": "summary_2024.pdf:142",
+    "duplicateSource": "summary_2024.pdf:143"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2020|2022|NKU,NDU,NMU|faculty_common|213004",
+    "keptSource": "summary_2024.pdf:142",
+    "duplicateSource": "summary_2024.pdf:143"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2020|2022|NKU,NDU,NMU|faculty_common|213005",
+    "keptSource": "summary_2024.pdf:142",
+    "duplicateSource": "summary_2024.pdf:143"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2020|2022|NKU,NDU,NMU|faculty_common|213001",
+    "keptSource": "summary_2024.pdf:142",
+    "duplicateSource": "summary_2024.pdf:144"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2020|2022|NKU,NDU,NMU|faculty_common|213002",
+    "keptSource": "summary_2024.pdf:142",
+    "duplicateSource": "summary_2024.pdf:144"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2020|2022|NKU,NDU,NMU|faculty_common|213003",
+    "keptSource": "summary_2024.pdf:142",
+    "duplicateSource": "summary_2024.pdf:144"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2020|2022|NKU,NDU,NMU|faculty_common|213004",
+    "keptSource": "summary_2024.pdf:142",
+    "duplicateSource": "summary_2024.pdf:144"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2020|2022|NKU,NDU,NMU|faculty_common|213005",
+    "keptSource": "summary_2024.pdf:142",
+    "duplicateSource": "summary_2024.pdf:144"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241516",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241517",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241518",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241503",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241504",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241505",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241519",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241520",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241521",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241522",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241523",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241524",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241525",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241526",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241527",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241514",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:250"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241516",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241517",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241518",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241503",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241504",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241505",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241519",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241520",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241521",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241522",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241523",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241524",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241525",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241526",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241527",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241514",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:257"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241516",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241517",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241518",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241503",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241504",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241505",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241519",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241520",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241521",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241522",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241523",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241524",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241525",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241526",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241527",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU|department_common|241514",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:262"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:267"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:267"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:267"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:267"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241101",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241005",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241006",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HCU,HVU,HPU,HMU,HHU,HAU,HEU|faculty_common|241102",
+    "keptSource": "summary_2024.pdf:240",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|246101",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|246102",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244123",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244133",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244110",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|246103",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244119",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244279",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244130",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|246104",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244118",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244117",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244134",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|246105",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244218",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244132",
+    "keptSource": "summary_2024.pdf:267",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244232",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244233",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244234",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244235",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244236",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244237",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:277"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244238",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244239",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244240",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244241",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244242",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244243",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244244",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244245",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244246",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244249",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244248",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244219",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244217",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244229",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244131",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244271",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2024|2024|HHU,HAU|department_common|244272",
+    "keptSource": "summary_2024.pdf:268",
+    "duplicateSource": "summary_2024.pdf:278"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|251002",
+    "keptSource": "summary_2024.pdf:332",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|251108",
+    "keptSource": "summary_2024.pdf:332",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|251009",
+    "keptSource": "summary_2024.pdf:332",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|251109",
+    "keptSource": "summary_2024.pdf:332",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|251110",
+    "keptSource": "summary_2024.pdf:332",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|251111",
+    "keptSource": "summary_2024.pdf:332",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|251112",
+    "keptSource": "summary_2024.pdf:332",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|251113",
+    "keptSource": "summary_2024.pdf:332",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|252002",
+    "keptSource": "summary_2024.pdf:332",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|255064",
+    "keptSource": "summary_2024.pdf:333",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|255065",
+    "keptSource": "summary_2024.pdf:333",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|254110",
+    "keptSource": "summary_2024.pdf:336",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|254111",
+    "keptSource": "summary_2024.pdf:336",
+    "duplicateSource": "summary_2024.pdf:337"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|253059",
+    "keptSource": "summary_2024.pdf:335",
+    "duplicateSource": "summary_2024.pdf:339"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|253060",
+    "keptSource": "summary_2024.pdf:335",
+    "duplicateSource": "summary_2024.pdf:339"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|253061",
+    "keptSource": "summary_2024.pdf:335",
+    "duplicateSource": "summary_2024.pdf:339"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|253062",
+    "keptSource": "summary_2024.pdf:335",
+    "duplicateSource": "summary_2024.pdf:339"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|253066",
+    "keptSource": "summary_2024.pdf:335",
+    "duplicateSource": "summary_2024.pdf:339"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|253063",
+    "keptSource": "summary_2024.pdf:335",
+    "duplicateSource": "summary_2024.pdf:339"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|252208",
+    "keptSource": "summary_2024.pdf:333",
+    "duplicateSource": "summary_2024.pdf:340"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|252210",
+    "keptSource": "summary_2024.pdf:333",
+    "duplicateSource": "summary_2024.pdf:340"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|252212",
+    "keptSource": "summary_2024.pdf:333",
+    "duplicateSource": "summary_2024.pdf:340"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|252205",
+    "keptSource": "summary_2024.pdf:332",
+    "duplicateSource": "summary_2024.pdf:340"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2021|2024|FSU,FCU|faculty_common|253070",
+    "keptSource": "summary_2024.pdf:333",
+    "duplicateSource": "summary_2024.pdf:340"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151328",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151346",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151371",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151438",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151324",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151325",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151259",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151326",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151042",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151327",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151231",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151266",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151203",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151329",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151323",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151347",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|110204",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151439",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151116",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151117",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151375",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151330",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151331",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151310",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151332",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151333",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151334",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151335",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151336",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151337",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151338",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151431",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151339",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151340",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151115",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151341",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151093",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151436",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:448"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151210",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151084",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151376",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151037",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151038",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151377",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151378",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151379",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151380",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151381",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151435",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151437",
+    "keptSource": "summary_2024.pdf:446",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151382",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151383",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151384",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151385",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151387",
+    "keptSource": "summary_2024.pdf:442",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151386",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151388",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151389",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151390",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151391",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151392",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151393",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151394",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151395",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151396",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151397",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:449"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151398",
+    "keptSource": "summary_2024.pdf:447",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151342",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151207",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151052",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151343",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151051",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151344",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151345",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151242",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151348",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151349",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151350",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151351",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151440",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151264",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151352",
+    "keptSource": "summary_2024.pdf:443",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151353",
+    "keptSource": "summary_2024.pdf:444",
+    "duplicateSource": "summary_2024.pdf:450"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151354",
+    "keptSource": "summary_2024.pdf:444",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151355",
+    "keptSource": "summary_2024.pdf:444",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151089",
+    "keptSource": "summary_2024.pdf:444",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151256",
+    "keptSource": "summary_2024.pdf:444",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151441",
+    "keptSource": "summary_2024.pdf:444",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151356",
+    "keptSource": "summary_2024.pdf:444",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|110206",
+    "keptSource": "summary_2024.pdf:444",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151445",
+    "keptSource": "summary_2024.pdf:444",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151367",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151118",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151119",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151007",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151008",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151212",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151213",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151143",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151144",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151369",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151010",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151011",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151120",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151121",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151370",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151275",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151012",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151013",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151018",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151019",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151372",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151442",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|VBU|department_common|151443",
+    "keptSource": "summary_2024.pdf:445",
+    "duplicateSource": "summary_2024.pdf:451"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|EXU|department_common|281102",
+    "keptSource": "summary_2024.pdf:464",
+    "duplicateSource": "summary_2024.pdf:470"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|EXU|department_common|281104",
+    "keptSource": "summary_2024.pdf:464",
+    "duplicateSource": "summary_2024.pdf:470"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|EXU|department_common|281107",
+    "keptSource": "summary_2024.pdf:464",
+    "duplicateSource": "summary_2024.pdf:470"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|EXU|department_common|281108",
+    "keptSource": "summary_2024.pdf:464",
+    "duplicateSource": "summary_2024.pdf:470"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|EXU|department_common|281112",
+    "keptSource": "summary_2024.pdf:464",
+    "duplicateSource": "summary_2024.pdf:470"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|EXU|department_common|281113",
+    "keptSource": "summary_2024.pdf:464",
+    "duplicateSource": "summary_2024.pdf:470"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|EXU|department_common|281114",
+    "keptSource": "summary_2024.pdf:464",
+    "duplicateSource": "summary_2024.pdf:470"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|EXU|department_common|281116",
+    "keptSource": "summary_2024.pdf:464",
+    "duplicateSource": "summary_2024.pdf:470"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|EXU|department_common|281117",
+    "keptSource": "summary_2024.pdf:464",
+    "duplicateSource": "summary_2024.pdf:470"
+  },
+  {
+    "type": "duplicate_curriculum_record",
+    "key": "undergraduate|U|2018|2022|EXU|department_common|281118",
+    "keptSource": "summary_2024.pdf:464",
+    "duplicateSource": "summary_2024.pdf:470"
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "104022",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 29
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "104023",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 29
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102336",
+    "referencedName": "English 1",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 36
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102336",
+    "referencedName": "English 2",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 36
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102357",
+    "referencedName": "English 3",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 36
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102357",
+    "referencedName": "English 5",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 36
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102359",
+    "referencedName": "TOEIC Training Ia",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 36
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102360",
+    "referencedName": "TOEIC Training Ib",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 36
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102361",
+    "referencedName": "English 3",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 36
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102361",
+    "referencedName": "English 5",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 36
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102369",
+    "referencedName": "English 4",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 36
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102369",
+    "referencedName": "English 6",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 36
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "025122",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 43
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "025123",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 43
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026020",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 45
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026029",
+    "referencedName": "失 格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 45
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026030",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 45
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026023",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 45
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026026",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 45
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026027",
+    "referencedName": "情報サービス演習I・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 45
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026027",
+    "referencedName": "情報資源組織演習I・ II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 45
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026027",
+    "referencedName": "失 格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 45
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "109014",
+    "referencedName": "日本語教授法 1 ~ 3",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 47
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "113012",
+    "referencedName": "中級簿記B",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 53
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "113012",
+    "referencedName": "中級簿記C",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 53
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "030022",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 65
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "033068",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 66
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "033101",
+    "referencedName": "古文・漢文チェックテスト",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 71
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "127050",
+    "referencedName": "介護等 の体験を免除する者",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 82
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215113",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215115",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215116",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215118",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215119",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215121",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215126",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215122",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215125",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215208",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 98
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211030",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 98
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "212211",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 98
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215220",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 98
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215307",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215308",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215309",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215310",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215311",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215312",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215113",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215115",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215116",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215118",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215119",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215121",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215126",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215122",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215125",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211030",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "212211",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 106
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215113",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 111
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215115",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 111
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215124",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 111
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215116",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 111
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215118",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 111
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215119",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 111
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215121",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 111
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215126",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 111
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215122",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 111
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215125",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 111
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211030",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 112
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215307",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 112
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215308",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 112
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215309",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 112
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215310",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 112
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215311",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 112
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215312",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 112
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "212211",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 113
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "223005",
+    "referencedName": "専門演習I・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 125
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "272101",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 144
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "272140",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 145
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "272166",
+    "referencedName": "演習III",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 148
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "273144",
+    "referencedName": "演習IIa・b",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 149
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "243451",
+    "referencedName": "失格",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 191
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244128",
+    "referencedName": "レクリエーション概論 (244135)",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 205
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244231",
+    "referencedName": "レクリエーション概論 (244135)",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 206
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244230",
+    "referencedName": "レクリエーション概論 (244135)",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 206
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292008",
+    "referencedName": "食物の科学(292003)",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 234
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292009",
+    "referencedName": "食品加工学(292005)",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 234
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292011",
+    "referencedName": "食品衛生学(292010)",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 234
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292012",
+    "referencedName": "食品分析学(292007)",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 234
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292014",
+    "referencedName": "基礎調理科学(292013)",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 235
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292016",
+    "referencedName": "応用調理科学(292015)",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 235
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292017",
+    "referencedName": "基礎調理科学(292013)",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 235
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292028",
+    "referencedName": "食空間・コーディネート論(292027)",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 235
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252225",
+    "referencedName": "ソーシャルワーク実習I・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 245
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252226",
+    "referencedName": "ソーシャルワーク実習I・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 245
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253071",
+    "referencedName": "精神保健福祉援助実習I・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 245
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252227",
+    "referencedName": "精神保健福祉援助演習(専門)I・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 245
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252241",
+    "referencedName": "ソーシャルワーク実習III・IV",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 246
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252242",
+    "referencedName": "ソー シャルワーク実習III・IV",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 246
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252245",
+    "referencedName": "ソー シャルワーク実習III・IV",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 246
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252246",
+    "referencedName": "ソー シャルワーク実習III・IV",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 246
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253060",
+    "referencedName": "福祉貢献基礎I・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 247
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253061",
+    "referencedName": "福祉貢献基礎I・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 247
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253062",
+    "referencedName": "福祉貢献研究I・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 247
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "255044",
+    "referencedName": "保育実習I・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 249
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "255044",
+    "referencedName": "保育実習指導I・ II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 249
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "255045",
+    "referencedName": "保育実習I・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 249
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "255045",
+    "referencedName": "保育実習指導I・ II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 249
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267255",
+    "referencedName": "KBS2 (韓国・朝鮮語入門B",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 275
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267255",
+    "referencedName": "初めての韓国・ 朝鮮語",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 275
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267104",
+    "referencedName": "KBS2 (韓国・朝鮮語入門B",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 278
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267115",
+    "referencedName": "KBS2 (韓国・朝鮮語入門B",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 279
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "151523",
+    "referencedName": "ゼミナールI ~ IV",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 298
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "151526",
+    "referencedName": "ゼミナールI ~ IV",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 298
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "151526",
+    "referencedName": "卒業プロジェ クトI・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 298
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "151527",
+    "referencedName": "ゼミナールI ~ IV",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 298
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "151527",
+    "referencedName": "卒業プロジェ クトI・II",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 298
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "284019",
+    "referencedName": "Skills Subjects",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 311
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "282314",
+    "referencedName": "Skills Subjects",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 312
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "104022",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 30
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "104023",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 30
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102336",
+    "referencedName": "English 1",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 37
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102336",
+    "referencedName": "English 2",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 37
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102357",
+    "referencedName": "English 3",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 37
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102357",
+    "referencedName": "English 5",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 37
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102359",
+    "referencedName": "TOEIC Training Ia",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 37
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102360",
+    "referencedName": "TOEIC Training Ib",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 37
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102361",
+    "referencedName": "English 3",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 37
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102361",
+    "referencedName": "English 5",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 37
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102369",
+    "referencedName": "English 4",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 37
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102369",
+    "referencedName": "English 6",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 37
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "023289",
+    "referencedName": "教育の基 小中栄一種免必修 礎的理解に関する科目等",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 41
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "023283",
+    "referencedName": "道徳指 中高一種免 (数学) 必修 導法",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 42
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "023250",
+    "referencedName": "道徳指 高一種免 (情報) 必修 導法",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 42
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "023249",
+    "referencedName": "道徳指 中一種免 (英語) 必修 導法",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 42
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "025122",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 45
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "025123",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 45
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026020",
+    "referencedName": "失 全科目必修 格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 47
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026029",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 47
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026030",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 47
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026023",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 47
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026026",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 47
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026027",
+    "referencedName": "情報サービス演習I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 47
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026027",
+    "referencedName": "情報資源組織演 習I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 47
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026027",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 47
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "030022",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 65
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "033068",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 66
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "033101",
+    "referencedName": "古文・漢文チェックテスト",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 71
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "127050",
+    "referencedName": "介護等 の体験を免除する者",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 82
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215113",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 96
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215115",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 96
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215116",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 96
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215118",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 96
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215119",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215121",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215126",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215122",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215125",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 97
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215208",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 98
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211030",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 98
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "212211",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 98
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215220",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 99
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215307",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 104
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215308",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215309",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215310",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215311",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215312",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215113",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215115",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215116",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215118",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 106
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215119",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 106
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215121",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 106
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215126",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 106
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215122",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 106
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215125",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 106
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211030",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 107
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "212211",
+    "referencedName": "失格",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 107
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "223005",
+    "referencedName": "専門演習I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 118
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "271124",
+    "referencedName": "三晃社ビル",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 136
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "272101",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 137
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "272140",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 138
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "272166",
+    "referencedName": "演習III",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 141
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "273144",
+    "referencedName": "演習IIa・b",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 142
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244128",
+    "referencedName": "レクリエーション概論 (244135)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 199
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244231",
+    "referencedName": "レクリエーション概論 (244135)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 200
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244230",
+    "referencedName": "レクリエーション概論 (244135)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 200
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292008",
+    "referencedName": "食物の科学(292003)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 228
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292009",
+    "referencedName": "食品加工学(292005)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 228
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292011",
+    "referencedName": "食品衛生学(292010)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 228
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292012",
+    "referencedName": "食品分析学(292007)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 228
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292014",
+    "referencedName": "基礎調理科学(292013)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 229
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292016",
+    "referencedName": "応用調理科学(292015)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 229
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292017",
+    "referencedName": "基礎調理科学(292013)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 229
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292028",
+    "referencedName": "食空間・コーディネート論(292027)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 229
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252225",
+    "referencedName": "ソーシャルワーク実習I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 239
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252226",
+    "referencedName": "ソーシャルワーク実習I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 240
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253071",
+    "referencedName": "精神保健福祉援助実習I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 240
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252227",
+    "referencedName": "精神保健福祉援助演習(専門)I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 240
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252241",
+    "referencedName": "ソーシャルワーク実習III・IV",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 240
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252242",
+    "referencedName": "ソー シャルワーク実習III・IV",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 240
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252245",
+    "referencedName": "ソー シャルワーク実習III・IV",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 241
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252246",
+    "referencedName": "ソー シャルワーク実習III・IV",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 241
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253060",
+    "referencedName": "福祉貢献基礎I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 241
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253061",
+    "referencedName": "福祉貢献基礎I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 241
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253062",
+    "referencedName": "福祉貢献研究I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 241
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "255044",
+    "referencedName": "保育実習I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 245
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "255045",
+    "referencedName": "保育実習I・II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 245
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "255045",
+    "referencedName": "保育実習指導I・ II",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 245
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267246",
+    "referencedName": "日本語教授法 1 ~ 3",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 269
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267203",
+    "referencedName": "コ 言語文化・コミュニケーションから ミュニケーション論 1 (コミュニケ ーション論入門)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 269
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267203",
+    "referencedName": "交流文化 1 (国 8 単位以上(注 際交流入門)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 269
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267203",
+    "referencedName": "交流文化 2 (国際関 6 ) 係入門)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 269
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "266070",
+    "referencedName": "交流文化 1 (国 地域文化・国際社会から 際交流入門)",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 271
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267101",
+    "referencedName": "長期海外 セミナー韓国・朝鮮語",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 275
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267102",
+    "referencedName": "長期海外 セミナー韓国・朝鮮語",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 275
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267103",
+    "referencedName": "長期海外 セミナー韓国・朝鮮語",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 275
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "284019",
+    "referencedName": "Skills Subjects",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 312
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "282314",
+    "referencedName": "Skills Subjects",
+    "sourceFile": "summary_2025.pdf",
+    "sourcePage": 313
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "110404",
+    "referencedName": "イ ラーニング ンシッ 110410 ンターンシップ概論",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 38
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "110601",
+    "referencedName": "ジェンダーと社 会",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 38
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "110602",
+    "referencedName": "女性学・男性学",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 38
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "110607",
+    "referencedName": "ジェンダー・ダ イバーシティ表現演習I",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 39
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "110607",
+    "referencedName": "ジェ ンダー・ダイバーシティ表現演 習II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 39
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "110609",
+    "referencedName": "思想としてのフ ェミニズム:性の多様性に至る 系譜を学ぶ",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 39
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102336",
+    "referencedName": "English 1",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102336",
+    "referencedName": "English 2",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102358",
+    "referencedName": "English 3",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102358",
+    "referencedName": "English 5",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102359",
+    "referencedName": "TOEIC Training Ia",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102360",
+    "referencedName": "TOEIC Training Ib",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102362",
+    "referencedName": "English 3",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102362",
+    "referencedName": "English 5",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102370",
+    "referencedName": "English 4",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102370",
+    "referencedName": "English 6",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 41
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "106007",
+    "referencedName": "中国語読 解1A",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 43
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "106007",
+    "referencedName": "中国語会話1A",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 43
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "106008",
+    "referencedName": "韓 国・朝鮮語入門",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 43
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "023120",
+    "referencedName": "教育の基礎 中一種免必修 的理解に関する科目等",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 49
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "023260",
+    "referencedName": "道 高一種免 (国語) 選択 徳指導法",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 50
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "023286",
+    "referencedName": "道 2024年度入学者に適用 徳指導法",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 51
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "023250",
+    "referencedName": "道 高一種免 (情報) 必修 徳指導法",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 51
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "023244",
+    "referencedName": "英語科教育 中高一種免 (英語) 必修 法I",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 51
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "025122",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 54
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "025070",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 54
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026020",
+    "referencedName": "失 格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 57
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026029",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 57
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026030",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 57
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026023",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 57
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026026",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 57
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026027",
+    "referencedName": "情報サービス演習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 57
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026027",
+    "referencedName": "情報資源組織演習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 57
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026027",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 57
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "031182",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 81
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "030022",
+    "referencedName": "履修上の注 意",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 81
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "031171",
+    "referencedName": "履修上の注 国文学特 国文学科 意",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 83
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "126303",
+    "referencedName": "専門演習 I~IV",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 96
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102360",
+    "referencedName": "TOEIC Training Ia",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 96
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "102360",
+    "referencedName": "TOEIC Training Ib",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 96
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "126424",
+    "referencedName": "小学校英 語教育実践演習I",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 98
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "126425",
+    "referencedName": "中学校英語 語教育 教育実践演習I(学校文法)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 98
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "126428",
+    "referencedName": "中学校英語 教育実践演習II(オーラルコ ミュニケーション)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 98
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "124008",
+    "referencedName": "介護 等の体験を免除する者",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "124073",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 105
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215202",
+    "referencedName": "データサイエンス入門",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 122
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215002",
+    "referencedName": "AI (人工知能)入門",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 122
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215113",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 122
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215115",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 122
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215116",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 122
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215118",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 123
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215119",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 123
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215121",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 123
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215126",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 123
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215122",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 123
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215125",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 123
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215208",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 124
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211030",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 124
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "212211",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 124
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215220",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 125
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215100",
+    "referencedName": "データサイエンス入門",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 131
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215002",
+    "referencedName": "AI (人工知能)入門",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 131
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215307",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 131
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215308",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 132
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215309",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 132
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215310",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 132
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215311",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 132
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215312",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 132
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215113",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 132
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215115",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 132
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215116",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 132
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215118",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 132
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215119",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 133
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215121",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 133
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215126",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 133
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215122",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 133
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215125",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 133
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211030",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 133
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "212211",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 134
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215002",
+    "referencedName": "AI (人工知能)入門",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 140
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211019",
+    "referencedName": "デー 215309 イエンス イエンス 20 単位を含む タ分析演習I",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 140
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211019",
+    "referencedName": "データ 16 単位を含む サイエンスII(心理実験設計)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 140
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211008",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 140
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211027",
+    "referencedName": "失 格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211029",
+    "referencedName": "失 格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211030",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "214008",
+    "referencedName": "データ解析演 データ解 感性工学 215208 習",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "212302",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 141
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "212211",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 142
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215008",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 143
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215008",
+    "referencedName": "言語心理学",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 143
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "214024",
+    "referencedName": "失 32 単位以上選択必修 格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 143
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "214027",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 144
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "214029",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 144
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215010",
+    "referencedName": "学校経営と学校図書館 (024000)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 144
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "215011",
+    "referencedName": "失 格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 144
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211036",
+    "referencedName": "プログラミング演習 2 専攻 演習 1 (Python)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 144
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "211038",
+    "referencedName": "失 テム開発 215220 専攻 格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 144
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "214024",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 147
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "214027",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 147
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "214029",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 147
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "026026",
+    "referencedName": "失格",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 147
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "223005",
+    "referencedName": "専門演習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 160
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "223005",
+    "referencedName": "専門演習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 162
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "271124",
+    "referencedName": "三晃社ビル",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 185
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "272101",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 186
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "272140",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 187
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "272143",
+    "referencedName": "履修上の注意",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 187
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "272166",
+    "referencedName": "演習III",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 190
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "273173",
+    "referencedName": "映像制 映像表 専攻 273204 作実習I(基礎)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 191
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "273175",
+    "referencedName": "映像制 作実習I(基礎)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 191
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "273153",
+    "referencedName": "デジタルコンテンツ実習 I(CG画像)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 191
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "273178",
+    "referencedName": "デジタルコンテンツ実習IV (DTP)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 191
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "273144",
+    "referencedName": "演習IIa・b",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 192
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "274116",
+    "referencedName": "建築のた 建築学部 めの数学",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "274160",
+    "referencedName": "建築環境学A (熱・ (2025年 274241 学B (光・ 空気)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 194
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244128",
+    "referencedName": "レクリエーション概論 (244135)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 269
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244231",
+    "referencedName": "レクリエーション概論 (244135)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 269
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244230",
+    "referencedName": "レクリエーション概論 (244135)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 269
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244128",
+    "referencedName": "レクリエーション 概論(244135)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 272
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244231",
+    "referencedName": "レクリエーション 概論(244135)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 272
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "247104",
+    "referencedName": "リハビリテーション",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 272
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "244230",
+    "referencedName": "レクリエーション 概論(244135)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 272
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292008",
+    "referencedName": "食物の科学(292003)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 318
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292009",
+    "referencedName": "食品加工学(292005)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 318
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292011",
+    "referencedName": "食品衛生学(292010)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 318
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292012",
+    "referencedName": "食品分析学(292007)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 318
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292014",
+    "referencedName": "基礎調理科学(292013)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 319
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292016",
+    "referencedName": "応用調理科学(292015)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 319
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292017",
+    "referencedName": "基礎調理科学(292013)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 319
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "292028",
+    "referencedName": "食空間・コーディネート論(292027)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 319
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252225",
+    "referencedName": "ソーシャルワーク実習II・III",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 333
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252226",
+    "referencedName": "ソーシャルワーク実習II・III",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 334
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253071",
+    "referencedName": "精神保健福祉援助実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 334
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252227",
+    "referencedName": "精神保健福祉援助演習(専門)I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 334
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252230",
+    "referencedName": "ソーシャルワーク実習指導II・III",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 334
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252230",
+    "referencedName": "コ ミュニティ・アクティブ・ラーニング演習 I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 334
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252234",
+    "referencedName": "ソーシャルワーク実習II・III",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 334
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252235",
+    "referencedName": "コミュニティ・アクティブ・ラーニ ング実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 334
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253073",
+    "referencedName": "精神保健福祉援助実習指導I・II・III",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253074",
+    "referencedName": "コミュニティ ・ アクティブ ・ ラーニング実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253076",
+    "referencedName": "精神保健福祉援助実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253077",
+    "referencedName": "コミュニティ・アクティブ・ラーニ ング実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253060",
+    "referencedName": "福祉貢献基礎I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253061",
+    "referencedName": "福祉貢献基礎I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "253062",
+    "referencedName": "福祉貢献研究I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252142",
+    "referencedName": "ソーシャルワーク実習II・III",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252142",
+    "referencedName": "精神保健福祉援助実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252142",
+    "referencedName": "コミュニティ・アクティブ・ラーニング 演習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252142",
+    "referencedName": "コミュニティ・アクティ ブ・ラーニング実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252143",
+    "referencedName": "ソーシャルワーク実習II・III",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252143",
+    "referencedName": "精神保健福祉援助実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 335
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252145",
+    "referencedName": "ソーシャルワーク実習II・III",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 336
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252145",
+    "referencedName": "精神保健福祉援助実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 336
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252145",
+    "referencedName": "コミュニティ・アクティブ・ラーニング 演習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 336
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252145",
+    "referencedName": "コミュニティ・アクティ ブ・ラーニング実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 336
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252146",
+    "referencedName": "ソーシャルワーク実習II・III",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 336
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "252146",
+    "referencedName": "精神保健福祉援助実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 336
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "255044",
+    "referencedName": "保育実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 339
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "255045",
+    "referencedName": "保育実習I・II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 339
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "255045",
+    "referencedName": "保育実習指導I・ II",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 339
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267246",
+    "referencedName": "日本語教授法 1 ~ 3",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 380
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267203",
+    "referencedName": "コミュニケーション論 1 (コミュニ 6 ) ケーション論入門)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 380
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "266028",
+    "referencedName": "交流文化 2 (国際 12 単位以上(注 関係入門)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 381
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267206",
+    "referencedName": "交流文化 1 地域文化・国際社会・観光産業・観光文化から (国際交流入門)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 382
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "266070",
+    "referencedName": "コミュニケーション論 1 (コミュニ 地域文化・国際社会から ケーション論入門)",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 382
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267101",
+    "referencedName": "長期海外 セミナー韓国・朝鮮語",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 386
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267102",
+    "referencedName": "長期海外 セミナー韓国・朝鮮語",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 386
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267103",
+    "referencedName": "長期海外 セミナー韓国・朝鮮語",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 386
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "262201",
+    "referencedName": "長期海外セミナ ー中国語",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 395
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "262203",
+    "referencedName": "中国語読解1A",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 395
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "262203",
+    "referencedName": "長期海外セミナ ー中国語",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 395
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "262213",
+    "referencedName": "中国語会話1A",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 395
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "262213",
+    "referencedName": "長期海外セミナ ー中国語",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 395
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "262214",
+    "referencedName": "中国語会話 2",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 395
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267101",
+    "referencedName": "長期海外セミナ ー韓国・朝鮮語",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 397
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267101",
+    "referencedName": "韓国・朝鮮語入門",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 397
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267102",
+    "referencedName": "長期海外セミナ ー韓国・朝鮮語",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 397
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267104",
+    "referencedName": "韓国・朝鮮語読解 1",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 397
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267105",
+    "referencedName": "韓国・朝鮮語読解 2",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 397
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267106",
+    "referencedName": "韓国・朝鮮語読解 3",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 397
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267115",
+    "referencedName": "韓国・朝鮮語会話 1",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 397
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267116",
+    "referencedName": "韓国・朝鮮語会話 2",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 397
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267117",
+    "referencedName": "韓国・朝鮮語会話 3",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 397
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267215",
+    "referencedName": "韓 国語能力試験対策 1",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 398
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "267216",
+    "referencedName": "韓 国語能力試験対策 2",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 398
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "110206",
+    "referencedName": "151445",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 436
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "151445",
+    "referencedName": "110206",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 436
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "151439",
+    "referencedName": "110204",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 442
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "110206",
+    "referencedName": "151445",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 444
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "151445",
+    "referencedName": "110206",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 444
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "284019",
+    "referencedName": "Skills 2021年度以前入学者履修不可 Subjects",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 467
+  },
+  {
+    "type": "relation_target_unresolved",
+    "courseCode": "282314",
+    "referencedName": "Skills Subjects",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 468
+  },
+  {
+    "type": "official_open_course_list_missing",
+    "sourceFile": "summary_2026.pdf",
+    "sourcePage": 54,
+    "explanation": "履修要覧は他学部・他学科開放科目一覧をCampusSquareへ別途掲載すると記載しており、正式9ファイル内に科目番号一覧がない。推測で開放科目を作成しない。"
+  },
+  {
+    "type": "student_organization_hierarchy_unresolved",
+    "organizationCode": "CLD",
+    "explanation": "指定された「図書館情報学領域」の正式な研究科階層を、正式な大学院履修要覧3冊の本文から一意に確認できない。"
+  }
+]

@@ -1,0 +1,347 @@
+[
+  {
+    "id": "teacherTrainingRegistered",
+    "type": "boolean",
+    "label": "教職課程に登録している",
+    "description": "教職課程登録者だけに認められる科目の判定に使用します。",
+    "required": false,
+    "appliesTo": [
+      {
+        "studentLevel": "undergraduate",
+        "admissionYearFrom": 1900,
+        "admissionYearTo": 2026,
+        "currentYearFrom": 1,
+        "currentYearTo": 4
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "sourceFile": "summary_2026.pdf",
+        "sourcePage": 38,
+        "sourceRule": "教職課程科目を履修する場合は教職課程登録を行い、教職課程未登録者の対象科目登録は認めない。"
+      },
+      {
+        "sourceFile": "summary_2025.pdf",
+        "sourcePage": 39,
+        "sourceRule": "教職課程科目を履修する場合は教職課程登録を行い、教職課程未登録者の対象科目登録は認めない。"
+      },
+      {
+        "sourceFile": "summary_2024.pdf",
+        "sourcePage": 46,
+        "sourceRule": "教職課程科目を履修する場合は教職課程履修希望登録票を提出する。"
+      }
+    ]
+  },
+  {
+    "id": "otherDepartmentTeachingLicenseApproved",
+    "type": "boolean",
+    "label": "他学科免履修者である",
+    "description": "教職課程を有しない所属から教職課程科目を履修する許可の判定に使用します。",
+    "required": false,
+    "appliesTo": [
+      {
+        "studentLevel": "undergraduate",
+        "admissionYearFrom": 2025,
+        "admissionYearTo": 2026,
+        "currentYearFrom": 1,
+        "currentYearTo": 4,
+        "organizationCodes": [
+          "FCU"
+        ]
+      }
+    ],
+    "visibleWhen": {
+      "attributeId": "teacherTrainingRegistered",
+      "equals": true
+    },
+    "sourceEvidence": [
+      {
+        "sourceFile": "summary_2026.pdf",
+        "sourcePage": 38,
+        "sourceRule": "子ども福祉専攻は指定3科目以外の教職課程科目を他学科免履修者のみ履修できる。"
+      },
+      {
+        "sourceFile": "summary_2025.pdf",
+        "sourcePage": 39,
+        "sourceRule": "子ども福祉専攻は指定3科目以外の教職課程科目を他学科免履修者のみ履修できる。"
+      }
+    ]
+  },
+  {
+    "id": "curatorProgramRegistered",
+    "type": "boolean",
+    "label": "学芸員課程に登録している",
+    "description": "課程未登録者の履修が認められない学芸員課程科目の判定に使用します。",
+    "required": false,
+    "appliesTo": [
+      {
+        "studentLevel": "undergraduate",
+        "admissionYearFrom": 1900,
+        "admissionYearTo": 2026,
+        "currentYearFrom": 1,
+        "currentYearTo": 4
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "sourceFile": "summary_2026.pdf",
+        "sourcePage": 42,
+        "sourceRule": "学芸員課程未登録者の履修登録は認めない。"
+      },
+      {
+        "sourceFile": "summary_2025.pdf",
+        "sourcePage": 44,
+        "sourceRule": "学芸員課程未登録者の履修登録は認めない。"
+      },
+      {
+        "sourceFile": "summary_2024.pdf",
+        "sourcePage": 53,
+        "sourceRule": "学芸員課程未登録者の履修登録は認めない。"
+      }
+    ]
+  },
+  {
+    "id": "librarianProgramRegistered",
+    "type": "boolean",
+    "label": "司書課程に登録している",
+    "description": "課程未登録者の履修が認められない司書課程科目の判定に使用します。",
+    "required": false,
+    "appliesTo": [
+      {
+        "studentLevel": "undergraduate",
+        "admissionYearFrom": 1900,
+        "admissionYearTo": 2026,
+        "currentYearFrom": 1,
+        "currentYearTo": 4
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "sourceFile": "summary_2026.pdf",
+        "sourcePage": 44,
+        "sourceRule": "司書課程未登録者の履修登録は認めない。"
+      },
+      {
+        "sourceFile": "summary_2025.pdf",
+        "sourcePage": 46,
+        "sourceRule": "司書課程未登録者の履修登録は認めない。"
+      },
+      {
+        "sourceFile": "summary_2024.pdf",
+        "sourcePage": 56,
+        "sourceRule": "司書課程未登録者の履修登録は認めない。"
+      }
+    ]
+  },
+  {
+    "id": "firstLanguage",
+    "type": "single_select",
+    "label": "第一言語",
+    "description": "履修要覧に第一言語による履修条件が明記された科目だけに使用します。",
+    "required": true,
+    "options": [
+      {
+        "value": "ja",
+        "label": "日本語"
+      },
+      {
+        "value": "zh",
+        "label": "中国語"
+      },
+      {
+        "value": "ko",
+        "label": "韓国・朝鮮語"
+      },
+      {
+        "value": "pt",
+        "label": "ポルトガル語"
+      },
+      {
+        "value": "de",
+        "label": "ドイツ語"
+      },
+      {
+        "value": "fr",
+        "label": "フランス語"
+      },
+      {
+        "value": "ru",
+        "label": "ロシア語"
+      },
+      {
+        "value": "es",
+        "label": "スペイン語"
+      },
+      {
+        "value": "it",
+        "label": "イタリア語"
+      },
+      {
+        "value": "other",
+        "label": "その他"
+      }
+    ],
+    "appliesTo": [
+      {
+        "studentLevel": "undergraduate",
+        "admissionYearFrom": 1900,
+        "admissionYearTo": 2026,
+        "currentYearFrom": 1,
+        "currentYearTo": 4
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "sourceFile": "summary_2026.pdf",
+        "sourcePage": 37,
+        "sourceRule": "第一言語による履修不可・対象者限定の記載。"
+      },
+      {
+        "sourceFile": "summary_2025.pdf",
+        "sourcePage": 38,
+        "sourceRule": "第一言語による履修不可・対象者限定の記載。"
+      },
+      {
+        "sourceFile": "summary_2024.pdf",
+        "sourcePage": 43,
+        "sourceRule": "第一言語による履修不可・対象者限定の記載。"
+      },
+      {
+        "sourceFile": "summary_change_2025_0325.pdf",
+        "sourcePage": 1,
+        "sourceRule": "追加された日本語科目は日本語を第一言語としない者のみ履修可。"
+      }
+    ]
+  },
+  {
+    "id": "educationCourse",
+    "type": "single_select",
+    "label": "所属コース",
+    "description": "2年次から登録する教育学部教育学科の所属コースです。",
+    "required": true,
+    "options": [
+      {
+        "value": "school_education",
+        "label": "学校教育コース"
+      },
+      {
+        "value": "english_education",
+        "label": "英語教育コース"
+      },
+      {
+        "value": "special_needs_education",
+        "label": "特別支援教育コース"
+      }
+    ],
+    "appliesTo": [
+      {
+        "studentLevel": "undergraduate",
+        "organizationCodes": [
+          "KEU"
+        ],
+        "admissionYearFrom": 2025,
+        "admissionYearTo": 2026,
+        "currentYearFrom": 2,
+        "currentYearTo": 4
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "sourceFile": "summary_2026.pdf",
+        "sourcePage": 78,
+        "sourceRule": "教育学部は2年次より3コースのいずれか1つに登録する。他コース科目も自由に履修できる。"
+      },
+      {
+        "sourceFile": "summary_2025.pdf",
+        "sourcePage": 78,
+        "sourceRule": "教育学部は2年次より3コースのいずれか1つに登録する。他コース科目も自由に履修できる。"
+      }
+    ]
+  },
+  {
+    "id": "languageSpecialization",
+    "type": "single_select",
+    "label": "所属専修",
+    "description": "交流文化学部ランゲージ専攻で2年次以降に所属する専修です。",
+    "required": true,
+    "options": [
+      {
+        "value": "english",
+        "label": "英語専修"
+      },
+      {
+        "value": "chinese",
+        "label": "中国語専修"
+      },
+      {
+        "value": "korean",
+        "label": "韓国・朝鮮語専修"
+      }
+    ],
+    "appliesTo": [
+      {
+        "studentLevel": "undergraduate",
+        "organizationCodes": [
+          "GLU"
+        ],
+        "admissionYearFrom": 2026,
+        "admissionYearTo": 2026,
+        "currentYearFrom": 2,
+        "currentYearTo": 4
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "sourceFile": "summary_2026.pdf",
+        "sourcePage": 274,
+        "sourceRule": "ランゲージ専攻は英語・中国語・韓国朝鮮語専修から1つを登録し、2年次以降に所属する。"
+      }
+    ]
+  },
+  {
+    "id": "glocomCourse",
+    "type": "single_select",
+    "label": "所属コース",
+    "description": "2年次以降に選択するGLOCOMのCore Subjectsコースです。",
+    "required": true,
+    "options": [
+      {
+        "value": "language_communication",
+        "label": "Language and Communication"
+      },
+      {
+        "value": "global_japan_studies",
+        "label": "Global Japan Studies"
+      }
+    ],
+    "appliesTo": [
+      {
+        "studentLevel": "undergraduate",
+        "organizationCodes": [
+          "EXU"
+        ],
+        "admissionYearFrom": 2022,
+        "admissionYearTo": 2026,
+        "currentYearFrom": 2,
+        "currentYearTo": 4
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "sourceFile": "summary_2026.pdf",
+        "sourcePage": 307,
+        "sourceRule": "1年次後期に申請し2年次以降はいずれかのコースを選択する。"
+      },
+      {
+        "sourceFile": "summary_2025.pdf",
+        "sourcePage": 308,
+        "sourceRule": "1年次後期に申請し2年次以降はいずれかのコースを選択する。"
+      },
+      {
+        "sourceFile": "summary_2024.pdf",
+        "sourcePage": 463,
+        "sourceRule": "2022年度以降入学者は2年次以降いずれかのコースを選択する。"
+      }
+    ]
+  }
+]

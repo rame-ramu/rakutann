@@ -2,16 +2,24 @@ import { FirebaseError } from 'firebase/app'
 import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore'
 import { ref, watch } from 'vue'
 import type { Router } from 'vue-router'
+import { SELECTABLE_CONDITIONS } from '../constants/courseConditions'
 import { firestoreDb } from '../firebase'
-import { store, mockCourses, type CourseDetail, type ScheduleSlot } from '../store'
+import type { StudentAttributes } from '../domain/curriculum'
+import {
+  normalizeApplicableStudentAttributes,
+  sanitizeStudentAttributes,
+} from '../services/studentAttributes'
+import { isValidStudentProfile, parseStudentId } from '../services/studentProfile'
+import { store, type Course, type CourseDetail, type ScheduleSlot } from '../store'
+import { COURSE_DAYS, COURSE_PERIODS } from './courseSchedule'
 
 export const STORAGE_KEY = 'rakutann-user-state-v1'
 const GUEST_STORAGE_KEY = `${STORAGE_KEY}:guest`
-const STORAGE_VERSION = 1
-const CLOUD_SCHEMA_VERSION = 1
+const STORAGE_VERSION = 2
+const CLOUD_SCHEMA_VERSION = 2
 const CLOUD_SAVE_DELAY_MS = 700
-const VALID_DAYS = new Set(['月', '火', '水', '木', '金'])
-const VALID_PERIODS = new Set([1, 2, 3, 4, 5])
+const VALID_DAYS = new Set<string>(COURSE_DAYS)
+const VALID_PERIODS = new Set<number>(COURSE_PERIODS)
 let activeStorageKey: string | null = null
 let activeUserId: string | null = null
 let isPersistencePaused = true
@@ -38,9 +46,13 @@ interface PersistedState {
     autoDetectedGrade: number | null
     isGradeManuallySelected: boolean
     isHumanInfoStudent: boolean
+    organizationCode: string
+    admissionYear: number
+    attributes: StudentAttributes
   } | null
   timetable: {
     courseIds: string[]
+    courses: Course[]
     classrooms: Record<string, string>
   }
   courseDetails: Record<string, CourseDetail>
@@ -49,6 +61,7 @@ interface PersistedState {
   selectedSemester: '' | '前期' | '後期'
   avoidedTeachersText: string
   freePeriods: ScheduleSlot[]
+  includeUnscheduledCourses: boolean
   lastPage: string
 }
 
@@ -96,10 +109,24 @@ const sanitizeStringArray = (value: unknown) => {
 }
 
 const legacyAttendancePointLabel = ['出席', '点'].join('')
-
-const normalizeTagName = (tag: string) => {
-  return tag.replace(legacyAttendancePointLabel, '態度点')
+const selectableConditionSet = new Set(SELECTABLE_CONDITIONS)
+const legacyFieldTags: Record<string, string[]> = {
+  '情報・データ': ['情報・数理', 'プログラミング・システム', 'AI・データ'],
+  '心理・人間': ['心理・認知'],
+  'ビジネス・経営': ['社会・ビジネス'],
+  '語学・国際': ['語学・コミュニケーション'],
+  'デザイン・表現': ['メディア・デザイン'],
+  '健康・福祉': ['健康・スポーツ'],
 }
+
+const normalizeTagNames = (tags: string[]) => [
+  ...new Set(
+    tags
+      .flatMap((tag) => legacyFieldTags[tag] ?? [tag])
+      .map((tag) => tag.replace(legacyAttendancePointLabel, '態度点'))
+      .filter((tag) => selectableConditionSet.has(tag)),
+  ),
+]
 
 const sanitizeSchedule = (value: unknown) => {
   return Array.isArray(value) ? value.filter(isScheduleSlot) : []
@@ -109,6 +136,31 @@ const sanitizeSemester = (value: unknown): '' | '前期' | '後期' => {
   return value === '前期' || value === '後期' ? value : ''
 }
 
+const sanitizeCourse = (value: unknown): Course | null => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null
+  const course = value as Partial<Course>
+  if (
+    typeof course.id !== 'string' ||
+    !/^2026_\d{6}-\d{2,}$/.test(course.id) ||
+    typeof course.baseCourseCode !== 'string' ||
+    typeof course.name !== 'string' ||
+    typeof course.instructor !== 'string' ||
+    typeof course.semester !== 'string' ||
+    typeof course.day !== 'string' ||
+    (course.period !== null && typeof course.period !== 'number') ||
+    !Array.isArray(course.conditions) ||
+    !Array.isArray(course.tagReasons)
+  ) {
+    return null
+  }
+  return course as Course
+}
+
+const sanitizeCourses = (value: unknown) =>
+  Array.isArray(value)
+    ? value.map(sanitizeCourse).filter((course): course is Course => Boolean(course))
+    : []
+
 const sanitizeStudentProfile = (value: unknown): PersistedState['studentProfile'] => {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return null
 
@@ -117,7 +169,11 @@ const sanitizeStudentProfile = (value: unknown): PersistedState['studentProfile'
     typeof profile.department !== 'string' ||
     !profile.department.trim() ||
     typeof profile.grade !== 'number' ||
-    !Number.isFinite(profile.grade)
+    !Number.isFinite(profile.grade) ||
+    typeof profile.organizationCode !== 'string' ||
+    !/^[A-Z]{3}$/.test(profile.organizationCode) ||
+    typeof profile.admissionYear !== 'number' ||
+    !Number.isInteger(profile.admissionYear)
   ) {
     return null
   }
@@ -131,6 +187,9 @@ const sanitizeStudentProfile = (value: unknown): PersistedState['studentProfile'
         : null,
     isGradeManuallySelected: profile.isGradeManuallySelected === true,
     isHumanInfoStudent: profile.isHumanInfoStudent === true,
+    organizationCode: profile.organizationCode,
+    admissionYear: profile.admissionYear,
+    attributes: sanitizeStudentAttributes(profile.attributes),
   }
 }
 
@@ -167,8 +226,9 @@ const sanitizeCourseDetails = (value: unknown) => {
 const normalizePersistedState = (value: unknown): PersistedState | null => {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return null
 
+  const storedVersion = (value as { version?: number }).version
+  if (storedVersion !== 1 && storedVersion !== STORAGE_VERSION) return null
   const state = value as Partial<PersistedState>
-  if (state.version !== STORAGE_VERSION) return null
 
   return {
     version: STORAGE_VERSION,
@@ -177,6 +237,7 @@ const normalizePersistedState = (value: unknown): PersistedState | null => {
     studentProfile: sanitizeStudentProfile(state.studentProfile),
     timetable: {
       courseIds: sanitizeStringArray(state.timetable?.courseIds),
+      courses: sanitizeCourses(state.timetable?.courses),
       classrooms: sanitizeClassrooms(state.timetable?.classrooms),
     },
     courseDetails: sanitizeCourseDetails(state.courseDetails),
@@ -186,6 +247,7 @@ const normalizePersistedState = (value: unknown): PersistedState | null => {
     avoidedTeachersText:
       typeof state.avoidedTeachersText === 'string' ? state.avoidedTeachersText : '',
     freePeriods: sanitizeSchedule(state.freePeriods),
+    includeUnscheduledCourses: state.includeUnscheduledCourses === true,
     lastPage:
       typeof state.lastPage === 'string' && state.lastPage.startsWith('/') ? state.lastPage : '',
   }
@@ -209,17 +271,24 @@ const buildPersistedState = (): PersistedState => ({
   version: STORAGE_VERSION,
   updatedAt: lastModifiedAt,
   studentProfile:
-    store.department && store.grade
+    store.department &&
+    store.grade &&
+    store.studentProfile &&
+    isValidStudentProfile(store.studentProfile)
       ? {
           department: store.department,
           grade: store.grade,
           autoDetectedGrade: store.autoDetectedGrade,
           isGradeManuallySelected: store.isGradeManuallySelected,
           isHumanInfoStudent: store.isHumanInfoStudent,
+          organizationCode: store.studentProfile.organizationCode,
+          admissionYear: store.studentProfile.admissionYear,
+          attributes: sanitizeStudentAttributes(store.studentProfile.attributes),
         }
       : null,
   timetable: {
     courseIds: store.candidateCourses.map((course) => course.id),
+    courses: store.candidateCourses,
     classrooms: store.classrooms,
   },
   courseDetails: store.courseDetails,
@@ -228,6 +297,7 @@ const buildPersistedState = (): PersistedState => ({
   selectedSemester: store.selectedSemester,
   avoidedTeachersText: store.avoidedTeachersText,
   freePeriods: store.selectedSchedule,
+  includeUnscheduledCourses: store.includeUnscheduledCourses,
   lastPage: store.lastPage,
 })
 
@@ -245,9 +315,16 @@ export const savePersistedState = () => {
   writeLocalState()
 }
 
-const applyPersistedState = (savedState: PersistedState) => {
+const applyPersistedState = async (savedState: PersistedState) => {
   const courseIds = savedState.timetable.courseIds
-  const coursesById = new Map(mockCourses.map((course) => [course.id, course]))
+  const coursesById = new Map(savedState.timetable.courses.map((course) => [course.id, course]))
+  const missingCourseIds = courseIds.filter((courseId) => !coursesById.has(courseId))
+  if (missingCourseIds.length > 0) {
+    const { getRuntimeCoursesByIds } = await import('../services/eligibilityRuntime')
+    for (const course of await getRuntimeCoursesByIds(missingCourseIds)) {
+      coursesById.set(course.id, course)
+    }
+  }
   const savedClassrooms = savedState.timetable.classrooms
   const savedCourseDetails = savedState.courseDetails
 
@@ -260,16 +337,30 @@ const applyPersistedState = (savedState: PersistedState) => {
   }
 
   if (savedState.studentProfile) {
+    const admissionYearSuffix = String(savedState.studentProfile.admissionYear).slice(-2)
+    const parsedProfile = parseStudentId(
+      `${admissionYearSuffix}000${savedState.studentProfile.organizationCode}`,
+      {
+        actualCurrentYear: savedState.studentProfile.grade,
+        attributes: savedState.studentProfile.attributes,
+      },
+    )
     store.studentId = ''
+    store.studentProfile = isValidStudentProfile(parsedProfile) ? parsedProfile : null
+    if (isValidStudentProfile(parsedProfile)) {
+      parsedProfile.attributes = normalizeApplicableStudentAttributes(parsedProfile)
+    }
+    store.profileWarning = parsedProfile.profileWarning
     store.department = savedState.studentProfile.department
     store.grade = savedState.studentProfile.grade
     store.autoDetectedGrade = savedState.studentProfile.autoDetectedGrade
     store.isGradeManuallySelected = savedState.studentProfile.isGradeManuallySelected
     store.isHumanInfoStudent = savedState.studentProfile.isHumanInfoStudent
   }
-  store.selectedConditions = savedState.selectedTags.map(normalizeTagName)
+  store.selectedConditions = normalizeTagNames(savedState.selectedTags)
   store.selectedSemester = savedState.selectedSemester
   store.selectedSchedule = savedState.freePeriods
+  store.includeUnscheduledCourses = savedState.includeUnscheduledCourses
   store.candidateCourses = courseIds
     .map((courseId) => coursesById.get(courseId))
     .filter((course): course is NonNullable<typeof course> => Boolean(course))
@@ -286,11 +377,11 @@ const applyPersistedState = (savedState: PersistedState) => {
   lastModifiedAt = savedState.updatedAt
 }
 
-export const loadPersistedState = () => {
+export const loadPersistedState = async () => {
   const savedState = readStoredState()
   if (!savedState) return null
 
-  applyPersistedState(savedState)
+  await applyPersistedState(savedState)
   return savedState
 }
 
@@ -392,7 +483,7 @@ export const activateUserPersistence = async (userId: string) => {
 
   activeStorageKey = getUserStorageKey(userId)
   migrateLegacyState(activeStorageKey)
-  const localState = loadPersistedState()
+  const localState = await loadPersistedState()
 
   try {
     const userDocument = await getDoc(doc(firestoreDb, 'users', userId))
@@ -406,7 +497,7 @@ export const activateUserPersistence = async (userId: string) => {
 
       if (!localState || cloudState.updatedAt >= localState.updatedAt) {
         store.resetSelections()
-        applyPersistedState(cloudState)
+        await applyPersistedState(cloudState)
       } else {
         await writeCloudState(userId)
       }
@@ -434,7 +525,7 @@ export const activateUserPersistence = async (userId: string) => {
   }
 }
 
-export const activateGuestPersistence = () => {
+export const activateGuestPersistence = async () => {
   activationGeneration += 1
   cancelScheduledCloudSave()
   isPersistencePaused = true
@@ -447,7 +538,7 @@ export const activateGuestPersistence = () => {
   activeStorageKey = GUEST_STORAGE_KEY
   lastModifiedAt = 0
   store.resetSelections()
-  loadPersistedState()
+  await loadPersistedState()
   isPersistencePaused = false
   isUserDataReady.value = true
 }
@@ -480,6 +571,9 @@ export const startPersistence = (router: Router) => {
         autoDetectedGrade: store.autoDetectedGrade,
         isGradeManuallySelected: store.isGradeManuallySelected,
         isHumanInfoStudent: store.isHumanInfoStudent,
+        organizationCode: store.studentProfile?.organizationCode,
+        admissionYear: store.studentProfile?.admissionYear,
+        attributes: { ...store.studentProfile?.attributes },
       },
       timetable: store.candidateCourses.map((course) => course.id),
       classrooms: { ...store.classrooms },
@@ -488,6 +582,7 @@ export const startPersistence = (router: Router) => {
       selectedSemester: store.selectedSemester,
       avoidedTeachersText: store.avoidedTeachersText,
       freePeriods: store.selectedSchedule.map((slot) => ({ ...slot })),
+      includeUnscheduledCourses: store.includeUnscheduledCourses,
       lastPage: store.lastPage,
     }),
     () => {

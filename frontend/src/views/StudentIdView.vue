@@ -7,28 +7,35 @@
       </div>
 
       <div class="card">
-        <p class="instruction">まずは学籍番号を教えてください。<br>学部や学年を自動で判別します。</p>
-        
+        <p class="instruction">
+          まずは学籍番号を教えてください。<br />学部や学年を自動で判別します。
+        </p>
+
         <div class="input-group">
-          <input 
-            v-model="inputId" 
-            type="text" 
-            placeholder="例: 24XXXNKU01" 
+          <input
+            v-model="inputId"
+            type="text"
+            placeholder="例: 25001NKU"
             @input="onInput"
-            maxlength="10"
-          >
+            maxlength="12"
+          />
         </div>
 
         <Transition name="fade">
-          <div v-if="store.department" class="info-badge">
+          <div v-if="hasValidProfile" class="info-badge">
             <span class="label">判定結果:</span>
             <span class="value">{{ store.department }} {{ store.grade }}年生</span>
             <span v-if="store.isGradeManuallySelected" class="manual-note">手動選択</span>
           </div>
         </Transition>
 
+        <p v-if="profileError" class="profile-message error-message">{{ profileError }}</p>
+        <p v-else-if="store.profileWarning" class="profile-message warning-message">
+          {{ store.profileWarning }}
+        </p>
+
         <Transition name="fade">
-          <div v-if="store.department" class="grade-picker">
+          <div v-if="hasValidProfile" class="grade-picker">
             <div class="grade-picker-header">
               <span>学年</span>
               <small v-if="store.autoDetectedGrade">
@@ -49,35 +56,132 @@
             </div>
           </div>
         </Transition>
+
+        <Transition name="fade">
+          <section v-if="applicableAttributes.length > 0" class="attribute-section">
+            <div class="attribute-section-header">
+              <h2>追加情報</h2>
+              <p>該当するものを選択してください</p>
+            </div>
+
+            <div class="attribute-groups">
+              <div
+                v-for="attribute in applicableAttributes"
+                :key="attribute.id"
+                class="attribute-group"
+              >
+                <template v-if="attribute.type === 'boolean'">
+                  <button
+                    type="button"
+                    class="attribute-toggle"
+                    :class="{ active: attributeValue(attribute.id) === true }"
+                    :aria-pressed="attributeValue(attribute.id) === true"
+                    @click="
+                      store.setStudentAttribute(attribute.id, attributeValue(attribute.id) !== true)
+                    "
+                  >
+                    <span class="attribute-check" aria-hidden="true">
+                      {{ attributeValue(attribute.id) === true ? '✓' : '' }}
+                    </span>
+                    <span>{{ attribute.label }}</span>
+                  </button>
+                </template>
+
+                <template v-else>
+                  <div class="select-heading">
+                    <span>{{ attribute.label }}</span>
+                    <small v-if="attribute.required">選択必須</small>
+                  </div>
+                  <div class="attribute-options" role="radiogroup" :aria-label="attribute.label">
+                    <button
+                      v-for="option in attribute.options"
+                      :key="option.value"
+                      type="button"
+                      role="radio"
+                      class="attribute-option"
+                      :class="{ active: attributeValue(attribute.id) === option.value }"
+                      :aria-checked="attributeValue(attribute.id) === option.value"
+                      @click="store.setStudentAttribute(attribute.id, option.value)"
+                    >
+                      {{ option.label }}
+                    </button>
+                  </div>
+                </template>
+              </div>
+            </div>
+
+            <p v-if="missingRequiredAttributes.length > 0" class="attribute-required-message">
+              {{
+                missingRequiredAttributes.map((attribute) => attribute.label).join('・')
+              }}を選択してください。
+            </p>
+          </section>
+        </Transition>
       </div>
 
-      <button 
-        :disabled="!store.department || !store.grade" 
-        @click="$router.push('/conditions')"
-        class="next-button"
-      >
+      <button :disabled="!canContinue" @click="$router.push('/conditions')" class="next-button">
         はじめる
       </button>
 
       <p class="footer-note">
-        ※学籍番号そのものは保存されません。判定した学部・学年のみ保存します。
+        ※学籍番号そのものは保存されません。判定した所属・入学年度・学年・追加情報を保存します。
       </p>
     </div>
   </BaseLayout>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import BaseLayout from '../components/BaseLayout.vue'
+import {
+  getApplicableStudentAttributes,
+  getMissingRequiredStudentAttributes,
+} from '../services/studentAttributes'
+import { isValidStudentProfile } from '../services/studentProfile'
 import { store } from '../store'
 
 const inputId = ref(store.studentId)
-const gradeOptions = [1, 2, 3, 4]
+const hasValidProfile = computed(() =>
+  store.studentProfile ? isValidStudentProfile(store.studentProfile) : false,
+)
+const validProfile = computed(() => {
+  const profile = store.studentProfile
+  return profile && isValidStudentProfile(profile) ? profile : null
+})
+const applicableAttributes = computed(() =>
+  validProfile.value
+    ? getApplicableStudentAttributes(
+        validProfile.value,
+        store.grade ?? validProfile.value.currentYear,
+      )
+    : [],
+)
+const missingRequiredAttributes = computed(() =>
+  validProfile.value
+    ? getMissingRequiredStudentAttributes(
+        validProfile.value,
+        store.grade ?? validProfile.value.currentYear,
+      )
+    : [],
+)
+const canContinue = computed(
+  () =>
+    hasValidProfile.value && Boolean(store.grade) && missingRequiredAttributes.value.length === 0,
+)
+const attributeValue = (attributeId: string) => validProfile.value?.attributes[attributeId]
+const profileError = computed(() => {
+  if (!inputId.value.trim() || !store.studentProfile || hasValidProfile.value) return ''
+  return store.studentProfile.profileWarning ?? '学籍番号を確認してください。'
+})
+const gradeOptions = computed(() => {
+  if (store.studentProfile?.studentType === 'M') return [1, 2]
+  if (store.studentProfile?.studentType === 'D') return [1, 2, 3]
+  return [1, 2, 3, 4]
+})
 
 const onInput = () => {
   store.setStudentId(inputId.value)
 }
-
 </script>
 
 <style scoped>
@@ -94,15 +198,8 @@ const onInput = () => {
 
 h1 {
   font-family:
-    "にくまるフォント",
-    "Nikumarufont",
-    "Nikumarufont Regular",
-    "M PLUS Rounded 1c",
-    "Zen Maru Gothic",
-    "Arial Black",
-    "Hiragino Maru Gothic ProN",
-    "Yu Gothic",
-    sans-serif;
+    'にくまるフォント', 'Nikumarufont', 'Nikumarufont Regular', 'M PLUS Rounded 1c',
+    'Zen Maru Gothic', 'Arial Black', 'Hiragino Maru Gothic ProN', 'Yu Gothic', sans-serif;
   box-sizing: border-box;
   display: block;
   width: min(100%, 30rem);
@@ -175,7 +272,9 @@ input {
 input:focus {
   outline: none;
   border-color: var(--comic-green);
-  box-shadow: 0 0 0 4px rgba(0, 166, 166, 0.22), inset 4px 4px 0 rgba(17, 24, 39, 0.08);
+  box-shadow:
+    0 0 0 4px rgba(0, 166, 166, 0.22),
+    inset 4px 4px 0 rgba(17, 24, 39, 0.08);
 }
 
 .info-badge {
@@ -203,6 +302,26 @@ input:focus {
   background: white;
   font-size: 0.75rem;
   line-height: 1;
+}
+
+.profile-message {
+  margin: 1rem 0 0;
+  padding: 0.75rem 1rem;
+  border: 2px solid #111827;
+  border-radius: 0.6rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.warning-message {
+  background: #fff7cc;
+  color: #713f12;
 }
 
 .grade-picker {
@@ -243,7 +362,9 @@ input:focus {
   font-size: 1rem;
   font-weight: 900;
   box-shadow: 4px 4px 0 #111827;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
 }
 
 .grade-button:hover {
@@ -257,6 +378,120 @@ input:focus {
   color: white;
   transform: translate(-1px, -1px);
   box-shadow: 5px 5px 0 #111827;
+}
+
+.attribute-section {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 3px dashed #111827;
+  text-align: left;
+}
+
+.attribute-section-header {
+  margin-bottom: 1rem;
+}
+
+.attribute-section-header h2 {
+  margin: 0 0 0.25rem;
+  color: #111827;
+  font-size: 1.2rem;
+  font-weight: 1000;
+}
+
+.attribute-section-header p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.attribute-groups {
+  display: grid;
+  gap: 1rem;
+}
+
+.attribute-toggle,
+.attribute-option {
+  border: 3px solid #111827;
+  border-radius: 0.6rem;
+  background: white;
+  color: #111827;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 3px 3px 0 #111827;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
+}
+
+.attribute-toggle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 0.9rem;
+  text-align: left;
+}
+
+.attribute-check {
+  display: grid;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 2px solid #111827;
+  border-radius: 0.3rem;
+  background: white;
+  line-height: 1;
+}
+
+.attribute-toggle.active,
+.attribute-option.active {
+  background: var(--comic-green);
+  color: white;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #111827;
+}
+
+.attribute-toggle:hover,
+.attribute-option:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #111827;
+}
+
+.select-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+  color: #111827;
+  font-weight: 900;
+}
+
+.select-heading small {
+  color: #9a3412;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.attribute-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.attribute-option {
+  min-height: 2.75rem;
+  padding: 0.65rem 0.85rem;
+}
+
+.attribute-required-message {
+  margin: 1rem 0 0;
+  color: #9a3412;
+  font-size: 0.85rem;
+  font-weight: 900;
 }
 
 .next-button {
@@ -307,7 +542,9 @@ input:focus {
   font-size: 0.9rem;
   font-weight: 900;
   box-shadow: 4px 4px 0 #111827;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
 }
 
 .delete-save-button:hover {
@@ -384,6 +621,22 @@ input:focus {
     gap: 0.35rem 0.6rem;
     padding: 0.65rem 0.75rem;
     box-shadow: 3px 3px 0 #111827;
+  }
+
+  .attribute-section {
+    margin-top: 1.25rem;
+    padding-top: 1.2rem;
+  }
+
+  .attribute-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .attribute-option {
+    min-width: 0;
+    padding-inline: 0.45rem;
+    font-size: 0.84rem;
   }
 
   .info-badge .value {

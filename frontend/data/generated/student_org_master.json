@@ -1,0 +1,1249 @@
+[
+  {
+    "code": "LJU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "文学部",
+    "graduateSchool": null,
+    "department": "国文学科",
+    "major": null,
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "LCU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "文学部",
+    "graduateSchool": null,
+    "department": "総合英語学科",
+    "major": null,
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "LAU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "文学部",
+    "graduateSchool": null,
+    "department": "教育学科",
+    "major": null,
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      3,
+      4
+    ],
+    "aliases": [
+      "旧・文学部 教育学科"
+    ],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "KEU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "教育学部",
+    "graduateSchool": null,
+    "department": "教育学科",
+    "major": null,
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "NKU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "人間情報学部",
+    "graduateSchool": null,
+    "department": "人間情報学科",
+    "major": "感性工学専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "NDU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "人間情報学部",
+    "graduateSchool": null,
+    "department": "人間情報学科",
+    "major": "データサイエンス専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "NMU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "人間情報学部",
+    "graduateSchool": null,
+    "department": "人間情報学科",
+    "major": "数学・情報教員養成専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "PFU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "心理学部",
+    "graduateSchool": null,
+    "department": "心理学科",
+    "major": null,
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "CSU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "創造表現学部",
+    "graduateSchool": null,
+    "department": "創造表現学科",
+    "major": "創作表現専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "CMU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "創造表現学部",
+    "graduateSchool": null,
+    "department": "創造表現学科",
+    "major": "メディアプロデュース専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "CKU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "創造表現学部",
+    "graduateSchool": null,
+    "department": "創造表現学科",
+    "major": "建築・インテリアデザイン専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      3,
+      4
+    ],
+    "aliases": [
+      "旧・建築・インテリアデザイン専攻"
+    ],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "AAU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "建築学部",
+    "graduateSchool": null,
+    "department": "建築学科",
+    "major": "建築・まちづくり専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "ARU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "建築学部",
+    "graduateSchool": null,
+    "department": "建築学科",
+    "major": "住居・インテリアデザイン専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "HCU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "健康医療科学部",
+    "graduateSchool": null,
+    "department": "医療貢献学科",
+    "major": "言語聴覚学専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "HVU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "健康医療科学部",
+    "graduateSchool": null,
+    "department": "医療貢献学科",
+    "major": "視覚科学専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "HPU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "健康医療科学部",
+    "graduateSchool": null,
+    "department": "医療貢献学科",
+    "major": "理学療法学専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "HMU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "健康医療科学部",
+    "graduateSchool": null,
+    "department": "医療貢献学科",
+    "major": "臨床検査学専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "HHU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "健康医療科学部",
+    "graduateSchool": null,
+    "department": "スポーツ・健康医科学科",
+    "major": "スポーツ・健康科学専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "HAU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "健康医療科学部",
+    "graduateSchool": null,
+    "department": "スポーツ・健康医科学科",
+    "major": "救急救命学専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "HEU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "健康医療科学部",
+    "graduateSchool": null,
+    "department": "健康栄養学科",
+    "major": null,
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      4
+    ],
+    "aliases": [
+      "旧・健康栄養学科"
+    ],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "SEU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "食健康科学部",
+    "graduateSchool": null,
+    "department": "健康栄養学科",
+    "major": null,
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "SFU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "食健康科学部",
+    "graduateSchool": null,
+    "department": "食創造科学科",
+    "major": null,
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "FSU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "福祉貢献学部",
+    "graduateSchool": null,
+    "department": "福祉貢献学科",
+    "major": "社会福祉専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "FCU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "福祉貢献学部",
+    "graduateSchool": null,
+    "department": "福祉貢献学科",
+    "major": "子ども福祉専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "GLU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "交流文化学部",
+    "graduateSchool": null,
+    "department": "交流文化学科",
+    "major": "ランゲージ専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "GMU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "交流文化学部",
+    "graduateSchool": null,
+    "department": "交流文化学科",
+    "major": "国際交流・観光専攻",
+    "course": null,
+    "specialization": null,
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [
+      "観光専攻"
+    ],
+    "admissionOrganizationOverrides": [
+      {
+        "admissionYearFrom": 2026,
+        "admissionYearTo": 2026,
+        "major": "観光専攻"
+      }
+    ]
+  },
+  {
+    "code": "VBU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "ビジネス学部",
+    "graduateSchool": null,
+    "department": "ビジネス学科",
+    "major": null,
+    "course": null,
+    "specialization": null,
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "EXU",
+    "studentLevel": "undergraduate",
+    "studentType": "U",
+    "programLevel": "undergraduate",
+    "faculty": "グローバル・コミュニケーション学部",
+    "graduateSchool": null,
+    "department": null,
+    "major": null,
+    "course": null,
+    "specialization": null,
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "aliases": [],
+    "admissionOrganizationOverrides": []
+  },
+  {
+    "code": "AJM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "国文学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "AJD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "国文学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "ALM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "図書館情報学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "ALD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "図書館情報学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "ADM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "情報デザイン・システム専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "ADD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "情報デザイン・システム専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "ASM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "創作表現専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "ASD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "創作表現専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "AMM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "メディアプロデュース専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "AMD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "メディアプロデュース専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "AKM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "建築・インテリアデザイン専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "AKD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "文化創造研究科",
+    "department": "文化創造専攻",
+    "major": null,
+    "course": null,
+    "specialization": "建築・インテリアデザイン専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "CLD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": null,
+    "department": null,
+    "major": null,
+    "course": null,
+    "specialization": "図書館情報学領域",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": [
+      "正式な研究科階層は資料内で一意に確認できず"
+    ]
+  },
+  {
+    "code": "DAM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "教育学研究科",
+    "department": "発達教育専攻",
+    "major": null,
+    "course": null,
+    "specialization": "教育学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "DCM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "教育学研究科",
+    "department": "発達教育専攻",
+    "major": null,
+    "course": null,
+    "specialization": "子ども発達専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FPM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "心理学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FPD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "心理学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FRM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "臨床心理学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FRD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "臨床心理学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FSM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "社会福祉学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FSD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "社会福祉学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FCM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "言語聴覚学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FCD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "言語聴覚学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FVM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "視覚科学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FVD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "視覚科学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FHM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "スポーツ・健康医科学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "FHD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "心理医療科学研究科",
+    "department": "心理医療科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": "スポーツ・健康医科学専修",
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "HNM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "健康栄養科学研究科",
+    "department": "健康栄養科学専攻",
+    "major": null,
+    "course": null,
+    "specialization": null,
+    "campus": "長久手キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "JLM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "グローバルカルチャー・コミュニケーション研究科",
+    "department": "グローバルカルチャー・コミュニケーション専攻",
+    "major": null,
+    "course": "言語文化コース",
+    "specialization": null,
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "JLD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "グローバルカルチャー・コミュニケーション研究科",
+    "department": "グローバルカルチャー・コミュニケーション専攻",
+    "major": null,
+    "course": "言語文化コース",
+    "specialization": null,
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "JGM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "グローバルカルチャー・コミュニケーション研究科",
+    "department": "グローバルカルチャー・コミュニケーション専攻",
+    "major": null,
+    "course": "交流文化コース",
+    "specialization": null,
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "JGD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "グローバルカルチャー・コミュニケーション研究科",
+    "department": "グローバルカルチャー・コミュニケーション専攻",
+    "major": null,
+    "course": "交流文化コース",
+    "specialization": null,
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "KAM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "ビジネス研究科",
+    "department": "ビジネス専攻",
+    "major": null,
+    "course": null,
+    "specialization": "アカウンティング専修",
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "KAD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "ビジネス研究科",
+    "department": "ビジネス専攻",
+    "major": null,
+    "course": null,
+    "specialization": "アカウンティング専修",
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  },
+  {
+    "code": "KMM",
+    "studentLevel": "graduate",
+    "studentType": "M",
+    "programLevel": "masters_or_doctoral_first",
+    "faculty": null,
+    "graduateSchool": "ビジネス研究科",
+    "department": "ビジネス専攻",
+    "major": null,
+    "course": null,
+    "specialization": "マネジメント＆エコノミー専修",
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2
+    ],
+    "aliases": []
+  },
+  {
+    "code": "KMD",
+    "studentLevel": "graduate",
+    "studentType": "D",
+    "programLevel": "doctoral_latter",
+    "faculty": null,
+    "graduateSchool": "ビジネス研究科",
+    "department": "ビジネス専攻",
+    "major": null,
+    "course": null,
+    "specialization": "マネジメント＆エコノミー専修",
+    "campus": "星が丘キャンパス",
+    "validCurrentYears2026": [
+      1,
+      2,
+      3
+    ],
+    "aliases": []
+  }
+]
