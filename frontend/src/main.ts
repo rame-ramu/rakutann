@@ -17,6 +17,8 @@ import {
   startPersistence,
 } from './utils/persistence'
 import { store } from './store'
+import { getMissingRequiredStudentAttributes } from './services/studentAttributes'
+import { isValidStudentProfile } from './services/studentProfile'
 
 const app = createApp(App)
 let authenticationTransition = 0
@@ -44,7 +46,7 @@ watch(
 
     if (guestMode && !user) {
       deactivateFriendFeatures()
-      activateGuestPersistence()
+      await activateGuestPersistence()
       if (router.currentRoute.value.name === 'friends') {
         await router.replace({ name: 'home' })
       }
@@ -55,9 +57,16 @@ watch(
       if (transition !== authenticationTransition || currentUser.value?.uid !== user.uid) return
     }
 
-    if (!store.department) {
+    if (!store.studentProfile || !isValidStudentProfile(store.studentProfile)) {
       if (router.currentRoute.value.name !== 'student-id') {
         await router.replace({ name: 'student-id' })
+      }
+      return
+    }
+
+    if (getMissingRequiredStudentAttributes(store.studentProfile).length > 0) {
+      if (router.currentRoute.value.name !== 'student-id') {
+        await router.replace({ name: 'student-id', query: { edit: '1' } })
       }
       return
     }

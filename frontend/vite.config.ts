@@ -52,6 +52,22 @@ export default defineConfig({
       workbox: {
         navigateFallback: `${base}index.html`,
         globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        cleanupOutdatedCaches: true,
+        runtimeCaching: [
+          {
+            urlPattern: /\/data\/(?:runtime\/|course_syllabus_urls_2026\.json)/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'rakutann-2026-generated-data-v2',
+              networkTimeoutSeconds: 6,
+              expiration: {
+                maxEntries: 8,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+        ],
       },
     }),
   ],

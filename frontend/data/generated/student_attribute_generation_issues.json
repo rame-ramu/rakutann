@@ -1,0 +1,16 @@
+[
+  {
+    "type": "adjacent_first_language_rule_not_applied",
+    "sourceFile": "summary_2024.pdf",
+    "sourcePage": 43,
+    "courseCode": "106006",
+    "courseName": "初めての外国語 6 (ポルトガル語)",
+    "excludedLanguages": [
+      "ポルトガル語",
+      "中国語"
+    ],
+    "appliedLanguages": [
+      "ポルトガル語"
+    ]
+  }
+]

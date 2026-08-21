@@ -1,0 +1,62 @@
+{
+  "referenceAcademicYear": 2026,
+  "sourceDirectory": "2026 初期データー　ベータ版",
+  "sourceManifest": [
+    {
+      "file": "summary_2026.pdf",
+      "sha256": "303cbb681f6cdf62a14f551260bdc62f11f4c81a4d7556a67128c00862dc43af"
+    },
+    {
+      "file": "summary_2025.pdf",
+      "sha256": "e40f5c475570b2259ff75f9ad669cc16990009d85c58159e162df92eeac0e300"
+    },
+    {
+      "file": "summary_change_2025_0325.pdf",
+      "sha256": "757fbb716db124b0b47e5b6e1526f90f157ad60b3028ace29b1d1d74f4dd4406"
+    },
+    {
+      "file": "summary_2024.pdf",
+      "sha256": "326f60489e86cd4ae67c2ecc7168956376d5bc5c131df5485be28a2fb9a45f2b"
+    },
+    {
+      "file": "summary_graduate_2026.pdf",
+      "sha256": "98128ad7ad0185543a494fc6c9bb04ca9a81d30c5025e690d1424b41f2a6ca99"
+    },
+    {
+      "file": "summary_graduate_2025.pdf",
+      "sha256": "208399e436dd3279ef5a3f94660ea02e2066e544bf37255105cfc04b0416fc24"
+    },
+    {
+      "file": "summary_graduate_change_2025.pdf",
+      "sha256": "8bc63277af7b6f9dabc6032501a7e62aa951eb5d9cf701e07c96507ca5f6e33d"
+    },
+    {
+      "file": "summary_graduate_2024.pdf",
+      "sha256": "485a7959a9f0b9d94207c616ee717a944a88ffeb5167fe30d8fb6e5e82538072"
+    },
+    {
+      "file": "syllabus_analysis_2026.xlsx",
+      "sha256": "2d505119e28be6f2da66062896a0b15837ac639691ade2e09ce8ad62a51fd481"
+    }
+  ],
+  "pdfPageCounts": {
+    "summary_2026.pdf": 314,
+    "summary_2025.pdf": 315,
+    "summary_2024.pdf": 477,
+    "summary_graduate_2026.pdf": 127,
+    "summary_graduate_2025.pdf": 125,
+    "summary_graduate_2024.pdf": 128
+  },
+  "counts": {
+    "studentOrganizations": 64,
+    "curriculumRecords": 11483,
+    "replacementRecords": 254,
+    "relationRecords": 1358,
+    "changeApplicationRecords": 7,
+    "openCourseRecords": 0,
+    "offeringClasses": 6298,
+    "offeringWorksheetRowsIncludingHeader": 6299,
+    "offeringWorksheetColumns": 68,
+    "generationIssues": 954
+  }
+}

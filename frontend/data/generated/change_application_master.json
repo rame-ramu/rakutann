@@ -1,0 +1,103 @@
+[
+  {
+    "changeType": "curriculum_course_addition",
+    "studentLevel": "undergraduate",
+    "admissionYearFrom": 2025,
+    "admissionYearTo": 2025,
+    "courseCode": "106011",
+    "changedFields": [
+      "courseName",
+      "conditionText"
+    ],
+    "status": "applied_conditional",
+    "explanation": "変更後欄に単位数・履修年次・開講学期がないためconditionalで追加",
+    "sourceFile": "summary_change_2025_0325.pdf",
+    "sourcePage": 1
+  },
+  {
+    "changeType": "curriculum_course_addition",
+    "studentLevel": "undergraduate",
+    "admissionYearFrom": 2025,
+    "admissionYearTo": 2025,
+    "courseCode": "106012",
+    "changedFields": [
+      "courseName",
+      "conditionText"
+    ],
+    "status": "applied_conditional",
+    "explanation": "変更後欄に単位数・履修年次・開講学期がないためconditionalで追加",
+    "sourceFile": "summary_change_2025_0325.pdf",
+    "sourcePage": 1
+  },
+  {
+    "changeType": "curriculum_course_addition",
+    "studentLevel": "undergraduate",
+    "admissionYearFrom": 2025,
+    "admissionYearTo": 2025,
+    "courseCode": "106013",
+    "changedFields": [
+      "courseName",
+      "conditionText"
+    ],
+    "status": "applied_conditional",
+    "explanation": "変更後欄に単位数・履修年次・開講学期がないためconditionalで追加",
+    "sourceFile": "summary_change_2025_0325.pdf",
+    "sourcePage": 1
+  },
+  {
+    "changeType": "curriculum_course_addition",
+    "studentLevel": "undergraduate",
+    "admissionYearFrom": 2025,
+    "admissionYearTo": 2025,
+    "courseCode": "106014",
+    "changedFields": [
+      "courseName",
+      "conditionText"
+    ],
+    "status": "applied_conditional",
+    "explanation": "変更後欄に単位数・履修年次・開講学期がないためconditionalで追加",
+    "sourceFile": "summary_change_2025_0325.pdf",
+    "sourcePage": 2
+  },
+  {
+    "changeType": "curriculum_field_override",
+    "studentLevel": "undergraduate",
+    "admissionYearFrom": 2025,
+    "admissionYearTo": 2025,
+    "courseCode": "291067",
+    "changedFields": [
+      "numbering"
+    ],
+    "after": {
+      "numbering": "2420"
+    },
+    "status": "applied",
+    "sourceFile": "summary_change_2025_0325.pdf",
+    "sourcePage": 2
+  },
+  {
+    "changeType": "graduation_requirement_note",
+    "studentLevel": "undergraduate",
+    "admissionYearFrom": 2025,
+    "admissionYearTo": 2025,
+    "courseCodes": [
+      "106011",
+      "106012",
+      "106013",
+      "106014"
+    ],
+    "status": "recorded_no_eligibility_filter_change",
+    "sourceFile": "summary_change_2025_0325.pdf",
+    "sourcePage": 2
+  },
+  {
+    "changeType": "academic_policy_override",
+    "studentLevel": "graduate",
+    "admissionYearFrom": 2025,
+    "admissionYearTo": 2025,
+    "target": "GPA制度",
+    "status": "recorded_no_course_eligibility_filter_change",
+    "sourceFile": "summary_graduate_change_2025.pdf",
+    "sourcePage": 1
+  }
+]
