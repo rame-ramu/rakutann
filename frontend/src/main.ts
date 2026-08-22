@@ -13,6 +13,7 @@ import router from './router'
 import {
   activateUserPersistence,
   activateGuestPersistence,
+  cloudDataRevision,
   deactivateUserPersistence,
   startPersistence,
 } from './utils/persistence'
@@ -22,6 +23,34 @@ import { isValidStudentProfile } from './services/studentProfile'
 
 const app = createApp(App)
 let authenticationTransition = 0
+
+const routeForCurrentData = async () => {
+  if (!store.studentProfile || !isValidStudentProfile(store.studentProfile)) {
+    if (router.currentRoute.value.name !== 'student-id') {
+      await router.replace({ name: 'student-id' })
+    }
+    return
+  }
+
+  if (getMissingRequiredStudentAttributes(store.studentProfile).length > 0) {
+    if (router.currentRoute.value.name !== 'student-id') {
+      await router.replace({ name: 'student-id', query: { edit: '1' } })
+    }
+    return
+  }
+
+  if (
+    router.currentRoute.value.name === 'student-id' &&
+    router.currentRoute.value.query.edit !== '1'
+  ) {
+    await router.replace({ name: 'home' })
+    return
+  }
+
+  if (!router.currentRoute.value.matched.length) {
+    await router.replace({ name: 'home' })
+  }
+}
 
 app.use(router)
 
@@ -57,34 +86,15 @@ watch(
       if (transition !== authenticationTransition || currentUser.value?.uid !== user.uid) return
     }
 
-    if (!store.studentProfile || !isValidStudentProfile(store.studentProfile)) {
-      if (router.currentRoute.value.name !== 'student-id') {
-        await router.replace({ name: 'student-id' })
-      }
-      return
-    }
-
-    if (getMissingRequiredStudentAttributes(store.studentProfile).length > 0) {
-      if (router.currentRoute.value.name !== 'student-id') {
-        await router.replace({ name: 'student-id', query: { edit: '1' } })
-      }
-      return
-    }
-
-    if (
-      router.currentRoute.value.name === 'student-id' &&
-      router.currentRoute.value.query.edit !== '1'
-    ) {
-      await router.replace({ name: 'home' })
-      return
-    }
-
-    if (!router.currentRoute.value.matched.length) {
-      await router.replace({ name: 'home' })
-    }
+    await routeForCurrentData()
   },
   { immediate: true },
 )
+
+watch(cloudDataRevision, async () => {
+  if (!isAuthReady.value || !currentUser.value) return
+  await routeForCurrentData()
+})
 
 void initializeAuthentication()
 

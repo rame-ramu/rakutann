@@ -1,5 +1,12 @@
 import { FirebaseError } from 'firebase/app'
-import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore'
+import {
+  doc,
+  onSnapshot,
+  serverTimestamp,
+  setDoc,
+  type DocumentSnapshot,
+  type Unsubscribe,
+} from 'firebase/firestore'
 import { ref, watch } from 'vue'
 import type { Router } from 'vue-router'
 import { SELECTABLE_CONDITIONS } from '../constants/courseConditions'
@@ -27,6 +34,9 @@ let isCloudPersistenceReady = false
 let hasPendingCloudSave = false
 let cloudSaveTimer: ReturnType<typeof setTimeout> | null = null
 let cloudWriteQueue: Promise<void> = Promise.resolve()
+let cloudSnapshotQueue: Promise<void> = Promise.resolve()
+let cloudUnsubscribe: Unsubscribe | null = null
+let hasReceivedServerSnapshot = false
 let activationGeneration = 0
 let changeRevision = 0
 let lastModifiedAt = 0
@@ -36,6 +46,7 @@ export type CloudSyncStatus = 'idle' | 'syncing' | 'saving' | 'synced' | 'offlin
 export const cloudSyncStatus = ref<CloudSyncStatus>('idle')
 export const cloudSyncError = ref('')
 export const isUserDataReady = ref(false)
+export const cloudDataRevision = ref(0)
 
 interface PersistedState {
   version: typeof STORAGE_VERSION
@@ -315,7 +326,10 @@ export const savePersistedState = () => {
   writeLocalState()
 }
 
-const applyPersistedState = async (savedState: PersistedState) => {
+const applyPersistedState = async (
+  savedState: PersistedState,
+  shouldApply: () => boolean = () => true,
+) => {
   const courseIds = savedState.timetable.courseIds
   const coursesById = new Map(savedState.timetable.courses.map((course) => [course.id, course]))
   const missingCourseIds = courseIds.filter((courseId) => !coursesById.has(courseId))
@@ -336,53 +350,65 @@ const applyPersistedState = async (savedState: PersistedState) => {
     }
   }
 
-  if (savedState.studentProfile) {
-    const admissionYearSuffix = String(savedState.studentProfile.admissionYear).slice(-2)
-    const parsedProfile = parseStudentId(
-      `${admissionYearSuffix}000${savedState.studentProfile.organizationCode}`,
-      {
-        actualCurrentYear: savedState.studentProfile.grade,
-        attributes: savedState.studentProfile.attributes,
-      },
-    )
-    store.studentId = ''
-    store.studentProfile = isValidStudentProfile(parsedProfile) ? parsedProfile : null
-    if (isValidStudentProfile(parsedProfile)) {
-      parsedProfile.attributes = normalizeApplicableStudentAttributes(parsedProfile)
+  if (!shouldApply()) return false
+
+  const wasPersistencePaused = isPersistencePaused
+  isPersistencePaused = true
+
+  try {
+    store.resetSelections()
+
+    if (savedState.studentProfile) {
+      const admissionYearSuffix = String(savedState.studentProfile.admissionYear).slice(-2)
+      const parsedProfile = parseStudentId(
+        `${admissionYearSuffix}000${savedState.studentProfile.organizationCode}`,
+        {
+          actualCurrentYear: savedState.studentProfile.grade,
+          attributes: savedState.studentProfile.attributes,
+        },
+      )
+      store.studentId = ''
+      store.studentProfile = isValidStudentProfile(parsedProfile) ? parsedProfile : null
+      if (isValidStudentProfile(parsedProfile)) {
+        parsedProfile.attributes = normalizeApplicableStudentAttributes(parsedProfile)
+      }
+      store.profileWarning = parsedProfile.profileWarning
+      store.department = savedState.studentProfile.department
+      store.grade = savedState.studentProfile.grade
+      store.autoDetectedGrade = savedState.studentProfile.autoDetectedGrade
+      store.isGradeManuallySelected = savedState.studentProfile.isGradeManuallySelected
+      store.isHumanInfoStudent = savedState.studentProfile.isHumanInfoStudent
     }
-    store.profileWarning = parsedProfile.profileWarning
-    store.department = savedState.studentProfile.department
-    store.grade = savedState.studentProfile.grade
-    store.autoDetectedGrade = savedState.studentProfile.autoDetectedGrade
-    store.isGradeManuallySelected = savedState.studentProfile.isGradeManuallySelected
-    store.isHumanInfoStudent = savedState.studentProfile.isHumanInfoStudent
+    store.selectedConditions = normalizeTagNames(savedState.selectedTags)
+    store.selectedSemester = savedState.selectedSemester
+    store.selectedSchedule = savedState.freePeriods
+    store.includeUnscheduledCourses = savedState.includeUnscheduledCourses
+    store.candidateCourses = courseIds
+      .map((courseId) => coursesById.get(courseId))
+      .filter((course): course is NonNullable<typeof course> => Boolean(course))
+    store.courseDetails = { ...savedCourseDetails }
+    store.classrooms = sanitizeClassrooms(
+      Object.fromEntries(
+        Object.entries(savedCourseDetails)
+          .filter(([, detail]) => detail.room)
+          .map(([courseId, detail]) => [courseId, detail.room]),
+      ),
+    )
+    store.avoidedTeachersText = savedState.avoidedTeachersText
+    store.lastPage = savedState.lastPage
+    lastModifiedAt = savedState.updatedAt
+  } finally {
+    isPersistencePaused = wasPersistencePaused
   }
-  store.selectedConditions = normalizeTagNames(savedState.selectedTags)
-  store.selectedSemester = savedState.selectedSemester
-  store.selectedSchedule = savedState.freePeriods
-  store.includeUnscheduledCourses = savedState.includeUnscheduledCourses
-  store.candidateCourses = courseIds
-    .map((courseId) => coursesById.get(courseId))
-    .filter((course): course is NonNullable<typeof course> => Boolean(course))
-  store.courseDetails = { ...savedCourseDetails }
-  store.classrooms = sanitizeClassrooms(
-    Object.fromEntries(
-      Object.entries(savedCourseDetails)
-        .filter(([, detail]) => detail.room)
-        .map(([courseId, detail]) => [courseId, detail.room]),
-    ),
-  )
-  store.avoidedTeachersText = savedState.avoidedTeachersText
-  store.lastPage = savedState.lastPage
-  lastModifiedAt = savedState.updatedAt
+
+  return true
 }
 
 export const loadPersistedState = async () => {
   const savedState = readStoredState()
   if (!savedState) return null
 
-  await applyPersistedState(savedState)
-  return savedState
+  return (await applyPersistedState(savedState)) ? savedState : null
 }
 
 const cancelScheduledCloudSave = () => {
@@ -390,6 +416,11 @@ const cancelScheduledCloudSave = () => {
     clearTimeout(cloudSaveTimer)
     cloudSaveTimer = null
   }
+}
+
+const stopCloudSubscription = () => {
+  cloudUnsubscribe?.()
+  cloudUnsubscribe = null
 }
 
 const getCloudSyncErrorMessage = (error: unknown) => {
@@ -468,66 +499,149 @@ const scheduleCloudSave = () => {
   }, CLOUD_SAVE_DELAY_MS)
 }
 
+const makeUserDataAvailable = (generation: number, userId: string) => {
+  if (generation !== activationGeneration || userId !== activeUserId) return
+
+  isPersistencePaused = false
+  isUserDataReady.value = true
+}
+
+const applyCloudState = async (cloudState: PersistedState, generation: number, userId: string) => {
+  const revisionBeforeLoad = changeRevision
+  const applied = await applyPersistedState(
+    cloudState,
+    () =>
+      generation === activationGeneration &&
+      userId === activeUserId &&
+      revisionBeforeLoad === changeRevision &&
+      !hasPendingCloudSave,
+  )
+
+  if (!applied) return false
+
+  writeLocalState()
+  cloudDataRevision.value += 1
+  return true
+}
+
+const handleCloudSnapshot = async (
+  snapshot: DocumentSnapshot,
+  generation: number,
+  userId: string,
+  preserveLocalChanges: boolean,
+) => {
+  if (generation !== activationGeneration || userId !== activeUserId) return
+
+  const isServerSnapshot = !snapshot.metadata.fromCache
+
+  if (!snapshot.exists()) {
+    makeUserDataAvailable(generation, userId)
+
+    // An empty cache does not prove that the server document is absent. Waiting for the
+    // server snapshot prevents a slow connection from overwriting existing cloud data.
+    if (!isServerSnapshot) return
+
+    hasReceivedServerSnapshot = true
+    if (lastModifiedAt === 0) lastModifiedAt = Date.now()
+    hasPendingCloudSave = true
+    isCloudPersistenceReady = true
+    scheduleCloudSave()
+    return
+  }
+
+  const cloudState = normalizePersistedState(snapshot.data().state)
+  if (!cloudState) throw new Error('Invalid cloud state')
+
+  makeUserDataAvailable(generation, userId)
+
+  if (!isServerSnapshot) {
+    if (!preserveLocalChanges && !hasPendingCloudSave && cloudState.updatedAt > lastModifiedAt) {
+      await applyCloudState(cloudState, generation, userId)
+    }
+    return
+  }
+
+  const isInitialServerSnapshot = !hasReceivedServerSnapshot
+  hasReceivedServerSnapshot = true
+
+  if (preserveLocalChanges || hasPendingCloudSave) {
+    isCloudPersistenceReady = true
+    scheduleCloudSave()
+    return
+  }
+
+  if (isInitialServerSnapshot) {
+    if (cloudState.updatedAt >= lastModifiedAt) {
+      await applyCloudState(cloudState, generation, userId)
+    } else {
+      hasPendingCloudSave = true
+    }
+  } else if (cloudState.updatedAt !== lastModifiedAt) {
+    await applyCloudState(cloudState, generation, userId)
+  }
+
+  if (generation !== activationGeneration || userId !== activeUserId) return
+
+  isCloudPersistenceReady = true
+  cloudSyncError.value = ''
+  if (hasPendingCloudSave) {
+    scheduleCloudSave()
+  } else {
+    cloudSyncStatus.value = 'synced'
+  }
+}
+
+const handleCloudSubscriptionError = (error: unknown, generation: number, userId: string) => {
+  if (generation !== activationGeneration || userId !== activeUserId) return
+
+  console.warn('クラウド保存のリアルタイム同期に失敗しました。端末内の保存を使用します。', error)
+  isCloudPersistenceReady = false
+  cloudSyncStatus.value = 'offline'
+  cloudSyncError.value = getCloudSyncErrorMessage(error)
+  makeUserDataAvailable(generation, userId)
+}
+
 export const activateUserPersistence = async (userId: string) => {
   const generation = ++activationGeneration
 
   cancelScheduledCloudSave()
+  stopCloudSubscription()
   isPersistencePaused = true
   isCloudPersistenceReady = false
   hasPendingCloudSave = false
+  hasReceivedServerSnapshot = false
+  cloudSnapshotQueue = Promise.resolve()
   isUserDataReady.value = false
   cloudSyncStatus.value = 'syncing'
   cloudSyncError.value = ''
   activeUserId = userId
+  lastModifiedAt = 0
   store.resetSelections()
 
   activeStorageKey = getUserStorageKey(userId)
   migrateLegacyState(activeStorageKey)
   const localState = await loadPersistedState()
+  if (generation !== activationGeneration || userId !== activeUserId) return
 
-  try {
-    const userDocument = await getDoc(doc(firestoreDb, 'users', userId))
-    if (generation !== activationGeneration || userId !== activeUserId) return
+  if (localState) makeUserDataAvailable(generation, userId)
 
-    if (userDocument.exists()) {
-      const cloudState = normalizePersistedState(userDocument.data().state)
-      if (!cloudState) {
-        throw new Error('Invalid cloud state')
-      }
-
-      if (!localState || cloudState.updatedAt >= localState.updatedAt) {
-        store.resetSelections()
-        await applyPersistedState(cloudState)
-      } else {
-        await writeCloudState(userId)
-      }
-    } else {
-      if (lastModifiedAt === 0) lastModifiedAt = Date.now()
-      await writeCloudState(userId)
-    }
-
-    if (generation !== activationGeneration || userId !== activeUserId) return
-
-    isCloudPersistenceReady = true
-    cloudSyncStatus.value = 'synced'
-    writeLocalState()
-  } catch (error) {
-    if (generation !== activationGeneration || userId !== activeUserId) return
-
-    console.warn('クラウド保存の初期化に失敗しました。端末内の保存を使用します。', error)
-    cloudSyncStatus.value = 'offline'
-    cloudSyncError.value = getCloudSyncErrorMessage(error)
-  } finally {
-    if (generation === activationGeneration && userId === activeUserId) {
-      isPersistencePaused = false
-      isUserDataReady.value = true
-    }
-  }
+  cloudUnsubscribe = onSnapshot(
+    doc(firestoreDb, 'users', userId),
+    { includeMetadataChanges: true },
+    (snapshot) => {
+      const preserveLocalChanges = hasPendingCloudSave || snapshot.metadata.hasPendingWrites
+      cloudSnapshotQueue = cloudSnapshotQueue
+        .then(() => handleCloudSnapshot(snapshot, generation, userId, preserveLocalChanges))
+        .catch((error: unknown) => handleCloudSubscriptionError(error, generation, userId))
+    },
+    (error) => handleCloudSubscriptionError(error, generation, userId),
+  )
 }
 
 export const activateGuestPersistence = async () => {
   activationGeneration += 1
   cancelScheduledCloudSave()
+  stopCloudSubscription()
   isPersistencePaused = true
   isCloudPersistenceReady = false
   hasPendingCloudSave = false
@@ -546,6 +660,7 @@ export const activateGuestPersistence = async () => {
 export const deactivateUserPersistence = () => {
   activationGeneration += 1
   cancelScheduledCloudSave()
+  stopCloudSubscription()
   isPersistencePaused = true
   isCloudPersistenceReady = false
   hasPendingCloudSave = false
