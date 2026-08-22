@@ -136,7 +136,6 @@ onBeforeUnmount(() => {
 <template>
   <header class="app-header">
     <RouterLink v-if="route.name === 'home'" class="header-action condition-link" to="/conditions">
-      <span aria-hidden="true">✦</span>
       希望条件
     </RouterLink>
     <RouterLink v-else-if="showResultsBackLink" class="header-action home-link" to="/results">

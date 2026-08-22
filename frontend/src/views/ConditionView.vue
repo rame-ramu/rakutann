@@ -33,7 +33,6 @@
             @click="store.toggleCondition(tag)"
             class="tag-button"
           >
-            <span class="icon">{{ getIcon(tag) }}</span>
             {{ tag }}
           </button>
         </div>
@@ -59,14 +58,12 @@
 
 <script setup lang="ts">
 import BaseLayout from '../components/BaseLayout.vue'
-import { CONDITION_GROUPS, CONDITION_ICONS } from '../constants/courseConditions'
+import { CONDITION_GROUPS } from '../constants/courseConditions'
 import { store } from '../store'
 
 const semesterOptions = ['前期', '後期'] as const
 
 const tagGroups = CONDITION_GROUPS
-
-const getIcon = (tag: string) => CONDITION_ICONS[tag] || '🏷️'
 </script>
 
 <style scoped>
@@ -265,12 +262,6 @@ h2 {
   .tag-button.active {
     transform: none;
     box-shadow: 3px 3px 0 #111827;
-  }
-
-  .icon {
-    flex: 0 0 auto;
-    width: 1.25rem;
-    text-align: center;
   }
 
   .semester-options {

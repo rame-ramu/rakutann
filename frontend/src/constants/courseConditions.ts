@@ -62,32 +62,3 @@ export const getExclusiveConditionSiblings = (condition: string) =>
   EXCLUSIVE_CONDITION_GROUPS.find((group) => group.includes(condition))?.filter(
     (candidate) => candidate !== condition,
   ) ?? []
-
-export const CONDITION_ICONS: Record<string, string> = {
-  'レポート・課題重視': '📝',
-  'レポート・課題あり': '📄',
-  試験あり: '有',
-  試験重視: '✍️',
-  試験なし: '🚫',
-  態度点なし: '0',
-  態度点低め: '↓',
-  態度点高め: '↑',
-  オンデマンド多め: '▶',
-  オンデマンド少なめ: '◐',
-  オンデマンドなし: '□',
-  全てオンデマンド: '◎',
-  前提履修なし: '✓',
-  前提履修あり: '要',
-  グループワークなし: '個',
-  グループワークあり: '組',
-  '情報・数理': '💻',
-  'プログラミング・システム': '⌨',
-  'AI・データ': '▦',
-  '心理・認知': '🧠',
-  '社会・ビジネス': '💼',
-  '語学・コミュニケーション': '🌐',
-  'メディア・デザイン': '🎨',
-  '健康・スポーツ': '＋',
-  'キャリア・教養': '本',
-  その他: '…',
-}

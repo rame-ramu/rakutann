@@ -33,7 +33,6 @@
       </div>
 
       <div class="recommendation-notice" role="note">
-        <span class="recommendation-notice-icon" aria-hidden="true">💡</span>
         <p>
           <strong>希望タグに合う授業から優先して表示しています。</strong>
           タグに一致しない授業も、学年・学期・曜日・時限に合う履修候補として一覧に表示されます。
@@ -727,11 +726,6 @@ h2 {
   background: #fffbe6;
   color: #111827;
   box-shadow: 3px 3px 0 #111827;
-}
-
-.recommendation-notice-icon {
-  flex: 0 0 auto;
-  line-height: 1.5;
 }
 
 .recommendation-notice p {
